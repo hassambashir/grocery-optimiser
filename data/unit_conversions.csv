@@ -1,24 +1,24 @@
-conversion_id,ingredient_id,source_unit,model_unit,multiplier,conversion_method,status,source_url,notes
-C001,chicken_breast,each,g,,average_usable_piece_weight,research_needed,,Needed for Gousto recipes that specify chicken breast portions by count.
-C002,red_pepper,each,g,,average_edible_item_weight,research_needed,,Approximation acceptable but should be sourced and sensitivity-tested.
-C003,garlic,clove,g,,average_edible_clove_weight,research_needed,,Low-cost ingredient; use a defensible average rather than false precision.
-C004,red_chilli,each,g,,average_edible_item_weight,research_needed,,Low materiality.
-C005,cayenne_pepper,tsp,g,,ingredient_specific_spoon_weight,research_needed,,Durable pantry stock.
-C006,ground_coriander,tsp,g,,ingredient_specific_spoon_weight,research_needed,,Durable pantry stock.
-C007,dried_oregano,tsp,g,,ingredient_specific_spoon_weight,research_needed,,Durable pantry stock.
-C008,smoked_paprika,tsp,g,,ingredient_specific_spoon_weight,research_needed,,Durable pantry stock.
-C009,brown_onion,each,g,,average_edible_item_weight,research_needed,,Use grams in stock model so loose and bagged onions can compete.
-C010,carrot,each,g,,average_edible_item_weight,research_needed,,Use grams in stock model.
-C011,spring_onion,each,g,,average_edible_item_weight,research_needed,,Fresh ingredient; approximation acceptable if sourced.
-C012,five_spice,tsp,g,,ingredient_specific_spoon_weight,research_needed,,Durable pantry stock.
-C013,sumac,tsp,g,,ingredient_specific_spoon_weight,research_needed,,Durable pantry stock.
-C014,wholewheat_noodles,nest,g,,product_or_pack_serving_weight,research_needed,,Prefer product-specific nest weight where available.
-C015,miso_paste,tbsp,g,,ingredient_specific_spoon_weight,research_needed,,Paste density/portion conversion.
-C016,turmeric,tsp,g,,ingredient_specific_spoon_weight,research_needed,,Durable pantry stock; small conversion error has low decision impact.
-C017,garam_masala,tsp,g,,ingredient_specific_spoon_weight,research_needed,,Durable pantry stock.
-C018,cardamom,pod,g,,average_seed_or_pod_weight,research_needed,,Low materiality; may remain count-based if simpler.
-C019,sweet_potato,each,g,,average_edible_item_weight,research_needed,,Use grams for package comparison.
-C020,courgette,each,g,,average_edible_item_weight,research_needed,,Use grams for loose/fixed-pack comparison.
-C021,saffron,packet,g,,source_packet_net_weight,research_needed,,Prefer the actual Gousto packet weight if available.
-C022,red_onion,each,g,,average_edible_item_weight,research_needed,,Use grams in stock model.
-C023,peri_peri_seasoning,tbsp,g,,ingredient_specific_spoon_weight,research_needed,,Durable pantry stock.
+conversion_id,ingredient_id,source_unit,model_unit,multiplier,conversion_method,status,confidence,source_url,notes
+C001,chicken_breast,each,g,125,internal_gousto_portion_equivalence,provisional,medium,https://www.gousto.co.uk/cookbook/recipes/one-pot-peri-peri-chicken-rice-with-buttered-corn,Standard Gousto breast portion inferred as 125g because comparable 2-person Gousto recipes supply 250g diced/strip chicken; R002 large fillet is overridden separately.
+C002,red_pepper,each,g,119,average_edible_item_weight,sourced,medium,https://food-nutrition.canada.ca/cnf-fce/serving-portion?id=2484,Health Canada medium raw red sweet pepper edible portion.
+C003,garlic,clove,g,3,average_edible_clove_weight,sourced,high,https://food-nutrition.canada.ca/cnf-fce/serving-portion?id=2394,Health Canada gives 1 raw garlic clove = 3g edible portion.
+C004,red_chilli,each,g,6.1,proxy_edible_item_weight,provisional,low,https://food-nutrition.canada.ca/cnf-fce/serving-portion?id=4858,Uses serrano pepper as a size proxy for an unspecified Gousto red chilli; sensitivity-test later.
+C005,cayenne_pepper,tsp,g,2.4,tesco_label_spoon_weight,sourced,high,https://www.tesco.com/shop/en-GB/products/252068516,Tesco label gives 1/2 tsp = 1.2g.
+C006,ground_coriander,tsp,g,1.8,ingredient_specific_spoon_weight,sourced,medium,https://www.myfooddiary.com/foods/29286/ground-coriander,Reference serving gives 1 tsp = 1.8g.
+C007,dried_oregano,tsp,g,0.5,tesco_label_spoon_weight,sourced,high,https://www.tesco.com/shop/en-GB/products/256149795,Tesco label gives 1/2 tsp = 0.25g.
+C008,smoked_paprika,tsp,g,2.4,tesco_label_spoon_weight,sourced,high,https://www.tesco.com/shop/en-GB/products/255770365,Tesco label gives 1/2 tsp = 1.2g.
+C009,brown_onion,each,g,120,tesco_loose_item_weight,provisional,medium,https://www.tesco.com/shop/en-GB/search?query=onions,Tesco loose-onion selector currently uses about 0.12kg as one item; actual onions vary.
+C010,carrot,each,g,61,average_edible_item_weight,sourced,high,https://food-nutrition.canada.ca/cnf-fce/serving-portion?id=2380,Health Canada medium raw carrot edible portion.
+C011,spring_onion,each,g,15,average_edible_item_weight,sourced,medium,https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/nutrient-data/table-4-vegetables-vegetable-products-nutrient-value-some-common-foods-2008.html,Health Canada table gives one medium green onion/scallion = 15g.
+C012,five_spice,tsp,g,2,ingredient_specific_spoon_weight,sourced,medium,https://cupgrams.com/convert/chinese-five-spice/teaspoons-to-grams/,Published ingredient-density conversion gives about 2g per tsp.
+C013,sumac,tsp,g,2,ingredient_specific_spoon_weight,sourced,medium,https://cupstogramscalculator.com/sumac/,Published ingredient-density conversion gives about 2g per tsp.
+C014,wholewheat_noodles,nest,g,62.5,product_pack_fraction,sourced,high,https://www.tesco.com/shop/en-GB/products/296921753,Tesco 250g pack labels 1/4 pack as 63g and instructs use by noodle nest; model uses exact 250/4 = 62.5g.
+C015,miso_paste,tbsp,g,17,tesco_label_spoon_weight,sourced,high,https://www.tesco.com/shop/en-GB/products/304368111,Tesco label gives one tablespoon = 17g.
+C016,turmeric,tsp,g,3.13,usda_derived_spoon_weight,sourced,medium,https://kitchenmath.io/convert/ground-turmeric/teaspoons-to-grams,USDA-derived conversion; small errors are immaterial for durable pantry stock.
+C017,garam_masala,tsp,g,1.8,measured_spoon_weight,provisional,medium,https://www.poormanprotein.com/misc/spices,Measured kitchen reference; spice-blend density varies by brand.
+C018,cardamom,pod,g,0.2,average_whole_pod_weight,provisional,low,https://cardamomnectar.com/cardamom-seeds-to-ground-conversion,Reference range is roughly 0.15-0.25g whole per pod; midpoint used.
+C019,sweet_potato,each,g,130,average_edible_item_weight,sourced,high,https://food-nutrition.canada.ca/cnf-fce/serving-portion?id=2240,Health Canada medium raw sweet potato edible portion.
+C020,courgette,each,g,200,tesco_loose_item_weight,provisional,medium,https://www.tesco.com/shop/en-GB/browse/groceries-and-essentials/fresh-food/fresh-vegetables-and-fresh-flowers/courgettes-aubergines-and-squash,Tesco loose-courgette selector currently uses about 0.2kg as one item; actual courgettes vary.
+C021,saffron,packet,g,0.1,pinch_proxy,provisional,low,https://pantryflex.com/sauces/chris-jeff-galvin-harissa-saffron-rouille,Gousto does not publish packet weight; 0.1g is a generic saffron-pinch proxy and must be sensitivity-tested.
+C022,red_onion,each,g,130,tesco_loose_item_weight,provisional,medium,https://www.tesco.com/shop/en-GB/search?query=onions,Tesco loose red-onion selector currently uses about 0.13kg as one item; actual onions vary.
+C023,peri_peri_seasoning,tbsp,g,17.5,commercial_seasoning_usage_proxy,provisional,low,https://www.sainsburys.co.uk/groceries/product/east-end-hot-peri-peri-seasoning-100g,Commercial peri-peri seasoning directions state 2 tbsp = 35g; Gousto blend may differ.
