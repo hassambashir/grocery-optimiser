@@ -1,0 +1,24 @@
+conversion_id,ingredient_id,source_unit,model_unit,multiplier,conversion_method,status,source_url,notes
+C001,chicken_breast,each,g,,average_usable_piece_weight,research_needed,,Needed for Gousto recipes that specify chicken breast portions by count.
+C002,red_pepper,each,g,,average_edible_item_weight,research_needed,,Approximation acceptable but should be sourced and sensitivity-tested.
+C003,garlic,clove,g,,average_edible_clove_weight,research_needed,,Low-cost ingredient; use a defensible average rather than false precision.
+C004,red_chilli,each,g,,average_edible_item_weight,research_needed,,Low materiality.
+C005,cayenne_pepper,tsp,g,,ingredient_specific_spoon_weight,research_needed,,Durable pantry stock.
+C006,ground_coriander,tsp,g,,ingredient_specific_spoon_weight,research_needed,,Durable pantry stock.
+C007,dried_oregano,tsp,g,,ingredient_specific_spoon_weight,research_needed,,Durable pantry stock.
+C008,smoked_paprika,tsp,g,,ingredient_specific_spoon_weight,research_needed,,Durable pantry stock.
+C009,brown_onion,each,g,,average_edible_item_weight,research_needed,,Use grams in stock model so loose and bagged onions can compete.
+C010,carrot,each,g,,average_edible_item_weight,research_needed,,Use grams in stock model.
+C011,spring_onion,each,g,,average_edible_item_weight,research_needed,,Fresh ingredient; approximation acceptable if sourced.
+C012,five_spice,tsp,g,,ingredient_specific_spoon_weight,research_needed,,Durable pantry stock.
+C013,sumac,tsp,g,,ingredient_specific_spoon_weight,research_needed,,Durable pantry stock.
+C014,wholewheat_noodles,nest,g,,product_or_pack_serving_weight,research_needed,,Prefer product-specific nest weight where available.
+C015,miso_paste,tbsp,g,,ingredient_specific_spoon_weight,research_needed,,Paste density/portion conversion.
+C016,turmeric,tsp,g,,ingredient_specific_spoon_weight,research_needed,,Durable pantry stock; small conversion error has low decision impact.
+C017,garam_masala,tsp,g,,ingredient_specific_spoon_weight,research_needed,,Durable pantry stock.
+C018,cardamom,pod,g,,average_seed_or_pod_weight,research_needed,,Low materiality; may remain count-based if simpler.
+C019,sweet_potato,each,g,,average_edible_item_weight,research_needed,,Use grams for package comparison.
+C020,courgette,each,g,,average_edible_item_weight,research_needed,,Use grams for loose/fixed-pack comparison.
+C021,saffron,packet,g,,source_packet_net_weight,research_needed,,Prefer the actual Gousto packet weight if available.
+C022,red_onion,each,g,,average_edible_item_weight,research_needed,,Use grams in stock model.
+C023,peri_peri_seasoning,tbsp,g,,ingredient_specific_spoon_weight,research_needed,,Durable pantry stock.
