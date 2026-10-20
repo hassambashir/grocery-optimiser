@@ -1,0 +1,2 @@
+ingredient_id,quantity,unit,inventory_policy,notes
+long_grain_rice,10000,g,assumed_on_hand_staple,User-specified first scenario: rice is kept in bulk and should not drive weekly package selection.
