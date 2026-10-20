@@ -50,7 +50,7 @@ The first model distinguishes:
 - **durable tracked inventory** — spices, dry goods and long-lived sauces that persist across planning cycles;
 - **fresh tracked inventory** — meat, dairy, vegetables and herbs where package size and spoilage matter more.
 
-A leftover quantity is therefore not automatically “waste”. Usable ending stock rolls into the next planning cycle. For products such as tins, the model will also distinguish whole unopened packs from undesirable partial opened-pack remainders.
+A leftover quantity is therefore not automatically “waste”. Usable ending stock rolls into the next planning cycle.
 
 ## Recipe quantity flexibility
 
