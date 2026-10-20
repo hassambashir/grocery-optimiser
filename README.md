@@ -26,7 +26,7 @@ This repository deliberately starts with real data rather than toy recipes:
 - `data/products.csv` — 83 Tesco UK product/package options covering every canonical ingredient used by the seed recipes.
 - `data/unit_conversions.csv` — explicit source-unit → model-unit conversions with source/method/confidence.
 - `data/flexibility_classes.csv` — first-pass recipe-quantity flexibility assumptions.
-- `config/initial_inventory.csv` — household-specific starting stock; currently includes 10 kg long-grain rice.
+- `config/initial_inventory.csv` — household-specific starting stock for any ingredient; the current example contains 10 kg long-grain rice, while omitted ingredients default to zero.
 
 Only recipe ingredient lists and metadata are stored; cooking instructions remain at the linked source pages.
 
@@ -50,7 +50,7 @@ The first model distinguishes:
 - **durable tracked inventory** — spices, dry goods and long-lived sauces that persist across planning cycles;
 - **fresh tracked inventory** — meat, dairy, vegetables and herbs where package size and spoilage matter more.
 
-A leftover quantity is therefore not automatically “waste”.
+A leftover quantity is therefore not automatically “waste”. Usable ending stock rolls into the next planning cycle. For products such as tins, the model will also distinguish whole unopened packs from undesirable partial opened-pack remainders.
 
 ## Recipe quantity flexibility
 
