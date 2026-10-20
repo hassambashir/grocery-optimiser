@@ -11,14 +11,16 @@ The practical goal is:
 ## Decisions the model should eventually make
 
 1. **Recipe selection**
-   - Select meals automatically from a candidate recipe library.
-   - Avoid an obviously repetitive week.
-   - Allow variety rules to be modelled separately from waste/cost.
+   - Select meals automatically from a **pre-approved candidate recipe library**.
+   - The recipe library is the main quality/acceptability filter: if a meal is not something the household would want to eat, it should not be in the candidate set.
+   - Avoid an obviously repetitive plan without building a subjective “taste score” for arbitrary recipes.
+   - Allow simple variety rules to be modelled separately from waste/cost when needed.
 
 2. **Recipe quantity**
    - A recipe ingredient need not always be a single rigid number.
-   - Each ingredient can later have `minimum`, `preferred`, and `maximum` usable quantities.
-   - Example: a nominal 150 g yoghurt requirement might tolerate 120–170 g, while a baking ingredient may have a much tighter range.
+   - The first model uses four **flexibility classes** instead of manually inventing min/preferred/max for every recipe row: `fixed`, `tight`, `moderate`, and `wide`.
+   - These classes generate a first-pass allowable interval around the published recipe quantity.
+   - The class boundaries are modelling assumptions and will be sensitivity-tested; recipe-specific overrides can be added later.
 
 3. **Retail package selection**
    - Choose whole retail packs where the product is sold as a fixed pack.
@@ -147,3 +149,37 @@ For the first implementation:
 - no live Tesco integration yet.
 
 The purpose of this scope is to get a small real model working before adding more recipes, nutrients, live product data, stochastic behaviour, or an interface.
+
+
+## First-model flexibility assumptions
+
+The seed model currently uses:
+
+| Class | Minimum | Preferred | Maximum | Typical first-pass use |
+|---|---:|---:|---:|---|
+| fixed | 100% | 100% | 100% | spices and stock |
+| tight | 90% | 100% | 110% | starches, sauces, pantry items |
+| moderate | 80% | 100% | 120% | protein and dairy |
+| wide | 70% | 100% | 130% | vegetables and fresh aromatics |
+
+These values are deliberately provisional. The purpose is to let the first optimiser test the value of quantity flexibility without pretending we already know the true culinary tolerance of every ingredient.
+
+A later experiment should compare these classes with:
+- completely fixed recipes;
+- narrower/wider class definitions;
+- recipe-specific bounds where justified.
+
+## Data-readiness checkpoint — 2026-10-20
+
+The initial real-data pass is now sufficient for the first deterministic model:
+
+- 10 recipes;
+- 105 recipe-ingredient rows;
+- 60 canonical ingredients;
+- 83 Tesco product/package rows;
+- no recipe ingredient lacks a normalised model quantity;
+- no required source-unit conversion is blank;
+- every used ingredient has a retail supply option or household-stock policy;
+- every canonical ingredient has a default flexibility class.
+
+Remaining uncertainty is recorded explicitly as confidence/status metadata and should be tested rather than silently treated as exact.
