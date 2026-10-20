@@ -1,2 +1,2 @@
-ingredient_id,product_id,quantity,unit,stock_state,inventory_policy,notes
-long_grain_rice,,10000,g,bulk,assumed_on_hand_staple,Example current household starting stock. Any ingredient may appear here; omitted ingredients default to zero. For package-sensitive items use product_id plus stock_state so sealed packs can be distinguished from opened remainder.
+ingredient_id,quantity,unit,inventory_policy,notes
+long_grain_rice,10000,g,assumed_on_hand_staple,Example current household starting stock. Any ingredient may appear here; omitted ingredients default to zero. End-of-cycle usable stock becomes the next cycle's starting stock.
