@@ -1,106 +1,106 @@
-recipe_id,source_ingredient_name,ingredient_id,source_quantity,source_unit,normalized_quantity,normalized_unit,normalization_status,notes
-R001,Intense chicken stock mix,chicken_stock_mix,5.5,g,5.5,g,exact_source_unit,
-R001,White long grain rice,long_grain_rice,130.0,g,130.0,g,exact_source_unit,
-R001,Chicken breast strips,chicken_breast,250.0,g,250.0,g,exact_source_unit,
-R001,Red pepper,red_pepper,1.0,each,119,g,converted_provisional,
-R001,Tomato paste,tomato_puree,32.0,g,32.0,g,exact_source_unit,Canonicalised paste -> puree family; product mapping must preserve suitability.
-R001,Sweetcorn,sweetcorn,150.0,g,150.0,g,exact_source_unit,Retail tins use usable_quantity when drained weight differs from labelled net weight.
-R001,Peri peri spice mix,peri_peri_seasoning,1.0,tbsp,17.5,g,converted_provisional,
-R001,Garlic clove,garlic,1.0,clove,3,g,converted_provisional,
-R001,Natural yoghurt,natural_yogurt,80.0,g,80.0,g,exact_source_unit,
-R002,Red chilli,red_chilli,1.0,each,6.1,g,converted_provisional,
-R002,Hoisin sauce sachet,hoisin_sauce,40.0,g,40.0,g,exact_source_unit,
-R002,Garlic clove,garlic,1.0,clove,3,g,converted_provisional,
-R002,Pak choi,pak_choi,200.0,g,200.0,g,exact_source_unit,
-R002,Cornflour,cornflour,3.0,g,3.0,g,exact_source_unit,
-R002,Fresh root ginger,fresh_ginger,15.0,g,15.0,g,exact_source_unit,
-R002,Large British chicken breast fillet,chicken_breast,1.0,each,250,g,converted_provisional,Large fillet source-specific override: modelled as 250g for this 2-person recipe rather than the 125g standard Gousto portion assumption.
-R002,Rice vinegar sachet,rice_vinegar,15.0,ml,15.0,ml,exact_source_unit,
-R002,Brown rice,brown_rice,130.0,g,130.0,g,exact_source_unit,
-R002,Soy sauce sachet,soy_sauce,15.0,ml,15.0,ml,exact_source_unit,
-R002,Shredded kale,kale,80.0,g,80.0,g,exact_source_unit,
-R003,Cayenne pepper,cayenne_pepper,0.5,tsp,1.2,g,converted_provisional,
-R003,Soy sauce,soy_sauce,8.0,ml,8.0,ml,exact_source_unit,
-R003,Skinless chicken thighs,chicken_thigh,320.0,g,320.0,g,exact_source_unit,
-R003,Ground coriander,ground_coriander,2.0,tsp,4.8,g,converted_provisional,
-R003,Dried oregano,dried_oregano,1.0,tsp,0.5,g,converted_provisional,
-R003,Intense beef stock mix,beef_stock_mix,5.5,g,5.5,g,exact_source_unit,
-R003,Ground smoked paprika,smoked_paprika,2.0,tsp,4.8,g,converted_provisional,
-R003,Garlic clove,garlic,2.0,clove,6,g,converted_provisional,
-R003,Brown onion,brown_onion,1.0,each,120,g,converted_provisional,
-R003,Crispy onions,crispy_onions,15.0,g,15.0,g,exact_source_unit,
-R003,Arborio rice,arborio_rice,160.0,g,160.0,g,exact_source_unit,
-R003,Spinach,spinach,80.0,g,80.0,g,exact_source_unit,
-R003,Cherry tomatoes,cherry_tomatoes,125.0,g,125.0,g,exact_source_unit,
-R004,Carrot,carrot,2.0,each,122,g,converted_provisional,
-R004,BBQ sauce,bbq_sauce,40.0,g,40.0,g,exact_source_unit,
-R004,White long grain rice,long_grain_rice,130.0,g,130.0,g,exact_source_unit,
-R004,Spring onion,spring_onion,1.0,each,15,g,converted_provisional,
-R004,Chicken breast portions,chicken_breast,2.0,each,250,g,converted_provisional,
-R004,Five-spice mix,five_spice,1.0,tsp,2.4,g,converted_provisional,
-R004,Garlic clove,garlic,1.0,clove,3,g,converted_provisional,
-R004,Toasted sesame oil,sesame_oil,10.0,ml,10.0,ml,exact_source_unit,
-R004,Tomato paste,tomato_puree,16.0,g,16.0,g,exact_source_unit,
-R004,Hoisin sauce,hoisin_sauce,20.0,g,20.0,g,exact_source_unit,
-R004,Sweet pea pods,mangetout,80.0,g,80.0,g,exact_source_unit,Mapped to mangetout; verify if source's 'sweet pea pods' is equivalent for product matching.
-R005,Intense chicken stock mix,chicken_stock_mix,5.5,g,5.5,g,exact_source_unit,
-R005,White long grain rice,long_grain_rice,130.0,g,130.0,g,exact_source_unit,
-R005,Ground sumac,sumac,1.0,tsp,2,g,converted_provisional,
-R005,Mediterranean-style seasoning,mediterranean_seasoning,3.0,g,3.0,g,exact_source_unit,
-R005,Chicken breast portions,chicken_breast,4.0,each,500,g,converted_provisional,Source displays '(2pcs) x2' for the double-chicken version.
-R005,Mayonnaise,mayonnaise,25.0,ml,25.0,ml,exact_source_unit,
-R005,Parsley,parsley,5.0,g,5.0,g,exact_source_unit,
-R005,Brown onion,brown_onion,1.0,each,120,g,converted_provisional,
-R005,Roasted garlic paste,garlic_paste,15.0,g,15.0,g,exact_source_unit,Roasted garlic paste kept in garlic-paste family; flavour-form mapping is provisional.
-R005,Fine green beans,green_beans,80.0,g,80.0,g,exact_source_unit,
-R005,Spinach,spinach,80.0,g,80.0,g,exact_source_unit,
-R006,Red pepper,red_pepper,1.0,each,119,g,converted_provisional,
-R006,Spring onion,spring_onion,1.0,each,15,g,converted_provisional,
-R006,Diced chicken breast,chicken_breast,250.0,g,250.0,g,exact_source_unit,
-R006,Toasted sesame oil,sesame_oil,10.0,ml,10.0,ml,exact_source_unit,
-R006,Brown onion,brown_onion,1.0,each,120,g,converted_provisional,
-R006,Wholewheat noodle nest,wholewheat_noodles,1.0,nest,62.5,g,converted_provisional,
-R006,Hoisin sauce,hoisin_sauce,40.0,g,40.0,g,exact_source_unit,
-R006,Ginger & garlic paste,ginger_garlic_paste,15.0,g,15.0,g,exact_source_unit,
-R006,Carrot,carrot,1.0,each,61,g,converted_provisional,
-R006,Soy sauce,soy_sauce,15.0,ml,15.0,ml,exact_source_unit,
-R007,British diced chicken thigh,chicken_thigh,250.0,g,250.0,g,exact_source_unit,
-R007,Fresh root ginger,fresh_ginger,15.0,g,15.0,g,exact_source_unit,
-R007,Mangetout,mangetout,80.0,g,80.0,g,exact_source_unit,
-R007,Red pepper,red_pepper,1.0,each,119,g,converted_provisional,
-R007,Wholewheat noodle nests,wholewheat_noodles,2.0,nest,125,g,converted_provisional,
-R007,White miso paste,miso_paste,2.0,tbsp,34,g,converted_provisional,
-R007,Toasted sesame oil sachet,sesame_oil,15.0,ml,15.0,ml,exact_source_unit,
-R008,Intense chicken stock mix,chicken_stock_mix,5.5,g,5.5,g,exact_source_unit,
-R008,Mango chutney,mango_chutney,20.0,g,20.0,g,exact_source_unit,
-R008,Solid creamed coconut,creamed_coconut,25.0,g,25.0,g,exact_source_unit,
-R008,Ground turmeric,turmeric,0.5,tsp,1.57,g,converted_provisional,
-R008,Chicken breast portions,chicken_breast,2.0,each,250,g,converted_provisional,
-R008,Tomato paste,tomato_puree,32.0,g,32.0,g,exact_source_unit,
-R008,Garam masala,garam_masala,1.0,tsp,1.8,g,converted_provisional,
-R008,Brown onion,brown_onion,1.0,each,120,g,converted_provisional,
-R008,White long grain rice,long_grain_rice,100.0,g,100.0,g,exact_source_unit,
-R008,Ginger paste,ginger_paste,15.0,g,15.0,g,exact_source_unit,
-R008,Cardamom pod,cardamom,3.0,pod,0.6,g,converted_provisional,
-R008,Spinach,spinach,120.0,g,120.0,g,exact_source_unit,
-R008,Flaked almonds,flaked_almonds,15.0,g,15.0,g,exact_source_unit,
-R009,Chicken stock mix,chicken_stock_mix,5.5,g,5.5,g,exact_source_unit,
-R009,Chicken breast portions,chicken_breast,2.0,each,250,g,converted_provisional,
-R009,Garlic clove,garlic,1.0,clove,3,g,converted_provisional,
-R009,Soft cheese,soft_cheese,50.0,g,50.0,g,exact_source_unit,
-R009,Spinach,spinach,80.0,g,80.0,g,exact_source_unit,
-R009,Cherry tomatoes,cherry_tomatoes,250.0,g,250.0,g,exact_source_unit,
-R009,Sweet potato,sweet_potato,2.0,each,260,g,converted_provisional,
-R010,British free range chicken breast portions,chicken_breast,2.0,each,250,g,converted_provisional,
-R010,Ground sumac,sumac,1.0,tsp,2,g,converted_provisional,
-R010,Ground coriander,ground_coriander,1.0,tsp,2.4,g,converted_provisional,
-R010,Garlic clove,garlic,1.0,clove,3,g,converted_provisional,
-R010,Courgette,courgette,1.0,each,200,g,converted_provisional,
-R010,Natural yoghurt,natural_yogurt,80.0,g,80.0,g,exact_source_unit,
-R010,Couscous,couscous,120.0,g,120.0,g,exact_source_unit,
-R010,Saffron,saffron,1.0,packet,0.1,g,converted_provisional,
-R010,Harissa paste,harissa_paste,20.0,g,20.0,g,exact_source_unit,
-R010,Chopped dates,chopped_dates,30.0,g,30.0,g,exact_source_unit,
-R010,Red pepper,red_pepper,1.0,each,119,g,converted_provisional,
-R010,Coriander & mint,fresh_herb_mix_coriander_mint,10.0,g,10.0,g,requires_split_or_bundle_mapping,Source supplies one combined 10g coriander-and-mint quantity. The previous synthetic Tesco bundle has been removed; exact retail component mapping remains deliberately unresolved rather than inventing a split.
-R010,Red onion,red_onion,1.0,each,130,g,converted_provisional,
+recipe_id,ingredient_id,preferred_quantity,unit,change_type,notes
+R001,chicken_stock_mix,5.5,g,kept,Ordinary chicken stock/cube equivalent.
+R001,long_grain_rice,130,g,kept,
+R001,chicken_breast,250,g,kept,
+R001,red_pepper,120,g,adjusted,Household-rounded medium pepper.
+R001,tomato_puree,30,g,adjusted,Rounded from Gousto's 32g sachet amount.
+R001,sweetcorn,160,g,adjusted,Use the full usable/drained amount of the smaller Tesco tin.
+R001,peri_peri_seasoning,10,g,adjusted,Household seasoning amount rather than preserving Gousto's supplied tablespoon weight.
+R001,garlic,6,g,adjusted,About two cloves.
+R001,natural_yogurt,100,g,adjusted,Practical sauce portion.
+R002,red_chilli,6,g,kept,Approximate one chilli.
+R002,hoisin_sauce,40,g,kept,
+R002,garlic,6,g,adjusted,About two cloves.
+R002,pak_choi,200,g,kept,
+R002,cornflour,5,g,adjusted,Household-rounded thickener amount.
+R002,fresh_ginger,15,g,kept,
+R002,chicken_breast,250,g,kept,
+R002,rice_vinegar,15,ml,kept,
+R002,brown_rice,130,g,kept,
+R002,soy_sauce,15,ml,kept,
+R002,kale,80,g,kept,
+R003,cayenne_pepper,1.2,g,kept,About 1/2 tsp.
+R003,soy_sauce,10,ml,adjusted,Rounded from 8ml.
+R003,chicken_thigh,320,g,kept,
+R003,ground_coriander,4.8,g,kept,About 2 tsp.
+R003,dried_oregano,0.5,g,kept,About 1 tsp.
+R003,chicken_stock_mix,5.5,g,substituted,Use the same ordinary chicken stock kept elsewhere instead of a separate beef-stock product.
+R003,smoked_paprika,4.8,g,kept,About 2 tsp.
+R003,garlic,6,g,kept,About two cloves.
+R003,brown_onion,120,g,kept,
+R003,arborio_rice,160,g,kept,Retained because the dish is cooked in a risotto-like style.
+R003,spinach,80,g,kept,
+R003,cherry_tomatoes,125,g,kept,
+R004,carrot,120,g,adjusted,Rounded household amount.
+R004,bbq_sauce,30,g,adjusted,Slightly reduced after simplifying the sauce.
+R004,long_grain_rice,130,g,kept,
+R004,spring_onion,30,g,adjusted,About two spring onions rather than a token single piece.
+R004,chicken_breast,250,g,kept,
+R004,five_spice,2.4,g,kept,About 1 tsp.
+R004,garlic,6,g,adjusted,About two cloves.
+R004,sesame_oil,10,ml,kept,
+R004,hoisin_sauce,30,g,adjusted,Increased after removing tomato paste.
+R004,soy_sauce,15,ml,added,Standard household sauce component.
+R004,mangetout,80,g,kept,
+R005,chicken_stock_mix,5.5,g,kept,Ordinary chicken stock/cube equivalent.
+R005,long_grain_rice,130,g,kept,
+R005,sumac,2,g,kept,About 1 tsp.
+R005,dried_oregano,1,g,substituted,Replaces bespoke Mediterranean seasoning with an ordinary pantry herb.
+R005,chicken_breast,300,g,adjusted,Reduced from Gousto's double-protein 500g version.
+R005,natural_yogurt,100,g,substituted,Replaces mayonnaise-based meal-kit sauce.
+R005,parsley,10,g,adjusted,More useful household herb amount.
+R005,brown_onion,120,g,kept,
+R005,garlic,6,g,substituted,Fresh garlic replaces roasted garlic paste.
+R005,green_beans,160,g,adjusted,Increase vegetables after reducing double chicken.
+R005,spinach,80,g,kept,
+R006,red_pepper,120,g,adjusted,Household-rounded medium pepper.
+R006,spring_onion,30,g,adjusted,About two spring onions.
+R006,chicken_breast,250,g,kept,
+R006,sesame_oil,10,ml,kept,
+R006,brown_onion,120,g,kept,
+R006,wholewheat_noodles,125,g,adjusted,Two nests for two adults rather than Gousto's smaller one-nest portion.
+R006,hoisin_sauce,40,g,kept,
+R006,fresh_ginger,10,g,substituted,Fresh ginger replaces ginger-garlic paste.
+R006,garlic,6,g,substituted,Fresh garlic replaces ginger-garlic paste.
+R006,carrot,60,g,adjusted,Rounded household amount.
+R006,soy_sauce,15,ml,kept,
+R007,chicken_thigh,250,g,kept,
+R007,fresh_ginger,15,g,kept,
+R007,mangetout,120,g,adjusted,Increase vegetable portion.
+R007,red_pepper,120,g,adjusted,Household-rounded medium pepper.
+R007,wholewheat_noodles,125,g,kept,Two nests.
+R007,miso_paste,34,g,kept,About 2 tbsp.
+R007,sesame_oil,15,ml,kept,
+R008,creamed_coconut,25,g,kept,
+R008,turmeric,1.5,g,adjusted,Household-rounded 1/2 tsp equivalent.
+R008,chicken_breast,250,g,kept,
+R008,garam_masala,1.8,g,kept,About 1 tsp.
+R008,ground_coriander,2.4,g,added,Common korma spice; uses an existing pantry ingredient.
+R008,brown_onion,120,g,kept,
+R008,long_grain_rice,120,g,adjusted,More typical two-person rice portion.
+R008,fresh_ginger,15,g,substituted,Fresh ginger replaces ginger paste.
+R008,garlic,6,g,added,Fresh garlic replaces meal-kit shortcuts.
+R008,cardamom,0.6,g,kept,About three pods.
+R008,spinach,120,g,kept,
+R008,flaked_almonds,15,g,kept,
+R008,natural_yogurt,100,g,added,Normal household korma sauce component.
+R008,fresh_coriander,10,g,added,Fresh finishing herb; replaces the need for bespoke herb handling elsewhere.
+R009,chicken_stock_mix,5.5,g,kept,Ordinary chicken stock/cube equivalent.
+R009,chicken_breast,250,g,kept,
+R009,garlic,6,g,adjusted,About two cloves.
+R009,soft_cheese,50,g,kept,
+R009,spinach,100,g,adjusted,Slightly fuller vegetable portion.
+R009,cherry_tomatoes,250,g,kept,
+R009,sweet_potato,450,g,adjusted,More realistic side portion for two adults.
+R010,chicken_breast,250,g,kept,
+R010,sumac,2,g,kept,About 1 tsp.
+R010,ground_coriander,2.4,g,kept,About 1 tsp.
+R010,garlic,6,g,adjusted,About two cloves.
+R010,courgette,200,g,kept,
+R010,natural_yogurt,100,g,adjusted,Practical sauce portion.
+R010,couscous,120,g,kept,
+R010,harissa_paste,20,g,kept,
+R010,chopped_dates,30,g,kept,
+R010,red_pepper,120,g,adjusted,Household-rounded medium pepper.
+R010,fresh_coriander,10,g,substituted,Use ordinary fresh coriander rather than Gousto's combined coriander-and-mint pack.
+R010,red_onion,130,g,kept,
