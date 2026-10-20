@@ -8,6 +8,7 @@ Uses only the Python standard library. Run from the repository root:
 from __future__ import annotations
 
 import csv
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,19 +24,31 @@ def require(condition: bool, message: str, errors: list[str]) -> None:
         errors.append(message)
 
 
+def require_unique(rows: list[dict[str, str]], key: str, label: str, errors: list[str]) -> None:
+    counts = Counter(row[key] for row in rows if row.get(key))
+    for value, count in counts.items():
+        require(count == 1, f"Duplicate {label}: {value}", errors)
+
+
 def main() -> int:
     recipes = read_csv("data/recipes.csv")
     recipe_ingredients = read_csv("data/recipe_ingredients.csv")
     ingredients = read_csv("data/ingredients.csv")
     products = read_csv("data/products.csv")
     conversions = read_csv("data/unit_conversions.csv")
-    flexibility = read_csv("data/flexibility_classes.csv")
+    flexibility = read_csv("config/flexibility_classes.csv")
     inventory = read_csv("config/initial_inventory.csv")
 
     errors: list[str] = []
 
+    require_unique(recipes, "recipe_id", "recipe_id", errors)
+    require_unique(ingredients, "ingredient_id", "ingredient_id", errors)
+    require_unique(products, "product_id", "product_id", errors)
+    require_unique(conversions, "conversion_id", "conversion_id", errors)
+
     recipe_ids = {r["recipe_id"] for r in recipes}
-    ingredient_ids = {r["ingredient_id"] for r in ingredients}
+    ingredient_map = {r["ingredient_id"]: r for r in ingredients}
+    ingredient_ids = set(ingredient_map)
     product_ingredient_ids = {r["ingredient_id"] for r in products}
     staple_ids = {
         r["ingredient_id"]
@@ -44,7 +57,6 @@ def main() -> int:
     }
     flex_classes = {r["flexibility_class"] for r in flexibility}
 
-    # Recipe integrity.
     for row in recipe_ingredients:
         rid = row["recipe_id"]
         iid = row["ingredient_id"]
@@ -57,7 +69,13 @@ def main() -> int:
         except ValueError:
             errors.append(f"Non-numeric normalized quantity: {rid}/{iid}")
 
-    # Every used ingredient must be obtainable or deliberately assumed on hand.
+        if iid in ingredient_map:
+            require(
+                row["normalized_unit"] == ingredient_map[iid]["preferred_model_unit"],
+                f"Recipe/model unit mismatch: {rid}/{iid}",
+                errors,
+            )
+
     used_ids = {r["ingredient_id"] for r in recipe_ingredients}
     for iid in sorted(used_ids):
         require(
@@ -66,28 +84,48 @@ def main() -> int:
             errors,
         )
 
-    # Flexibility classes must resolve.
     for row in ingredients:
         fc = row["default_flexibility_class"]
         require(bool(fc), f"Missing default flexibility class: {row['ingredient_id']}", errors)
         require(fc in flex_classes, f"Unknown flexibility class {fc}: {row['ingredient_id']}", errors)
+        require(
+            row["shelf_life_class"] in {"short", "medium", "long", "unknown"},
+            f"Unknown shelf_life_class: {row['ingredient_id']}",
+            errors,
+        )
 
-    # Product rows must be numerically usable.
     for row in products:
         pid = row["product_id"]
-        require(row["ingredient_id"] in ingredient_ids, f"Unknown ingredient on product {pid}", errors)
+        iid = row["ingredient_id"]
+        require(iid in ingredient_ids, f"Unknown ingredient on product {pid}", errors)
+
         try:
             require(float(row["pack_quantity"]) > 0, f"Non-positive pack quantity: {pid}", errors)
         except ValueError:
             errors.append(f"Non-numeric pack quantity: {pid}")
+
         try:
             require(float(row["regular_price_gbp"]) >= 0, f"Negative price: {pid}", errors)
         except ValueError:
             errors.append(f"Non-numeric regular price: {pid}")
+
         if row["usable_quantity"]:
             require(bool(row["usable_unit"]), f"usable_quantity has no usable_unit: {pid}", errors)
 
-    # All declared conversion rows in the seed dataset must have a multiplier.
+        if iid in ingredient_map:
+            effective_unit = row["usable_unit"] if row["usable_quantity"] else row["pack_unit"]
+            require(
+                effective_unit == ingredient_map[iid]["preferred_model_unit"],
+                f"Retail/model unit mismatch: {pid}/{iid}",
+                errors,
+            )
+
+        require(
+            row["mapping_status"] != "needs_weight_conversion",
+            f"Stale unresolved product mapping: {pid}",
+            errors,
+        )
+
     for row in conversions:
         require(bool(row["multiplier"]), f"Blank conversion multiplier: {row['conversion_id']}", errors)
         try:
@@ -95,13 +133,15 @@ def main() -> int:
         except ValueError:
             errors.append(f"Non-numeric conversion multiplier: {row['conversion_id']}")
 
-    # Starting inventory must reference known ingredients.
     for row in inventory:
-        require(
-            row["ingredient_id"] in ingredient_ids,
-            f"Unknown ingredient in initial inventory: {row['ingredient_id']}",
-            errors,
-        )
+        iid = row["ingredient_id"]
+        require(iid in ingredient_ids, f"Unknown ingredient in initial inventory: {iid}", errors)
+        if iid in ingredient_map:
+            require(
+                row["unit"] == ingredient_map[iid]["preferred_model_unit"],
+                f"Initial-inventory/model unit mismatch: {iid}",
+                errors,
+            )
 
     if errors:
         print("Seed-data validation FAILED")
