@@ -9,7 +9,7 @@ The optimiser chooses only from a **pre-approved recipe library**. Meal acceptab
 ## Current v1 scope
 
 - 2-person dinners;
-- 10 real Gousto recipes;
+- 10 household-cleaned recipes derived from real Gousto recipes;
 - chicken-focused, no fish;
 - real Tesco UK pack/price snapshot;
 - household starting inventory;
@@ -28,7 +28,7 @@ Simple variety constraints can be added where useful, such as preventing exact r
 
 ### 2. Recipe quantity
 
-Published recipe quantities are the preferred quantities, but some ingredients may vary within a class-based range.
+Household-cleaned recipe quantities are the preferred quantities. The original Gousto quantities are retained separately as source data, but the optimiser operates on the cleaned household layer.
 
 The first model uses:
 
@@ -95,7 +95,7 @@ The model uses units that make recipe demand and retail supply comparable:
 - liquids: usually millilitres;
 - count measures from source recipes are converted using ingredient-specific parameters where needed.
 
-The conversion layer is documented in `data/unit_conversions.csv`.
+The cleaned optimiser layer is already expressed in canonical model units. `data/unit_conversions.csv` documents the conversions used to interpret the preserved source recipes.
 
 ## Objective
 
@@ -120,3 +120,12 @@ After the deterministic optimiser works, simulation can test questions such as:
 - how plans behave when meals are skipped or the household eats out.
 
 Those are later experiments, not requirements for the first solver.
+
+
+## Recipe cleansing boundary
+
+Recipe design is deliberately separated from optimisation.
+
+Before a recipe enters the candidate library, it is converted from the meal-kit source into a normal household version. This is where we remove or substitute meal-kit artefacts, correct implausible portions and add ordinary ingredients when they genuinely improve the dish.
+
+The optimiser does **not** get permission to remove an ingredient simply because it is expensive or inconvenient. It chooses among the already-cleaned recipes and, separately, may adjust quantities only within the explicit flexibility rules.
