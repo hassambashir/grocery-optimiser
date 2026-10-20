@@ -1,231 +1,157 @@
 # Data normalisation
 
-## Why a canonical ingredient layer is necessary
+## Purpose
 
-Recipes and supermarkets describe the same food differently.
+Recipes and supermarkets describe the same food differently. The optimiser therefore separates four layers:
 
-A recipe may say:
+1. **Source recipe ingredient** — original wording and quantity from the recipe.
+2. **Canonical ingredient** — stable internal ingredient identity.
+3. **Unit conversion** — conversion from household recipe measures to the model unit where required.
+4. **Retail product** — a specific Tesco pack or variable-weight option that can supply the canonical ingredient.
 
-- `Chicken breast strips`
-- `Large British chicken breast fillet`
-- `Chicken breast portions`
-- `Diced chicken breast`
+Example:
 
-Tesco may sell:
+`Chicken breast strips` / `Chicken breast portions` / `Diced chicken breast`
+→ `chicken_breast`
+→ Tesco 350 g / 650 g / 1 kg / 1.6 kg / 2 kg options.
 
-- 350 g chicken breast fillets
-- 650 g chicken breast fillets
-- 1 kg chicken breast fillets
-- 1.6 kg chicken fillet packs
+## Relation to the research paper
 
-The optimiser needs one stable concept — for example `chicken_breast` — between those two layers.
+Van Rooijen et al. (2024) standardised recipe ingredients to NEVO food codes, converted household measures to grams using a Dutch portion-size database, and worked with edible weights.
 
-The data model therefore separates:
-
-1. **Source recipe ingredient** — the wording and quantity as published.
-2. **Canonical ingredient** — the normalised food concept.
-3. **Retail product** — a specific Tesco pack/SKU that can satisfy that ingredient.
-4. **Unit conversion** — a transparent parameter converting source household measures to the model unit when necessary.
-
-This separation prevents either recipe wording or a supermarket product name from becoming the definition of an ingredient.
-
-## What the research paper did
-
-Van Rooijen et al. (2024) used recipes from the Netherlands Nutrition Centre. To create a common ingredient vocabulary, the authors standardised recipe ingredients to **NEVO food codes**. They converted household measures such as tablespoons to grams using the Dutch RIVM portion-size database and converted food quantities to **edible weights**. Their final recipe database contained 263 dinners. Retail data then supplied net weight, package size and package price for each food item.
+This project uses the same separation principle, adapted to real UK recipe and Tesco data.
 
 Reference: https://doi.org/10.1016/j.resconrec.2024.107559
 
-## Our UK adaptation
+## Source quantities are preserved
 
-We use the same core idea: retain the source measurement, map it to a canonical food, then convert only when the optimisation model requires a common unit.
+`data/recipe_ingredients.csv` keeps:
 
-### 1. Preserve source quantities
+- `source_ingredient_name`;
+- `source_quantity`;
+- `source_unit`;
+- the resulting canonical ingredient and model quantity.
 
-`recipe_ingredients.csv` keeps:
+The published recipe value is never silently overwritten.
 
-- `source_ingredient_name`
-- `source_quantity`
-- `source_unit`
-
-These are the audit trail back to the recipe.
-
-### 2. Map to a canonical ingredient ID
-
-Examples:
-
-- `Chicken breast strips` → `chicken_breast`
-- `Chicken breast portions` → `chicken_breast`
-- `White long grain rice` → `long_grain_rice`
-- `Natural yoghurt` → `natural_yogurt`
-
-Canonicalisation is about identity; conversion is handled separately.
-
-### 3. Preferred model units
+## Canonical units
 
 For the first model:
 
-- most solid foods → **grams**;
-- liquids sold/measured volumetrically → **millilitres**;
-- count units remain only where count is genuinely the better representation.
+- most divisible solid foods use grams;
+- suitable liquids use millilitres.
 
-This means recipe measures such as `1 onion`, `1 garlic clove`, `1 red pepper`, `2 carrots` and `1 noodle nest` can ultimately become grams even though the source recipe stays unchanged.
+Recipe measures such as `1 onion`, `2 garlic cloves`, `0.5 tsp turmeric` or `1 noodle nest` are converted using `data/unit_conversions.csv`.
 
-Why grams for produce? Because retail supply may come from either:
-- a loose item;
-- a weight-based loose purchase;
-- a multipack;
-- a fixed-weight bag.
+## Conversion quality
 
-A common mass unit lets those options compete in one stock balance.
+Conversions do not all deserve the same precision.
 
-### 4. Approximate conversions are allowed when the decision impact is low
+A material error in chicken quantity may change the pack decision. A small error in half a teaspoon of turmeric probably will not.
 
-Earlier versions of this project marked every non-exact household measure as unresolved. That is too strict.
+Each conversion therefore records:
 
-We now distinguish **precision from materiality**.
-
-Examples:
-- a garlic clove can be represented by an average edible gram weight;
-- an onion sold `each` can be represented by an average edible gram weight;
-- half a teaspoon of turmeric can be converted using an ingredient-specific approximate weight;
-- a noodle nest can be converted using the product/pack serving weight.
-
-These values must still be documented in `data/unit_conversions.csv`, but they do not need false precision.
-
-A 0.3 g spice error should not receive the same modelling effort as a 300 g chicken error.
-
-### 5. Fresh aromatics
-
-For the initial model:
-- garlic → grams;
-- fresh ginger → grams;
-- onions → grams.
-
-This allows partial use and inventory carryover naturally.
-
-For example, the recipe may ask for one garlic clove, but the optimiser consumes the corresponding estimated grams from the garlic stock. Retail garlic can then be represented as a bulb/pack with an estimated usable gram quantity.
-
-We do **not** need to force garlic inventory to remain an integer number of cloves after cooking. The physical cooking behaviour is continuous enough for this purpose.
-
-### 6. Durable pantry ingredients
-
-Spices and pantry ingredients should be tracked as persistent inventory rather than weekly leftovers.
-
-Examples:
-- turmeric;
-- garam masala;
-- paprika;
-- dried oregano;
-- cornflour.
-
-A jar may be purchased once and then used over many planning cycles. Their small recipe measures are converted to grams/ml so stock can be decremented, but remaining stock is not penalised as weekly waste.
-
-### 7. Staples can be assumed on hand
-
-Some household staples do not need to participate in package-choice optimisation in the first experiment.
-
-For the current household scenario, long-grain rice is treated as a bulk staple with a large starting inventory (for example 10 kg). Meals consume that stock, but the optimiser does not select a new rice package until a later model introduces reorder logic.
-
-This prevents a cheap, long-lived staple from adding needless complexity to the first package-selection experiment.
-
-### 8. Keep composite ingredients intact until a split is justified
-
-The Harissa Chicken recipe supplies `Coriander & mint (10g)` as one combined quantity. It is currently represented as `fresh_herb_mix_coriander_mint`.
-
-We should not arbitrarily call that 5 g coriander + 5 g mint.
-
-### 9. Keep product form explicit
-
-Two foods can be related without being identical.
-
-Examples:
-
-- red pepper vs a mixed-pepper pack;
-- natural yoghurt vs Greek-style yoghurt;
-- fresh chicken thigh fillet vs bone-in chicken thigh;
-- generic soy sauce vs light/dark soy sauce;
-- tomato paste vs tomato puree.
-
-`products.csv` therefore includes a `product_form` and a `mapping_status`. Substitution should later be an explicit rule, not an accidental consequence of sharing a word.
-
-### 10. Effective usable package quantity
-
-The optimiser ultimately needs one number describing how much usable ingredient a retail purchase supplies.
-
-For most products:
-
-`effective usable quantity = pack quantity`
-
-Only override this when the difference is material and known, for example a canned ingredient with a meaningful drained weight.
-
-We do not need a complicated yield model for every food at the beginning.
-
-### 11. Variable-weight products
-
-Loose produce such as onions, carrots and courgettes can be treated as weight-based supply.
-
-Later we can decide whether the optimiser sees this as:
-- continuous grams at a price per kg;
-- realistic discrete increments; or
-- a bounded approximation around average item weights.
-
-That choice belongs in the mathematical model, not in the source-data cleaning.
-
-## Files
-
-### `data/ingredients.csv`
-
-One row per canonical ingredient.
-
-### `data/recipe_ingredients.csv`
-
-Many-to-many bridge between recipes and canonical ingredients. It retains the original recipe quantity.
-
-### `data/products.csv`
-
-Specific retail products mapped to canonical ingredients. Multiple products can map to the same ingredient, which creates the package-size choice.
-
-### `data/unit_conversions.csv`
-
-Documented conversion parameters between household source measures and canonical model units.
-
-## Current normalisation status
-
-The first-pass conversions required by the 10 seed recipes are now populated in `data/unit_conversions.csv`, and every recipe-ingredient row has a model quantity/unit.
-
-The conversion file intentionally records:
-- the multiplier;
+- multiplier;
 - conversion method;
 - status;
 - confidence;
 - source URL;
 - notes.
 
-Some values remain **provisional approximations**, not facts. The most important examples to sensitivity-test later include the standard Gousto chicken-breast piece assumption, unspecified red chilli size, cardamom pod weight, peri-peri tablespoon weight and the Gousto saffron packet proxy.
+Some conversions are sourced directly; others remain explicit provisional approximations and should later be sensitivity-tested.
 
-The seed retail data now covers all canonical ingredients used by the recipes. Some mappings are deliberately marked `compatible_candidate` or `synthetic_bundle` where the Tesco product is not a one-to-one representation of the Gousto supplied ingredient.
+## Canonical ingredient metadata
 
-For products where net pack weight materially differs from edible supply, the optimiser should use `usable_quantity` when present and otherwise fall back to `pack_quantity`.
+`data/ingredients.csv` stores:
 
-### What is deliberately deferred
+- canonical ID/name;
+- category;
+- preferred model unit;
+- coarse shelf-life class;
+- inventory policy;
+- default quantity-flexibility class.
 
-The first deterministic optimiser does **not** require us to finish:
-- probabilistic shelf-life distributions;
+The current `shelf_life_class` values are deliberately coarse: `short`, `medium`, `long`, or `unknown`. They are metadata for later spoilage modelling; v1 does not yet turn them into exact expiry-day constraints.
+
+## Retail products
+
+`data/products.csv` stores Tesco package/price options mapped to canonical ingredients.
+
+Multiple products can map to one ingredient so the optimiser can choose among pack sizes.
+
+Product mappings may be labelled as:
+- direct;
+- compatible candidate;
+- substitution candidate;
+- estimated usable weight;
+- variable-weight supply;
+- effective usable quantity;
+- synthetic bundle.
+
+These labels preserve uncertainty rather than pretending every match is exact.
+
+## Usable quantity
+
+For most products:
+
+`usable quantity = labelled pack quantity`
+
+When that is materially false, `usable_quantity` is populated and should be used by the optimiser.
+
+Examples include drained canned food and count-based produce packs that need an estimated edible gram quantity.
+
+There is no open/sealed package-state model in v1.
+
+## Variable-weight produce
+
+Loose onions, carrots, courgettes and similar products are represented as weight-based supply when Tesco sells them that way.
+
+The mathematical model can later decide whether to treat this as continuous grams or realistic purchase increments.
+
+## Composite ingredients
+
+A combined source quantity is not split without evidence.
+
+For example, Gousto's `Coriander & mint (10g)` remains one composite canonical ingredient because the source does not tell us the internal split.
+
+## Product-form compatibility
+
+Related products are not automatically treated as identical.
+
+Examples:
+- red pepper vs mixed-pepper pack;
+- tomato paste vs tomato puree;
+- generic soy sauce vs light soy;
+- Gousto seasoning blend vs a retail substitute.
+
+Compatibility is explicit in `mapping_status` and notes.
+
+## Flexibility is separate from conversion
+
+`config/flexibility_classes.csv` controls how far the optimiser may deliberately move away from the preferred recipe quantity.
+
+This is separate from unit conversion:
+
+- conversion asks **what does the source quantity mean in model units?**
+- flexibility asks **how far may the optimiser adjust that quantity?**
+
+Keeping them separate avoids confusing measurement uncertainty with a deliberate recipe adjustment.
+
+## Starting inventory
+
+`config/initial_inventory.csv` can contain any ingredient already in the household.
+
+Ingredients not listed start at zero. Usable end-of-cycle inventory is intended to roll into the next cycle.
+
+## Deliberately deferred
+
+The first deterministic model does not require:
+
+- exact shelf-life distributions;
 - live Tesco availability;
-- household-specific pantry detection;
-- precise cooking yields for every food;
-- nutrition optimisation.
+- pantry scanning/detection;
+- cooking-yield models for every food;
+- nutrition optimisation;
+- open/sealed package-state tracking.
 
-Those belong to later rolling-horizon and simulation stages.
-
-
-## Quantity-flexibility layer
-
-`data/flexibility_classes.csv` defines first-pass allowable variation around published recipe quantities.
-
-This layer is kept separate from unit conversion:
-
-- **unit conversion** answers “what model quantity does the published recipe mean?”;
-- **flexibility** answers “how far may the optimiser reasonably move away from that published quantity?”
-
-Keeping the two separate prevents an uncertain clove-to-gram conversion from being confused with a deliberate recipe-serving adjustment.
+Those should be added only if later experiments show that they materially improve the model.
