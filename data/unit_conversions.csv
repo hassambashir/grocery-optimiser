@@ -4,14 +4,14 @@ C002,red_pepper,each,g,119,average_edible_item_weight,sourced,medium,https://foo
 C003,garlic,clove,g,3,average_edible_clove_weight,sourced,high,https://food-nutrition.canada.ca/cnf-fce/serving-portion?id=2394,Health Canada gives 1 raw garlic clove = 3g edible portion.
 C004,red_chilli,each,g,6.1,proxy_edible_item_weight,provisional,low,https://food-nutrition.canada.ca/cnf-fce/serving-portion?id=4858,Uses serrano pepper as a size proxy for an unspecified Gousto red chilli; sensitivity-test later.
 C005,cayenne_pepper,tsp,g,2.4,tesco_label_spoon_weight,sourced,high,https://www.tesco.com/shop/en-GB/products/252068516,Tesco label gives 1/2 tsp = 1.2g.
-C006,ground_coriander,tsp,g,1.8,ingredient_specific_spoon_weight,sourced,medium,https://www.myfooddiary.com/foods/29286/ground-coriander,Reference serving gives 1 tsp = 1.8g.
+C006,ground_coriander,tsp,g,2.4,tesco_label_spoon_weight,sourced,high,https://www.tesco.com/shop/en-GB/products/256150527,"Tesco product label gives 1/2 tsp = 1.2g, so 1 tsp = 2.4g."
 C007,dried_oregano,tsp,g,0.5,tesco_label_spoon_weight,sourced,high,https://www.tesco.com/shop/en-GB/products/256149795,Tesco label gives 1/2 tsp = 0.25g.
 C008,smoked_paprika,tsp,g,2.4,tesco_label_spoon_weight,sourced,high,https://www.tesco.com/shop/en-GB/products/255770365,Tesco label gives 1/2 tsp = 1.2g.
 C009,brown_onion,each,g,120,tesco_loose_item_weight,provisional,medium,https://www.tesco.com/shop/en-GB/search?query=onions,Tesco loose-onion selector currently uses about 0.12kg as one item; actual onions vary.
 C010,carrot,each,g,61,average_edible_item_weight,sourced,high,https://food-nutrition.canada.ca/cnf-fce/serving-portion?id=2380,Health Canada medium raw carrot edible portion.
 C011,spring_onion,each,g,15,average_edible_item_weight,sourced,medium,https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/nutrient-data/table-4-vegetables-vegetable-products-nutrient-value-some-common-foods-2008.html,Health Canada table gives one medium green onion/scallion = 15g.
-C012,five_spice,tsp,g,2,ingredient_specific_spoon_weight,sourced,medium,https://cupgrams.com/convert/chinese-five-spice/teaspoons-to-grams/,Published ingredient-density conversion gives about 2g per tsp.
-C013,sumac,tsp,g,2,ingredient_specific_spoon_weight,sourced,medium,https://cupstogramscalculator.com/sumac/,Published ingredient-density conversion gives about 2g per tsp.
+C012,five_spice,tsp,g,2.4,tesco_label_spoon_weight,sourced,high,https://www.tesco.com/shop/en-GB/products/251620642,"Tesco product label gives 1/2 tsp = 1.2g, so 1 tsp = 2.4g."
+C013,sumac,tsp,g,2,ingredient_specific_spoon_weight,provisional,medium,https://cupstogramscalculator.com/sumac/,"Independent density reference gives about 2g per tsp. Tesco product page 300456226 currently labels 1/2 tsp as 5g, which is unusually high; retain 2g/tsp provisionally rather than adopting the conflicting value without further verification."
 C014,wholewheat_noodles,nest,g,62.5,product_pack_fraction,sourced,high,https://www.tesco.com/shop/en-GB/products/296921753,Tesco 250g pack labels 1/4 pack as 63g and instructs use by noodle nest; model uses exact 250/4 = 62.5g.
 C015,miso_paste,tbsp,g,17,tesco_label_spoon_weight,sourced,high,https://www.tesco.com/shop/en-GB/products/304368111,Tesco label gives one tablespoon = 17g.
 C016,turmeric,tsp,g,3.13,usda_derived_spoon_weight,sourced,medium,https://kitchenmath.io/convert/ground-turmeric/teaspoons-to-grams,USDA-derived conversion; small errors are immaterial for durable pantry stock.
