@@ -1,6 +1,6 @@
-"""Validate the model-ready seed dataset.
+"""Validate the model-ready seed dataset and preserved source layer.
 
-Uses only the Python standard library. Run from the repository root:
+Run from the repository root:
 
     python scripts/validate_seed_data.py
 """
@@ -30,9 +30,19 @@ def require_unique(rows: list[dict[str, str]], key: str, label: str, errors: lis
         require(count == 1, f"Duplicate {label}: {value}", errors)
 
 
+def require_unique_pair(
+    rows: list[dict[str, str]], key1: str, key2: str, label: str, errors: list[str]
+) -> None:
+    counts = Counter((row[key1], row[key2]) for row in rows)
+    for value, count in counts.items():
+        require(count == 1, f"Duplicate {label}: {value[0]}/{value[1]}", errors)
+
+
 def main() -> int:
     recipes = read_csv("data/recipes.csv")
     recipe_ingredients = read_csv("data/recipe_ingredients.csv")
+    source_recipes = read_csv("data/source_recipes.csv")
+    source_recipe_ingredients = read_csv("data/source_recipe_ingredients.csv")
     ingredients = read_csv("data/ingredients.csv")
     products = read_csv("data/products.csv")
     conversions = read_csv("data/unit_conversions.csv")
@@ -40,15 +50,19 @@ def main() -> int:
     inventory = read_csv("config/initial_inventory.csv")
 
     errors: list[str] = []
-    warnings: list[str] = []
 
     require_unique(recipes, "recipe_id", "recipe_id", errors)
+    require_unique(source_recipes, "recipe_id", "source recipe_id", errors)
+    require_unique_pair(
+        recipe_ingredients, "recipe_id", "ingredient_id", "cleaned recipe ingredient", errors
+    )
     require_unique(ingredients, "ingredient_id", "ingredient_id", errors)
     require_unique(products, "product_id", "product_id", errors)
     require_unique(products, "retailer_product_id", "retailer_product_id", errors)
     require_unique(conversions, "conversion_id", "conversion_id", errors)
 
     recipe_ids = {r["recipe_id"] for r in recipes}
+    source_recipe_ids = {r["recipe_id"] for r in source_recipes}
     ingredient_map = {r["ingredient_id"]: r for r in ingredients}
     ingredient_ids = set(ingredient_map)
     product_ingredient_ids = {r["ingredient_id"] for r in products}
@@ -59,40 +73,57 @@ def main() -> int:
     }
     flex_classes = {r["flexibility_class"] for r in flexibility}
 
-    special_retail_mapping_ids = {
-        r["ingredient_id"]
-        for r in recipe_ingredients
-        if r["normalization_status"] == "requires_split_or_bundle_mapping"
-    }
+    require(
+        recipe_ids == source_recipe_ids,
+        "Cleaned and source recipe sets do not match",
+        errors,
+    )
+
+    for row in source_recipe_ingredients:
+        require(
+            row["recipe_id"] in source_recipe_ids,
+            f"Unknown source recipe_id: {row['recipe_id']}",
+            errors,
+        )
+        require(
+            row["ingredient_id"] in ingredient_ids,
+            f"Unknown canonical ingredient in source layer: {row['recipe_id']}/{row['ingredient_id']}",
+            errors,
+        )
 
     for row in recipe_ingredients:
         rid = row["recipe_id"]
         iid = row["ingredient_id"]
-        require(rid in recipe_ids, f"Unknown recipe_id in recipe_ingredients: {rid}", errors)
-        require(iid in ingredient_ids, f"Unknown ingredient_id in recipe_ingredients: {iid}", errors)
-        require(bool(row["normalized_quantity"]), f"Missing normalized_quantity: {rid}/{iid}", errors)
-        require(bool(row["normalized_unit"]), f"Missing normalized_unit: {rid}/{iid}", errors)
+        require(rid in recipe_ids, f"Unknown cleaned recipe_id: {rid}", errors)
+        require(iid in ingredient_ids, f"Unknown ingredient_id in cleaned recipes: {iid}", errors)
+        require(bool(row["preferred_quantity"]), f"Missing preferred_quantity: {rid}/{iid}", errors)
+        require(bool(row["unit"]), f"Missing unit: {rid}/{iid}", errors)
+        require(
+            row["change_type"] in {"kept", "adjusted", "added", "substituted"},
+            f"Unknown change_type: {rid}/{iid}",
+            errors,
+        )
         try:
-            require(float(row["normalized_quantity"]) > 0, f"Non-positive normalized quantity: {rid}/{iid}", errors)
+            require(
+                float(row["preferred_quantity"]) > 0,
+                f"Non-positive preferred quantity: {rid}/{iid}",
+                errors,
+            )
         except ValueError:
-            errors.append(f"Non-numeric normalized quantity: {rid}/{iid}")
+            errors.append(f"Non-numeric preferred quantity: {rid}/{iid}")
 
         if iid in ingredient_map:
             require(
-                row["normalized_unit"] == ingredient_map[iid]["preferred_model_unit"],
-                f"Recipe/model unit mismatch: {rid}/{iid}",
+                row["unit"] == ingredient_map[iid]["preferred_model_unit"],
+                f"Cleaned recipe/model unit mismatch: {rid}/{iid}",
                 errors,
             )
 
     used_ids = {r["ingredient_id"] for r in recipe_ingredients}
     for iid in sorted(used_ids):
-        if iid in special_retail_mapping_ids:
-            if iid not in product_ingredient_ids:
-                warnings.append(f"Known composite retail mapping still unresolved: {iid}")
-            continue
         require(
             iid in product_ingredient_ids or iid in staple_ids,
-            f"No retail supply or assumed-on-hand policy for: {iid}",
+            f"No retail supply or assumed-on-hand policy for cleaned ingredient: {iid}",
             errors,
         )
 
@@ -116,12 +147,8 @@ def main() -> int:
             f"Product not exactly resolved: {pid}",
             errors,
         )
-        expected_url = (
-            f"https://www.tesco.com/shop/en-GB/products/{row['retailer_product_id']}"
-            if row["retailer"] == "Tesco"
-            else None
-        )
-        if expected_url:
+        if row["retailer"] == "Tesco":
+            expected_url = f"https://www.tesco.com/shop/en-GB/products/{row['retailer_product_id']}"
             require(row["source_url"] == expected_url, f"Product URL/ID mismatch: {pid}", errors)
 
         try:
@@ -145,16 +172,14 @@ def main() -> int:
                 errors,
             )
 
-        require(
-            row["mapping_status"] != "needs_weight_conversion",
-            f"Stale unresolved product mapping: {pid}",
-            errors,
-        )
-
     for row in conversions:
         require(bool(row["multiplier"]), f"Blank conversion multiplier: {row['conversion_id']}", errors)
         try:
-            require(float(row["multiplier"]) > 0, f"Non-positive conversion multiplier: {row['conversion_id']}", errors)
+            require(
+                float(row["multiplier"]) > 0,
+                f"Non-positive conversion multiplier: {row['conversion_id']}",
+                errors,
+            )
         except ValueError:
             errors.append(f"Non-numeric conversion multiplier: {row['conversion_id']}")
 
@@ -175,10 +200,9 @@ def main() -> int:
         return 1
 
     print("Seed-data validation PASSED")
-    for warning in warnings:
-        print(f"WARNING: {warning}")
-    print(f"Recipes: {len(recipes)}")
-    print(f"Recipe-ingredient rows: {len(recipe_ingredients)}")
+    print(f"Cleaned recipes: {len(recipes)}")
+    print(f"Cleaned recipe-ingredient rows: {len(recipe_ingredients)}")
+    print(f"Source recipe-ingredient rows: {len(source_recipe_ingredients)}")
     print(f"Canonical ingredients: {len(ingredients)}")
     print(f"Resolved retail product rows: {len(products)}")
     print(f"Unit conversions: {len(conversions)}")
