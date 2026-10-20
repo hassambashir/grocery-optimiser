@@ -219,3 +219,21 @@ Conceptually, for a fixed usable pack size (Q):
 - recipe flexibility and recipe selection are allowed to reduce that residual.
 
 The exact linear formulation belongs in Stage 2 rather than in the data-cleaning layer.
+
+
+## Starting-inventory state
+
+For ordinary bulk/divisible stock, an ingredient quantity is enough (for example 10,000 g rice or 40 g garlic).
+
+For package-sensitive products, quantity alone can lose important information. For example:
+- one sealed 160 g sweetcorn tin;
+- 160 g of already-opened sweetcorn
+
+have the same grams but different practical value.
+
+`config/initial_inventory.csv` therefore supports an optional `product_id` and `stock_state`. The first implementation can use states such as:
+- `bulk` — ordinary divisible stock;
+- `sealed` — unopened retail pack(s);
+- `opened` — already-opened remainder.
+
+This same state representation should be carried from one planning cycle into the next where package state materially affects waste.
