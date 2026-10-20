@@ -79,14 +79,9 @@ The current `shelf_life_class` values are deliberately coarse: `short`, `medium`
 
 Multiple products can map to one ingredient so the optimiser can choose among pack sizes.
 
-Product mappings may be labelled as:
-- direct;
-- compatible candidate;
-- substitution candidate;
-- estimated usable weight;
-- variable-weight supply;
-- effective usable quantity;
-- synthetic bundle.
+Every row in `products.csv` now represents one real Tesco product/listing and carries an exact `retailer_product_id`, exact Tesco product URL, and `product_resolution_status=resolved_exact`.
+
+Ingredient-to-product compatibility is still a separate question. `mapping_status` may therefore be direct, compatible candidate, substitution candidate, estimated usable weight, variable-weight supply, or effective usable quantity.
 
 These labels preserve uncertainty rather than pretending every match is exact.
 
@@ -113,6 +108,8 @@ The mathematical model can later decide whether to treat this as continuous gram
 A combined source quantity is not split without evidence.
 
 For example, Gousto's `Coriander & mint (10g)` remains one composite canonical ingredient because the source does not tell us the internal split.
+
+The earlier synthetic `Coriander 30G + Mint 30G Retail Bundle` row has been removed from `products.csv`. Real Tesco coriander and mint products exist, but mapping a single 10 g combined recipe quantity onto two separate retail products requires a modelling rule we have not yet justified. This remains one explicit retail-mapping exception rather than fabricated data.
 
 ## Product-form compatibility
 
