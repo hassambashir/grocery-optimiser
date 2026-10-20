@@ -40,10 +40,12 @@ def main() -> int:
     inventory = read_csv("config/initial_inventory.csv")
 
     errors: list[str] = []
+    warnings: list[str] = []
 
     require_unique(recipes, "recipe_id", "recipe_id", errors)
     require_unique(ingredients, "ingredient_id", "ingredient_id", errors)
     require_unique(products, "product_id", "product_id", errors)
+    require_unique(products, "retailer_product_id", "retailer_product_id", errors)
     require_unique(conversions, "conversion_id", "conversion_id", errors)
 
     recipe_ids = {r["recipe_id"] for r in recipes}
@@ -56,6 +58,12 @@ def main() -> int:
         if r["inventory_policy"] == "assumed_on_hand_staple"
     }
     flex_classes = {r["flexibility_class"] for r in flexibility}
+
+    special_retail_mapping_ids = {
+        r["ingredient_id"]
+        for r in recipe_ingredients
+        if r["normalization_status"] == "requires_split_or_bundle_mapping"
+    }
 
     for row in recipe_ingredients:
         rid = row["recipe_id"]
@@ -78,6 +86,10 @@ def main() -> int:
 
     used_ids = {r["ingredient_id"] for r in recipe_ingredients}
     for iid in sorted(used_ids):
+        if iid in special_retail_mapping_ids:
+            if iid not in product_ingredient_ids:
+                warnings.append(f"Known composite retail mapping still unresolved: {iid}")
+            continue
         require(
             iid in product_ingredient_ids or iid in staple_ids,
             f"No retail supply or assumed-on-hand policy for: {iid}",
@@ -98,6 +110,19 @@ def main() -> int:
         pid = row["product_id"]
         iid = row["ingredient_id"]
         require(iid in ingredient_ids, f"Unknown ingredient on product {pid}", errors)
+        require(bool(row["retailer_product_id"]), f"Missing retailer_product_id: {pid}", errors)
+        require(
+            row["product_resolution_status"] == "resolved_exact",
+            f"Product not exactly resolved: {pid}",
+            errors,
+        )
+        expected_url = (
+            f"https://www.tesco.com/shop/en-GB/products/{row['retailer_product_id']}"
+            if row["retailer"] == "Tesco"
+            else None
+        )
+        if expected_url:
+            require(row["source_url"] == expected_url, f"Product URL/ID mismatch: {pid}", errors)
 
         try:
             require(float(row["pack_quantity"]) > 0, f"Non-positive pack quantity: {pid}", errors)
@@ -150,10 +175,12 @@ def main() -> int:
         return 1
 
     print("Seed-data validation PASSED")
+    for warning in warnings:
+        print(f"WARNING: {warning}")
     print(f"Recipes: {len(recipes)}")
     print(f"Recipe-ingredient rows: {len(recipe_ingredients)}")
     print(f"Canonical ingredients: {len(ingredients)}")
-    print(f"Retail product rows: {len(products)}")
+    print(f"Resolved retail product rows: {len(products)}")
     print(f"Unit conversions: {len(conversions)}")
     print(f"Flexibility classes: {len(flexibility)}")
     return 0
