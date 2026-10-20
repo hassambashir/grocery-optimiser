@@ -6,19 +6,20 @@ The project is inspired by van Rooijen et al. (2024) and adapts optimisation-bas
 
 ## Current stage
 
-**Stage 1 complete: model-ready seed dataset.**
+**Stage 1: resolved real-product seed dataset, with one explicit composite-ingredient exception.**
 
 The repository currently contains:
 
 - 10 real Gousto dinners for 2 people;
 - 105 recipe-ingredient rows;
 - 60 canonical ingredients;
-- 83 Tesco product/package rows;
+- 82 real Tesco product/package rows, each resolved to an exact Tesco product ID/page;
 - 23 explicit household-measure conversions;
+- 1 deliberately unresolved retail mapping: Gousto's combined 10 g `Coriander & mint` ingredient, because its split is unknown and the previous synthetic bundle was removed;
 - 4 provisional recipe-flexibility classes;
 - household starting inventory configuration.
 
-The next stage is the first deterministic optimisation model. Live Tesco integration, shelf-life simulation and a user interface are deliberately deferred.
+Before the first deterministic optimiser uses all 10 recipes, the combined coriander-and-mint retail mapping needs one modelling decision. The repository deliberately leaves that case explicit rather than inventing a fake Tesco product or an unsupported 5 g / 5 g split. Live Tesco integration, shelf-life simulation and a user interface remain deferred.
 
 ## Repository structure
 
@@ -63,7 +64,7 @@ scripts/
 
 ## Data freshness
 
-Tesco prices and listings are snapshots, currently checked on 2026-10-20. The optimiser should not assume they are permanently current.
+Tesco product identities/URLs were resolved on 2026-10-21. Price fields remain a research snapshot around 2026-10-20/21 and should not be treated as permanently current.
 
 ## Reference
 
