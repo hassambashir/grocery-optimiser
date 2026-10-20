@@ -189,18 +189,43 @@ Specific retail products mapped to canonical ingredients. Multiple products can 
 
 Documented conversion parameters between household source measures and canonical model units.
 
-## Next normalisation work
+## Current normalisation status
 
-Before the first optimiser is trustworthy, resolve the conversions that actually affect the seed recipes:
+The first-pass conversions required by the 10 seed recipes are now populated in `data/unit_conversions.csv`, and every recipe-ingredient row has a model quantity/unit.
 
-- chicken breast `piece` → usable grams;
-- garlic `clove` → average edible grams;
-- onion/pepper/carrot/courgette/sweet potato `each` → average edible grams;
-- tsp/tbsp → ingredient-specific grams or ml;
-- noodle nest → grams;
-- retail `each` produce → effective grams where needed;
-- material drained weight for canned food;
-- product substitutions and acceptable forms;
-- shelf-life/opened-life rules.
+The conversion file intentionally records:
+- the multiplier;
+- conversion method;
+- status;
+- confidence;
+- source URL;
+- notes.
 
-Each conversion should include its source, method and confidence rather than being hidden inside code.
+Some values remain **provisional approximations**, not facts. The most important examples to sensitivity-test later include the standard Gousto chicken-breast piece assumption, unspecified red chilli size, cardamom pod weight, peri-peri tablespoon weight and the Gousto saffron packet proxy.
+
+The seed retail data now covers all canonical ingredients used by the recipes. Some mappings are deliberately marked `compatible_candidate` or `synthetic_bundle` where the Tesco product is not a one-to-one representation of the Gousto supplied ingredient.
+
+For products where net pack weight materially differs from edible supply, the optimiser should use `usable_quantity` when present and otherwise fall back to `pack_quantity`.
+
+### What is deliberately deferred
+
+The first deterministic optimiser does **not** require us to finish:
+- probabilistic shelf-life distributions;
+- live Tesco availability;
+- household-specific pantry detection;
+- precise cooking yields for every food;
+- nutrition optimisation.
+
+Those belong to later rolling-horizon and simulation stages.
+
+
+## Quantity-flexibility layer
+
+`data/flexibility_classes.csv` defines first-pass allowable variation around published recipe quantities.
+
+This layer is kept separate from unit conversion:
+
+- **unit conversion** answers “what model quantity does the published recipe mean?”;
+- **flexibility** answers “how far may the optimiser reasonably move away from that published quantity?”
+
+Keeping the two separate prevents an uncertain clove-to-gram conversion from being confused with a deliberate recipe-serving adjustment.
