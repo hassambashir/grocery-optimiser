@@ -1,0 +1,5 @@
+flexibility_class,min_factor,preferred_factor,max_factor,notes
+fixed,1.00,1.00,1.00,No quantity deviation in the first model. Used where a recipe amount should not be manipulated to absorb inventory.
+tight,0.90,1.00,1.10,Small +/-10% adjustment around the published quantity.
+moderate,0.80,1.00,1.20,Allows a practical +/-20% serving adjustment.
+wide,0.70,1.00,1.30,Allows a broad +/-30% adjustment for ingredients whose exact portion is naturally flexible.
