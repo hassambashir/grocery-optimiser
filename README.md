@@ -6,20 +6,30 @@ The project is inspired by van Rooijen et al. (2024) and adapts optimisation-bas
 
 ## Current stage
 
-**Stage 1: resolved real-product seed dataset, with one explicit composite-ingredient exception.**
+**Stage 1 complete: cleaned household seed recipes + resolved retail products.**
+
+The optimiser-facing recipe layer now contains **10 household-cleaned dinners** derived from Gousto recipes. The original Gousto metadata and ingredient lists are preserved separately for audit.
+
+Cleaning removed meal-kit artefacts where they distorted normal household cooking. Examples include:
+- reducing Gousto's double-chicken Greek recipe from 500 g to a normal two-person chicken portion;
+- using two noodle nests for two adults in the smaller-portioned hoisin noodle recipe;
+- replacing ginger/garlic pastes with fresh ginger and garlic where practical;
+- replacing the combined coriander-and-mint meal-kit pack with ordinary fresh coriander;
+- removing saffron from the harissa recipe;
+- simplifying the quick-kit korma into a more normal yoghurt/coconut/spice structure;
+- using the full usable amount of a small sweetcorn tin instead of preserving a 150 g meal-kit quantity.
 
 The repository currently contains:
-
-- 10 real Gousto dinners for 2 people;
-- 105 recipe-ingredient rows;
-- 60 canonical ingredients;
-- 82 real Tesco product/package rows, each resolved to an exact Tesco product ID/page;
-- 23 explicit household-measure conversions;
-- 1 deliberately unresolved retail mapping: Gousto's combined 10 g `Coriander & mint` ingredient, because its split is unknown and the previous synthetic bundle was removed;
+- 10 cleaned household recipes;
+- 105 cleaned recipe-ingredient rows;
+- the original 10 Gousto recipes and 105 source ingredient rows;
+- 61 canonical ingredients;
+- 83 real Tesco product/package rows, each resolved to an exact Tesco product ID/page;
+- 23 documented source-unit conversions;
 - 4 provisional recipe-flexibility classes;
 - household starting inventory configuration.
 
-Before the first deterministic optimiser uses all 10 recipes, the combined coriander-and-mint retail mapping needs one modelling decision. The repository deliberately leaves that case explicit rather than inventing a fake Tesco product or an unsupported 5 g / 5 g split. Live Tesco integration, shelf-life simulation and a user interface remain deferred.
+The dataset is now sufficient for the **first deterministic optimiser**. It is still a seed library; scaling from 10 recipes toward roughly 100–300 comes after the model formulation is working.
 
 ## Repository structure
 
@@ -31,6 +41,8 @@ config/
 data/
   recipes.csv
   recipe_ingredients.csv
+  source_recipes.csv
+  source_recipe_ingredients.csv
   ingredients.csv
   products.csv
   unit_conversions.csv
@@ -43,24 +55,25 @@ scripts/
   validate_seed_data.py
 ```
 
-### What each part means
+### Optimiser-facing vs source data
 
-- `docs/problem_definition.md` — what the optimiser is supposed to decide and the current modelling assumptions.
-- `docs/data_normalisation.md` — how recipe wording, canonical ingredients, units and Tesco products are reconciled.
-- `config/` — household/model assumptions that may change between scenarios.
-- `data/` — source and reference data used by the model.
-- `scripts/validate_seed_data.py` — consistency checks for the seed dataset.
+- `data/recipes.csv` and `data/recipe_ingredients.csv` are the **cleaned household recipes used by the optimiser**.
+- `data/source_recipes.csv` and `data/source_recipe_ingredients.csv` preserve the original Gousto recipe representation and conversions.
+- `data/ingredients.csv` is the canonical ingredient vocabulary.
+- `data/products.csv` is the real Tesco product/package table.
+- `data/unit_conversions.csv` documents household-measure conversions used when interpreting source recipes.
 
 ## Core v1 principles
 
 - The optimiser chooses only from a pre-approved recipe library.
+- Recipe cleansing happens **before optimisation**; the optimiser does not decide to drop inconvenient ingredients from a recipe.
+- Cleaned recipe quantities are preferred household quantities, not blindly copied meal-kit sachet sizes.
 - Divisible solids are generally modelled in grams; suitable liquids in millilitres.
-- Source recipe quantities are preserved, with conversions stored separately.
 - Retail products are bought in real pack sizes; `usable_quantity` overrides labelled pack weight where the edible/drained amount materially differs.
 - Starting inventory can exist for any ingredient. Omitted ingredients start at zero.
 - Usable ending inventory rolls into the next planning cycle.
 - Rice is currently configured as 10 kg starting stock; that is a household scenario, not a special rule in the optimiser.
-- Quantity flexibility is a modelling assumption and will be sensitivity-tested.
+- Quantity flexibility is a separate modelling assumption and will be sensitivity-tested.
 
 ## Data freshness
 
