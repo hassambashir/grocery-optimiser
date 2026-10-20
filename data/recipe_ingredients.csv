@@ -4,7 +4,7 @@ R001,White long grain rice,long_grain_rice,130.0,g,130.0,g,exact_source_unit,
 R001,Chicken breast strips,chicken_breast,250.0,g,250.0,g,exact_source_unit,
 R001,Red pepper,red_pepper,1.0,each,119,g,converted_provisional,
 R001,Tomato paste,tomato_puree,32.0,g,32.0,g,exact_source_unit,Canonicalised paste -> puree family; product mapping must preserve suitability.
-R001,Sweetcorn,sweetcorn,150.0,g,150.0,g,exact_source_unit,Recipe amount is ingredient weight; retail tins may require drained-weight mapping.
+R001,Sweetcorn,sweetcorn,150.0,g,150.0,g,exact_source_unit,Retail tins use usable_quantity when drained weight differs from labelled net weight.
 R001,Peri peri spice mix,peri_peri_seasoning,1.0,tbsp,17.5,g,converted_provisional,
 R001,Garlic clove,garlic,1.0,clove,3,g,converted_provisional,
 R001,Natural yoghurt,natural_yogurt,80.0,g,80.0,g,exact_source_unit,
