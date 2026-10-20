@@ -28,10 +28,12 @@ The practical goal is:
    - Do not assume the smallest pack is best: a larger pack may have a lower unit price and may be useful in later meals.
 
 4. **Inventory and carryover**
-   - Track what remains after each meal.
+   - Every canonical ingredient may have a starting inventory quantity. Missing rows in the starting-inventory file mean zero, not “this ingredient cannot be carried”.
+   - Track purchases, consumption and remaining usable stock.
    - Remaining stock should not automatically be called waste.
-   - Carry stock into later planning cycles when it is still usable.
+   - End-of-cycle usable stock becomes the next cycle's starting stock.
    - Use an effective usable quantity for products where packaging/net weight materially differs from edible/drained supply.
+   - Preserve package state where it matters: an unopened tin is not equivalent to a partly used opened tin.
 
 5. **Rolling planning**
    - Do not hard-code “exactly seven days” as the universal optimal shopping cycle.
@@ -46,7 +48,9 @@ Not every ingredient needs the same optimisation treatment.
 
 Some foods are household staples kept in bulk and should not distort weekly meal choice.
 
-For the first household scenario, **long-grain rice is assumed to be already available in bulk** (for example a 10 kg starting stock). The optimiser consumes from that stock but does not choose a new rice pack during the initial meal-planning experiment.
+For the first household scenario, **long-grain rice is one example of non-zero starting inventory** (currently 10 kg). The same mechanism applies to every ingredient: yoghurt, garlic, spices, vegetables or anything else may start with a non-zero quantity if it is already in the kitchen.
+
+The optimiser consumes from starting stock first as part of the same inventory balance. Whatever usable stock remains at the end of one planning cycle rolls into the next cycle. Ingredients omitted from the starting-inventory file simply start at zero.
 
 Later simulation can add a reorder threshold so staples are replenished when stock becomes low.
 
@@ -183,3 +187,35 @@ The initial real-data pass is now sufficient for the first deterministic model:
 - every canonical ingredient has a default flexibility class.
 
 Remaining uncertainty is recorded explicitly as confidence/status metadata and should be tested rather than silently treated as exact.
+
+
+## Opened-package behaviour
+
+Usable quantity and package-opening behaviour are separate concepts.
+
+For a can of sweetcorn, for example:
+- the retail can may be labelled 325 g;
+- the edible/drained supply may be about 260 g;
+- the optimiser must buy whole cans;
+- an **unopened** extra can can carry forward normally;
+- a **partly used opened** can is undesirable and should usually be finished soon.
+
+The first model therefore marks tinned sweetcorn products with `prefer_full_pack_once_opened`.
+
+This should be a **strong preference rather than an absolute rule**. A hard rule could force an unreasonable portion. The optimiser should instead have several ways to avoid an opened remainder:
+
+1. choose the smaller can if it fits the recipe better;
+2. adjust the recipe quantity within its allowed flexibility;
+3. select another approved recipe that can use the remaining sweetcorn;
+4. use the remainder in another selected meal within the relevant period;
+5. accept a small opened remainder only when the alternatives are worse.
+
+This is important because aggregate inventory alone cannot distinguish “one unopened tin left” from “220 g left in a tin that had to be opened”. The optimisation model should explicitly distinguish whole unopened packs from the residual of a partially used pack for products whose `package_consumption_policy` requires it.
+
+Conceptually, for a fixed usable pack size (Q):
+
+- whole unused packs can roll forward without an opened-food penalty;
+- once a pack is partially consumed, the residual (Q - 	ext{partial use}) receives a strong penalty;
+- recipe flexibility and recipe selection are allowed to reduce that residual.
+
+The exact linear formulation belongs in Stage 2 rather than in the data-cleaning layer.
