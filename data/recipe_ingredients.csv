@@ -1,350 +1,373 @@
 recipe_id,ingredient_id,preferred_quantity,unit,notes
-"R001","chicken_stock_mix","0.5","cube","Ordinary chicken stock/cube equivalent."
-"R001","long_grain_rice","130","g",""
-"R001","chicken_breast","250","g",""
-"R001","red_pepper","1","each","Whole vegetable required; no fractional consumption."
-"R001","tomato_puree","30","g","Rounded from Gousto's 32g sachet amount."
-"R001","sweetcorn","160","g","Use the full usable/drained amount of the smaller Tesco tin."
-"R001","peri_peri_seasoning","10","g","Household seasoning amount rather than preserving Gousto's supplied tablespoon weight."
-"R001","garlic","6","g","About two cloves."
-"R001","natural_yogurt","100","g","Practical sauce portion."
-"R002","red_chilli","6","g","Approximate one chilli."
-"R002","hoisin_sauce","40","g",""
-"R002","garlic","6","g","About two cloves."
-"R002","pak_choi","200","g",""
-"R002","cornflour","5","g","Household-rounded thickener amount."
-"R002","fresh_ginger","15","g",""
-"R002","chicken_breast","250","g",""
-"R002","rice_vinegar","15","ml",""
-"R002","brown_rice","130","g",""
-"R002","soy_sauce","15","ml",""
-"R002","kale","80","g",""
-"R003","cayenne_pepper","1.2","g","About 1/2 tsp."
-"R003","soy_sauce","10","ml","Rounded from 8ml."
-"R003","chicken_thigh","320","g",""
-"R003","ground_coriander","4.8","g","About 2 tsp."
-"R003","dried_oregano","0.5","g","About 1 tsp."
-"R003","chicken_stock_mix","0.5","cube","Use the same ordinary chicken stock kept elsewhere instead of a separate beef-stock product."
-"R003","smoked_paprika","4.8","g","About 2 tsp."
-"R003","garlic","6","g","About two cloves."
-"R003","brown_onion","1","each","Whole vegetable required; no fractional consumption."
-"R003","arborio_rice","160","g","Retained because the dish is cooked in a risotto-like style."
-"R003","spinach","80","g",""
-"R003","cherry_tomatoes","125","g",""
-"R004","carrot","120","g","Rounded household amount."
-"R004","bbq_sauce","30","g","Slightly reduced after simplifying the sauce."
-"R004","long_grain_rice","130","g",""
-"R004","spring_onion","30","g","About two spring onions rather than a token single piece."
-"R004","chicken_breast","250","g",""
-"R004","five_spice","2.4","g","About 1 tsp."
-"R004","garlic","6","g","About two cloves."
-"R004","sesame_oil","10","ml",""
-"R004","hoisin_sauce","30","g","Increased after removing tomato paste."
-"R004","soy_sauce","15","ml","Standard household sauce component."
-"R004","mangetout","80","g",""
-"R005","chicken_stock_mix","0.5","cube","Ordinary chicken stock/cube equivalent."
-"R005","long_grain_rice","130","g",""
-"R005","sumac","2","g","About 1 tsp."
-"R005","dried_oregano","1","g","Replaces bespoke Mediterranean seasoning with an ordinary pantry herb."
-"R005","chicken_breast","300","g","Reduced from Gousto's double-protein 500g version."
-"R005","natural_yogurt","100","g","Replaces mayonnaise-based meal-kit sauce."
-"R005","parsley","10","g","More useful household herb amount."
-"R005","brown_onion","1","each","Whole vegetable required; no fractional consumption."
-"R005","garlic","6","g","Fresh garlic replaces roasted garlic paste."
-"R005","green_beans","160","g","Increase vegetables after reducing double chicken."
-"R005","spinach","80","g",""
-"R006","red_pepper","1","each","Whole vegetable required; no fractional consumption."
-"R006","spring_onion","30","g","About two spring onions."
-"R006","chicken_breast","250","g",""
-"R006","sesame_oil","10","ml",""
-"R006","brown_onion","1","each","Whole vegetable required; no fractional consumption."
-"R006","wholewheat_noodles","125","g","Two nests for two adults rather than Gousto's smaller one-nest portion."
-"R006","hoisin_sauce","40","g",""
-"R006","fresh_ginger","10","g","Fresh ginger replaces ginger-garlic paste."
-"R006","garlic","6","g","Fresh garlic replaces ginger-garlic paste."
-"R006","carrot","60","g","Rounded household amount."
-"R006","soy_sauce","15","ml",""
-"R007","chicken_thigh","250","g",""
-"R007","fresh_ginger","15","g",""
-"R007","mangetout","120","g","Increase vegetable portion."
-"R007","red_pepper","1","each","Whole vegetable required; no fractional consumption."
-"R007","wholewheat_noodles","125","g","Two nests."
-"R007","miso_paste","34","g","About 2 tbsp."
-"R007","sesame_oil","15","ml",""
-"R008","creamed_coconut","25","g",""
-"R008","turmeric","1.5","g","Household-rounded 1/2 tsp equivalent."
-"R008","chicken_breast","250","g",""
-"R008","garam_masala","1.8","g","About 1 tsp."
-"R008","ground_coriander","2.4","g","Common korma spice; uses an existing pantry ingredient."
-"R008","brown_onion","1","each","Whole vegetable required; no fractional consumption."
-"R008","long_grain_rice","120","g","More typical two-person rice portion."
-"R008","fresh_ginger","15","g","Fresh ginger replaces ginger paste."
-"R008","garlic","6","g","Fresh garlic replaces meal-kit shortcuts."
-"R008","cardamom","0.6","g","About three pods."
-"R008","spinach","120","g",""
-"R008","flaked_almonds","15","g",""
-"R008","natural_yogurt","100","g","Normal household korma sauce component."
-"R008","fresh_coriander","10","g","Fresh finishing herb; replaces the need for bespoke herb handling elsewhere."
-"R009","chicken_stock_mix","0.5","cube","Ordinary chicken stock/cube equivalent."
-"R009","chicken_breast","250","g",""
-"R009","garlic","6","g","About two cloves."
-"R009","soft_cheese","50","g",""
-"R009","spinach","100","g","Slightly fuller vegetable portion."
-"R009","cherry_tomatoes","250","g",""
-"R009","sweet_potato","450","g","More realistic side portion for two adults."
-"R010","chicken_breast","250","g",""
-"R010","sumac","2","g","About 1 tsp."
-"R010","ground_coriander","2.4","g","About 1 tsp."
-"R010","garlic","6","g","About two cloves."
-"R010","courgette","200","g",""
-"R010","natural_yogurt","100","g","Practical sauce portion."
-"R010","couscous","120","g",""
-"R010","harissa_paste","20","g",""
-"R010","chopped_dates","30","g",""
-"R010","red_pepper","1","each","Whole vegetable required; no fractional consumption."
-"R010","fresh_coriander","10","g","Use ordinary fresh coriander rather than Gousto's combined coriander-and-mint pack."
-"R010","red_onion","1","each","Whole vegetable required; no fractional consumption."
-"R011","chicken_breast","350","g","350g chicken breast"
-"R011","red_pepper","2","each","2 peppers"
-"R011","brown_onion","1","each","1 onion"
-"R011","tortillas","4","each","4 tortillas"
-"R011","smoked_paprika","2.4","g","1 tsp smoked paprika | approximate household unit conversion; review"
-"R011","ground_cumin","2","g","1 tsp cumin | approximate household unit conversion; review"
-"R011","lime","1","each","1 lime | whole fruit"
-"R011","vegetable_oil","14","ml","1 tbsp oil | approximate household unit conversion; review"
-"R012","chicken_thigh","400","g","400g chicken thighs"
-"R012","potatoes","400","g","400g baby potatoes"
-"R012","cherry_tomatoes","150","g","150g cherry tomatoes"
-"R012","red_onion","1","each","1 red onion"
-"R012","lemon","1","each","1 lemon | whole fruit"
-"R012","garlic","6","g","2 garlic cloves | approximate household unit conversion; review"
-"R012","dried_oregano","0.5","g","1 tsp oregano | approximate household unit conversion; review"
-"R012","vegetable_oil","14","ml","1 tbsp oil | approximate household unit conversion; review"
-"R013","chicken_breast","300","g","300g chicken breast"
-"R013","pasta","180","g","180g pasta"
-"R013","spinach","100","g","100g spinach"
-"R013","red_pepper","1","each","1 pepper"
-"R013","single_cream","120","ml","120ml single cream | measured by volume"
-"R013","cajun_seasoning","6","g","2 tsp Cajun seasoning | approximate household unit conversion; review"
-"R013","garlic","3","g","1 garlic clove | approximate household unit conversion; review"
-"R014","chicken_thigh","400","g","400g chicken thighs"
-"R014","jasmine_rice","140","g","140g jasmine rice"
-"R014","soy_sauce","50","ml","50ml soy sauce"
-"R014","vinegar","45","ml","45ml vinegar"
-"R014","garlic","9","g","3 garlic cloves | approximate household unit conversion; review"
-"R014","bay_leaves","2","each","2 bay leaves | two whole leaves"
-"R014","brown_sugar","4","g","1 tsp brown sugar | approximate household unit conversion; review"
-"R014","green_beans","180","g","180g green beans"
-"R015","chicken_breast","300","g","300g chicken breast"
-"R015","jasmine_rice","140","g","140g jasmine rice"
-"R015","egg","1","each","1 egg"
-"R015","breadcrumbs","70","g","70g breadcrumbs"
-"R015","brown_onion","1","each","1 onion"
-"R015","carrot","200","g","2 carrots | approximate household unit conversion; review"
-"R015","curry_powder","15","g","1 tbsp curry powder | approximate household unit conversion; review"
-"R015","chicken_stock_mix","0.5","cube","250ml chicken stock | standardised to practical half cube"
-"R015","plain_flour","8","g","1 tbsp flour | approximate household unit conversion; review"
-"R016","chicken_mince","300","g","300g chicken mince"
-"R016","jasmine_rice","140","g","140g jasmine rice"
-"R016","green_beans","180","g","180g green beans"
-"R016","garlic","9","g","3 garlic cloves | approximate household unit conversion; review"
-"R016","red_chilli","6","g","1 chilli | approximate household unit conversion; review"
-"R016","soy_sauce","20","ml","20ml soy sauce"
-"R016","oyster_sauce","18","g","1 tbsp oyster sauce | approximate household unit conversion; review"
-"R016","fresh_basil","15","g","15g basil"
-"R017","chicken_thigh","350","g","350g chicken thigh"
-"R017","flatbreads","2","each","2 flatbreads"
-"R017","natural_yogurt","100","g","100g yoghurt"
-"R017","cucumber","0.5","each","Half a cucumber; combine leftover halves across meals"
-"R017","tomatoes","240","g","2 tomatoes | approximate household unit conversion; review"
-"R017","ground_cumin","2","g","1 tsp cumin | approximate household unit conversion; review"
-"R017","smoked_paprika","2.4","g","1 tsp paprika | approximate household unit conversion; review"
-"R017","lemon","1","each","1 lemon | whole fruit"
-"R017","garlic","3","g","1 garlic clove | approximate household unit conversion; review"
-"R018","beef_mince","300","g","300g beef mince"
-"R018","potatoes","450","g","450g potatoes"
-"R018","brown_onion","1","each","1 onion"
-"R018","carrot","200","g","2 carrots | approximate household unit conversion; review"
-"R018","peas","120","g","120g peas"
-"R018","tomato_puree","16","g","1 tbsp tomato puree | approximate household unit conversion; review"
-"R018","beef_stock_mix","0.5","cube","250ml beef stock | standardised to practical half cube"
-"R018","butter","20","g","20g butter"
-"R019","beef_strips","300","g","300g thin beef strips"
-"R019","jasmine_rice","140","g","140g jasmine rice"
-"R019","cucumber","0.5","each","Half a cucumber; combine leftover halves across meals"
-"R019","carrot","100","g","1 carrot | approximate household unit conversion; review"
-"R019","soy_sauce","30","ml","30ml soy sauce"
-"R019","brown_sugar","15","g","1 tbsp brown sugar | approximate household unit conversion; review"
-"R019","sesame_oil","4","ml","1 tsp sesame oil | approximate household unit conversion; review"
-"R019","garlic","6","g","2 garlic cloves | approximate household unit conversion; review"
-"R019","fresh_ginger","10","g","10g ginger"
-"R020","beef_strips","300","g","300g beef strips"
-"R020","egg_noodles","180","g","180g egg noodles"
-"R020","broccoli","250","g","250g broccoli"
-"R020","garlic","6","g","2 garlic cloves | approximate household unit conversion; review"
-"R020","soy_sauce","20","ml","20ml soy sauce"
-"R020","hoisin_sauce","30","g","30g hoisin"
-"R020","cornflour","3","g","1 tsp cornflour | approximate household unit conversion; review"
-"R020","fresh_ginger","10","g","10g ginger"
-"R021","beef_mince","300","g","300g beef mince"
-"R021","potatoes","500","g","2 large potatoes | approximate household unit conversion; review"
-"R021","brown_onion","1","each","1 onion"
-"R021","kidney_beans","240","g","1 tin kidney beans | approximate household unit conversion; review"
-"R021","chopped_tomatoes","400","g","1 tin chopped tomatoes | approximate household unit conversion; review"
-"R021","ground_cumin","2","g","1 tsp cumin | approximate household unit conversion; review"
-"R021","smoked_paprika","2.4","g","1 tsp smoked paprika | approximate household unit conversion; review"
-"R021","red_chilli","6","g","1 chilli | approximate household unit conversion; review"
-"R022","beef_mince","300","g","300g beef mince"
-"R022","spaghetti","180","g","180g spaghetti"
-"R022","egg","1","each","1 egg"
-"R022","breadcrumbs","30","g","30g breadcrumbs"
-"R022","brown_onion","1","each","1 onion"
-"R022","chopped_tomatoes","400","g","400g chopped tomatoes"
-"R022","garlic","6","g","2 garlic cloves | approximate household unit conversion; review"
-"R022","dried_oregano","0.5","g","1 tsp oregano | approximate household unit conversion; review"
-"R023","lamb_mince","300","g","300g lamb mince"
-"R023","pittas","2","each","2 pittas"
-"R023","ground_cumin","2","g","1 tsp cumin | approximate household unit conversion; review"
-"R023","ground_coriander","2.4","g","1 tsp coriander | approximate household unit conversion; review"
-"R023","garlic","3","g","1 garlic clove | approximate household unit conversion; review"
-"R023","natural_yogurt","100","g","100g yoghurt"
-"R023","cucumber","0.5","each","Half a cucumber; combine leftover halves across meals"
-"R023","tomatoes","240","g","2 tomatoes | approximate household unit conversion; review"
-"R023","lemon","1","each","1 lemon | whole fruit"
-"R024","diced_lamb","300","g","300g diced lamb"
-"R024","chickpeas","240","g","1 tin chickpeas | approximate household unit conversion; review"
-"R024","couscous","150","g","150g couscous"
-"R024","carrot","200","g","2 carrots | approximate household unit conversion; review"
-"R024","brown_onion","1","each","1 onion"
-"R024","chopped_tomatoes","400","g","1 tin chopped tomatoes | approximate household unit conversion; review"
-"R024","ground_cumin","2","g","1 tsp cumin | approximate household unit conversion; review"
-"R024","ground_cinnamon","2.6","g","1 tsp cinnamon | approximate household unit conversion; review"
-"R024","chicken_stock_mix","0.5","cube","300ml stock | standardised to practical half cube"
-"R025","paneer","250","g","250g paneer"
-"R025","basmati_rice","140","g","140g basmati rice"
-"R025","red_pepper","1","each","1 pepper"
-"R025","red_onion","1","each","1 red onion"
-"R025","natural_yogurt","120","g","120g yoghurt"
-"R025","garam_masala","2","g","1 tsp garam masala | approximate household unit conversion; review"
-"R025","smoked_paprika","2.4","g","1 tsp paprika | approximate household unit conversion; review"
-"R025","lemon","1","each","1 lemon | whole fruit"
-"R025","fresh_mint","10","g","10g mint"
-"R026","chickpeas","480","g","2 tins chickpeas | approximate household unit conversion; review"
-"R026","basmati_rice","140","g","140g basmati rice"
-"R026","brown_onion","1","each","1 onion"
-"R026","chopped_tomatoes","400","g","1 tin chopped tomatoes | approximate household unit conversion; review"
-"R026","garlic","6","g","2 garlic cloves | approximate household unit conversion; review"
-"R026","fresh_ginger","10","g","10g ginger"
-"R026","garam_masala","2","g","1 tsp garam masala | approximate household unit conversion; review"
-"R026","ground_cumin","2","g","1 tsp cumin | approximate household unit conversion; review"
-"R026","spinach","100","g","100g spinach"
-"R027","sweet_potato","450","g","450g sweet potatoes"
-"R027","black_beans","240","g","1 tin black beans | approximate household unit conversion; review"
-"R027","tortillas","4","each","4 tortillas"
-"R027","passata","300","g","300g passata"
-"R027","cheddar","100","g","100g cheddar"
-"R027","brown_onion","1","each","1 onion"
-"R027","ground_cumin","2","g","1 tsp cumin | approximate household unit conversion; review"
-"R027","smoked_paprika","2.4","g","1 tsp paprika | approximate household unit conversion; review"
-"R028","pasta","180","g","180g pasta"
-"R028","ricotta","200","g","200g ricotta"
-"R028","spinach","200","g","200g spinach"
-"R028","passata","300","g","300g passata"
-"R028","mozzarella","80","g","80g mozzarella"
-"R028","garlic","6","g","2 garlic cloves | approximate household unit conversion; review"
-"R028","dried_oregano","0.5","g","1 tsp oregano | approximate household unit conversion; review"
-"R029","mushrooms","350","g","350g mushrooms"
-"R029","egg_noodles","180","g","180g egg noodles"
-"R029","brown_onion","1","each","1 onion"
-"R029","sour_cream","150","ml","150g sour cream"
-"R029","mustard","5","g","1 tsp mustard | approximate household unit conversion; review"
-"R029","vegetable_stock","0.5","cube","200ml vegetable stock | practical stock cube amount"
-"R029","smoked_paprika","2.4","g","1 tsp paprika | approximate household unit conversion; review"
-"R029","plain_flour","8","g","1 tbsp flour | approximate household unit conversion; review"
-"R030","tofu","300","g","300g firm tofu"
-"R030","jasmine_rice","140","g","140g jasmine rice"
-"R030","broccoli","200","g","200g broccoli"
-"R030","red_pepper","1","each","1 pepper"
-"R030","soy_sauce","20","ml","20ml soy sauce"
-"R030","hoisin_sauce","18","g","1 tbsp hoisin | approximate household unit conversion; review"
-"R030","sesame_oil","4","ml","1 tsp sesame oil | approximate household unit conversion; review"
-"R030","garlic","6","g","2 garlic cloves | approximate household unit conversion; review"
-"R031","salmon","260","g","2 salmon fillets (260g)"
-"R031","potatoes","400","g","400g baby potatoes"
-"R031","green_beans","200","g","200g green beans"
-"R031","lemon","1","each","1 lemon | whole fruit"
-"R031","garlic","3","g","1 garlic clove | approximate household unit conversion; review"
-"R031","olive_oil","14","ml","1 tbsp olive oil | approximate household unit conversion; review"
-"R031","dried_dill","1","g","1 tsp dried dill | approximate household unit conversion; review"
-"R032","cod","300","g","300g cod fillets"
-"R032","couscous","140","g","140g couscous"
-"R032","courgette","200","g","1 courgette | approximate household unit conversion; review"
-"R032","passata","300","g","300g passata"
-"R032","olives","50","g","50g olives"
-"R032","garlic","6","g","2 garlic cloves | approximate household unit conversion; review"
-"R032","dried_oregano","0.5","g","1 tsp oregano | approximate household unit conversion; review"
-"R032","olive_oil","14","ml","1 tbsp olive oil | approximate household unit conversion; review"
-"R033","prawns","300","g","300g raw peeled prawns"
-"R033","jasmine_rice","140","g","140g jasmine rice"
-"R033","coconut_milk","200","g","200ml coconut milk | approximate household unit conversion; review"
-"R033","red_pepper","1","each","1 pepper"
-"R033","mangetout","100","g","100g mangetout"
-"R033","thai_red_curry_paste","15","g","1 tbsp Thai red curry paste | approximate household unit conversion; review"
-"R033","lime","1","each","1 lime | whole fruit"
-"R034","potatoes","500","g","2 large potatoes | approximate household unit conversion; review"
-"R034","tuna","145","g","1 tin tuna (145g drained)"
-"R034","sweetcorn","120","g","120g sweetcorn"
-"R034","mayonnaise","60","ml","60g mayonnaise | approximate household unit conversion; review"
-"R034","cheddar","40","g","40g cheddar"
-"R034","cucumber","0.5","each","Half a cucumber; combine leftover halves across meals"
-"R034","tomatoes","120","g","1 tomato | approximate household unit conversion; review"
-"R035","halloumi","225","g","225g halloumi"
-"R035","couscous","150","g","150g couscous"
-"R035","courgette","200","g","1 courgette | approximate household unit conversion; review"
-"R035","red_pepper","1","each","1 pepper"
-"R035","red_onion","1","each","1 red onion"
-"R035","lemon","1","each","1 lemon | whole fruit"
-"R035","dried_oregano","0.5","g","1 tsp oregano | approximate household unit conversion; review"
-"R035","vegetable_oil","14","ml","1 tbsp oil | approximate household unit conversion; review"
-"R036","tinned_lentils","240","g","1 tin lentils | approximate household unit conversion; review"
-"R036","potatoes","450","g","450g potatoes"
-"R036","brown_onion","1","each","1 onion"
-"R036","carrot","200","g","2 carrots | approximate household unit conversion; review"
-"R036","peas","120","g","120g peas"
-"R036","vegetable_stock","0.5","cube","200ml vegetable stock | practical stock cube amount"
-"R036","tomato_puree","16","g","1 tbsp tomato puree | approximate household unit conversion; review"
-"R036","butter","20","g","20g butter"
-"R037","beef_mince","250","g","250g beef mince"
-"R037","aubergine","300","g","1 aubergine | approximate household unit conversion; review"
-"R037","bulgur","120","g","120g bulgur"
-"R037","brown_onion","1","each","1 onion"
-"R037","chopped_tomatoes","250","g","250g chopped tomatoes"
-"R037","garlic","6","g","2 garlic cloves | approximate household unit conversion; review"
-"R037","ground_cumin","2","g","1 tsp cumin | approximate household unit conversion; review"
-"R037","olive_oil","14","ml","1 tbsp olive oil | approximate household unit conversion; review"
-"R038","orzo","160","g","160g orzo"
-"R038","chickpeas","240","g","1 tin chickpeas | approximate household unit conversion; review"
-"R038","spinach","100","g","100g spinach"
-"R038","lemon","1","each","1 lemon | whole fruit"
-"R038","brown_onion","1","each","1 onion"
-"R038","garlic","6","g","2 garlic cloves | approximate household unit conversion; review"
-"R038","vegetable_stock","1","cube","400ml vegetable stock | practical stock cube amount"
-"R038","feta","50","g","50g feta"
-"R039","chicken_thigh","300","g","300g chicken thigh"
-"R039","rice_noodles","160","g","160g rice noodles"
-"R039","cucumber","0.5","each","Half a cucumber; combine leftover halves across meals"
-"R039","carrot","100","g","1 carrot | approximate household unit conversion; review"
-"R039","lemongrass","15","g","1 stalk lemongrass | approximate household unit conversion; review"
-"R039","lime","1","each","1 lime | whole fruit"
-"R039","fish_sauce","15","ml","1 tbsp fish sauce | approximate household unit conversion; review"
-"R039","sugar","4","g","1 tsp sugar | approximate household unit conversion; review"
-"R039","garlic","6","g","2 garlic cloves | approximate household unit conversion; review"
-"R040","red_lentils","180","g","180g red lentils"
-"R040","basmati_rice","140","g","140g basmati rice"
-"R040","cauliflower","650","g","1 small cauliflower | approximate household unit conversion; review"
-"R040","brown_onion","1","each","1 onion"
-"R040","chopped_tomatoes","400","g","1 tin chopped tomatoes | approximate household unit conversion; review"
-"R040","turmeric","2.5","g","1 tsp turmeric | approximate household unit conversion; review"
-"R040","ground_cumin","2","g","1 tsp cumin | approximate household unit conversion; review"
-"R040","garlic","6","g","2 garlic cloves | approximate household unit conversion; review"
-"R040","vegetable_oil","14","ml","1 tbsp oil | approximate household unit conversion; review"
+R001,chicken_stock_mix,0.5,cube,Ordinary chicken stock/cube equivalent.
+R001,long_grain_rice,130,g,
+R001,chicken_breast,250,g,
+R001,red_pepper,1,each,Whole vegetable required; no fractional consumption.
+R001,tomato_puree,30,g,Rounded from Gousto's 32g sachet amount.
+R001,sweetcorn,160,g,Use the full usable/drained amount of the smaller Tesco tin.
+R001,peri_peri_seasoning,10,g,Household seasoning amount rather than preserving Gousto's supplied tablespoon weight.
+R001,garlic,6,g,About two cloves.
+R001,natural_yogurt,100,g,Practical sauce portion.
+R001,butter,20,g,Cooking butter required by the named dish; previously omitted.
+R002,red_chilli,6,g,Approximate one chilli.
+R002,hoisin_sauce,40,g,
+R002,garlic,6,g,About two cloves.
+R002,pak_choi,200,g,
+R002,cornflour,5,g,Household-rounded thickener amount.
+R002,fresh_ginger,15,g,
+R002,chicken_breast,250,g,
+R002,rice_vinegar,15,ml,
+R002,brown_rice,130,g,
+R002,soy_sauce,15,ml,
+R002,kale,80,g,
+R002,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R003,cayenne_pepper,1.2,g,About 1/2 tsp.
+R003,soy_sauce,10,ml,Rounded from 8ml.
+R003,chicken_thigh,320,g,
+R003,ground_coriander,4.8,g,About 2 tsp.
+R003,dried_oregano,0.5,g,About 1 tsp.
+R003,chicken_stock_mix,0.5,cube,Use the same ordinary chicken stock kept elsewhere instead of a separate beef-stock product.
+R003,smoked_paprika,4.8,g,About 2 tsp.
+R003,garlic,6,g,About two cloves.
+R003,brown_onion,1,each,Whole vegetable required; no fractional consumption.
+R003,arborio_rice,160,g,Retained because the dish is cooked in a risotto-like style.
+R003,spinach,80,g,
+R003,cherry_tomatoes,125,g,
+R003,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R004,carrot,120,g,Rounded household amount.
+R004,bbq_sauce,30,g,Slightly reduced after simplifying the sauce.
+R004,long_grain_rice,130,g,
+R004,spring_onion,30,g,About two spring onions rather than a token single piece.
+R004,chicken_breast,250,g,
+R004,five_spice,2.4,g,About 1 tsp.
+R004,garlic,6,g,About two cloves.
+R004,sesame_oil,10,ml,
+R004,hoisin_sauce,30,g,Increased after removing tomato paste.
+R004,soy_sauce,15,ml,Standard household sauce component.
+R004,mangetout,80,g,
+R005,chicken_stock_mix,0.5,cube,Ordinary chicken stock/cube equivalent.
+R005,long_grain_rice,130,g,
+R005,sumac,2,g,About 1 tsp.
+R005,dried_oregano,1,g,Replaces bespoke Mediterranean seasoning with an ordinary pantry herb.
+R005,chicken_breast,300,g,Reduced from Gousto's double-protein 500g version.
+R005,natural_yogurt,100,g,Replaces mayonnaise-based meal-kit sauce.
+R005,parsley,10,g,More useful household herb amount.
+R005,brown_onion,1,each,Whole vegetable required; no fractional consumption.
+R005,garlic,6,g,Fresh garlic replaces roasted garlic paste.
+R005,green_beans,160,g,Increase vegetables after reducing double chicken.
+R005,spinach,80,g,
+R005,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R006,red_pepper,1,each,Whole vegetable required; no fractional consumption.
+R006,spring_onion,30,g,About two spring onions.
+R006,chicken_breast,250,g,
+R006,sesame_oil,10,ml,
+R006,brown_onion,1,each,Whole vegetable required; no fractional consumption.
+R006,wholewheat_noodles,125,g,Two nests for two adults rather than Gousto's smaller one-nest portion.
+R006,hoisin_sauce,40,g,
+R006,fresh_ginger,10,g,Fresh ginger replaces ginger-garlic paste.
+R006,garlic,6,g,Fresh garlic replaces ginger-garlic paste.
+R006,carrot,60,g,Rounded household amount.
+R006,soy_sauce,15,ml,
+R007,chicken_thigh,250,g,
+R007,fresh_ginger,15,g,
+R007,mangetout,120,g,Increase vegetable portion.
+R007,red_pepper,1,each,Whole vegetable required; no fractional consumption.
+R007,wholewheat_noodles,125,g,Two nests.
+R007,miso_paste,34,g,About 2 tbsp.
+R007,sesame_oil,15,ml,
+R007,butter,20,g,Cooking butter required by the named dish; previously omitted.
+R008,creamed_coconut,25,g,
+R008,turmeric,1.5,g,Household-rounded 1/2 tsp equivalent.
+R008,chicken_breast,250,g,
+R008,garam_masala,1.8,g,About 1 tsp.
+R008,ground_coriander,2.4,g,Common korma spice; uses an existing pantry ingredient.
+R008,brown_onion,1,each,Whole vegetable required; no fractional consumption.
+R008,long_grain_rice,120,g,More typical two-person rice portion.
+R008,fresh_ginger,15,g,Fresh ginger replaces ginger paste.
+R008,garlic,6,g,Fresh garlic replaces meal-kit shortcuts.
+R008,cardamom,0.6,g,About three pods.
+R008,spinach,120,g,
+R008,flaked_almonds,15,g,
+R008,natural_yogurt,100,g,Normal household korma sauce component.
+R008,fresh_coriander,10,g,Fresh finishing herb; replaces the need for bespoke herb handling elsewhere.
+R008,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R009,chicken_stock_mix,0.5,cube,Ordinary chicken stock/cube equivalent.
+R009,chicken_breast,250,g,
+R009,garlic,6,g,About two cloves.
+R009,soft_cheese,50,g,
+R009,spinach,100,g,Slightly fuller vegetable portion.
+R009,cherry_tomatoes,250,g,
+R009,sweet_potato,450,g,More realistic side portion for two adults.
+R009,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R010,chicken_breast,250,g,
+R010,sumac,2,g,About 1 tsp.
+R010,ground_coriander,2.4,g,About 1 tsp.
+R010,garlic,6,g,About two cloves.
+R010,courgette,200,g,
+R010,natural_yogurt,100,g,Practical sauce portion.
+R010,couscous,120,g,
+R010,harissa_paste,20,g,
+R010,chopped_dates,30,g,
+R010,red_pepper,1,each,Whole vegetable required; no fractional consumption.
+R010,fresh_coriander,10,g,Use ordinary fresh coriander rather than Gousto's combined coriander-and-mint pack.
+R010,red_onion,1,each,Whole vegetable required; no fractional consumption.
+R010,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R011,chicken_breast,350,g,350g chicken breast
+R011,red_pepper,2,each,2 peppers
+R011,brown_onion,1,each,1 onion
+R011,tortillas,4,each,4 tortillas
+R011,smoked_paprika,2.4,g,1 tsp smoked paprika | approximate household unit conversion; review
+R011,ground_cumin,2,g,1 tsp cumin | approximate household unit conversion; review
+R011,lime,1,each,1 lime | whole fruit
+R011,vegetable_oil,15,ml,One household tablespoon = 15 ml.
+R012,chicken_thigh,400,g,400g chicken thighs
+R012,potatoes,400,g,400g baby potatoes
+R012,cherry_tomatoes,150,g,150g cherry tomatoes
+R012,red_onion,1,each,1 red onion
+R012,lemon,1,each,1 lemon | whole fruit
+R012,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R012,dried_oregano,0.5,g,1 tsp oregano | approximate household unit conversion; review
+R012,vegetable_oil,15,ml,One household tablespoon = 15 ml.
+R013,chicken_breast,300,g,300g chicken breast
+R013,pasta,180,g,180g pasta
+R013,spinach,100,g,100g spinach
+R013,red_pepper,1,each,1 pepper
+R013,single_cream,120,ml,120ml single cream | measured by volume
+R013,cajun_seasoning,6,g,2 tsp Cajun seasoning | approximate household unit conversion; review
+R013,garlic,3,g,1 garlic clove | approximate household unit conversion; review
+R013,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R014,chicken_thigh,400,g,400g chicken thighs
+R014,jasmine_rice,140,g,140g jasmine rice
+R014,soy_sauce,50,ml,50ml soy sauce
+R014,vinegar,45,ml,45ml vinegar
+R014,garlic,9,g,3 garlic cloves | approximate household unit conversion; review
+R014,bay_leaves,2,each,2 bay leaves | two whole leaves
+R014,brown_sugar,4,g,1 tsp brown sugar | approximate household unit conversion; review
+R014,green_beans,180,g,180g green beans
+R014,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R015,chicken_breast,300,g,300g chicken breast
+R015,jasmine_rice,140,g,140g jasmine rice
+R015,egg,1,each,1 egg
+R015,breadcrumbs,70,g,70g breadcrumbs
+R015,brown_onion,1,each,1 onion
+R015,carrot,200,g,2 carrots | approximate household unit conversion; review
+R015,curry_powder,15,g,1 tbsp curry powder | approximate household unit conversion; review
+R015,chicken_stock_mix,0.5,cube,250ml chicken stock | standardised to practical half cube
+R015,plain_flour,8,g,1 tbsp flour | approximate household unit conversion; review
+R015,vegetable_oil,45,ml,"Shallow-frying allowance plus sauce preparation; oil is consumed/used, not assumed free."
+R016,chicken_mince,300,g,300g chicken mince
+R016,jasmine_rice,140,g,140g jasmine rice
+R016,green_beans,180,g,180g green beans
+R016,garlic,9,g,3 garlic cloves | approximate household unit conversion; review
+R016,red_chilli,6,g,1 chilli | approximate household unit conversion; review
+R016,soy_sauce,20,ml,20ml soy sauce
+R016,oyster_sauce,18,g,1 tbsp oyster sauce | approximate household unit conversion; review
+R016,fresh_basil,15,g,15g basil
+R016,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R017,chicken_thigh,350,g,350g chicken thigh
+R017,flatbreads,2,each,2 flatbreads
+R017,natural_yogurt,100,g,100g yoghurt
+R017,cucumber,0.5,each,Half a cucumber; combine leftover halves across meals
+R017,tomatoes,240,g,2 tomatoes | approximate household unit conversion; review
+R017,ground_cumin,2,g,1 tsp cumin | approximate household unit conversion; review
+R017,smoked_paprika,2.4,g,1 tsp paprika | approximate household unit conversion; review
+R017,lemon,1,each,1 lemon | whole fruit
+R017,garlic,3,g,1 garlic clove | approximate household unit conversion; review
+R017,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R018,beef_mince,300,g,300g beef mince
+R018,potatoes,450,g,450g potatoes
+R018,brown_onion,1,each,1 onion
+R018,carrot,200,g,2 carrots | approximate household unit conversion; review
+R018,peas,120,g,120g peas
+R018,tomato_puree,16,g,1 tbsp tomato puree | approximate household unit conversion; review
+R018,beef_stock_mix,0.5,cube,250ml beef stock | standardised to practical half cube
+R018,butter,20,g,20g butter
+R019,beef_strips,300,g,300g thin beef strips
+R019,jasmine_rice,140,g,140g jasmine rice
+R019,cucumber,0.5,each,Half a cucumber; combine leftover halves across meals
+R019,carrot,100,g,1 carrot | approximate household unit conversion; review
+R019,soy_sauce,30,ml,30ml soy sauce
+R019,brown_sugar,15,g,1 tbsp brown sugar | approximate household unit conversion; review
+R019,sesame_oil,5,ml,One household teaspoon = 5 ml.
+R019,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R019,fresh_ginger,10,g,10g ginger
+R020,beef_strips,300,g,300g beef strips
+R020,egg_noodles,180,g,180g egg noodles
+R020,broccoli,250,g,250g broccoli
+R020,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R020,soy_sauce,20,ml,20ml soy sauce
+R020,hoisin_sauce,30,g,30g hoisin
+R020,cornflour,3,g,1 tsp cornflour | approximate household unit conversion; review
+R020,fresh_ginger,10,g,10g ginger
+R020,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R021,beef_mince,300,g,300g beef mince
+R021,baking_potato,2,each,Two large baking potatoes; not interchangeable with two baby potatoes.
+R021,brown_onion,1,each,1 onion
+R021,kidney_beans,240,g,1 tin kidney beans | approximate household unit conversion; review
+R021,chopped_tomatoes,400,g,1 tin chopped tomatoes | approximate household unit conversion; review
+R021,ground_cumin,2,g,1 tsp cumin | approximate household unit conversion; review
+R021,smoked_paprika,2.4,g,1 tsp smoked paprika | approximate household unit conversion; review
+R021,red_chilli,6,g,1 chilli | approximate household unit conversion; review
+R022,beef_mince,300,g,300g beef mince
+R022,spaghetti,180,g,180g spaghetti
+R022,egg,1,each,1 egg
+R022,breadcrumbs,30,g,30g breadcrumbs
+R022,brown_onion,1,each,1 onion
+R022,chopped_tomatoes,400,g,400g chopped tomatoes
+R022,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R022,dried_oregano,0.5,g,1 tsp oregano | approximate household unit conversion; review
+R023,lamb_mince,300,g,300g lamb mince
+R023,pittas,2,each,2 pittas
+R023,ground_cumin,2,g,1 tsp cumin | approximate household unit conversion; review
+R023,ground_coriander,2.4,g,1 tsp coriander | approximate household unit conversion; review
+R023,garlic,3,g,1 garlic clove | approximate household unit conversion; review
+R023,natural_yogurt,100,g,100g yoghurt
+R023,cucumber,0.5,each,Half a cucumber; combine leftover halves across meals
+R023,tomatoes,240,g,2 tomatoes | approximate household unit conversion; review
+R023,lemon,1,each,1 lemon | whole fruit
+R024,diced_lamb,300,g,300g diced lamb
+R024,chickpeas,240,g,1 tin chickpeas | approximate household unit conversion; review
+R024,couscous,150,g,150g couscous
+R024,carrot,200,g,2 carrots | approximate household unit conversion; review
+R024,brown_onion,1,each,1 onion
+R024,chopped_tomatoes,400,g,1 tin chopped tomatoes | approximate household unit conversion; review
+R024,ground_cumin,2,g,1 tsp cumin | approximate household unit conversion; review
+R024,ground_cinnamon,2.6,g,1 tsp cinnamon | approximate household unit conversion; review
+R024,chicken_stock_mix,0.5,cube,300ml stock | standardised to practical half cube
+R024,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R025,paneer,250,g,250g paneer
+R025,basmati_rice,140,g,140g basmati rice
+R025,red_pepper,1,each,1 pepper
+R025,red_onion,1,each,1 red onion
+R025,natural_yogurt,120,g,120g yoghurt
+R025,garam_masala,2,g,1 tsp garam masala | approximate household unit conversion; review
+R025,smoked_paprika,2.4,g,1 tsp paprika | approximate household unit conversion; review
+R025,lemon,1,each,1 lemon | whole fruit
+R025,fresh_mint,10,g,10g mint
+R025,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R026,chickpeas,480,g,2 tins chickpeas | approximate household unit conversion; review
+R026,basmati_rice,140,g,140g basmati rice
+R026,brown_onion,1,each,1 onion
+R026,chopped_tomatoes,400,g,1 tin chopped tomatoes | approximate household unit conversion; review
+R026,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R026,fresh_ginger,10,g,10g ginger
+R026,garam_masala,2,g,1 tsp garam masala | approximate household unit conversion; review
+R026,ground_cumin,2,g,1 tsp cumin | approximate household unit conversion; review
+R026,spinach,100,g,100g spinach
+R026,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R027,sweet_potato,450,g,450g sweet potatoes
+R027,black_beans,240,g,1 tin black beans | approximate household unit conversion; review
+R027,tortillas,4,each,4 tortillas
+R027,passata,300,g,300g passata
+R027,cheddar,100,g,100g cheddar
+R027,brown_onion,1,each,1 onion
+R027,ground_cumin,2,g,1 tsp cumin | approximate household unit conversion; review
+R027,smoked_paprika,2.4,g,1 tsp paprika | approximate household unit conversion; review
+R027,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R028,pasta,180,g,180g pasta
+R028,ricotta,200,g,200g ricotta
+R028,spinach,200,g,200g spinach
+R028,passata,300,g,300g passata
+R028,mozzarella,80,g,80g mozzarella
+R028,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R028,dried_oregano,0.5,g,1 tsp oregano | approximate household unit conversion; review
+R028,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R029,mushrooms,350,g,350g mushrooms
+R029,egg_noodles,180,g,180g egg noodles
+R029,brown_onion,1,each,1 onion
+R029,sour_cream,150,ml,"150 ml soured cream, measured by volume to match retail pack."
+R029,mustard,5,g,1 tsp mustard | approximate household unit conversion; review
+R029,vegetable_stock,0.5,cube,200ml vegetable stock | practical stock cube amount
+R029,smoked_paprika,2.4,g,1 tsp paprika | approximate household unit conversion; review
+R029,plain_flour,8,g,1 tbsp flour | approximate household unit conversion; review
+R029,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R030,tofu,300,g,300g firm tofu
+R030,jasmine_rice,140,g,140g jasmine rice
+R030,broccoli,200,g,200g broccoli
+R030,red_pepper,1,each,1 pepper
+R030,soy_sauce,20,ml,20ml soy sauce
+R030,hoisin_sauce,18,g,1 tbsp hoisin | approximate household unit conversion; review
+R030,sesame_oil,5,ml,One household teaspoon = 5 ml.
+R030,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R031,salmon,260,g,2 salmon fillets (260g)
+R031,potatoes,400,g,400g baby potatoes
+R031,green_beans,200,g,200g green beans
+R031,lemon,1,each,1 lemon | whole fruit
+R031,garlic,3,g,1 garlic clove | approximate household unit conversion; review
+R031,olive_oil,15,ml,One household tablespoon = 15 ml.
+R031,dried_dill,1,g,1 tsp dried dill | approximate household unit conversion; review
+R032,cod,300,g,300g cod fillets
+R032,couscous,140,g,140g couscous
+R032,courgette,200,g,1 courgette | approximate household unit conversion; review
+R032,passata,300,g,300g passata
+R032,olives,50,g,50g olives
+R032,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R032,dried_oregano,0.5,g,1 tsp oregano | approximate household unit conversion; review
+R032,olive_oil,15,ml,One household tablespoon = 15 ml.
+R033,prawns,300,g,300g raw peeled prawns
+R033,jasmine_rice,140,g,140g jasmine rice
+R033,coconut_milk,200,ml,200 ml canned coconut milk; no assumed mass-to-volume conversion.
+R033,red_pepper,1,each,1 pepper
+R033,mangetout,100,g,100g mangetout
+R033,thai_red_curry_paste,15,g,1 tbsp Thai red curry paste | approximate household unit conversion; review
+R033,lime,1,each,1 lime | whole fruit
+R033,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R034,baking_potato,2,each,Two large baking potatoes; not interchangeable with two baby potatoes.
+R034,tuna,145,g,145 g drained tuna is the preferred two-person quantity; a 145 g net can supplies only 102 g drained.
+R034,sweetcorn,120,g,120g sweetcorn
+R034,mayonnaise,60,ml,"60 ml mayonnaise, measured by volume to match retail pack."
+R034,cheddar,40,g,40g cheddar
+R034,cucumber,0.5,each,Half a cucumber; combine leftover halves across meals
+R034,tomatoes,120,g,1 tomato | approximate household unit conversion; review
+R035,halloumi,225,g,225g halloumi
+R035,couscous,150,g,150g couscous
+R035,courgette,200,g,1 courgette | approximate household unit conversion; review
+R035,red_pepper,1,each,1 pepper
+R035,red_onion,1,each,1 red onion
+R035,lemon,1,each,1 lemon | whole fruit
+R035,dried_oregano,0.5,g,1 tsp oregano | approximate household unit conversion; review
+R035,vegetable_oil,15,ml,One household tablespoon = 15 ml.
+R036,tinned_lentils,240,g,1 tin lentils | approximate household unit conversion; review
+R036,potatoes,450,g,450g potatoes
+R036,brown_onion,1,each,1 onion
+R036,carrot,200,g,2 carrots | approximate household unit conversion; review
+R036,peas,120,g,120g peas
+R036,vegetable_stock,0.5,cube,200ml vegetable stock | practical stock cube amount
+R036,tomato_puree,16,g,1 tbsp tomato puree | approximate household unit conversion; review
+R036,butter,20,g,20g butter
+R037,beef_mince,250,g,250g beef mince
+R037,aubergine,1,each,"One whole aubergine, matching Tesco each listing; weight varies."
+R037,bulgur,120,g,120g bulgur
+R037,brown_onion,1,each,1 onion
+R037,chopped_tomatoes,250,g,250g chopped tomatoes
+R037,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R037,ground_cumin,2,g,1 tsp cumin | approximate household unit conversion; review
+R037,olive_oil,15,ml,One household tablespoon = 15 ml.
+R038,orzo,160,g,160g orzo
+R038,chickpeas,240,g,1 tin chickpeas | approximate household unit conversion; review
+R038,spinach,100,g,100g spinach
+R038,lemon,1,each,1 lemon | whole fruit
+R038,brown_onion,1,each,1 onion
+R038,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R038,vegetable_stock,1,cube,400ml vegetable stock | practical stock cube amount
+R038,feta,50,g,50g feta
+R038,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R039,chicken_thigh,300,g,300g chicken thigh
+R039,rice_noodles,160,g,160g rice noodles
+R039,cucumber,0.5,each,Half a cucumber; combine leftover halves across meals
+R039,carrot,100,g,1 carrot | approximate household unit conversion; review
+R039,lemongrass,1,each,One fresh stem; trim and mince. Tesco pack contains at least two stems.
+R039,lime,1,each,1 lime | whole fruit
+R039,fish_sauce,15,ml,1 tbsp fish sauce | approximate household unit conversion; review
+R039,sugar,4,g,1 tsp sugar | approximate household unit conversion; review
+R039,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R039,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
+R040,red_lentils,180,g,180g red lentils
+R040,basmati_rice,140,g,140g basmati rice
+R040,cauliflower,650,g,1 small cauliflower | approximate household unit conversion; review
+R040,brown_onion,1,each,1 onion
+R040,chopped_tomatoes,400,g,1 tin chopped tomatoes | approximate household unit conversion; review
+R040,turmeric,2.5,g,1 tsp turmeric | approximate household unit conversion; review
+R040,ground_cumin,2,g,1 tsp cumin | approximate household unit conversion; review
+R040,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R040,vegetable_oil,15,ml,One household tablespoon = 15 ml.

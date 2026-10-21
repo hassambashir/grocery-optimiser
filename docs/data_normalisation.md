@@ -1,139 +1,39 @@
-# Data normalisation
+# Data normalisation and substitution policy
 
-## Purpose
+The authoritative optimiser inputs are `recipes.csv`, `recipe_ingredients.csv`, `ingredients.csv` and `products.csv`. Recipe notes are regenerated from the structured quantities so they do not request whole cucumbers or liquid stock while the model uses halves and dry cubes. The removed historical source CSVs are not claimed to be present.
 
-The repository separates the original meal-kit source from the recipes actually given to the optimiser.
+## Units
 
-The pipeline is:
+- Grams for divisible solids and millilitres for liquids, including single/soured cream and canned coconut milk.
+- Stock demand is 0.5 or 1 dry cube. Retail gross mass remains 100 g, with usable quantity 10 cubes. Water belongs in cooking instructions.
+- Cucumber demand is 0.5 each; purchases are whole cucumbers. Eggs are whole eggs.
+- Aubergine and lemongrass recipes each use one whole item/stem, matching retail counts without inventing an edible gram yield.
+- Jacket-potato recipes use two large `baking_potato` items. General `potatoes` are measured in grams for mash/roasting; larger roasting potatoes are cut to similar-sized pieces. Baby potatoes cannot satisfy a jacket-potato count.
+- A household tablespoon is 15 ml and teaspoon 5 ml. Do not silently equate grams with millilitres for sauces.
+- Existing source conversions are historical explanatory records, not automatically applied to already-normalised recipe quantities. Provisional conversions remain explicitly marked as such.
 
-**Gousto source recipe → canonical ingredient interpretation → household-cleaned recipe → Tesco retail supply**
+## Purchasing eligibility
 
-This avoids optimising Gousto's sachet and meal-kit design as if it were a normal household recipe.
+The validator and optimiser call the same `exclusion_reason` function. A product requires Tesco identity, an exact product ID/URL, an approved mapping, `listed_online` snapshot status, a finite positive price and effective quantity, and a matching canonical unit. Unknown statuses, unapproved compatibility and substitution candidates are excluded. Having starting inventory never counts as complete catalogue coverage.
 
-## Source layer
+Approved mappings are `direct`, `direct_variable_weight`, `effective_usable_quantity` and `estimated_usable_weight`. The last two are not claims that physical yields are exact. Mixed-colour peppers remain excluded from a red-pepper-only requirement. An unused Italian-herb approximation remains unapproved.
 
-`data/source_recipes.csv` and `data/source_recipe_ingredients.csv` preserve the original Gousto recipe metadata, ingredient wording, source quantities and the unit-normalisation work already done.
+## Interchangeability
 
-The source layer is the audit trail. It is not the direct optimiser input.
+Closed-cup/chestnut mushrooms, suitable egg pack sizes, plain chopped-tomato brands, suitable beef mince fat levels and dry starch pack sizes compete within their ingredient family. Fresh tomatoes, cherry tomatoes, chopped canned tomatoes, passata and puree remain separate. Dry noodles are not supplied by cooked noodles. Black beans are canned/drained, not dry beans. Garden peas are frozen. Raw peeled prawns are not cooked or shell-on prawns. Plain tofu is not silken, smoked or flavoured tofu. Thin-cut beef can be sliced into strips before cooking.
 
-## Household-cleaned recipe layer
+Whole flatbreads are ordinary meal-sized breads. Tiny 35 g folded flatbreads were not treated as equivalent to a full meal-sized bread. Bay leaves have a verified 10-leaf retail pack, avoiding a guessed leaves-per-gram conversion.
 
-`data/recipes.csv` and `data/recipe_ingredients.csv` are the optimiser-facing recipes.
+## Pack and usable quantities
 
-Each cleaned ingredient row contains:
-- `recipe_id`;
-- canonical `ingredient_id`;
-- `preferred_quantity`;
-- model `unit`;
-- `change_type` describing whether the household recipe kept, adjusted, added or substituted the source ingredient;
-- a short note where the reason is material.
+`pack_quantity` describes the bought pack in `pack_unit`. `usable_quantity` and `usable_unit`, when both populated, override it for supply. Gross and drained masses are retained separately: a 145 g tuna can supplies 102 g drained, and four cans supply 408 g; Tesco black beans supply 235 g per 400 g can; Tesco lentils supply 235 g per 390 g can. No double draining or cooked-to-dry conversion is applied.
 
-An ingredient removed during cleansing is absent from the cleaned recipe but remains visible in the preserved source layer.
+Count-labelled egg/bread packs use counts directly. Loose produce is bought in integer reference portions; actual weights/charges vary. Weighted onion bags retain disclosed estimated counts. Garlic bulb packs retain the inherited conservative estimate of 24 g edible garlic per bulb; this is not a verified Tesco net weight. These approximations are surfaced in basket output and must be checked against the actual produce.
 
-## What recipe cleansing is allowed to do
+## Tesco label discrepancy
 
-Cleaning happens before optimisation and may:
-- round impractical meal-kit quantities;
-- use a whole sensible retail portion where that is how a household would normally cook;
-- replace proprietary/sachet-style ingredients with ordinary household equivalents;
-- reduce meal-kit upsells such as double-protein variants;
-- increase under-sized vegetable or starch portions;
-- remove decorative or unusually expensive flourishes that do not materially define the dish;
-- add a normal ingredient where the source used a shortcut product.
+Listing 279695475 names a 220 g salmon pack and displays Pack size 220 g; GBP 4.90 / GBP 22.27 per kg also implies 220 g. Its Net Contents section says 260 g. The catalogue uses the conservative, multiply-supported 220 g, preserves both observations in evidence, and documents the conflict in product notes. Other verified salmon packs remain alternatives.
 
-The aim is not to make every recipe share the same ingredients. Changes should still make culinary sense.
+## Snapshot evidence and offers
 
-## Examples in the current seed
-
-- R001 uses 160 g usable sweetcorn so the small drained tin is naturally consumed.
-- R003 drops crispy onions and uses the same ordinary chicken stock family used elsewhere.
-- R005 removes the double-chicken configuration and replaces mayonnaise/garlic paste with yoghurt and fresh garlic.
-- R006 uses two noodle nests for two adults and replaces ginger-garlic paste with fresh ingredients.
-- R008 removes quick-kit mango chutney/tomato/stock shortcuts and uses yoghurt, fresh ginger, garlic and coriander.
-- R010 removes saffron and replaces Gousto's combined coriander-and-mint pack with ordinary fresh coriander.
-
-## Canonical ingredient layer
-
-`data/ingredients.csv` is the stable vocabulary joining recipes to retail products.
-
-It stores:
-- canonical ID/name;
-- category;
-- preferred model unit;
-- coarse shelf-life class;
-- inventory policy;
-- default quantity-flexibility class.
-
-Source-only canonical ingredients may remain in this table even when the cleaned v1 recipes no longer use them. That preserves source auditability without forcing them into the optimiser basket.
-
-## Unit conversions
-
-`data/unit_conversions.csv` documents conversions such as:
-- onion `each → g`;
-- garlic `clove → g`;
-- spice `tsp → g`;
-- noodle `nest → g`.
-
-These conversions are primarily needed to interpret source recipes and compare them with retail supply.
-
-Conversions record method, status, confidence, source and notes so approximate values are visible rather than hidden.
-
-## Retail products
-
-`data/products.csv` stores real Tesco package/price options mapped to canonical ingredients.
-
-Each row represents one real Tesco listing and carries:
-- an exact Tesco `retailer_product_id`;
-- exact product URL;
-- pack quantity/unit;
-- price snapshot;
-- product form;
-- mapping status.
-
-Multiple retail products may supply the same canonical ingredient so the optimiser can choose among pack sizes.
-
-## Usable quantity
-
-For most products:
-
-`usable quantity = labelled pack quantity`
-
-When that is materially false, `usable_quantity` is populated and should override the label quantity in stock calculations.
-
-The sweetcorn tins are the clearest current example because drained edible weight differs materially from can net weight.
-
-## Variable-weight produce
-
-Loose onions, carrots, courgettes and similar products are represented as weight-based supply where Tesco sells them that way.
-
-The mathematical model will decide how to represent realistic purchase increments.
-
-## Flexibility is separate from cleansing
-
-Recipe cleansing answers:
-
-**What is the sensible household version of this recipe?**
-
-Quantity flexibility answers:
-
-**Once that recipe is fixed, how far may a selected ingredient reasonably move around its preferred household quantity?**
-
-The current flexibility-class assumptions live in `config/flexibility_classes.csv` and should be sensitivity-tested later.
-
-## Starting inventory
-
-`config/initial_inventory.csv` can contain any ingredient already in the household.
-
-Ingredients not listed start at zero. End-of-cycle usable stock is intended to roll into the next planning cycle.
-
-## Deliberately deferred
-
-The first deterministic model does not require:
-- exact shelf-life distributions;
-- live Tesco availability;
-- pantry scanning/detection;
-- cooking-yield models for every food;
-- nutrition optimisation;
-- open/sealed package-state tracking.
-
-Those should be added only if later experiments show that they materially improve the model.
+`product_evidence.csv` records factual observations and canonical Tesco URLs, checked 21 October 2026. Pages can change by retrieval, location and delivery slot. Stock states are snapshots, not delivery guarantees. Expired single-product Clubcard prices were cleared; current offers are retained. Conditional multibuys remain textual and are not applied as unconditional prices. The offline validator verifies integrity and agreement with stored evidence; it does not claim to re-fetch live Tesco stock.

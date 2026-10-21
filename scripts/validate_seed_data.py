@@ -1,190 +1,145 @@
-"""Validate the model-ready seed dataset and preserved source layer.
-
-Run from the repository root:
-
-    python scripts/validate_seed_data.py
-"""
-
-from __future__ import annotations
-
+"""Validate catalogue integrity and actual optimiser eligibility (offline snapshot)."""
+import argparse
 import csv
-from collections import Counter
+import re
+from collections import Counter, defaultdict
+from datetime import date
 from pathlib import Path
-
-ROOT = Path(__file__).resolve().parents[1]
-
-
-def read_csv(relative_path: str) -> list[dict[str, str]]:
-    with (ROOT / relative_path).open(newline="", encoding="utf-8") as f:
-        return list(csv.DictReader(f))
+from catalogue import (ROOT, read_csv, positive, effective_pack, exclusion_reason,
+                       consumption_step, MAPPINGS, AVAILABILITY, UNITS)
 
 
-def require(condition: bool, message: str, errors: list[str]) -> None:
-    if not condition:
-        errors.append(message)
+def validate(root=ROOT, allow_documented_exceptions=False):
+    errors=[]
+    def require(ok,message):
+        if not ok:errors.append(message)
+    def unique(rows,key,label):
+        values=[r.get(key,'') for r in rows]
+        require(all(values),f'{label}: blank {key}')
+        for v,n in Counter(values).items():require(n==1,f'{label}: duplicate {key} {v}')
+    paths=['data/recipes.csv','data/recipe_ingredients.csv','data/ingredients.csv',
+           'data/products.csv','data/unit_conversions.csv','config/flexibility_classes.csv',
+           'config/initial_inventory.csv','data/product_evidence.csv']
+    tables={}
+    for path in paths:
+        try:tables[path]=read_csv(path,root)
+        except (ValueError,OSError,csv.Error) as e:errors.append(str(e))
+    if errors:return errors,{}
+    recipes,lines,ingredients,products,conversions,flex,inventory,evidence=[tables[p] for p in paths]
+    required={
+      paths[0]:{'recipe_id','recipe_name','servings','cooking_instructions','main_protein','cooking_method'},
+      paths[1]:{'recipe_id','ingredient_id','preferred_quantity','unit'},
+      paths[2]:{'ingredient_id','preferred_model_unit','default_flexibility_class','shelf_life_class'},
+      paths[3]:{'product_id','retailer_product_id','ingredient_id','retailer','product_name','pack_quantity','pack_unit','usable_quantity','usable_unit','regular_price_gbp','clubcard_price_gbp','availability_status','mapping_status','product_resolution_status','source_url','source_checked_at','package_type','notes'},
+      paths[4]:{'conversion_id','ingredient_id','source_unit','model_unit','multiplier'},
+      paths[5]:{'flexibility_class','min_factor','preferred_factor','max_factor'},
+      paths[6]:{'ingredient_id','quantity','unit'},
+      paths[7]:{'product_id','retailer_product_id','checked_at','source_url','observed_name','regular_price_gbp','availability_status'}}
+    for path,fields in required.items():
+        if tables[path]: require(fields<=set(tables[path][0]),f'{path}: missing required columns {fields-set(tables[path][0])}')
+        elif path!='config/initial_inventory.csv':errors.append(f'{path}: empty table')
+    if errors:return errors,{}
+    for rows,key,label in [(recipes,'recipe_id','recipes'),(ingredients,'ingredient_id','ingredients'),(products,'product_id','products'),(products,'retailer_product_id','products'),(conversions,'conversion_id','conversions'),(flex,'flexibility_class','flexibility'),(inventory,'ingredient_id','inventory'),(evidence,'product_id','evidence')]:unique(rows,key,label)
+    im={r['ingredient_id']:r for r in ingredients};rm={r['recipe_id']:r for r in recipes};fm={r['flexibility_class']:r for r in flex};em={r['product_id']:r for r in evidence}
+    for pair,n in Counter((r['recipe_id'],r['ingredient_id']) for r in lines).items():require(n==1,f'duplicate recipe ingredient {pair}')
+    for r in recipes:
+        require(r['servings']=='2',f"{r['recipe_id']}: expected two servings")
+        for k in ['recipe_name','cooking_instructions','main_protein','cooking_method']:require(bool(r[k].strip()),f"{r['recipe_id']}: blank {k}")
+        require(any(l['recipe_id']==r['recipe_id'] for l in lines),f"{r['recipe_id']}: no ingredients")
+    for r in flex:
+        keys=['min_factor','preferred_factor','max_factor']
+        good=all(positive(r[k]) for k in keys);require(good,f"Invalid flexibility values: {r['flexibility_class']}")
+        if good:require(float(r['min_factor'])<=float(r['preferred_factor'])==1<=float(r['max_factor']),f"Invalid flexibility bounds: {r['flexibility_class']}")
+    for r in ingredients:
+        iid=r['ingredient_id']
+        require(r['preferred_model_unit'] in UNITS,f'{iid}: invalid model unit')
+        require(r['default_flexibility_class'] in fm,f'{iid}: unknown flexibility class')
+        require(r['shelf_life_class'] in {'short','medium','long','unknown'},f'{iid}: invalid shelf life')
+    for r in lines:
+        iid=r['ingredient_id'];label=f"{r['recipe_id']}/{iid}"
+        require(r['recipe_id'] in rm,f'{label}: unknown recipe');require(iid in im,f'{label}: unknown ingredient')
+        require(positive(r['preferred_quantity']),f'{label}: invalid preferred quantity')
+        if iid in im:
+            require(r['unit']==im[iid]['preferred_model_unit'],f'{label}: recipe/model unit mismatch')
+            step=consumption_step(iid,r['unit'])
+            if step and positive(r['preferred_quantity']):require(abs(float(r['preferred_quantity'])/step-round(float(r['preferred_quantity'])/step))<1e-8,f'{label}: impractical fractional count')
+    eligible=defaultdict(list);excluded={}
+    for p in products:
+        pid=p['product_id'];iid=p['ingredient_id']
+        require(iid in im,f'{pid}: unknown ingredient');require(p['retailer']=='Tesco',f'{pid}: retailer must be Tesco')
+        require(bool(re.fullmatch(r'\d{9}',p['retailer_product_id'])),f'{pid}: invalid Tesco ID')
+        require(p['source_url']=='https://www.tesco.com/shop/en-GB/products/'+p['retailer_product_id'],f'{pid}: URL/ID mismatch')
+        require(p['product_resolution_status']=='resolved_exact',f'{pid}: unresolved product')
+        require(p['availability_status'] in AVAILABILITY,f'{pid}: unknown availability status')
+        require(p['mapping_status'] in MAPPINGS,f'{pid}: unknown mapping status')
+        require(p['package_type'] in {'fixed_pack','variable_weight','loose_each'},f'{pid}: invalid package type')
+        require(p['pack_unit'] in UNITS,f'{pid}: invalid pack unit')
+        require(positive(p['pack_quantity']),f'{pid}: invalid pack quantity')
+        require(positive(p['regular_price_gbp']),f'{pid}: invalid regular price')
+        if p['clubcard_price_gbp']:
+            require(positive(p['clubcard_price_gbp']),f'{pid}: invalid Clubcard price')
+            if positive(p['regular_price_gbp']) and positive(p['clubcard_price_gbp']):require(float(p['clubcard_price_gbp'])<=float(p['regular_price_gbp']),f'{pid}: Clubcard price exceeds regular price')
+        require(bool(p['usable_quantity'])==bool(p['usable_unit']),f'{pid}: incomplete usable pair')
+        if p['usable_quantity']:
+            require(positive(p['usable_quantity']),f'{pid}: invalid usable quantity')
+            require(p['usable_unit'] in UNITS,f'{pid}: invalid usable unit')
+            if p['pack_unit']==p['usable_unit'] and positive(p['pack_quantity']) and positive(p['usable_quantity']):require(float(p['usable_quantity'])<=float(p['pack_quantity']),f'{pid}: usable quantity exceeds pack')
+        try:date.fromisoformat(p['source_checked_at'])
+        except ValueError:errors.append(f'{pid}: invalid source date')
+        if iid in im and p['mapping_status'] not in {'substitution_candidate','compatible_candidate'}:
+            require((p['usable_unit'] if p['usable_quantity'] else p['pack_unit'])==im[iid]['preferred_model_unit'],f'{pid}: retail/model unit mismatch')
+        if p['pack_unit'] in {'each','cube'} and positive(p['pack_quantity']):require(float(p['pack_quantity']).is_integer(),f'{pid}: fractional retail count')
+        if p['mapping_status']=='estimated_usable_weight':require('estimat' in p['notes'].lower(),f'{pid}: undocumented estimated quantity')
+        reason=exclusion_reason(p,im)
+        if reason:excluded[pid]=reason
+        else:eligible[iid].append(p)
+        e=em.get(pid);require(e is not None,f'{pid}: missing verification evidence')
+        if e:
+            for pk,ek in [('retailer_product_id','retailer_product_id'),('source_url','source_url'),('product_name','observed_name'),('regular_price_gbp','regular_price_gbp'),('availability_status','availability_status'),('source_checked_at','checked_at')]:require(p[pk]==e[ek],f'{pid}: evidence mismatch {pk}')
+            # Tesco sometimes displays drained rather than gross weight as Pack size.
+            observed=re.fullmatch(r'(\d+(?:\.\d+)?)\s*(KG|G|ML|L)',e.get('observed_pack',''),re.I)
+            if observed:
+                q=float(observed[1]);u=observed[2].lower()
+                if u in {'kg','l'}:q*=1000;u='g' if u=='kg' else 'ml'
+                comparisons=[]
+                if p['pack_unit']==u and positive(p['pack_quantity']):comparisons.append(float(p['pack_quantity']))
+                if p['usable_unit']==u and positive(p['usable_quantity']):comparisons.append(float(p['usable_quantity']))
+                if comparisons:require(any(abs(q-v)<1e-8 for v in comparisons),f'{pid}: quantity contradicts observed pack size')
+    require(set(em)=={p['product_id'] for p in products},'Orphan verification evidence')
+    for r in conversions:
+        label=r['conversion_id'];require(r['ingredient_id'] in im,f'{label}: unknown conversion ingredient')
+        require(positive(r['multiplier']),f'{label}: invalid conversion multiplier')
+        require(bool(r['source_unit']) and r['model_unit'] in UNITS,f'{label}: invalid conversion units')
+    for key,n in Counter((r['ingredient_id'],r['source_unit'],r['model_unit']) for r in conversions).items():
+        require(n==1,f'Duplicate conversion pair: {key}')
+    for r in inventory:
+        iid=r['ingredient_id'];require(iid in im,f'{iid}: unknown inventory ingredient')
+        require(positive(r['quantity'],True),f'{iid}: invalid inventory quantity')
+        if iid in im:require(r['unit']==im[iid]['preferred_model_unit'],f'{iid}: inventory/model unit mismatch')
+    used={r['ingredient_id'] for r in lines};missing=sorted(used-set(eligible))
+    exceptions={}
+    ep=root/'data/coverage_exceptions.csv'
+    if ep.exists():
+        for r in read_csv(ep):
+            require(r['ingredient_id'] in used,'Unknown coverage exception ingredient')
+            require(bool(r.get('reason')) and bool(r.get('research_urls')), 'Incomplete coverage exception')
+            exceptions[r['ingredient_id']]=r
+    for iid in missing:
+        if not (allow_documented_exceptions and iid in exceptions):errors.append(f'{iid}: NO ELIGIBLE TESCO PRODUCT (inventory is not catalogue coverage)')
+    for iid in exceptions:require(iid in missing,f'{iid}: stale coverage exception')
+    stats=dict(recipes=len(recipes),used_ingredients=len(used),canonical_ingredients=len(ingredients),recipe_ingredient_rows=len(lines),products=len(products),eligible_products=sum(map(len,eligible.values())),covered_ingredients=len(used&set(eligible)),missing=missing,excluded=excluded,alternatives=sum(max(0,len(eligible[i])-1) for i in used))
+    return errors,stats
 
 
-def require_unique(rows: list[dict[str, str]], key: str, label: str, errors: list[str]) -> None:
-    counts = Counter(row[key] for row in rows if row.get(key))
-    for value, count in counts.items():
-        require(count == 1, f"Duplicate {label}: {value}", errors)
+def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--allow-documented-exceptions',action='store_true');args=parser.parse_args()
+    errors,stats=validate(allow_documented_exceptions=args.allow_documented_exceptions)
+    print('Seed-data validation '+('FAILED' if errors else 'PASSED'))
+    for k,v in stats.items():
+        if k!='excluded':print(f'{k}: {v}')
+    print(f"Excluded product rows: {len(stats.get('excluded',{}))}")
+    for e in errors:print('- '+e)
+    print('Offline integrity/eligibility check; postcode-specific stock and future prices require checkout verification.')
+    return bool(errors)
 
-
-def require_unique_pair(
-    rows: list[dict[str, str]], key1: str, key2: str, label: str, errors: list[str]
-) -> None:
-    counts = Counter((row[key1], row[key2]) for row in rows)
-    for value, count in counts.items():
-        require(count == 1, f"Duplicate {label}: {value[0]}/{value[1]}", errors)
-
-
-def main() -> int:
-    catalogue = read_csv("data/recipes.csv")
-    recipes = catalogue
-    recipe_ingredients = read_csv("data/recipe_ingredients.csv")
-    ingredients = read_csv("data/ingredients.csv")
-    products = read_csv("data/products.csv")
-    conversions = read_csv("data/unit_conversions.csv")
-    flexibility = read_csv("config/flexibility_classes.csv")
-    inventory = read_csv("config/initial_inventory.csv")
-
-    errors: list[str] = []
-    require_unique(catalogue, "recipe_id", "catalogue recipe_id", errors)
-    for recipe in catalogue:
-        require(bool(recipe["recipe_name"]), "Missing recipe name: " + recipe["recipe_id"], errors)
-
-
-    require_unique(recipes, "recipe_id", "recipe_id", errors)
-    require_unique_pair(
-        recipe_ingredients, "recipe_id", "ingredient_id", "cleaned recipe ingredient", errors
-    )
-    require_unique(ingredients, "ingredient_id", "ingredient_id", errors)
-    require_unique(products, "product_id", "product_id", errors)
-    require_unique(products, "retailer_product_id", "retailer_product_id", errors)
-    require_unique(conversions, "conversion_id", "conversion_id", errors)
-
-    recipe_ids = {r["recipe_id"] for r in recipes}
-    ingredient_map = {r["ingredient_id"]: r for r in ingredients}
-    ingredient_ids = set(ingredient_map)
-    product_ingredient_ids = {r["ingredient_id"] for r in products}
-    staple_ids = {
-        r["ingredient_id"]
-        for r in ingredients
-        if r["inventory_policy"] == "assumed_on_hand_staple"
-    }
-    flex_classes = {r["flexibility_class"] for r in flexibility}
-
-    for row in recipe_ingredients:
-        rid = row["recipe_id"]
-        iid = row["ingredient_id"]
-        require(rid in recipe_ids, f"Unknown cleaned recipe_id: {rid}", errors)
-        require(iid in ingredient_ids, f"Unknown ingredient_id in cleaned recipes: {iid}", errors)
-        require(bool(row["preferred_quantity"]), f"Missing preferred_quantity: {rid}/{iid}", errors)
-        require(bool(row["unit"]), f"Missing unit: {rid}/{iid}", errors)
-        try:
-            require(
-                float(row["preferred_quantity"]) > 0,
-                f"Non-positive preferred quantity: {rid}/{iid}",
-                errors,
-            )
-        except ValueError:
-            errors.append(f"Non-numeric preferred quantity: {rid}/{iid}")
-
-        if iid in ingredient_map:
-            require(
-                row["unit"] == ingredient_map[iid]["preferred_model_unit"],
-                f"Cleaned recipe/model unit mismatch: {rid}/{iid}",
-                errors,
-            )
-
-    used_ids = {r["ingredient_id"] for r in recipe_ingredients if r["recipe_id"] in recipe_ids}
-    missing_retail = sorted(iid for iid in used_ids if iid not in product_ingredient_ids and iid not in staple_ids)
-    if missing_retail:
-        print(f"Retail coverage incomplete for {len(missing_retail)} ingredient IDs; recipes using them are automatically excluded.")
-
-    for row in ingredients:
-        fc = row["default_flexibility_class"]
-        require(bool(fc), f"Missing default flexibility class: {row['ingredient_id']}", errors)
-        require(fc in flex_classes, f"Unknown flexibility class {fc}: {row['ingredient_id']}", errors)
-        require(
-            row["shelf_life_class"] in {"short", "medium", "long", "unknown"},
-            f"Unknown shelf_life_class: {row['ingredient_id']}",
-            errors,
-        )
-
-    for row in products:
-        pid = row["product_id"]
-        iid = row["ingredient_id"]
-        require(iid in ingredient_ids, f"Unknown ingredient on product {pid}", errors)
-        require(bool(row["retailer_product_id"]), f"Missing retailer_product_id: {pid}", errors)
-        require(
-            row["product_resolution_status"] == "resolved_exact",
-            f"Product not exactly resolved: {pid}",
-            errors,
-        )
-        if row["retailer"] == "Tesco":
-            expected_url = f"https://www.tesco.com/shop/en-GB/products/{row['retailer_product_id']}"
-            require(row["source_url"] == expected_url, f"Product URL/ID mismatch: {pid}", errors)
-
-        try:
-            require(float(row["pack_quantity"]) > 0, f"Non-positive pack quantity: {pid}", errors)
-        except ValueError:
-            errors.append(f"Non-numeric pack quantity: {pid}")
-
-        try:
-            require(float(row["regular_price_gbp"]) >= 0, f"Negative price: {pid}", errors)
-        except ValueError:
-            errors.append(f"Non-numeric regular price: {pid}")
-
-        if row["usable_quantity"]:
-            require(bool(row["usable_unit"]), f"usable_quantity has no usable_unit: {pid}", errors)
-
-        if iid in ingredient_map:
-            effective_unit = row["usable_unit"] if row["usable_quantity"] else row["pack_unit"]
-            require(
-                effective_unit == ingredient_map[iid]["preferred_model_unit"],
-                f"Retail/model unit mismatch: {pid}/{iid}",
-                errors,
-            )
-
-    for row in conversions:
-        require(bool(row["multiplier"]), f"Blank conversion multiplier: {row['conversion_id']}", errors)
-        try:
-            require(
-                float(row["multiplier"]) > 0,
-                f"Non-positive conversion multiplier: {row['conversion_id']}",
-                errors,
-            )
-        except ValueError:
-            errors.append(f"Non-numeric conversion multiplier: {row['conversion_id']}")
-
-    for row in inventory:
-        iid = row["ingredient_id"]
-        require(iid in ingredient_ids, f"Unknown ingredient in initial inventory: {iid}", errors)
-        if iid in ingredient_map:
-            require(
-                row["unit"] == ingredient_map[iid]["preferred_model_unit"],
-                f"Initial-inventory/model unit mismatch: {iid}",
-                errors,
-            )
-
-    if errors:
-        print("Seed-data validation FAILED")
-        for error in errors:
-            print(f"- {error}")
-        return 1
-
-    print("Seed-data validation PASSED")
-    print(f"Cleaned recipes: {len(recipes)}")
-    print(f"Total catalogue recipes: {len(catalogue)}")
-    print(f"Ingredients without retail mapping: {len(missing_retail)}")
-    print(f"Cleaned recipe-ingredient rows: {len(recipe_ingredients)}")
-    print(f"Canonical ingredients: {len(ingredients)}")
-    print(f"Resolved retail product rows: {len(products)}")
-    print(f"Unit conversions: {len(conversions)}")
-    print(f"Flexibility classes: {len(flexibility)}")
-    return 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+if __name__=='__main__':raise SystemExit(main())

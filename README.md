@@ -1,85 +1,71 @@
 # Grocery Optimiser
 
-A research prototype that jointly chooses approved meals and supermarket pack sizes, with the aim of reducing avoidable food waste and unnecessary spend while carrying useful inventory forward.
+Choose seven varied dinners for two people and integer Tesco retail packs, balancing shopping cost, fresh surplus risk and small departures from preferred recipe quantities. Useful leftovers remain inventory; there is no requirement to finish a pack within one week.
 
-The project is inspired by van Rooijen et al. (2024) and adapts optimisation-based household meal planning to a UK/Tesco setting with real recipes, real retail pack sizes, flexible recipe quantities and rolling household inventory.
+## Verified snapshot: 21 October 2026
 
-## Current stage
+- 40 recipes, 372 recipe-ingredient rows, 125 ingredients used (133 canonical entries including retained legacy ingredients).
+- 240 distinct Tesco listings, each with product-page verification evidence.
+- 222 eligible product rows overall; 217 serve currently used ingredients, providing 92 alternatives beyond one option per ingredient.
+- All 125 used ingredients have an eligible purchasing option; no ingredient coverage exceptions.
+- 18 unavailable or unapproved product rows are retained for audit and excluded from purchasing.
 
-**Stage 1 complete: cleaned household seed recipes + resolved retail products.**
+See [validation report](docs/validation_report.md) for executed results, the seven-dinner basket, corrections and limitations; [coverage audit](docs/catalogue_coverage.md) lists every ingredient and excluded product.
 
-The optimiser-facing recipe layer now contains **10 household-cleaned dinners** derived from Gousto recipes. The original Gousto metadata and ingredient lists are preserved separately for audit.
+## Run
 
-Cleaning removed meal-kit artefacts where they distorted normal household cooking. Examples include:
-- reducing Gousto's double-chicken Greek recipe from 500 g to a normal two-person chicken portion;
-- using two noodle nests for two adults in the smaller-portioned hoisin noodle recipe;
-- replacing ginger/garlic pastes with fresh ginger and garlic where practical;
-- replacing the combined coriander-and-mint meal-kit pack with ordinary fresh coriander;
-- removing saffron from the harissa recipe;
-- simplifying the quick-kit korma into a more normal yoghurt/coconut/spice structure;
-- using the full usable amount of a small sweetcorn tin instead of preserving a 150 g meal-kit quantity.
+Python 3.11+:
 
-The repository currently contains:
-- 10 cleaned household recipes;
-- 105 cleaned recipe-ingredient rows;
-- the original 10 Gousto recipes and 105 source ingredient rows;
-- 61 canonical ingredients;
-- 83 real Tesco product/package rows, each resolved to an exact Tesco product ID/page;
-- 23 documented source-unit conversions;
-- 4 provisional recipe-flexibility classes;
-- household starting inventory configuration.
-
-The dataset is now sufficient for the **first deterministic optimiser**. It is still a seed library; scaling from 10 recipes toward roughly 100–300 comes after the model formulation is working.
-
-## Repository structure
-
-```text
-config/
-  initial_inventory.csv
-  flexibility_classes.csv
-
-data/
-  recipes.csv
-  recipe_ingredients.csv
-  source_recipes.csv
-  source_recipe_ingredients.csv
-  ingredients.csv
-  products.csv
-  unit_conversions.csv
-
-docs/
-  problem_definition.md
-  data_normalisation.md
-
-scripts/
-  validate_seed_data.py
+```sh
+python -m pip install -r requirements.txt
+python scripts/validate_seed_data.py
+python -m unittest discover -s tests -v
+python scripts/optimise_week.py --days 7
 ```
 
-### Optimiser-facing vs source data
+PuLP is pinned to 3.3.0, including the CBC solver used in the tests. A successful result requires proven solver optimality, not just a feasible incumbent.
 
-- `data/recipes.csv` and `data/recipe_ingredients.csv` are the **cleaned household recipes used by the optimiser**.
-- `data/source_recipes.csv` and `data/source_recipe_ingredients.csv` preserve the original Gousto recipe representation and conversions.
-- `data/ingredients.csv` is the canonical ingredient vocabulary.
-- `data/products.csv` is the real Tesco product/package table.
-- `data/unit_conversions.csv` documents household-measure conversions used when interpreting source recipes.
+Optional outputs and scenarios:
 
-## Core v1 principles
+```sh
+python scripts/optimise_week.py --days 7 --output-json plan.json --ending-inventory next_inventory.csv
+python scripts/optimise_week.py --days 7 --inventory next_inventory.csv
+python scripts/optimise_week.py --days 3 --require-recipes R015 R017 R018
+```
 
-- The optimiser chooses only from a pre-approved recipe library.
-- Recipe cleansing happens **before optimisation**; the optimiser does not decide to drop inconvenient ingredients from a recipe.
-- Cleaned recipe quantities are preferred household quantities, not blindly copied meal-kit sachet sizes.
-- Divisible solids are generally modelled in grams; suitable liquids in millilitres.
-- Retail products are bought in real pack sizes; `usable_quantity` overrides labelled pack weight where the edible/drained amount materially differs.
-- Starting inventory can exist for any ingredient. Omitted ingredients start at zero.
-- Usable ending inventory rolls into the next planning cycle.
-- Rice is currently configured as 10 kg starting stock; that is a household scenario, not a special rule in the optimiser.
-- Quantity flexibility is a separate modelling assumption and will be sensitivity-tested.
+Before reusing inventory, remove anything eaten, discarded or no longer usable. Exporting a balance does not establish food safety or expiry. The regression test carries durable stock to week two without assuming opened fresh food lasts another week.
 
-## Data freshness
+## Data and code
 
-Tesco product identities/URLs were resolved on 2026-10-21. Price fields remain a research snapshot around 2026-10-20/21 and should not be treated as permanently current.
+| File | Purpose |
+|---|---|
+| `data/recipes.csv` | Forty household dinners with methods and two servings |
+| `data/recipe_ingredients.csv` | Authoritative preferred quantities and canonical units |
+| `data/ingredients.csv` | Ingredient identities, units, shelf-life classes and flexibility |
+| `data/products.csv` | Tesco IDs, mappings, gross/usable quantities, prices, statuses and URLs |
+| `data/product_evidence.csv` | Observed Tesco product-page facts for every listing |
+| `data/unit_conversions.csv` | Documented historical household/source conversions, including explicit approximations |
+| `config/initial_inventory.csv` | Actual model starting stock; example includes 10 kg rice |
+| `config/flexibility_classes.csv` | Bounds on preferred quantities |
+| `scripts/catalogue.py` | Shared strict CSV reader and eligibility rules |
+| `scripts/validate_seed_data.py` | Integrity, evidence and complete eligible-coverage gate |
+| `scripts/optimise_week.py` | Joint recipe, pack and inventory MILP |
+| `tests/test_project.py` | Data-corruption, purchasing and end-to-end regression tests |
 
-## Reference
+The old `source_recipes.csv` and `source_recipe_ingredients.csv` files are not present in this repository. Inspiration URLs are retained; cooking methods are household adaptations, not claimed verbatim source recipes.
 
-M. A. van Rooijen, J. C. Gerdessen, G. D. H. Claassen, and S. L. J. M. de Leeuw (2024), *Optimizing household food waste: The impact of meal planning, package sizes, and performance indicators*, Resources, Conservation & Recycling 205, 107559.  
-https://doi.org/10.1016/j.resconrec.2024.107559
+## Model behaviour
+
+Purchases are whole retail packs or integer reference portions of loose produce. Consumption is independent: eggs and whole-item recipes use integer quantities; cucumber and stock cubes allow half units; grams and millilitres are divisible. Single and soured cream and canned coconut milk use millilitres. Tinned beans, tuna, olives and mozzarella use labelled drained quantities where relevant.
+
+The objective is purchase expenditure plus a provisional value-based short-life surplus penalty plus a proportional penalty for deviations **in either direction** from recipe preferences. The last term prevents free inflation of portions to absorb surplus. Default weights are `--fresh-penalty 0.50` and `--deviation-penalty 2.0`. These are modelling assumptions, not measured food-waste probabilities. Long-life stock has no surplus penalty. Variety caps apply to protein and cooking-method groups when feasible; recipes cannot repeat within a plan.
+
+Prices are regular-price snapshots. Active single-product Clubcard prices are recorded, but this model deliberately costs regular prices; conditional multibuys are documented rather than incorrectly converted into single-product discounts. Delivery fees, Clubcard multibuy optimisation and postcode/slot-specific availability are not modelled.
+
+## Important scope
+
+This is a deterministic planning prototype. Online listing availability does not guarantee stock for a Northern Ireland delivery postcode. Fresh/frozen alternatives require appropriate thawing and storage. Loose-produce weights and garlic/onion yields are disclosed estimates; checkout weights may differ. Shelf-life classes are coarse, without opened-pack or freezer-location tracking. There is no nutrition constraint, expiry-aware cooking schedule, live basket integration or rolling multiweek objective. Ending inventory is an accounting balance, not measured waste.
+
+## Research inspiration
+
+M. A. van Rooijen et al. (2024), *Optimizing household food waste: The impact of meal planning, package sizes, and performance indicators*, Resources, Conservation & Recycling 205, 107559. https://doi.org/10.1016/j.resconrec.2024.107559

@@ -1,3 +1,5 @@
+> Historical audit retained for context. Superseded by [the executed 21 October validation report](validation_report.md) and [complete catalogue coverage](catalogue_coverage.md). Counts and unresolved items below describe an earlier snapshot.
+
 # Recipe-to-market audit — 21 October 2026
 
 Scope: all 40 recipes, 349 ingredient lines, 132 canonical ingredients, and 88 current Tesco product rows. This is a structural audit of the repository catalogue, **not** a live verification of Tesco prices or local availability.
@@ -45,3 +47,4 @@ The catalogue does not yet supply the following recipe ingredients with an eligi
 5. Implement human-readable approximate counts for weight-based produce and robust loose-variable-weight purchasing.
 
 **Audit status:** all recipe lines screened; targeted corrections committed; Tesco product mapping and executable validation incomplete.
+
