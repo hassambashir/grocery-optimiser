@@ -1,11 +1,5 @@
 name: Test weekly grocery optimiser
 on:
-  push:
-    paths:
-      - 'scripts/**'
-      - 'data/**'
-      - 'config/**'
-      - '.github/workflows/test-optimiser.yml'
   workflow_dispatch:
 jobs:
   optimise:
