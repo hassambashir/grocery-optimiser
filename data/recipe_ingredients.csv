@@ -2,7 +2,7 @@ recipe_id,ingredient_id,preferred_quantity,unit,change_type,notes
 R001,chicken_stock_mix,5.5,g,kept,Ordinary chicken stock/cube equivalent.
 R001,long_grain_rice,130,g,kept,
 R001,chicken_breast,250,g,kept,
-R001,red_pepper,120,g,adjusted,Household-rounded medium pepper.
+R001,red_pepper,1,each,adjusted,Whole vegetable required; no fractional consumption.
 R001,tomato_puree,30,g,adjusted,Rounded from Gousto's 32g sachet amount.
 R001,sweetcorn,160,g,adjusted,Use the full usable/drained amount of the smaller Tesco tin.
 R001,peri_peri_seasoning,10,g,adjusted,Household seasoning amount rather than preserving Gousto's supplied tablespoon weight.
@@ -27,7 +27,7 @@ R003,dried_oregano,0.5,g,kept,About 1 tsp.
 R003,chicken_stock_mix,5.5,g,substituted,Use the same ordinary chicken stock kept elsewhere instead of a separate beef-stock product.
 R003,smoked_paprika,4.8,g,kept,About 2 tsp.
 R003,garlic,6,g,kept,About two cloves.
-R003,brown_onion,120,g,kept,
+R003,brown_onion,1,each,adjusted,Whole vegetable required; no fractional consumption.
 R003,arborio_rice,160,g,kept,Retained because the dish is cooked in a risotto-like style.
 R003,spinach,80,g,kept,
 R003,cherry_tomatoes,125,g,kept,
@@ -49,15 +49,15 @@ R005,dried_oregano,1,g,substituted,Replaces bespoke Mediterranean seasoning with
 R005,chicken_breast,300,g,adjusted,Reduced from Gousto's double-protein 500g version.
 R005,natural_yogurt,100,g,substituted,Replaces mayonnaise-based meal-kit sauce.
 R005,parsley,10,g,adjusted,More useful household herb amount.
-R005,brown_onion,120,g,kept,
+R005,brown_onion,1,each,adjusted,Whole vegetable required; no fractional consumption.
 R005,garlic,6,g,substituted,Fresh garlic replaces roasted garlic paste.
 R005,green_beans,160,g,adjusted,Increase vegetables after reducing double chicken.
 R005,spinach,80,g,kept,
-R006,red_pepper,120,g,adjusted,Household-rounded medium pepper.
+R006,red_pepper,1,each,adjusted,Whole vegetable required; no fractional consumption.
 R006,spring_onion,30,g,adjusted,About two spring onions.
 R006,chicken_breast,250,g,kept,
 R006,sesame_oil,10,ml,kept,
-R006,brown_onion,120,g,kept,
+R006,brown_onion,1,each,adjusted,Whole vegetable required; no fractional consumption.
 R006,wholewheat_noodles,125,g,adjusted,Two nests for two adults rather than Gousto's smaller one-nest portion.
 R006,hoisin_sauce,40,g,kept,
 R006,fresh_ginger,10,g,substituted,Fresh ginger replaces ginger-garlic paste.
@@ -67,7 +67,7 @@ R006,soy_sauce,15,ml,kept,
 R007,chicken_thigh,250,g,kept,
 R007,fresh_ginger,15,g,kept,
 R007,mangetout,120,g,adjusted,Increase vegetable portion.
-R007,red_pepper,120,g,adjusted,Household-rounded medium pepper.
+R007,red_pepper,1,each,adjusted,Whole vegetable required; no fractional consumption.
 R007,wholewheat_noodles,125,g,kept,Two nests.
 R007,miso_paste,34,g,kept,About 2 tbsp.
 R007,sesame_oil,15,ml,kept,
@@ -76,7 +76,7 @@ R008,turmeric,1.5,g,adjusted,Household-rounded 1/2 tsp equivalent.
 R008,chicken_breast,250,g,kept,
 R008,garam_masala,1.8,g,kept,About 1 tsp.
 R008,ground_coriander,2.4,g,added,Common korma spice; uses an existing pantry ingredient.
-R008,brown_onion,120,g,kept,
+R008,brown_onion,1,each,adjusted,Whole vegetable required; no fractional consumption.
 R008,long_grain_rice,120,g,adjusted,More typical two-person rice portion.
 R008,fresh_ginger,15,g,substituted,Fresh ginger replaces ginger paste.
 R008,garlic,6,g,added,Fresh garlic replaces meal-kit shortcuts.
@@ -101,6 +101,6 @@ R010,natural_yogurt,100,g,adjusted,Practical sauce portion.
 R010,couscous,120,g,kept,
 R010,harissa_paste,20,g,kept,
 R010,chopped_dates,30,g,kept,
-R010,red_pepper,120,g,adjusted,Household-rounded medium pepper.
+R010,red_pepper,1,each,adjusted,Whole vegetable required; no fractional consumption.
 R010,fresh_coriander,10,g,substituted,Use ordinary fresh coriander rather than Gousto's combined coriander-and-mint pack.
-R010,red_onion,130,g,kept,
+R010,red_onion,1,each,adjusted,Whole vegetable required; no fractional consumption.
