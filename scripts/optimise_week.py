@@ -65,6 +65,19 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False):
     model = pulp.LpProblem("weekly_grocery_plan", pulp.LpMinimize)
     chosen = {r["recipe_id"]: pulp.LpVariable("meal_" + r["recipe_id"], cat="Binary") for r in recipes}
     model += pulp.lpSum(chosen.values()) == days, "dinner_count"
+    # Diversity constraints apply only when tagged, model-ready options exist.
+    catalogue = {r["recipe_id"]: r for r in read_csv("data/recipe_catalogue.csv")}
+    if days >= 4:
+        for field, cap in (("main_protein", max(2, (days + 1) // 2)),
+                           ("cooking_method", max(2, (days + 1) // 2))):
+            groups = defaultdict(list)
+            for r in recipes:
+                value = catalogue.get(r["recipe_id"], {}).get(field, "").strip().lower()
+                if value:
+                    groups[value].append(chosen[r["recipe_id"]])
+            for value, variables in groups.items():
+                model += pulp.lpSum(variables) <= cap, "diversity_" + field + "_" + value.replace("-", "_").replace(" ", "_")
+
 
     purchase, supply, cost = {}, defaultdict(list), []
     for i in used:
