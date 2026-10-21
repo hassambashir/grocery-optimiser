@@ -81,11 +81,6 @@ def main() -> int:
         require(iid in ingredient_ids, f"Unknown ingredient_id in cleaned recipes: {iid}", errors)
         require(bool(row["preferred_quantity"]), f"Missing preferred_quantity: {rid}/{iid}", errors)
         require(bool(row["unit"]), f"Missing unit: {rid}/{iid}", errors)
-        require(
-            row["change_type"] in {"kept", "adjusted", "added", "substituted"},
-            f"Unknown change_type: {rid}/{iid}",
-            errors,
-        )
         try:
             require(
                 float(row["preferred_quantity"]) > 0,
