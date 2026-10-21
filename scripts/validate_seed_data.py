@@ -39,7 +39,8 @@ def require_unique_pair(
 
 
 def main() -> int:
-    recipes = read_csv("data/recipes.csv")
+    catalogue = read_csv("data/recipes.csv")
+    recipes = [r for r in catalogue if r["readiness"] == "ready_for_existing_optimizer"]
     recipe_ingredients = read_csv("data/recipe_ingredients.csv")
     source_recipes = read_csv("data/source_recipes.csv")
     source_recipe_ingredients = read_csv("data/source_recipe_ingredients.csv")
@@ -49,16 +50,12 @@ def main() -> int:
     flexibility = read_csv("config/flexibility_classes.csv")
     inventory = read_csv("config/initial_inventory.csv")
 
-    candidates = read_csv("data/recipe_candidates.csv")
     errors: list[str] = []
-    require_unique(candidates, "recipe_id", "candidate recipe_id", errors)
-    for candidate in candidates:
-        require(candidate["recipe_id"] not in {r["recipe_id"] for r in recipes},
-                "Candidate already active: " + candidate["recipe_id"], errors)
-        require(bool(candidate["recipe_name"]), "Candidate missing name", errors)
-        require(bool(candidate["source_url"]), "Candidate missing source URL", errors)
-        require(candidate["readiness"] == "source_linked_pending_ingredient_mapping",
-                "Unknown candidate readiness: " + candidate["recipe_id"], errors)
+    require_unique(catalogue, "recipe_id", "catalogue recipe_id", errors)
+    for recipe in catalogue:
+        require(bool(recipe["recipe_name"]), "Missing recipe name: " + recipe["recipe_id"], errors)
+        require(recipe["readiness"] in {"ready_for_existing_optimizer", "needs_ingredients_and_instructions", "needs_canonical_and_tesco_mapping"},
+                "Unknown readiness: " + recipe["recipe_id"], errors)
 
 
     require_unique(recipes, "recipe_id", "recipe_id", errors)
@@ -211,7 +208,8 @@ def main() -> int:
 
     print("Seed-data validation PASSED")
     print(f"Cleaned recipes: {len(recipes)}")
-    print(f"Staged recipe candidates (not optimised): {len(candidates)}")
+    print(f"Total catalogue recipes: {len(catalogue)}")
+    print(f"Not yet model-ready: {len(catalogue)-len(recipes)}")
     print(f"Cleaned recipe-ingredient rows: {len(recipe_ingredients)}")
     print(f"Source recipe-ingredient rows: {len(source_recipe_ingredients)}")
     print(f"Canonical ingredients: {len(ingredients)}")
