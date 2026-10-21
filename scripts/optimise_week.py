@@ -36,9 +36,10 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False):
 
     used = {r["ingredient_id"] for r in lines}
     available = defaultdict(list)
+    snapshot_unavailable = set()
     for p in products:
         i = p["ingredient_id"]
-        if i not in used or p["availability_status"] == "out_of_stock":
+        if i not in used:
             continue
         if p["mapping_status"] == "substitution_candidate":
             continue  # Mixed-colour peppers etc. need explicit approval.
@@ -51,6 +52,8 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False):
         if qty <= 0:
             raise ValueError("Nonpositive pack quantity: " + p["product_id"])
         available[i].append((p, qty, float(p["regular_price_gbp"])))
+        if p["availability_status"] == "out_of_stock":
+            snapshot_unavailable.add(p["product_id"])
 
     missing = sorted(i for i in used if not available[i] and inventory[i] <= 0)
     if missing:
@@ -117,6 +120,11 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False):
     for p, n, amount in bought:
         print("  " + str(n) + " x " + p["product_name"] + " | GBP " + format(amount, ".2f"))
     print("\nShopping cost: GBP " + format(spent, ".2f"))
+    flagged = [p["product_name"] for p, _, _ in bought if p["product_id"] in snapshot_unavailable]
+    if flagged:
+        print("WARNING: Snapshot marks purchased products out of stock (prototype ignores stock status):")
+        for name in flagged:
+            print("  " + name)
     print("Fresh surplus risk proxy: GBP " + format(sum(pulp.value(x) for x in risk), ".2f"))
     print("Quantity shortfall penalty: " + format(sum(pulp.value(x) for x in deviation_cost), ".2f"))
     print("Ending inventory (nonzero):")
