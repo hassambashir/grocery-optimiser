@@ -104,7 +104,7 @@ def main() -> int:
                 errors,
             )
 
-    used_ids = {r["ingredient_id"] for r in recipe_ingredients}
+    used_ids = {r["ingredient_id"] for r in recipe_ingredients if r["recipe_id"] in recipe_ids}
     for iid in sorted(used_ids):
         require(
             iid in product_ingredient_ids or iid in staple_ids,
