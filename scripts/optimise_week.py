@@ -135,7 +135,7 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False):
         print("WARNING: Purchased compatible-but-not-exact product mappings; review before shopping:")
         for name in compatible_selected:
             print("  " + name)
-    print("\\nIngredient consumption and estimated value:")
+    print("\nIngredient consumption and estimated value:")
     # Weighted-average valuation. Opening inventory has no recorded cost basis:
     # estimate its unit value using the cheapest listed retail unit price.
     total_consumption_value = 0.0
@@ -160,7 +160,7 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False):
           format(total_consumption_value, ".2f"))
     print("VALUATION NOTE: Weighted-average cost; opening inventory valued at lowest snapshot retail unit price.")
     print("This is an estimate, not this week's cash spend or measured food waste.")
-    print("\\nPer-recipe ingredient quantities (preferred -> actual):")
+    print("\nPer-recipe ingredient quantities (preferred -> actual):")
     for rid, i, preferred, amount in recipe_consumption:
         if pulp.value(chosen[rid]) > 0.5:
             print("  " + rid + " " + i + ": " + format(preferred, ".1f") + " -> " +
