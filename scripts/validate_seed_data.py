@@ -42,8 +42,6 @@ def main() -> int:
     catalogue = read_csv("data/recipes.csv")
     recipes = [r for r in catalogue if r["readiness"] == "ready_for_existing_optimizer"]
     recipe_ingredients = read_csv("data/recipe_ingredients.csv")
-    source_recipes = read_csv("data/source_recipes.csv")
-    source_recipe_ingredients = read_csv("data/source_recipe_ingredients.csv")
     ingredients = read_csv("data/ingredients.csv")
     products = read_csv("data/products.csv")
     conversions = read_csv("data/unit_conversions.csv")
@@ -59,7 +57,6 @@ def main() -> int:
 
 
     require_unique(recipes, "recipe_id", "recipe_id", errors)
-    require_unique(source_recipes, "recipe_id", "source recipe_id", errors)
     require_unique_pair(
         recipe_ingredients, "recipe_id", "ingredient_id", "cleaned recipe ingredient", errors
     )
@@ -69,7 +66,6 @@ def main() -> int:
     require_unique(conversions, "conversion_id", "conversion_id", errors)
 
     recipe_ids = {r["recipe_id"] for r in recipes}
-    source_recipe_ids = {r["recipe_id"] for r in source_recipes}
     ingredient_map = {r["ingredient_id"]: r for r in ingredients}
     ingredient_ids = set(ingredient_map)
     product_ingredient_ids = {r["ingredient_id"] for r in products}
@@ -79,24 +75,6 @@ def main() -> int:
         if r["inventory_policy"] == "assumed_on_hand_staple"
     }
     flex_classes = {r["flexibility_class"] for r in flexibility}
-
-    require(
-        recipe_ids == source_recipe_ids,
-        "Cleaned and source recipe sets do not match",
-        errors,
-    )
-
-    for row in source_recipe_ingredients:
-        require(
-            row["recipe_id"] in source_recipe_ids,
-            f"Unknown source recipe_id: {row['recipe_id']}",
-            errors,
-        )
-        require(
-            row["ingredient_id"] in ingredient_ids,
-            f"Unknown canonical ingredient in source layer: {row['recipe_id']}/{row['ingredient_id']}",
-            errors,
-        )
 
     for row in recipe_ingredients:
         rid = row["recipe_id"]
@@ -211,7 +189,6 @@ def main() -> int:
     print(f"Total catalogue recipes: {len(catalogue)}")
     print(f"Not yet model-ready: {len(catalogue)-len(recipes)}")
     print(f"Cleaned recipe-ingredient rows: {len(recipe_ingredients)}")
-    print(f"Source recipe-ingredient rows: {len(source_recipe_ingredients)}")
     print(f"Canonical ingredients: {len(ingredients)}")
     print(f"Resolved retail product rows: {len(products)}")
     print(f"Unit conversions: {len(conversions)}")
