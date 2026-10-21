@@ -1,0 +1,23 @@
+name: Test weekly grocery optimiser
+on:
+  push:
+    paths:
+      - 'scripts/optimise_week.py'
+      - 'data/**'
+      - 'config/**'
+      - '.github/workflows/test-optimiser.yml'
+  workflow_dispatch:
+jobs:
+  optimise:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install solver
+        run: python -m pip install pulp
+      - name: Validate data
+        run: python scripts/validate_seed_data.py
+      - name: Run 7-day optimisation
+        run: python scripts/optimise_week.py --days 7
