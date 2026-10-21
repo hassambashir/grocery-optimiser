@@ -80,7 +80,7 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False):
         preferred = float(row["preferred_quantity"])
         klass = flex[ingredients[i]["default_flexibility_class"]]
         low, high = float(klass["min_factor"]), float(klass["max_factor"])
-        amount = pulp.LpVariable("use_" + str(n), lowBound=0)
+        amount = pulp.LpVariable("use_" + str(n), lowBound=0, cat="Integer" if ingredients[i]["preferred_model_unit"] == "each" else "Continuous")
         model += amount >= preferred * low * chosen[rid]
         model += amount <= preferred * high * chosen[rid]
         consumption[i].append(amount)
