@@ -1,0 +1,214 @@
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /root/.local/lib/python3.12/site-packages/pulp/apis/../solverdir/cbc/linux/i64/cbc /tmp/66946d69b8654726913147239ea7f439-pulp.mps -timeMode elapsed -branch -printingOptions all -solution /tmp/66946d69b8654726913147239ea7f439-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 1712 COLUMNS
+At line 7679 RHS
+At line 9387 BOUNDS
+At line 9712 ENDATA
+Problem MODEL has 1707 rows, 1193 columns and 4688 elements
+Coin0008I MODEL read with 0 errors
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is 12.7876 - 0.01 seconds
+Cgl0003I 0 fixed, 173 tightened bounds, 55 strengthened rows, 29 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 13 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 3 strengthened rows, 0 substitutions
+Cgl0004I processed model has 1171 rows, 777 columns (210 integer (40 of which binary)) and 3241 elements
+Cbc0012I Integer solution of 29.741135 found by DiveCoefficient after 0 iterations and 0 nodes (0.05 seconds)
+Cbc0038I Full problem 1171 rows 777 columns, reduced to 129 rows 113 columns
+Cbc0012I Integer solution of 21.573135 found by DiveCoefficient after 283 iterations and 0 nodes (0.14 seconds)
+Cbc0031I 40 added rows had average density of 25.9
+Cbc0013I At root node, 40 cuts changed objective from 14.706229 to 21.573135 in 6 passes
+Cbc0014I Cut generator 0 (Probing) - 49 row cuts average 2.0 elements, 3 column cuts (3 active)  in 0.014 seconds - new frequency is 1
+Cbc0014I Cut generator 1 (Gomory) - 67 row cuts average 84.7 elements, 0 column cuts (0 active)  in 0.004 seconds - new frequency is 1
+Cbc0014I Cut generator 2 (Knapsack) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.004 seconds - new frequency is -100
+Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is -100
+Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 63 row cuts average 13.9 elements, 0 column cuts (0 active)  in 0.004 seconds - new frequency is 1
+Cbc0014I Cut generator 5 (FlowCover) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.002 seconds - new frequency is -100
+Cbc0014I Cut generator 6 (TwoMirCuts) - 207 row cuts average 92.4 elements, 0 column cuts (0 active)  in 0.016 seconds - new frequency is 1
+Cbc0014I Cut generator 7 (ZeroHalf) - 1 row cuts average 3.0 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is -100
+Cbc0001I Search completed - best objective 21.57313461538465, took 283 iterations and 0 nodes (0.14 seconds)
+Cbc0035I Maximum depth 0, 0 variables fixed on reduced cost
+Cuts at root node changed objective from 14.7062 to 21.5731
+Probing was tried 6 times and created 52 cuts of which 0 were active after adding rounds of cuts (0.014 seconds)
+Gomory was tried 6 times and created 67 cuts of which 0 were active after adding rounds of cuts (0.004 seconds)
+Knapsack was tried 6 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.004 seconds)
+Clique was tried 6 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+MixedIntegerRounding2 was tried 6 times and created 63 cuts of which 0 were active after adding rounds of cuts (0.004 seconds)
+FlowCover was tried 6 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.002 seconds)
+TwoMirCuts was tried 6 times and created 207 cuts of which 0 were active after adding rounds of cuts (0.016 seconds)
+ZeroHalf was tried 1 times and created 1 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+
+Result - Optimal solution found
+
+Objective value:                21.57313462
+Enumerated nodes:               0
+Total iterations:               283
+Time (CPU seconds):             0.15
+Time (Wallclock seconds):       0.16
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.16   (Wallclock seconds):       0.17
+
+Eligible recipes: 40 of 40 (based on ingredient supply)
+Selected two-person dinners (7):
+  R011 Chicken fajita traybake
+  R018 Beef cottage pie
+  R021 Beef chilli with baked potatoes
+  R027 Sweet potato and black bean enchiladas
+  R029 Mushroom stroganoff
+  R034 Tuna sweetcorn jacket potatoes
+  R036 Lentil shepherd's pie
+
+Tesco shopping basket (regular-price snapshot):
+  1 x Tesco British Chicken Breast Fillets 350g | usable 350 g | GBP 2.67
+  2 x Tesco Red Peppers Each | usable 2 each | GBP 1.40
+  6 x Tesco Brown Onions Loose | usable 6 each | GBP 0.66
+  2 x Tesco Carrots Loose | usable 320 g | GBP 0.22
+  1 x Tesco Naturally Sweet Sweetcorn 200G | usable 160 g | GBP 0.50
+  1 x Tesco Limes Each | usable 1 each | GBP 0.23
+  1 x Tesco Closed Cup Mushrooms 400G | usable 400 g | GBP 1.29
+  1 x Grower's Harvest Chopped Tomatoes 400G | usable 400 g | GBP 0.43
+  1 x Tesco Tomato Passata 500G | usable 500 g | GBP 0.60
+  1 x Tesco Red Kidney Beans In Water 400G | usable 240 g | GBP 0.39
+  1 x Tesco Green Lentils In Water 390G | usable 235 g | GBP 0.45
+  1 x Tesco British Soured Cream 150Ml | usable 150 ml | GBP 0.70
+  1 x Tesco 10% Fat Beef Mince 500g | usable 500 g | GBP 5.60
+  1 x Tesco Plain White Tortilla Wraps 8 Pack | usable 8 each | GBP 1.40
+  1 x Tesco Baby Potatoes 1Kg | usable 1000 g | GBP 0.99
+  1 x Tesco Black Beans 400G | usable 235 g | GBP 0.46
+  1 x Tesco Medium Egg Noodles 250G | usable 250 g | GBP 0.95
+  1 x Tesco Tuna Chunks In Spring Water 145G | usable 102 g | GBP 0.65
+  1 x Tesco Baking Potatoes 4 Pack | usable 4 each | GBP 0.85
+
+Shopping cost: GBP 20.44
+Planning estimates (actual produce weights/yields and charges vary):
+  Tesco Brown Onions Loose
+  Tesco Carrots Loose
+
+Ingredient consumption and estimated value:
+  baking_potato: 4.0 each | estimated GBP 0.85
+  beef_mince: 500.0 g | estimated GBP 5.60
+  beef_stock_mix: 0.5 cube | estimated GBP 0.05
+  black_beans: 235.0 g | estimated GBP 0.46
+  brown_onion: 6.0 each | estimated GBP 0.66
+  butter: 40.0 g | estimated GBP 0.30
+  carrot: 400.0 g | estimated GBP 0.28
+  cheddar: 140.0 g | estimated GBP 1.12
+  chicken_breast: 350.0 g | estimated GBP 2.67
+  chopped_tomatoes: 400.0 g | estimated GBP 0.43
+  cucumber: 0.5 each | estimated GBP 0.49
+  egg_noodles: 180.0 g | estimated GBP 0.68
+  ground_cumin: 6.0 g | estimated GBP 0.09
+  kidney_beans: 240.0 g | estimated GBP 0.39
+  lime: 1.0 each | estimated GBP 0.23
+  mayonnaise: 60.0 ml | estimated GBP 0.11
+  mushrooms: 350.0 g | estimated GBP 1.13
+  mustard: 5.0 g | estimated GBP 0.01
+  passata: 300.0 g | estimated GBP 0.36
+  peas: 240.0 g | estimated GBP 0.31
+  plain_flour: 8.0 g | estimated GBP 0.00
+  potatoes: 900.0 g | estimated GBP 0.86
+  red_chilli: 6.0 g | estimated GBP 0.05
+  red_pepper: 2.0 each | estimated GBP 1.40
+  smoked_paprika: 9.6 g | estimated GBP 0.20
+  sour_cream: 150.0 ml | estimated GBP 0.70
+  sweet_potato: 450.0 g | estimated GBP 0.54
+  sweetcorn: 120.0 g | estimated GBP 0.35
+  tinned_lentils: 235.0 g | estimated GBP 0.45
+  tomato_puree: 32.0 g | estimated GBP 0.09
+  tomatoes: 120.0 g | estimated GBP 0.29
+  tortillas: 8.0 each | estimated GBP 1.40
+  tuna: 145.0 g | estimated GBP 0.91
+  vegetable_oil: 35.0 ml | estimated GBP 0.05
+  vegetable_stock: 1.0 cube | estimated GBP 0.10
+Estimated consumed-ingredient value (includes opening stock): GBP 23.62
+VALUATION NOTE: Weighted-average cost; opening inventory valued at lowest snapshot retail unit price.
+This is an estimate, not this week's cash spend or measured food waste.
+
+Per-recipe ingredient quantities (preferred -> actual):
+  R011 chicken_breast: 350.0 -> 350.0 g
+  R011 red_pepper: 2.0 -> 2.0 each
+  R011 brown_onion: 1.0 -> 1.0 each
+  R011 tortillas: 4.0 -> 4.0 each
+  R011 smoked_paprika: 2.4 -> 2.4 g
+  R011 ground_cumin: 2.0 -> 2.0 g
+  R011 lime: 1.0 -> 1.0 each
+  R011 vegetable_oil: 15.0 -> 15.0 ml
+  R018 beef_mince: 300.0 -> 260.0 g
+  R018 potatoes: 450.0 -> 450.0 g
+  R018 brown_onion: 1.0 -> 1.0 each
+  R018 carrot: 200.0 -> 200.0 g
+  R018 peas: 120.0 -> 120.0 g
+  R018 tomato_puree: 16.0 -> 16.0 g
+  R018 beef_stock_mix: 0.5 -> 0.5 cube
+  R018 butter: 20.0 -> 20.0 g
+  R021 beef_mince: 300.0 -> 240.0 g
+  R021 baking_potato: 2.0 -> 2.0 each
+  R021 brown_onion: 1.0 -> 1.0 each
+  R021 kidney_beans: 240.0 -> 240.0 g
+  R021 chopped_tomatoes: 400.0 -> 400.0 g
+  R021 ground_cumin: 2.0 -> 2.0 g
+  R021 smoked_paprika: 2.4 -> 2.4 g
+  R021 red_chilli: 6.0 -> 6.0 g
+  R027 sweet_potato: 450.0 -> 450.0 g
+  R027 black_beans: 240.0 -> 235.0 g
+  R027 tortillas: 4.0 -> 4.0 each
+  R027 passata: 300.0 -> 300.0 g
+  R027 cheddar: 100.0 -> 100.0 g
+  R027 brown_onion: 1.0 -> 1.0 each
+  R027 ground_cumin: 2.0 -> 2.0 g
+  R027 smoked_paprika: 2.4 -> 2.4 g
+  R027 vegetable_oil: 10.0 -> 10.0 ml
+  R029 mushrooms: 350.0 -> 350.0 g
+  R029 egg_noodles: 180.0 -> 180.0 g
+  R029 brown_onion: 1.0 -> 1.0 each
+  R029 sour_cream: 150.0 -> 150.0 ml
+  R029 mustard: 5.0 -> 5.0 g
+  R029 vegetable_stock: 0.5 -> 0.5 cube
+  R029 smoked_paprika: 2.4 -> 2.4 g
+  R029 plain_flour: 8.0 -> 8.0 g
+  R029 vegetable_oil: 10.0 -> 10.0 ml
+  R034 baking_potato: 2.0 -> 2.0 each
+  R034 tuna: 145.0 -> 145.0 g
+  R034 sweetcorn: 120.0 -> 120.0 g
+  R034 mayonnaise: 60.0 -> 60.0 ml
+  R034 cheddar: 40.0 -> 40.0 g
+  R034 cucumber: 0.5 -> 0.5 each
+  R034 tomatoes: 120.0 -> 120.0 g
+  R036 tinned_lentils: 240.0 -> 235.0 g
+  R036 potatoes: 450.0 -> 450.0 g
+  R036 brown_onion: 1.0 -> 1.0 each
+  R036 carrot: 200.0 -> 200.0 g
+  R036 peas: 120.0 -> 120.0 g
+  R036 vegetable_stock: 0.5 -> 0.5 cube
+  R036 tomato_puree: 16.0 -> 16.0 g
+  R036 butter: 20.0 -> 20.0 g
+Fresh surplus risk proxy: GBP 0.38
+Quantity deviation penalty: 0.75
+Ending inventory (nonzero):
+  beef_stock_mix: 9.0 cube
+  butter: 170.0 g
+  cheddar: 120.0 g
+  egg_noodles: 140.0 g
+  ground_cumin: 88.0 g
+  long_grain_rice: 10000.0 g
+  mayonnaise: 330.0 ml
+  mushrooms: 100.0 g
+  mustard: 170.0 g
+  passata: 400.0 g
+  peas: 420.0 g
+  plain_flour: 1484.0 g
+  potatoes: 200.0 g
+  red_chilli: 48.0 g
+  smoked_paprika: 28.8 g
+  sweet_potato: 100.0 g
+  sweetcorn: 80.0 g
+  tomato_puree: 136.0 g
+  tomatoes: 15.0 g
+  tuna: 16.0 g
+  vegetable_oil: 930.0 ml
+  vegetable_stock: 8.0 cube

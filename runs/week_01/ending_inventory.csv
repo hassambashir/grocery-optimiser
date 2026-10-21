@@ -1,0 +1,25 @@
+ingredient_id,quantity,unit,inventory_policy,notes
+beef_stock_mix,9.5,cube,carried_forward,Check usable condition before next week.
+butter,210.0,g,carried_forward,Check usable condition before next week.
+carrot,80.0,g,carried_forward,Check usable condition before next week.
+cheddar,260.0,g,carried_forward,Check usable condition before next week.
+cucumber,0.5,each,carried_forward,Check usable condition before next week.
+egg_noodles,70.0,g,carried_forward,Check usable condition before next week.
+ground_cumin,94.0,g,carried_forward,Check usable condition before next week.
+long_grain_rice,10000.0,g,carried_forward,Check usable condition before next week.
+mayonnaise,390.0,ml,carried_forward,Check usable condition before next week.
+mushrooms,50.0,g,carried_forward,Check usable condition before next week.
+mustard,175.0,g,carried_forward,Check usable condition before next week.
+passata,200.0,g,carried_forward,Check usable condition before next week.
+peas,660.0,g,carried_forward,Check usable condition before next week.
+plain_flour,1492.0,g,carried_forward,Check usable condition before next week.
+potatoes,100.0,g,carried_forward,Check usable condition before next week.
+red_chilli,54.0,g,carried_forward,Check usable condition before next week.
+smoked_paprika,38.4,g,carried_forward,Check usable condition before next week.
+sweet_potato,550.0,g,carried_forward,Check usable condition before next week.
+sweetcorn,40.0,g,carried_forward,Check usable condition before next week.
+tomato_puree,168.0,g,carried_forward,Check usable condition before next week.
+tomatoes,135.0,g,carried_forward,Check usable condition before next week.
+tuna,59.0,g,carried_forward,Check usable condition before next week.
+vegetable_oil,965.0,ml,carried_forward,Check usable condition before next week.
+vegetable_stock,9.0,cube,carried_forward,Check usable condition before next week.

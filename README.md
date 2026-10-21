@@ -69,3 +69,7 @@ This is a deterministic planning prototype. Online listing availability does not
 ## Research inspiration
 
 M. A. van Rooijen et al. (2024), *Optimizing household food waste: The impact of meal planning, package sizes, and performance indicators*, Resources, Conservation & Recycling 205, 107559. https://doi.org/10.1016/j.resconrec.2024.107559
+
+## Saved two-week simulation
+
+[Locked Week 1 and executed Week 2](runs/README.md) preserve the £39.88 original basket and a £20.44 optimal second-week basket using all 24 opening leftover balances. Both weeks include complete plans, inventory and reconciliation files. This is explicitly simulated consumption, assuming all leftovers survive; it does not overwrite the baseline inventory or represent actual purchases. The full 17-test suite includes snapshot-integrity and two-week balance regression checks.

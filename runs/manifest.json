@@ -1,0 +1,46 @@
+{
+  "simulation_only": true,
+  "week_01_source_commit": "11f26beb71e85705149ec59ea40b2626705bdde6",
+  "execution_base_commit": "28c06ea50bc375f05af80bdf76995c75a61740c2",
+  "parameters": {
+    "days": 7,
+    "servings_per_recipe": 2,
+    "fresh_penalty": 0.5,
+    "deviation_penalty": 2.0,
+    "required_recipes": []
+  },
+  "solver": "PuLP 3.3.0 / bundled CBC",
+  "assumptions": [
+    "All recorded Week 1 purchases and consumption completed in simulation only.",
+    "All 24 ending balances survive unchanged; no spoilage or other consumption.",
+    "Regular snapshot prices and unchanged within-week variety constraints."
+  ],
+  "sha256": {
+    "runs/week_01/basket.csv": "410eb3b7acb00ff401cd72ec2b2f1d608cac04577f995122de81217dc15162ce",
+    "runs/week_01/consumption.csv": "8eb947c7a2a6d16b5f14d8c5dc778223a8aa4e0bb5bc1a0e158d2346230524c5",
+    "runs/week_01/ending_inventory.csv": "706fde6bd3f66fa3fac29297fdf55a036d27f38bce636c497bf3c12b2c104377",
+    "runs/week_01/opening_inventory.csv": "b3cbe5b1aae82b2d34689f258f98e4f37003fa5e40de6ad92f923d20f22951c2",
+    "runs/week_01/plan.json": "b707cb52c89cf0b190f3db8673b014fc7c123eebb1bb99569bf200d6bb767af2",
+    "runs/week_01/recipes.csv": "0102f5fae1842e08f09a569ac15b924f1157acefef51959b1705f8dfe80b10cb",
+    "runs/week_01/reconciliation.csv": "704ca9d6d1edef1d29a8ae8e6a182d622f40ce84dd8f67e0cfbc495e206b6051",
+    "runs/week_02/basket.csv": "eb6a3fafe7b14751aa21e5565eac461f4cae8c118c5fcbc395d444189ec72598",
+    "runs/week_02/consumption.csv": "8eb947c7a2a6d16b5f14d8c5dc778223a8aa4e0bb5bc1a0e158d2346230524c5",
+    "runs/week_02/ending_inventory.csv": "e5b2916bad1bee5d7f2bf6ea85f208a674be255cf9c99dd30a5e8e06a5985b5a",
+    "runs/week_02/opening_inventory.csv": "706fde6bd3f66fa3fac29297fdf55a036d27f38bce636c497bf3c12b2c104377",
+    "runs/week_02/plan.json": "b5e61080272606d6b83e9a3afc5a67988dbef4d4b6c1516f139cf0b92539c62d",
+    "runs/week_02/recipes.csv": "0102f5fae1842e08f09a569ac15b924f1157acefef51959b1705f8dfe80b10cb",
+    "runs/week_02/reconciliation.csv": "bc909ba938cb8112cb88dd3a6e97626bf9796034884ddf3fb0f2dbaf987c4305",
+    "runs/week_02/solver_output.txt": "932b1efe07bd2fa7ab46e7e3b4b7dfafddd3dd754ec8598f403b5232866e3fe4",
+    "data/ingredients.csv": "8e0c63d51bdf35fd5a0f9f1d692d2a619ff22a8361aa39c5e0e04ac18b19ecc0",
+    "data/product_evidence.csv": "7c1f6ee25533e25e1a38a7b6663f30da81032682fe7de43414fe7ca08d81e01f",
+    "data/products.csv": "2c8b688025dc9abff3116a4eb6c063f61c02fd48aa751f9a1385eb58b5ec86bc",
+    "data/recipe_ingredients.csv": "c0bde367ab6d0359faeacdaa2d2ce2877834b12adc37159e223f8832daca29b5",
+    "data/recipes.csv": "1ea0b96641eba15052832a2292d1f704a88028eb365a7c0d283a099161efc67e",
+    "data/unit_conversions.csv": "50a37e6eea15862472fc3a1da6a3a69bd0de8230907c35fbe7a50895fa6c1824",
+    "config/flexibility_classes.csv": "ffeb2a282aaf022ca299ac92866ba376e3c62cb0a64c638be0943b2cbf78fcae",
+    "config/initial_inventory.csv": "b3cbe5b1aae82b2d34689f258f98e4f37003fa5e40de6ad92f923d20f22951c2",
+    "scripts/catalogue.py": "8176b2e1bd28930d1c89bc8ef05dbb1a1e976bf7fa4cdac3823acbfc73079822",
+    "scripts/optimise_week.py": "c6e80053e7f834960eb56c394f3044e0e8c5673952f3de13924bd55edae3bd72",
+    "scripts/validate_seed_data.py": "6a322ed9841005ae443c6c97e4a5b1f49079a291af44830c17335df1cc266f56"
+  }
+}

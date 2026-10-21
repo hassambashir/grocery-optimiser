@@ -1,0 +1,22 @@
+test_drain_and_inventory_corruption_fail (test_project.DataTests.test_drain_and_inventory_corruption_fail) ... ok
+test_ids_references_urls_and_units_fail (test_project.DataTests.test_ids_references_urls_and_units_fail) ... ok
+test_invalid_prices_and_quantities_fail (test_project.DataTests.test_invalid_prices_and_quantities_fail) ... ok
+test_inventory_cannot_hide_missing_purchase_coverage (test_project.DataTests.test_inventory_cannot_hide_missing_purchase_coverage) ... ok
+test_known_drained_quantities (test_project.DataTests.test_known_drained_quantities) ... ok
+test_malformed_csv_fails (test_project.DataTests.test_malformed_csv_fails) ... ok
+test_real_catalogue_complete (test_project.DataTests.test_real_catalogue_complete) ... ok
+test_unsafe_statuses_excluded (test_project.DataTests.test_unsafe_statuses_excluded) ... ok
+test_alternative_pack_mix_and_leftovers (test_project.OptimiserTests.test_alternative_pack_mix_and_leftovers) ... ok
+test_each_of_all_40_recipes_is_feasible (test_project.OptimiserTests.test_each_of_all_40_recipes_is_feasible) ... ok
+test_half_cucumber_half_cube_and_whole_eggs (test_project.OptimiserTests.test_half_cucumber_half_cube_and_whole_eggs) ... ok
+test_inventory_is_used_and_unrelated_stock_retained (test_project.OptimiserTests.test_inventory_is_used_and_unrelated_stock_retained) ... ok
+test_no_free_inflation_to_consume_durable_stock (test_project.OptimiserTests.test_no_free_inflation_to_consume_durable_stock) ... ok
+test_second_week_carry_forward (test_project.OptimiserTests.test_second_week_carry_forward) ... ok
+test_seven_day_real_plan (test_project.OptimiserTests.test_seven_day_real_plan) ... ok
+test_complete_two_week_workflow (test_two_week.TwoWeekTests.test_complete_two_week_workflow) ... ok
+test_locked_snapshots_and_report (test_two_week.TwoWeekTests.test_locked_snapshots_and_report) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 8.892s
+
+OK
