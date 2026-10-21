@@ -256,7 +256,7 @@ recipe_id,ingredient_id,preferred_quantity,unit,notes
 "R029","mushrooms","350","g","350g mushrooms"
 "R029","egg_noodles","180","g","180g egg noodles"
 "R029","brown_onion","1","each","1 onion"
-"R029","sour_cream","150","g","150g sour cream"
+"R029","sour_cream","150","ml","150g sour cream"
 "R029","mustard","5","g","1 tsp mustard | approximate household unit conversion; review"
 "R029","vegetable_stock","0.5","cube","200ml vegetable stock | practical stock cube amount"
 "R029","smoked_paprika","2.4","g","1 tsp paprika | approximate household unit conversion; review"
