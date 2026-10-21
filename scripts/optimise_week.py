@@ -18,7 +18,7 @@ def read_csv(path):
 
 def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False):
     recipes = [r for r in read_csv("data/recipes.csv") if r["readiness"] == "ready_for_existing_optimizer"]
-    lines = read_csv("data/recipe_ingredients.csv")
+    lines = [line for line in read_csv("data/recipe_ingredients.csv") if line["recipe_id"] in {recipe["recipe_id"] for recipe in recipes}]
     ingredients = {r["ingredient_id"]: r for r in read_csv("data/ingredients.csv")}
     products = read_csv("data/products.csv")
     flex = {r["flexibility_class"]: r for r in read_csv("config/flexibility_classes.csv")}
