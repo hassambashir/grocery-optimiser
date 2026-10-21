@@ -76,6 +76,9 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False):
                 if value:
                     groups[value].append(chosen[r["recipe_id"]])
             for value, variables in groups.items():
+                # Do not make a chicken-only seed dataset infeasible.
+                if len(recipes) - len(variables) < days - cap:
+                    continue
                 model += pulp.lpSum(variables) <= cap, "diversity_" + field + "_" + value.replace("-", "_").replace(" ", "_")
 
 
