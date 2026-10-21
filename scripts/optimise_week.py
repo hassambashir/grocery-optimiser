@@ -17,10 +17,25 @@ def read_csv(path):
         return list(csv.DictReader(handle))
 
 def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False):
-    recipes = [r for r in read_csv("data/recipes.csv") if r["readiness"] == "ready_for_existing_optimizer"]
-    lines = [line for line in read_csv("data/recipe_ingredients.csv") if line["recipe_id"] in {recipe["recipe_id"] for recipe in recipes}]
+    catalogue = read_csv("data/recipes.csv")
+    all_lines = read_csv("data/recipe_ingredients.csv")
     ingredients = {r["ingredient_id"]: r for r in read_csv("data/ingredients.csv")}
     products = read_csv("data/products.csv")
+    inventory_rows = read_csv("config/initial_inventory.csv")
+    inventory_ids = {r["ingredient_id"] for r in inventory_rows if float(r["quantity"]) > 0}
+    supplied = {p["ingredient_id"] for p in products
+                if p["mapping_status"] not in ("substitution_candidate",)
+                and p["availability_status"] != "out_of_stock"
+                and p["regular_price_gbp"] and float(p["regular_price_gbp"]) >= 0
+                and (p["usable_unit"] or p["pack_unit"]) == ingredients[p["ingredient_id"]]["preferred_model_unit"]}
+    required = defaultdict(set)
+    for line in all_lines:
+        required[line["recipe_id"]].add(line["ingredient_id"])
+    recipes = [r for r in catalogue if required[r["recipe_id"]]
+               and required[r["recipe_id"]] <= supplied | inventory_ids]
+    eligible_ids = {r["recipe_id"] for r in recipes}
+    lines = [line for line in all_lines if line["recipe_id"] in eligible_ids]
+    print(f"Eligible recipes: {len(recipes)} of {len(catalogue)} (based on ingredient supply)")
     flex = {r["flexibility_class"]: r for r in read_csv("config/flexibility_classes.csv")}
     inventory = defaultdict(float)
     for row in read_csv("config/initial_inventory.csv"):
@@ -44,7 +59,7 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False):
             continue
         if p["mapping_status"] == "compatible_candidate":
             compatible_products.add(p["product_id"])
-        if p["mapping_status"] == "substitution_candidate":
+        if p["availability_status"] == "out_of_stock" or p["mapping_status"] == "substitution_candidate":
             continue  # Mixed-colour peppers etc. need explicit approval.
         if p["regular_price_gbp"] == "":
             continue
