@@ -81,7 +81,7 @@ ingredient_id,canonical_name,category,preferred_model_unit,shelf_life_class,inve
 "oyster_sauce","Oyster Sauce","sauce_or_paste","g","medium","durable_tracked","tight","Added from complete household recipe; Tesco product not yet verified."
 "fresh_basil","Basil","pantry_other","g","medium","fresh_tracked","tight","Added from complete household recipe; Tesco product not yet verified."
 "flatbreads","Flatbreads","starch","each","long","durable_tracked","tight","Added from complete household recipe; Tesco product not yet verified."
-"cucumber","Cucumber","pantry_other","g","medium","fresh_tracked","tight","Added from complete household recipe; Tesco product not yet verified."
+"cucumber","Cucumber","fresh_produce","each","medium","fresh_tracked","tight","Added from complete household recipe; Tesco product not yet verified."
 "tomatoes","Tomatoes","pantry_other","g","medium","fresh_tracked","tight","Added from complete household recipe; Tesco product not yet verified."
 "beef_mince","Beef Mince","protein","g","short","fresh_tracked","moderate","Added from complete household recipe; Tesco product not yet verified."
 "peas","Peas","pantry_other","g","medium","durable_tracked","tight","Added from complete household recipe; Tesco product not yet verified."
