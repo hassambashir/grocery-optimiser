@@ -106,7 +106,7 @@ ingredient_id,canonical_name,category,preferred_model_unit,shelf_life_class,inve
 "ricotta","Ricotta","dairy","g","short","fresh_tracked","tight","Added from complete household recipe; Tesco product not yet verified."
 "mozzarella","Mozzarella","dairy","g","short","fresh_tracked","tight","Added from complete household recipe; Tesco product not yet verified."
 "mushrooms","Mushrooms","pantry_other","g","medium","fresh_tracked","tight","Added from complete household recipe; Tesco product not yet verified."
-"sour_cream","Sour Cream","dairy","g","short","fresh_tracked","tight","Added from complete household recipe; Tesco product not yet verified."
+"sour_cream","Sour Cream","dairy","ml","short","fresh_tracked","tight","Added from complete household recipe; Tesco product not yet verified."
 "mustard","Mustard","pantry_other","g","medium","durable_tracked","tight","Added from complete household recipe; Tesco product not yet verified."
 "vegetable_stock","Vegetable stock mix","stock","cube","long","durable_tracked","tight","Added from complete household recipe; Dry cubes/granules only; Tesco stock cube 10g makes 450ml; other products require own preparation ratio."
 "tofu","Firm Tofu","protein","g","short","fresh_tracked","moderate","Added from complete household recipe; Tesco product not yet verified."
