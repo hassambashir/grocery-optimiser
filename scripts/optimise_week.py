@@ -17,7 +17,7 @@ def read_csv(path):
         return list(csv.DictReader(handle))
 
 def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False):
-    recipes = read_csv("data/recipes.csv")
+    recipes = [r for r in read_csv("data/recipes.csv") if r["readiness"] == "ready_for_existing_optimizer"]
     lines = read_csv("data/recipe_ingredients.csv")
     ingredients = {r["ingredient_id"]: r for r in read_csv("data/ingredients.csv")}
     products = read_csv("data/products.csv")
@@ -66,7 +66,7 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False):
     chosen = {r["recipe_id"]: pulp.LpVariable("meal_" + r["recipe_id"], cat="Binary") for r in recipes}
     model += pulp.lpSum(chosen.values()) == days, "dinner_count"
     # Diversity constraints apply only when tagged, model-ready options exist.
-    catalogue = {r["recipe_id"]: r for r in read_csv("data/recipe_catalogue.csv")}
+    catalogue = {r["recipe_id"]: r for r in recipes}
     if days >= 4:
         for field, cap in (("main_protein", max(2, (days + 1) // 2)),
                            ("cooking_method", max(2, (days + 1) // 2))):
