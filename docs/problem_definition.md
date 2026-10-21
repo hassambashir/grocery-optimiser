@@ -99,15 +99,11 @@ The cleaned optimiser layer is already expressed in canonical model units. `data
 
 ## Objective
 
-The final objective is not locked yet. Candidate components include:
+The first deterministic prototype objective is **shopping expenditure + a provisional fresh-surplus risk penalty + a penalty for reducing preferred recipe quantities**. It is implemented in `scripts/optimise_week.py` with PuLP and CBC. Fresh-surplus risk is estimated as 50% of the cheapest mapped unit price multiplied by ending inventory for short-shelf-life ingredients; **this is not observed food waste, an expiry forecast, or a validated spoilage probability**. Durable inventory has no waste penalty. The relative quantity shortfall penalty defaults to 2 per ingredient when an ingredient is reduced by 100% of its preferred amount, scaled proportionally. These arbitrary coefficients require sensitivity analysis.
 
-- purchase cost;
-- spoilage/discarded food;
-- value of carryover inventory;
-- simple variety constraints or penalties;
-- shopping frequency/convenience.
+Run `pip install pulp` then `python scripts/optimise_week.py --days 7` from the repository root. The solver selects seven distinct two-person dinners, buys integer multiples of listed product quantities and carries unused inventory forward. The `--fresh-penalty` and `--deviation-penalty` flags adjust assumptions.
 
-The first deterministic model should start simpler and add objective components only when their behaviour can be inspected.
+**Limitations:** Tesco prices are a dated snapshot, not live checkout quotes; loose produce is approximated as integer multiples of its reference weight; recipes lack an audited full pantry-ingredient/cooking-method layer; expiry is not tracked; product mapping compatibility is provisional for some rows; no meal scheduling or 90-day simulation is included. Results require a successful execution and manual plausibility review before use as a real shopping list.
 
 ## Later simulation
 
