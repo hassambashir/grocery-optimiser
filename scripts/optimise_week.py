@@ -37,10 +37,13 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False):
     used = {r["ingredient_id"] for r in lines}
     available = defaultdict(list)
     snapshot_unavailable = set()
+    compatible_products = set()
     for p in products:
         i = p["ingredient_id"]
         if i not in used:
             continue
+        if p["mapping_status"] == "compatible_candidate":
+            compatible_products.add(p["product_id"])
         if p["mapping_status"] == "substitution_candidate":
             continue  # Mixed-colour peppers etc. need explicit approval.
         if p["regular_price_gbp"] == "":
@@ -75,6 +78,7 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False):
             cost.append(price * v)
 
     consumption, deviation_cost = defaultdict(list), []
+    recipe_consumption = []
     for n, row in enumerate(lines):
         rid, i = row["recipe_id"], row["ingredient_id"]
         preferred = float(row["preferred_quantity"])
@@ -84,6 +88,7 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False):
         model += amount >= preferred * low * chosen[rid]
         model += amount <= preferred * high * chosen[rid]
         consumption[i].append(amount)
+        recipe_consumption.append((rid, i, preferred, amount))
         # Discourage systematically shrinking portions; unitless proportional deviation.
         shortfall = pulp.LpVariable("shortfall_" + str(n), lowBound=0)
         model += shortfall >= preferred * chosen[rid] - amount
@@ -125,6 +130,41 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False):
         print("WARNING: Snapshot marks purchased products out of stock (prototype ignores stock status):")
         for name in flagged:
             print("  " + name)
+    compatible_selected = [p["product_name"] for p, _, _ in bought if p["product_id"] in compatible_products]
+    if compatible_selected:
+        print("WARNING: Purchased compatible-but-not-exact product mappings; review before shopping:")
+        for name in compatible_selected:
+            print("  " + name)
+    print("\\nIngredient consumption and estimated value:")
+    # Weighted-average valuation. Opening inventory has no recorded cost basis:
+    # estimate its unit value using the cheapest listed retail unit price.
+    total_consumption_value = 0.0
+    for i in sorted(used):
+        used_qty = sum(pulp.value(x) for x in consumption[i])
+        if used_qty < 0.0001:
+            continue
+        purchases = [(qty * pulp.value(purchase[p["product_id"]]), price * pulp.value(purchase[p["product_id"]]))
+                     for p, qty, price in available[i]]
+        purchased_qty = sum(q for q, _ in purchases)
+        purchased_cost = sum(c for _, c in purchases)
+        opening_qty = inventory[i]
+        opening_unit_estimate = min((price / qty for _, qty, price in available[i]), default=0.0)
+        opening_estimated_value = opening_qty * opening_unit_estimate
+        unit_cost = ((purchased_cost + opening_estimated_value) / (purchased_qty + opening_qty)
+                     if purchased_qty + opening_qty > 0 else 0.0)
+        value = used_qty * unit_cost
+        total_consumption_value += value
+        print("  " + i + ": " + format(used_qty, ".1f") + " " +
+              ingredients[i]["preferred_model_unit"] + " | estimated GBP " + format(value, ".2f"))
+    print("Estimated consumed-ingredient value (includes opening stock): GBP " +
+          format(total_consumption_value, ".2f"))
+    print("VALUATION NOTE: Weighted-average cost; opening inventory valued at lowest snapshot retail unit price.")
+    print("This is an estimate, not this week's cash spend or measured food waste.")
+    print("\\nPer-recipe ingredient quantities (preferred -> actual):")
+    for rid, i, preferred, amount in recipe_consumption:
+        if pulp.value(chosen[rid]) > 0.5:
+            print("  " + rid + " " + i + ": " + format(preferred, ".1f") + " -> " +
+                  format(pulp.value(amount), ".1f") + " " + ingredients[i]["preferred_model_unit"])
     print("Fresh surplus risk proxy: GBP " + format(sum(pulp.value(x) for x in risk), ".2f"))
     print("Quantity shortfall penalty: " + format(sum(pulp.value(x) for x in deviation_cost), ".2f"))
     print("Ending inventory (nonzero):")
@@ -132,7 +172,8 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False):
         if pulp.value(v) > 0.01:
             print("  " + i + ": " + format(pulp.value(v), ".1f") + " " + ingredients[i]["preferred_model_unit"])
     return {"status": "Optimal", "recipes": selected, "basket": bought, "spend_gbp": spent,
-            "ending_inventory": {i: pulp.value(v) for i, v in end.items()}}
+            "ending_inventory": {i: pulp.value(v) for i, v in end.items()},
+            "consumption_value_gbp_estimate": total_consumption_value}
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
