@@ -81,7 +81,7 @@ R168,lemon,1,each,Two-person draft quantity; dry starch or drained canned pulses
 R168,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R168,fresh_mint,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R168,flaked_almonds,15,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
-R168,red_chilli,1,each,One chilli; deseed to moderate heat.
+R168,red_chilli,6,g,One chilli; deseed to moderate heat. | Estimated 6 g per red chilli; adjust heat to taste.
 R168,ground_cumin,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R168,ground_coriander,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R169,brown_rice,130,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
@@ -305,7 +305,7 @@ R187,carrot,100,g,Two-person draft quantity; dry starch or drained canned pulses
 R187,green_beans,100,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R187,spring_onion,25,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R187,fresh_coriander,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
-R187,red_chilli,1,each,One chilli; deseed to moderate heat.
+R187,red_chilli,6,g,One chilli; deseed to moderate heat. | Estimated 6 g per red chilli; adjust heat to taste.
 R187,flaked_almonds,15,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R188,chicken_thigh,350,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R188,harissa_paste,20,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
@@ -320,7 +320,7 @@ R189,salmon,260,g,Two-person draft quantity; dry starch or drained canned pulses
 R189,soy_sauce,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R189,sugar,3,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R189,lime,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
-R189,red_chilli,1,each,One chilli; deseed to moderate heat.
+R189,red_chilli,6,g,One chilli; deseed to moderate heat. | Estimated 6 g per red chilli; adjust heat to taste.
 R189,fresh_ginger,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R189,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
 R189,pak_choi,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
@@ -357,7 +357,7 @@ R192,basmati_rice,150,g,Two-person draft quantity; dry starch or drained canned 
 R192,vegetable_oil,12,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R192,fresh_ginger,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R192,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
-R192,red_chilli,1,each,One chilli; deseed to moderate heat.
+R192,red_chilli,6,g,One chilli; deseed to moderate heat. | Estimated 6 g per red chilli; adjust heat to taste.
 R192,turmeric,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R192,curry_powder,3,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R192,tomato_puree,20,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
@@ -380,7 +380,7 @@ R193,vegetable_oil,15,ml,Two-person draft quantity; dry starch or drained canned
 R194,cauliflower,300,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R194,vegetable_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R194,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
-R194,red_chilli,1,each,One chilli; deseed to moderate heat.
+R194,red_chilli,6,g,One chilli; deseed to moderate heat. | Estimated 6 g per red chilli; adjust heat to taste.
 R194,fresh_ginger,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R194,prawns,200,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R194,spring_onion,50,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
@@ -405,7 +405,7 @@ R195,cayenne_pepper,0.3,g,Two-person draft quantity; dry starch or drained canne
 R195,garam_masala,3,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R195,spinach,250,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R195,lime,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
-R195,red_chilli,1,each,One chilli; deseed to moderate heat.
+R195,red_chilli,6,g,One chilli; deseed to moderate heat. | Estimated 6 g per red chilli; adjust heat to taste.
 R195,fresh_coriander,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R195,flatbreads,2,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R196,paneer,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
@@ -454,7 +454,7 @@ R199,garlic_paste,10,g,Two-person draft quantity; dry starch or drained canned p
 R199,ginger_paste,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R199,curry_powder,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R199,red_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
-R199,red_chilli,1,each,One chilli; deseed to moderate heat.
+R199,red_chilli,6,g,One chilli; deseed to moderate heat. | Estimated 6 g per red chilli; adjust heat to taste.
 R199,flaked_almonds,15,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R199,bay_leaves,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R199,cardamom,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
@@ -472,6 +472,6 @@ R200,vinegar,12,ml,Two-person draft quantity; dry starch or drained canned pulse
 R200,honey,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R200,fresh_mint,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R200,red_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
-R200,red_chilli,1,each,One chilli; deseed to moderate heat.
+R200,red_chilli,6,g,One chilli; deseed to moderate heat. | Estimated 6 g per red chilli; adjust heat to taste.
 R200,flatbreads,2,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R200,cucumber,0.5,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
