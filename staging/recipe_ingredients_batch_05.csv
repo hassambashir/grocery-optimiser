@@ -5,7 +5,7 @@ R121,fish_sauce,25,ml,Two portions
 R121,brown_sugar,25,g,Two portions
 R121,lime,1,each,Two portions
 R121,cucumber,0.5,each,Two portions
-R121,spring_onion,2,each,Two portions
+R121,spring_onion,30,g,Two portions | Approx. 2 spring onions at 15 g each.
 R121,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
 R122,feta,180,g,Two portions
 R122,butter_beans,240,g,Two portions
@@ -21,7 +21,7 @@ R123,pineapple,200,g,Two portions
 R123,basmati_rice,150,g,Two portions
 R123,red_pepper,1,each,Two portions
 R123,lime,1,each,Two portions
-R123,spring_onion,2,each,Two portions
+R123,spring_onion,30,g,Two portions | Approx. 2 spring onions at 15 g each.
 R124,beef_mince,300,g,Two portions
 R124,passata,350,g,Two portions
 R124,brown_onion,1,each,Two portions
@@ -36,7 +36,7 @@ R125,miso_paste,25,g,Two portions
 R125,butter,25,g,Two portions
 R125,soy_sauce,20,ml,Two portions
 R125,pak_choi,200,g,Two portions
-R125,spring_onion,2,each,Two portions
+R125,spring_onion,30,g,Two portions | Approx. 2 spring onions at 15 g each.
 R125,sesame_seeds,12,g,Two portions
 R126,salmon,260,g,Two portions
 R126,harissa_paste,30,g,Two portions
