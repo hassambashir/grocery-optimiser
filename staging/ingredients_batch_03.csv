@@ -1,7 +1,57 @@
-ingredient_id,canonical_name,category,preferred_model_unit,shelf_life_class,inventory_policy,default_flexibility_class,notes
-sweet_chilli_sauce,Sweet chilli sauce,sauce_or_paste,g,long,durable_tracked,tight,Tesco mapping pending
-avocado,Avocado,fruit,each,short,fresh_tracked,tight,Tesco mapping pending
-hot_sauce,Hot sauce,sauce_or_paste,ml,long,durable_tracked,tight,Tesco mapping pending
-green_chilli,Green chilli,vegetable,each,short,fresh_tracked,tight,Tesco mapping pending
-sun_dried_tomatoes,Sun-dried tomatoes,pantry_other,g,long,durable_tracked,tight,Tesco mapping pending
-lasagne_sheets,Lasagne sheets,starch,g,long,durable_tracked,tight,Tesco mapping pending
+ingredient_id
+canonical_name
+category
+preferred_model_unit
+shelf_life_class
+inventory_policy
+default_flexibility_class
+"notes
+sweet_chilli_sauce"
+Sweet chilli sauce
+sauce_or_paste
+g
+long
+durable_tracked
+tight
+"Tesco mapping pending
+avocado"
+Avocado
+fruit
+each
+short
+fresh_tracked
+tight
+"Tesco mapping pending
+hot_sauce"
+Hot sauce
+sauce_or_paste
+ml
+long
+durable_tracked
+tight
+"Tesco mapping pending
+green_chilli"
+Green chilli
+vegetable
+each
+short
+fresh_tracked
+tight
+"Tesco mapping pending
+sun_dried_tomatoes"
+Sun-dried tomatoes
+pantry_other
+g
+long
+durable_tracked
+tight
+"Tesco mapping pending
+lasagne_sheets"
+Lasagne sheets
+starch
+g
+long
+durable_tracked
+tight
+"Tesco mapping pending
+"
