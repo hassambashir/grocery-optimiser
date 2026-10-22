@@ -17,7 +17,7 @@ See [validation report](docs/validation_report.md) for executed results, the sev
 Python 3.11+:
 
 ```sh
-python -m pip install -r requirements.txt
+python -m pip install -r requirements-app.txt
 python scripts/validate_seed_data.py
 python -m unittest discover -s tests -v
 python scripts/optimise_week.py --days 7
@@ -73,3 +73,9 @@ M. A. van Rooijen et al. (2024), *Optimizing household food waste: The impact of
 ## Saved two-week simulation
 
 [Locked Week 1 and executed Week 2](runs/README.md) preserve the £39.88 original basket and a £20.44 optimal second-week basket using all 24 opening leftover balances. Both weeks include complete plans, inventory and reconciliation files. This is explicitly simulated consumption, assuming all leftovers survive; it does not overwrite the baseline inventory or represent actual purchases. The full 17-test suite includes snapshot-integrity and two-week balance regression checks.
+
+## Household web application
+
+The first mobile-friendly application is implemented in [`app/`](app/) with a Python API and persistent inventory. Browse recipes, pin meals, save exclusions, generate plans, confirm received products and record cooked/skipped meals. Manual stock entry distinguishes additions from total corrections. New households start empty; simulations never become actual stock automatically.
+
+See [application setup, database design and tested behaviour](docs/application.md). Install `requirements-app.txt` to run the app and full test suite. [Supabase SQL](db/001_initial.sql), a Dockerfile and a Render deployment blueprint are supplied. This version has been tested locally but is **not yet deployed to a live database or public phone URL**.
