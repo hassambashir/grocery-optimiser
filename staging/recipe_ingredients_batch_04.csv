@@ -127,7 +127,7 @@ R117,cucumber,0.5,each,Two portions
 R117,natural_yogurt,140,g,Two portions
 R117,lemon,1,each,Two portions
 R118,beef_strips,280,g,Two portions
-R118,black_bean_sauce,60,g,Two portions
+R118,black_bean_sauce,60,ml,Two portions | Approximate volume from original gram quantity; verify against product density
 R118,red_pepper,1,each,Two portions
 R118,green_pepper,1,each,Two portions
 R118,egg_noodles,180,g,Two portions
