@@ -131,4 +131,4 @@ fish_sauce,Fish Sauce,sauce_or_paste,ml,medium,durable_tracked,tight,
 sugar,Sugar,pantry_other,g,long,durable_tracked,tight,
 red_lentils,Red Lentils,pantry_other,g,long,durable_tracked,tight,
 cauliflower,Cauliflower,vegetable,g,short,fresh_tracked,tight,
-baking_potato,Large baking potato,vegetable,each,medium,fresh_tracked,fixed,"Jacket potato recipes require two large whole potatoes, not arbitrary small potatoes by weight."
+baking_potato,Large baking potato,vegetable,g,medium,fresh_tracked,fixed,Approximate 300 g per large baking potato; jacket recipes still require large whole potatoes.
