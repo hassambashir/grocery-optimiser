@@ -1,21 +1,220 @@
-recipe_id,recipe_name,cuisine,servings,main_protein,cooking_method,primary_side,inspiration_url,cooking_instructions,ingredient_notes,rating
-R081,Halloumi Bacon Burger with Sweet Chilli Peppers,British,2,pork,pan_fry,burger,https://www.hellofresh.co.uk/recipes/halloumi-and-bacon-burger-5f4fa38c4811c67cdd3465a5,"Heat oven to 200 C. Halve and deseed the pepper; roast cut-side down for about 20 minutes until soft and lightly charred. Slice halloumi into four pieces and shred lettuce. Fry bacon lardons for 5-7 minutes until crisp and cooked through; set aside. Fry halloumi in the same pan for 3-4 minutes per side until golden. Coat halloumi with some sweet chilli sauce off heat. Warm buns for 2-3 minutes, then layer with lettuce, roasted pepper, halloumi and bacon. Drizzle with remaining sauce.",Verified HelloFresh source steps adapted; original also includes potato wedges and carrot-mayo salad; household version omits those and uses bacon lardons instead of rashers.,
-R082,Honey Halloumi Gyros with Tzatziki,Greek,2,cheese,pan_fry,flatbread,https://www.hellofresh.co.uk/recipes/halloumi-gyros-5e3d9615ab310f0eb42caff4,"Roast sweet potato wedges at 210 C until golden, approximately 18-20 minutes, turning halfway. Chop cucumber and mix with yoghurt and lemon to make a simple tzatziki-style salad. Slice halloumi and pan-fry over medium-high heat for 3-4 minutes per side; add honey and turn for another 1-2 minutes to glaze. Warm the flatbreads briefly, then fill with halloumi and cucumber yoghurt. Serve with the sweet potato wedges.","Adapted method; ingredient reconciliation and independent source check pending",Source-page match and rating require independent verification; unverified rating removed,
-R083,Gochujang Halloumi Sesame Chips,Korean,2,cheese,pan_fry,potato,https://www.hellofresh.co.uk/recipes/honey-gochujang-halloumi-steak-66e066e846f5f843647231b8,"Heat oven to 220 C (200 C fan). Cut potatoes into 1 cm chips, scatter with sesame seeds and roast for 25-30 minutes, turning halfway. Cut halloumi into two thick steaks, soak briefly in cold water and pat dry. Fry steaks in a lightly oiled pan for 2-3 minutes each side, then bake for 5-6 minutes to soften. In the pan, warm gochujang with 2 tablespoons water for 2-3 minutes to make a glaze. Slice avocado and toss with lettuce. Serve halloumi with sesame chips and salad, spooning glaze over.",Verified HelloFresh source steps adapted; original adds honey and butter to glaze and rice vinegar and spring onion to salad; these are omitted from household version.,
-R084,Buffalo Halloumi Flatbreads and Slaw,American,2,cheese,pan_fry,flatbread,https://www.hellofresh.co.uk/recipes/buffalo-halloumi-loaded-flatbreads-64107f7a0565a60137055b91,"Heat oven to 220 C (200 C fan). Cut potatoes into 1 cm chips and roast for 25-30 minutes, turning halfway. Slice halloumi, soak briefly in cold water and pat dry. Shred carrot and cabbage and mix with mayonnaise for slaw. Warm hot sauce with 50 ml water for 1-2 minutes to make a pourable sauce. Fry halloumi for 2-3 minutes per side until golden. Warm flatbreads in oven for 3-4 minutes, fill with halloumi and slaw, drizzle with sauce and serve with chips.",Verified HelloFresh source steps adapted; original buffalo sauce contains vinegar honey and butter and recipe includes tomato rocket and blue cheese; household version simplifies.,
-R085,Chicken Saltimbocca with Asparagus Potatoes,Italian,2,chicken,pan_fry,potato,https://www.hellofresh.co.uk/recipes/carluccios-chicken-saltimbocca-5f75b0b4e76a5e6d551e0152,"Roast potato chunks until golden, approximately 30-35 minutes, turning halfway. Trim asparagus and roast for the last 10-12 minutes. Flatten chicken breasts to an even 1-2 cm; place sage leaves and serrano ham on each. Fry ham-side down for 5-6 minutes then turn and cook another 4-5 minutes or until chicken is cooked through. Rest briefly and serve with roasted potatoes and asparagus; squeeze lemon over to finish.","Adapted method; ingredient reconciliation and independent source check pending",Source-page match and rating require independent verification; unverified rating removed,
-R086,Serrano Wrapped Chicken with Roast Broccoli,Italian,2,chicken,oven_roast,potato,,"Heat oven to 210 C (190 C fan). Cut potatoes into chunks and roast for 15 minutes. Wrap chicken breasts in serrano ham and place on a separate tray with broccoli florets and chopped garlic. Roast for 20-25 minutes until chicken is cooked through, turning broccoli halfway. Scatter hard cheese over broccoli for the last 3 minutes; serve with potatoes.",Source-page match and rating require independent verification; unverified rating removed,
-R087,Crispy Buffalo Chicken Tacos,Mexican,2,chicken,pan_fry,tortilla,,"Heat oven to 220 C (200 C fan). Cut potatoes into wedges and roast for 30-35 minutes, turning halfway. Slice chicken and fry for 7-10 minutes until fully cooked. Mix hot sauce, honey and mustard; toss with chicken and heat briefly. Warm tortillas and fill with lettuce, chicken and cheddar. Serve with wedges.",Source-page match and rating require independent verification; unverified rating removed,
-R088,BBQ Pulled Chicken Loaded Fries,American,2,chicken,oven_bake,potato,,"Heat oven to 220 C (200 C fan). Cut potatoes into fries and roast for 30-35 minutes, turning halfway. Bake chicken thighs with barbecue sauce and a splash of water in a covered dish for about 25 minutes until fully cooked; shred and mix into sauce. Top fries with chicken and cheddar and bake another 3-5 minutes. Finish with avocado, chilli and coriander.",Source-page match and rating require independent verification; unverified rating removed,
-R089,Chicken Korma Skewers and Carrot Salad,Indian,2,chicken,oven_roast,potato,,"Heat oven to 220 C (200 C fan). Roast potato wedges for 30-35 minutes, turning halfway. Coat chicken pieces with garam masala and half the yoghurt, thread onto oven-safe skewers or spread on a tray, and roast for 18-22 minutes until cooked through. Grate carrot and mix with lemon juice and remaining yoghurt. Serve with skewers and wedges.",Source-page match and rating require independent verification; unverified rating removed,
-R090,Chicken Bacon Chive Cream with Roast Potatoes,British,2,chicken,pan_simmer,potato,,"Heat oven to 220 C (200 C fan). Roast potato chunks for 30-35 minutes. Fry bacon lardons for 5-7 minutes; remove. Slice and fry chicken for 7-10 minutes until cooked through. Add creme fraiche, mustard, bacon, chives and a splash of water and simmer gently for 2-3 minutes. Steam mangetout for 3-4 minutes and serve alongside.",Source-page match and rating require independent verification; unverified rating removed,
-R091,Creamy Gochujang Beef Rigatoni,Korean,2,beef,pan_simmer,pasta,https://www.hellofresh.co.uk/recipes/creamy-gochujang-beef-rigatoni-641889fd6b23cefedf01ca1b,"Boil pasta in salted water until tender, around 12 minutes for rigatoni or according to packet instructions, then drain. Fry beef mince in a dry pan over medium-high heat for 5-6 minutes, breaking it up until browned and cooked through; drain excess fat. Lower heat, stir in gochujang, creme fraiche and about 100 ml water, then simmer 3-4 minutes until slightly thickened. Stir in spinach for 1-2 minutes until wilted. Toss with pasta and top with sliced spring onions.",Verified HelloFresh source steps adapted; original also uses garlic tomato puree chicken stock paste sugar and butter; these are omitted from household version.,
-R092,Prawn Bacon Chilli Spaghetti,Italian,2,shrimp,pan_fry,pasta,,"Cook spaghetti according to packet instructions, reserving a little water. Fry bacon lardons for 5-7 minutes until browned. Add chopped garlic and sliced chilli for 30 seconds, then prawns and cook for 3-5 minutes until pink, opaque and cooked through. Lower heat, stir in creme fraiche and enough pasta water to coat spaghetti; toss and serve.",Source-page match and rating require independent verification; unverified rating removed,
-R093,Cheesy Chipotle Bean Quesadillas,Mexican,2,legumes,pan_fry,tortilla,,"Drain and rinse black beans and mash half. Combine with chipotle paste and diced tomatoes. Divide bean mixture and cheddar between tortillas, fold and toast in a dry pan for 2-3 minutes per side until golden and cheese melts. Serve with sliced avocado and rocket.",Source-page match and rating require independent verification; unverified rating removed,
-R094,Roasted Pepper Aubergine Walnut Linguine,Italian,2,vegetarian,pan_simmer,pasta,,"Heat oven to 220 C (200 C fan). Dice aubergine and pepper and roast for 25-30 minutes until tender. Cook pasta according to packet instructions. Simmer passata for 5 minutes, add roasted vegetables and a splash of pasta water, then toss with pasta. Top with chopped walnuts and chives.",Source-page match and rating require independent verification; unverified rating removed,
-R095,Creamy Pesto Pea Spinach Pasta,Italian,2,vegetarian,pan_simmer,pasta,,"Cook pasta according to packet instructions; add peas for the last 3 minutes and spinach for the final minute. Drain, reserving some cooking water. Warm pesto and soft cheese gently with a splash of reserved water, then toss with pasta and vegetables. Sprinkle with grated hard cheese.",Source-page match and rating require independent verification; unverified rating removed,
-R096,Sun-Dried Tomato Asparagus Risotto,Italian,2,vegetarian,pan_simmer,rice,,"Dissolve vegetable stock cube in about 600 ml hot water. Toast arborio rice in a pan for 1 minute, then add stock gradually, stirring frequently for 18-22 minutes until rice is tender. Add chopped asparagus for the final 5-7 minutes, then halved cherry tomatoes and chopped sun-dried tomatoes. Remove from heat and stir in grated hard cheese.",Source-page match and rating require independent verification; unverified rating removed,
-R097,Roasted Vegetable Cheddar Lasagne,Italian,2,vegetarian,oven_bake,pasta,,"Heat oven to 200 C (180 C fan). Slice courgette and pepper and roast for 20 minutes. Loosen soft cheese with a splash of water. Layer passata, lasagne sheets, roasted vegetables and soft cheese in a small baking dish, finishing with cheddar. Cover and bake 25 minutes, uncover and bake 15-20 minutes more until sheets are tender; rest 5 minutes.",Source-page match and rating require independent verification; unverified rating removed,
-R098,Chettinad Chickpea Coconut Soup with Naan,Indian,2,legumes,pan_stew,naan,,"Drain chickpeas. Simmer chopped tomatoes, coconut milk and garam masala for 8 minutes. Add chickpeas and simmer 10-12 minutes more, thinning with water if needed for a soup consistency. Warm naan according to packet instructions. Finish soup with chopped coriander and crispy onions.",Source-page match and rating require independent verification; unverified rating removed,
-R099,Indonesian Tofu Vegetable Laksa,Indonesian,2,tofu,pan_stew,noodles,,"Drain and cube tofu. Heat curry paste with a splash of coconut milk for 1 minute, then add remaining coconut milk and about 300 ml water. Simmer tofu in broth for 8 minutes. Add rice noodles and cook according to packet timing, adding chopped pak choi for the final 2-3 minutes. Finish with lime juice and coriander.",Source-page match and rating require independent verification; unverified rating removed,
-R100,Halloumi Falafel Harissa Bulgur Bowl,Middle Eastern,2,cheese,pan_fry,bulgur,,"Cook bulgur according to packet instructions and fluff. Slice pepper and onion and fry in a non-stick pan for 5-7 minutes. Heat falafel according to packet instructions. Fry halloumi slices for 2-3 minutes per side until golden. Mix harissa with yoghurt. Serve bulgur topped with vegetables, falafel, halloumi and dressing.",Source-page match and rating require independent verification; unverified rating removed,
+recipe_id
+recipe_name
+cuisine
+servings
+main_protein
+cooking_method
+primary_side
+inspiration_url
+cooking_instructions
+ingredient_notes
+"rating
+R081"
+Halloumi Bacon Burger with Sweet Chilli Peppers
+British
+2
+pork
+pan_fry
+burger
+https://www.hellofresh.co.uk/recipes/halloumi-and-bacon-burger-5f4fa38c4811c67cdd3465a5
+"Heat oven to 200 C. Halve and deseed the pepper; roast cut-side down for about 20 minutes until soft and lightly charred. Slice halloumi into four pieces and shred lettuce. Fry bacon lardons for 5-7 minutes until crisp and cooked through; set aside. Fry halloumi in the same pan for 3-4 minutes per side until golden. Coat halloumi with some sweet chilli sauce off heat. Warm buns for 2-3 minutes, then layer with lettuce, roasted pepper, halloumi and bacon. Drizzle with remaining sauce."
+Verified HelloFresh source steps adapted; original also includes potato wedges and carrot-mayo salad; household version omits those and uses bacon lardons instead of rashers.
+"
+R082"
+Honey Halloumi Gyros with Tzatziki
+Greek
+2
+cheese
+pan_fry
+flatbread
+https://www.hellofresh.co.uk/recipes/halloumi-gyros-5e3d9615ab310f0eb42caff4
+"Roast sweet potato wedges at 210 C until golden, approximately 18-20 minutes, turning halfway. Chop cucumber and mix with yoghurt and lemon to make a simple tzatziki-style salad. Slice halloumi and pan-fry over medium-high heat for 3-4 minutes per side; add honey and turn for another 1-2 minutes to glaze. Warm the flatbreads briefly, then fill with halloumi and cucumber yoghurt. Serve with the sweet potato wedges."
+Adapted method; ingredient reconciliation and independent source check pending
+Source-page match and rating require independent verification; unverified rating removed
+"
+R083"
+Gochujang Halloumi Sesame Chips
+Korean
+2
+cheese
+pan_fry
+potato
+https://www.hellofresh.co.uk/recipes/honey-gochujang-halloumi-steak-66e066e846f5f843647231b8
+"Heat oven to 220 C (200 C fan). Cut potatoes into 1 cm chips, scatter with sesame seeds and roast for 25-30 minutes, turning halfway. Cut halloumi into two thick steaks, soak briefly in cold water and pat dry. Fry steaks in a lightly oiled pan for 2-3 minutes each side, then bake for 5-6 minutes to soften. In the pan, warm gochujang with 2 tablespoons water for 2-3 minutes to make a glaze. Slice avocado and toss with lettuce. Serve halloumi with sesame chips and salad, spooning glaze over."
+Verified HelloFresh source steps adapted; original adds honey and butter to glaze and rice vinegar and spring onion to salad; these are omitted from household version.
+"
+R084"
+Buffalo Halloumi Flatbreads and Slaw
+American
+2
+cheese
+pan_fry
+flatbread
+https://www.hellofresh.co.uk/recipes/buffalo-halloumi-loaded-flatbreads-64107f7a0565a60137055b91
+"Heat oven to 220 C (200 C fan). Cut potatoes into 1 cm chips and roast for 25-30 minutes, turning halfway. Slice halloumi, soak briefly in cold water and pat dry. Shred carrot and cabbage and mix with mayonnaise for slaw. Warm hot sauce with 50 ml water for 1-2 minutes to make a pourable sauce. Fry halloumi for 2-3 minutes per side until golden. Warm flatbreads in oven for 3-4 minutes, fill with halloumi and slaw, drizzle with sauce and serve with chips."
+Verified HelloFresh source steps adapted; original buffalo sauce contains vinegar honey and butter and recipe includes tomato rocket and blue cheese; household version simplifies.
+"
+R085"
+Chicken Saltimbocca with Asparagus Potatoes
+Italian
+2
+chicken
+pan_fry
+potato
+https://www.hellofresh.co.uk/recipes/carluccios-chicken-saltimbocca-5f75b0b4e76a5e6d551e0152
+"Roast potato chunks until golden, approximately 30-35 minutes, turning halfway. Trim asparagus and roast for the last 10-12 minutes. Flatten chicken breasts to an even 1-2 cm; place sage leaves and serrano ham on each. Fry ham-side down for 5-6 minutes then turn and cook another 4-5 minutes or until chicken is cooked through. Rest briefly and serve with roasted potatoes and asparagus; squeeze lemon over to finish."
+Adapted method; ingredient reconciliation and independent source check pending
+Source-page match and rating require independent verification; unverified rating removed
+"
+R086"
+Serrano Wrapped Chicken with Roast Broccoli
+Italian
+2
+chicken
+oven_roast
+potato
+"Heat oven to 210 C (190 C fan). Cut potatoes into chunks and roast for 15 minutes. Wrap chicken breasts in serrano ham and place on a separate tray with broccoli florets and chopped garlic. Roast for 20-25 minutes until chicken is cooked through, turning broccoli halfway. Scatter hard cheese over broccoli for the last 3 minutes; serve with potatoes."
+Source-page match and rating require independent verification; unverified rating removed
+"
+R087"
+Crispy Buffalo Chicken Tacos
+Mexican
+2
+chicken
+pan_fry
+tortilla
+"Heat oven to 220 C (200 C fan). Cut potatoes into wedges and roast for 30-35 minutes, turning halfway. Slice chicken and fry for 7-10 minutes until fully cooked. Mix hot sauce, honey and mustard; toss with chicken and heat briefly. Warm tortillas and fill with lettuce, chicken and cheddar. Serve with wedges."
+Source-page match and rating require independent verification; unverified rating removed
+"
+R088"
+BBQ Pulled Chicken Loaded Fries
+American
+2
+chicken
+oven_bake
+potato
+"Heat oven to 220 C (200 C fan). Cut potatoes into fries and roast for 30-35 minutes, turning halfway. Bake chicken thighs with barbecue sauce and a splash of water in a covered dish for about 25 minutes until fully cooked; shred and mix into sauce. Top fries with chicken and cheddar and bake another 3-5 minutes. Finish with avocado, chilli and coriander."
+Source-page match and rating require independent verification; unverified rating removed
+"
+R089"
+Chicken Korma Skewers and Carrot Salad
+Indian
+2
+chicken
+oven_roast
+potato
+"Heat oven to 220 C (200 C fan). Roast potato wedges for 30-35 minutes, turning halfway. Coat chicken pieces with garam masala and half the yoghurt, thread onto oven-safe skewers or spread on a tray, and roast for 18-22 minutes until cooked through. Grate carrot and mix with lemon juice and remaining yoghurt. Serve with skewers and wedges."
+Source-page match and rating require independent verification; unverified rating removed
+"
+R090"
+Chicken Bacon Chive Cream with Roast Potatoes
+British
+2
+chicken
+pan_simmer
+potato
+"Heat oven to 220 C (200 C fan). Roast potato chunks for 30-35 minutes. Fry bacon lardons for 5-7 minutes; remove. Slice and fry chicken for 7-10 minutes until cooked through. Add creme fraiche, mustard, bacon, chives and a splash of water and simmer gently for 2-3 minutes. Steam mangetout for 3-4 minutes and serve alongside."
+Source-page match and rating require independent verification; unverified rating removed
+"
+R091"
+Creamy Gochujang Beef Rigatoni
+Korean
+2
+beef
+pan_simmer
+pasta
+https://www.hellofresh.co.uk/recipes/creamy-gochujang-beef-rigatoni-641889fd6b23cefedf01ca1b
+"Boil pasta in salted water until tender, around 12 minutes for rigatoni or according to packet instructions, then drain. Fry beef mince in a dry pan over medium-high heat for 5-6 minutes, breaking it up until browned and cooked through; drain excess fat. Lower heat, stir in gochujang, creme fraiche and about 100 ml water, then simmer 3-4 minutes until slightly thickened. Stir in spinach for 1-2 minutes until wilted. Toss with pasta and top with sliced spring onions."
+Verified HelloFresh source steps adapted; original also uses garlic tomato puree chicken stock paste sugar and butter; these are omitted from household version.
+"
+R092"
+Prawn Bacon Chilli Spaghetti
+Italian
+2
+shrimp
+pan_fry
+pasta
+"Cook spaghetti according to packet instructions, reserving a little water. Fry bacon lardons for 5-7 minutes until browned. Add chopped garlic and sliced chilli for 30 seconds, then prawns and cook for 3-5 minutes until pink, opaque and cooked through. Lower heat, stir in creme fraiche and enough pasta water to coat spaghetti; toss and serve."
+Source-page match and rating require independent verification; unverified rating removed
+"
+R093"
+Cheesy Chipotle Bean Quesadillas
+Mexican
+2
+legumes
+pan_fry
+tortilla
+"Drain and rinse black beans and mash half. Combine with chipotle paste and diced tomatoes. Divide bean mixture and cheddar between tortillas, fold and toast in a dry pan for 2-3 minutes per side until golden and cheese melts. Serve with sliced avocado and rocket."
+Source-page match and rating require independent verification; unverified rating removed
+"
+R094"
+Roasted Pepper Aubergine Walnut Linguine
+Italian
+2
+vegetarian
+pan_simmer
+pasta
+"Heat oven to 220 C (200 C fan). Dice aubergine and pepper and roast for 25-30 minutes until tender. Cook pasta according to packet instructions. Simmer passata for 5 minutes, add roasted vegetables and a splash of pasta water, then toss with pasta. Top with chopped walnuts and chives."
+Source-page match and rating require independent verification; unverified rating removed
+"
+R095"
+Creamy Pesto Pea Spinach Pasta
+Italian
+2
+vegetarian
+pan_simmer
+pasta
+"Cook pasta according to packet instructions; add peas for the last 3 minutes and spinach for the final minute. Drain, reserving some cooking water. Warm pesto and soft cheese gently with a splash of reserved water, then toss with pasta and vegetables. Sprinkle with grated hard cheese."
+Source-page match and rating require independent verification; unverified rating removed
+"
+R096"
+Sun-Dried Tomato Asparagus Risotto
+Italian
+2
+vegetarian
+pan_simmer
+rice
+"Dissolve vegetable stock cube in about 600 ml hot water. Toast arborio rice in a pan for 1 minute, then add stock gradually, stirring frequently for 18-22 minutes until rice is tender. Add chopped asparagus for the final 5-7 minutes, then halved cherry tomatoes and chopped sun-dried tomatoes. Remove from heat and stir in grated hard cheese."
+Source-page match and rating require independent verification; unverified rating removed
+"
+R097"
+Roasted Vegetable Cheddar Lasagne
+Italian
+2
+vegetarian
+oven_bake
+pasta
+"Heat oven to 200 C (180 C fan). Slice courgette and pepper and roast for 20 minutes. Loosen soft cheese with a splash of water. Layer passata, lasagne sheets, roasted vegetables and soft cheese in a small baking dish, finishing with cheddar. Cover and bake 25 minutes, uncover and bake 15-20 minutes more until sheets are tender; rest 5 minutes."
+Source-page match and rating require independent verification; unverified rating removed
+"
+R098"
+Chettinad Chickpea Coconut Soup with Naan
+Indian
+2
+legumes
+pan_stew
+naan
+"Drain chickpeas. Simmer chopped tomatoes, coconut milk and garam masala for 8 minutes. Add chickpeas and simmer 10-12 minutes more, thinning with water if needed for a soup consistency. Warm naan according to packet instructions. Finish soup with chopped coriander and crispy onions."
+Source-page match and rating require independent verification; unverified rating removed
+"
+R099"
+Indonesian Tofu Vegetable Laksa
+Indonesian
+2
+tofu
+pan_stew
+noodles
+"Drain and cube tofu. Heat curry paste with a splash of coconut milk for 1 minute, then add remaining coconut milk and about 300 ml water. Simmer tofu in broth for 8 minutes. Add rice noodles and cook according to packet timing, adding chopped pak choi for the final 2-3 minutes. Finish with lime juice and coriander."
+Source-page match and rating require independent verification; unverified rating removed
+"
+R100"
+Halloumi Falafel Harissa Bulgur Bowl
+Middle Eastern
+2
+cheese
+pan_fry
+bulgur
+"Cook bulgur according to packet instructions and fluff. Slice pepper and onion and fry in a non-stick pan for 5-7 minutes. Heat falafel according to packet instructions. Fry halloumi slices for 2-3 minutes per side until golden. Mix harissa with yoghurt. Serve bulgur topped with vegetables, falafel, halloumi and dressing."
+Source-page match and rating require independent verification; unverified rating removed
+"
+"
