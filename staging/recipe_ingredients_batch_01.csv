@@ -63,7 +63,7 @@ R048,pork_mince,240,g,Household standardised amount; verify product compatibilit
 R048,basmati_rice,150,g,Household standardised amount; verify product compatibility
 R048,brown_onion,1,each,Household standardised amount; verify product compatibility
 R048,garlic,2,clove,Household standardised amount; verify product compatibility | Standardised from 6 g; review serving equivalence
-R048,red_chilli,1,each,Household standardised amount; verify product compatibility | Standardised from 6 g; review serving equivalence
+R048,red_chilli,6,g,Household standardised amount; verify product compatibility | Standardised from 6 g; review serving equivalence | Estimated 6 g per red chilli; adjust heat to taste.
 R048,mangetout,150,g,Household standardised amount; verify product compatibility
 R048,ketjap_manis,50,g,Household standardised amount; verify product compatibility
 R048,soy_sauce,25,ml,Household standardised amount; verify product compatibility
