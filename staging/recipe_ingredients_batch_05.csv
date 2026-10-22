@@ -6,11 +6,11 @@ R121,brown_sugar,25,g,Two portions
 R121,lime,1,each,Two portions
 R121,cucumber,0.5,each,Two portions
 R121,spring_onion,2,each,Two portions
-R121,garlic,8,g,Two portions
+R121,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
 R122,feta,180,g,Two portions
 R122,butter_beans,240,g,Two portions
 R122,cherry_tomatoes,300,g,Two portions
-R122,garlic,8,g,Two portions
+R122,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
 R122,dried_oregano,3,g,Two portions
 R122,olive_oil,20,ml,Two portions
 R122,ciabatta,2,each,Two portions
@@ -26,7 +26,7 @@ R124,beef_mince,300,g,Two portions
 R124,passata,350,g,Two portions
 R124,brown_onion,1,each,Two portions
 R124,carrot,120,g,Two portions
-R124,garlic,8,g,Two portions
+R124,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
 R124,dried_oregano,3,g,Two portions
 R124,instant_polenta,150,g,Two portions
 R124,hard_cheese,40,g,Two portions
@@ -42,15 +42,15 @@ R126,salmon,260,g,Two portions
 R126,harissa_paste,30,g,Two portions
 R126,couscous,150,g,Two portions
 R126,orange,1,each,Two portions
-R126,courgette,200,g,Two portions
+R126,courgette,1,each,Two portions | Standardised from 200 g; review serving equivalence
 R126,fresh_mint,10,g,Two portions
 R126,natural_yogurt,100,g,Two portions
-R127,sausages,300,g,Two portions
+R127,sausages,4,each,Two portions | Standardised from 300 g; review serving equivalence
 R127,butter_beans,240,g,Two portions
 R127,kale,130,g,Two portions
 R127,chopped_tomatoes,350,g,Two portions
 R127,brown_onion,1,each,Two portions
-R127,garlic,8,g,Two portions
+R127,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
 R127,ciabatta,2,each,Two portions
 R127,smoked_paprika,4,g,Two portions
 R128,paneer,250,g,Two portions
@@ -81,7 +81,7 @@ R131,giant_couscous,160,g,Two portions
 R131,cherry_tomatoes,200,g,Two portions
 R131,spinach,80,g,Two portions
 R131,lemon,1,each,Two portions
-R131,garlic,8,g,Two portions
+R131,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
 R131,chicken_stock_mix,0.5,cube,Two portions
 R131,olive_oil,15,ml,Two portions
 R132,chickpeas,240,g,Two portions
@@ -97,7 +97,7 @@ R133,courgette,2,each,Two portions
 R133,spinach,100,g,Two portions
 R133,feta,90,g,Two portions
 R133,passata,300,g,Two portions
-R133,garlic,8,g,Two portions
+R133,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
 R133,dried_oregano,3,g,Two portions
 R134,cod,300,g,Two portions
 R134,tamarind_paste,25,g,Two portions
@@ -133,7 +133,7 @@ R137,rocket,60,g,Two portions
 R138,pork_loin_steaks,320,g,Two portions
 R138,lemon,1,each,Two portions
 R138,dried_oregano,5,g,Two portions
-R138,garlic,8,g,Two portions
+R138,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
 R138,pittas,4,each,Two portions
 R138,cucumber,0.5,each,Two portions
 R138,natural_yogurt,150,g,Two portions
@@ -151,5 +151,5 @@ R140,ricotta,250,g,Two portions
 R140,spinach,180,g,Two portions
 R140,passata,450,g,Two portions
 R140,mozzarella,100,g,Two portions
-R140,garlic,8,g,Two portions
+R140,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
 R140,dried_oregano,3,g,Two portions
