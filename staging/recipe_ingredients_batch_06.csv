@@ -30,7 +30,7 @@ R143,honey,20,g,Two portions
 R143,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
 R143,egg_noodles,150,g,Two portions
 R143,sesame_seeds,20,g,Two portions
-R143,spring_onion,2,each,Two portions
+R143,spring_onion,30,g,Two portions | Approx. 2 spring onions at 15 g each.
 R144,brown_onion,1,each,Two portions
 R144,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
 R144,garam_masala,4,g,Two portions
@@ -166,7 +166,7 @@ R156,rice_vinegar,30,ml,Two portions
 R156,vegetable_oil,15,ml,Two portions
 R156,pork_loin_steaks,250,g,Two portions
 R156,red_pepper,1,each,Two portions
-R156,spring_onion,3,each,Two portions
+R156,spring_onion,45,g,Two portions | Approx. 3 spring onions at 15 g each.
 R156,basmati_rice,150,g,Two portions
 R157,vegetable_oil,15,ml,Two portions
 R157,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
@@ -175,7 +175,7 @@ R157,red_chilli,6,g,Two portions | Estimated 6 g per red chilli; adjust heat to 
 R157,pork_mince,300,g,Two portions
 R157,black_bean_sauce,160,ml,Two portions | Approximate volume from original gram quantity; verify against product density
 R157,rice_noodles,150,g,Two portions
-R157,spring_onion,3,each,Two portions
+R157,spring_onion,45,g,Two portions | Approx. 3 spring onions at 15 g each.
 R158,diced_beef,300,g,Two portions
 R158,olive_oil,15,ml,Two portions
 R158,brown_onion,1,each,Two portions
@@ -189,7 +189,7 @@ R159,chicken_thigh,300,g,Two portions
 R159,vegetable_oil,15,ml,Two portions
 R159,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
 R159,red_pepper,1,each,Two portions
-R159,spring_onion,3,each,Two portions
+R159,spring_onion,45,g,Two portions | Approx. 3 spring onions at 15 g each.
 R159,beansprouts,100,g,Two portions
 R159,egg_noodles,180,g,Two portions
 R159,oyster_sauce,45,ml,Two portions
