@@ -21,7 +21,7 @@ R142,carrot,100,g,Two portions
 R142,red_pepper,1,each,Two portions
 R142,soy_sauce,30,ml,Two portions
 R142,cornflour,8,g,Two portions
-R142,sweet_chilli_sauce,35,g,Two portions
+R142,sweet_chilli_sauce,35,ml,Two portions | Approximate volume from original gram quantity; verify against product density
 R143,salmon,260,g,Two portions
 R143,soy_sauce,40,ml,Two portions
 R143,rice_vinegar,25,ml,Two portions
@@ -106,7 +106,7 @@ R149,spaghetti,160,g,Two portions
 R150,pork_loin_steaks,180,g,Two portions
 R150,prawns,100,g,Two portions
 R150,egg_noodles,160,g,Two portions
-R150,teriyaki_sauce,35,g,Two portions
+R150,teriyaki_sauce,35,ml,Two portions | Approximate volume from original gram quantity; verify against product density
 R150,five_spice,2,g,Two portions
 R150,curry_powder,5,g,Two portions
 R150,carrot,100,g,Two portions
@@ -173,7 +173,7 @@ R157,garlic,3,clove,Two portions | Standardised from 8 g; review serving equival
 R157,fresh_ginger,12,g,Two portions
 R157,red_chilli,1,each,Two portions
 R157,pork_mince,300,g,Two portions
-R157,black_bean_sauce,160,g,Two portions
+R157,black_bean_sauce,160,ml,Two portions | Approximate volume from original gram quantity; verify against product density
 R157,rice_noodles,150,g,Two portions
 R157,spring_onion,3,each,Two portions
 R158,diced_beef,300,g,Two portions
