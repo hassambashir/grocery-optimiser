@@ -4,7 +4,7 @@ R081,bacon_lardons,100,g,Two portions
 R081,burger_buns,2,each,Two portions
 R081,red_pepper,1,each,Two portions
 R081,sweet_chilli_sauce,45,g,Two portions
-R081,lettuce,60,g,Two portions
+R081,lettuce,0.25,each,Two portions | Standardised from 60 g; review serving equivalence
 R082,halloumi,225,g,Two portions
 R082,flatbreads,2,each,Two portions
 R082,sweet_potato,400,g,Two portions
@@ -17,7 +17,7 @@ R083,gochujang,35,g,Two portions
 R083,potatoes,450,g,Two portions
 R083,sesame_seeds,15,g,Two portions
 R083,avocado,1,each,Two portions
-R083,lettuce,70,g,Two portions
+R083,lettuce,0.25,each,Two portions | Standardised from 70 g; review serving equivalence
 R084,halloumi,225,g,Two portions
 R084,flatbreads,2,each,Two portions
 R084,potatoes,400,g,Two portions
@@ -36,22 +36,22 @@ R086,serrano_ham,70,g,Two portions
 R086,potatoes,450,g,Two portions
 R086,broccoli,220,g,Two portions
 R086,hard_cheese,35,g,Two portions
-R086,garlic,6,g,Two portions
+R086,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
 R087,chicken_breast,300,g,Two portions
 R087,tortillas,4,each,Two portions
 R087,potatoes,400,g,Two portions
 R087,cheddar,50,g,Two portions
 R087,hot_sauce,35,ml,Two portions
-R087,lettuce,100,g,Two portions
+R087,lettuce,0.5,each,Two portions | Standardised from 100 g; review serving equivalence
 R087,wholegrain_mustard,15,g,Two portions
 R087,honey,15,g,Two portions
 R088,chicken_thigh,300,g,Two portions
 R088,potatoes,500,g,Two portions
-R088,bbq_sauce,70,g,Two portions
+R088,bbq_sauce,70,ml,Two portions | Standardised from 70 g; review serving equivalence
 R088,cheddar,70,g,Two portions
 R088,avocado,1,each,Two portions
 R088,fresh_coriander,10,g,Two portions
-R088,red_chilli,10,g,Two portions
+R088,red_chilli,1.5,each,Two portions | Standardised from 10 g; review serving equivalence
 R089,chicken_breast,300,g,Two portions
 R089,garam_masala,8,g,Two portions
 R089,potatoes,450,g,Two portions
@@ -76,7 +76,7 @@ R092,bacon_lardons,90,g,Two portions
 R092,spaghetti,180,g,Two portions
 R092,creme_fraiche,120,g,Two portions
 R092,green_chilli,1,each,Two portions
-R092,garlic,6,g,Two portions
+R092,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
 R093,black_beans,240,g,Two portions
 R093,tortillas,4,each,Two portions
 R093,cheddar,80,g,Two portions
@@ -103,7 +103,7 @@ R096,sun_dried_tomatoes,70,g,Two portions
 R096,vegetable_stock,1,cube,Two portions
 R096,hard_cheese,40,g,Two portions
 R097,lasagne_sheets,160,g,Two portions
-R097,courgette,220,g,Two portions
+R097,courgette,1,each,Two portions | Standardised from 220 g; review serving equivalence
 R097,red_pepper,1,each,Two portions
 R097,passata,400,g,Two portions
 R097,cheddar,100,g,Two portions
