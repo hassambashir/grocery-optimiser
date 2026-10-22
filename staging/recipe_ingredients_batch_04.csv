@@ -22,7 +22,7 @@ R103,kale,120,g,Two portions
 R103,harissa_paste,40,g,Two portions
 R103,passata,300,g,Two portions
 R103,breadcrumbs,30,g,Two portions
-R103,garlic,8,g,Two portions
+R103,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
 R103,olive_oil,20,ml,Two portions
 R104,cod,300,g,Two portions
 R104,potatoes,450,g,Two portions
@@ -30,7 +30,7 @@ R104,peas,200,g,Two portions
 R104,lemon,1,each,Two portions
 R104,butter,30,g,Two portions
 R104,parsley,15,g,Two portions
-R104,garlic,6,g,Two portions
+R104,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
 R105,pork_loin_steaks,300,g,Two portions
 R105,apple,2,each,Two portions
 R105,potatoes,450,g,Two portions
@@ -66,7 +66,7 @@ R109,spinach,120,g,Two portions
 R109,basmati_rice,120,g,Two portions
 R109,passata,250,g,Two portions
 R109,mozzarella,80,g,Two portions
-R109,garlic,6,g,Two portions
+R109,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
 R110,lamb_mince,300,g,Two portions
 R110,bulgur,150,g,Two portions
 R110,cauliflower,400,g,Two portions
@@ -104,7 +104,7 @@ R114,spinach,100,g,Two portions
 R114,chicken_stock_mix,0.5,cube,Two portions
 R114,hard_cheese,35,g,Two portions
 R115,halloumi,180,g,Two portions
-R115,courgette,300,g,Two portions
+R115,courgette,1.5,each,Two portions | Standardised from 300 g; review serving equivalence
 R115,egg,1,each,Two portions
 R115,plain_flour,60,g,Two portions
 R115,tomatoes,250,g,Two portions
