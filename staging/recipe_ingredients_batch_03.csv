@@ -3,7 +3,7 @@ R081,halloumi,225,g,Two portions
 R081,bacon_lardons,100,g,Two portions
 R081,burger_buns,2,each,Two portions
 R081,red_pepper,1,each,Two portions
-R081,sweet_chilli_sauce,45,g,Two portions
+R081,sweet_chilli_sauce,45,ml,Two portions | Approximate volume from original gram quantity; verify against product density
 R081,lettuce,0.25,each,Two portions | Standardised from 60 g; review serving equivalence
 R082,halloumi,225,g,Two portions
 R082,flatbreads,2,each,Two portions
