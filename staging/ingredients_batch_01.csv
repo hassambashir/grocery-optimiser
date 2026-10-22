@@ -20,7 +20,7 @@ pesto,Basil pesto,sauce_or_paste,g,long,durable_tracked,tight,New staged ingredi
 rocket,Rocket leaves,vegetable,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
 pumpkin_seeds,Pumpkin seeds,pantry_other,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
 sausages,Pork sausages,protein,each,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
-apple,Apple,fruit,each,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+apple,Apple,fruit,each,medium,fresh_tracked,tight,Fresh whole apples; Tesco SKU mapping pending
 chives,Fresh chives,fresh_aromatic,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
 falafel,Ready-to-eat falafel,protein,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
 peanut_butter,Peanut butter,pantry_other,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
