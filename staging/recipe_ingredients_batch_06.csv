@@ -4,7 +4,7 @@ R141,chicken_thigh,320,g,Two portions
 R141,zaatar,15,g,Two portions
 R141,sumac,5,g,Two portions
 R141,smoked_paprika,3,g,Two portions
-R141,garlic,8,g,Two portions
+R141,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
 R141,lemon,1,each,Two portions
 R141,red_onion,1,each,Two portions
 R141,olives,60,g,Two portions
@@ -15,7 +15,7 @@ R142,pork_mince,250,g,Two portions
 R142,egg_noodles,180,g,Two portions
 R142,sesame_oil,15,ml,Two portions
 R142,fresh_ginger,15,g,Two portions
-R142,garlic,8,g,Two portions
+R142,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
 R142,mangetout,100,g,Two portions
 R142,carrot,100,g,Two portions
 R142,red_pepper,1,each,Two portions
@@ -27,12 +27,12 @@ R143,soy_sauce,40,ml,Two portions
 R143,rice_vinegar,25,ml,Two portions
 R143,fresh_ginger,20,g,Two portions
 R143,honey,20,g,Two portions
-R143,garlic,6,g,Two portions
+R143,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
 R143,egg_noodles,150,g,Two portions
 R143,sesame_seeds,20,g,Two portions
 R143,spring_onion,2,each,Two portions
 R144,brown_onion,1,each,Two portions
-R144,garlic,6,g,Two portions
+R144,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
 R144,garam_masala,4,g,Two portions
 R144,turmeric,3,g,Two portions
 R144,ground_coriander,3,g,Two portions
@@ -72,7 +72,7 @@ R147,chickpeas,200,g,Two portions
 R147,spinach,200,g,Two portions
 R147,brown_onion,1,each,Two portions
 R147,fresh_ginger,10,g,Two portions
-R147,garlic,6,g,Two portions
+R147,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
 R147,curry_powder,8,g,Two portions
 R147,garam_masala,3,g,Two portions
 R147,turmeric,2,g,Two portions
@@ -95,7 +95,7 @@ R148,brown_sugar,5,g,Two portions
 R148,fresh_coriander,10,g,Two portions
 R149,turkey_mince,300,g,Two portions
 R149,breadcrumbs,20,g,Two portions
-R149,garlic,8,g,Two portions
+R149,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
 R149,olive_oil,15,ml,Two portions
 R149,brown_onion,1,each,Two portions
 R149,carrot,100,g,Two portions
@@ -169,7 +169,7 @@ R156,red_pepper,1,each,Two portions
 R156,spring_onion,3,each,Two portions
 R156,basmati_rice,150,g,Two portions
 R157,vegetable_oil,15,ml,Two portions
-R157,garlic,8,g,Two portions
+R157,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
 R157,fresh_ginger,12,g,Two portions
 R157,red_chilli,1,each,Two portions
 R157,pork_mince,300,g,Two portions
@@ -187,7 +187,7 @@ R158,potatoes,350,g,Two portions
 R158,butter,20,g,Two portions
 R159,chicken_thigh,300,g,Two portions
 R159,vegetable_oil,15,ml,Two portions
-R159,garlic,6,g,Two portions
+R159,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
 R159,red_pepper,1,each,Two portions
 R159,spring_onion,3,each,Two portions
 R159,beansprouts,100,g,Two portions
@@ -197,7 +197,7 @@ R160,sweet_potato,300,g,Two portions
 R160,vegetable_oil,10,ml,Two portions
 R160,brown_onion,1,each,Two portions
 R160,fresh_ginger,12,g,Two portions
-R160,garlic,6,g,Two portions
+R160,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
 R160,thai_red_curry_paste,35,g,Two portions
 R160,chickpeas,240,g,Two portions
 R160,chopped_tomatoes,300,g,Two portions
