@@ -117,7 +117,7 @@ R171,vegetable_oil,12,ml,Two-person draft quantity; dry starch or drained canned
 R171,brown_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R171,ginger_garlic_paste,15,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R171,honey,15,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
-R171,sweet_chilli_sauce,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R171,sweet_chilli_sauce,10,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable. | Provisional numeric g-to-ml standardisation; serving volume requires verification.
 R171,lime,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R171,fish_sauce,7,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
 R171,soy_sauce,7,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
