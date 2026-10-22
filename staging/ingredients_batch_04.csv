@@ -1,0 +1,5 @@
+ingredient_id,canonical_name,category,preferred_model_unit,shelf_life_class,inventory_policy,default_flexibility_class,notes
+thai_green_curry_paste,Thai green curry paste,sauce_or_paste,g,long,durable_tracked,tight,New canonical ingredient; Tesco mapping pending
+puff_pastry,Puff pastry,starch,g,short,fresh_tracked,tight,New canonical ingredient; Tesco mapping pending
+black_bean_sauce,Black bean sauce,sauce_or_paste,g,long,durable_tracked,tight,New canonical ingredient; Tesco mapping pending
+dried_apricots,Dried apricots,pantry_other,g,long,durable_tracked,tight,New canonical ingredient; Tesco mapping pending
