@@ -1,0 +1,11 @@
+ingredient_id,canonical_name,category,preferred_model_unit,shelf_life_class,inventory_policy,default_flexibility_class,notes
+jerk_seasoning,Jerk seasoning,seasoning,g,long,durable_tracked,tight,Batch 05; Tesco mapping pending
+pineapple,Pineapple,fruit,g,short,fresh_tracked,tight,Batch 05; Tesco mapping pending
+instant_polenta,Instant polenta,starch,g,long,durable_tracked,tight,Batch 05; Tesco mapping pending
+udon_noodles,Udon noodles,starch,g,long,durable_tracked,tight,Batch 05; Tesco mapping pending
+orange,Orange,fruit,each,short,fresh_tracked,tight,Batch 05; Tesco mapping pending
+goats_cheese,Goat cheese,dairy,g,short,fresh_tracked,tight,Batch 05; Tesco mapping pending
+giant_couscous,Giant couscous,starch,g,long,durable_tracked,tight,Batch 05; Tesco mapping pending
+tamarind_paste,Tamarind paste,sauce_or_paste,g,long,durable_tracked,tight,Batch 05; Tesco mapping pending
+fresh_thyme,Fresh thyme,fresh_aromatic,g,short,fresh_tracked,tight,Batch 05; Tesco mapping pending
+cannelloni_tubes,Cannelloni tubes,starch,g,long,durable_tracked,tight,Batch 05; Tesco mapping pending
