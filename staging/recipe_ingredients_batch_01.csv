@@ -57,7 +57,7 @@ R047,garlic,3,clove,Household standardised amount; verify product compatibility 
 R047,broccoli,150,g,Household standardised amount; verify product compatibility
 R047,baby_corn,100,g,Household standardised amount; verify product compatibility
 R047,sesame_oil,15,ml,Household standardised amount; verify product compatibility
-R047,teriyaki_sauce,100,g,Household standardised amount; verify product compatibility
+R047,teriyaki_sauce,100,ml,Household standardised amount; verify product compatibility | Approximate volume from original gram quantity; verify against product density
 R047,sesame_seeds,5,g,Household standardised amount; verify product compatibility
 R048,pork_mince,240,g,Household standardised amount; verify product compatibility
 R048,basmati_rice,150,g,Household standardised amount; verify product compatibility
