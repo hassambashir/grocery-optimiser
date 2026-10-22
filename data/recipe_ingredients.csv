@@ -9,7 +9,7 @@ R001,peri_peri_seasoning,10,g,Household seasoning amount rather than preserving 
 R001,garlic,2,clove,About two cloves. | Standardised from 6 g; confirm portion against recipe
 R001,natural_yogurt,100,g,Practical sauce portion.
 R001,butter,20,g,Cooking butter required by the named dish; previously omitted.
-R002,red_chilli,1,each,Approximate one chilli. | Standardised from 6 g; confirm portion against recipe
+R002,red_chilli,6,g,Approximate one chilli. | Standardised from 6 g; confirm portion against recipe | Estimated 6 g per red chilli; adjust heat to taste.
 R002,hoisin_sauce,40,ml,Standardised from 40 g; confirm portion against recipe
 R002,garlic,2,clove,About two cloves. | Standardised from 6 g; confirm portion against recipe
 R002,pak_choi,200,g,
@@ -159,7 +159,7 @@ R016,chicken_mince,300,g,300g chicken mince
 R016,jasmine_rice,140,g,140g jasmine rice
 R016,green_beans,180,g,180g green beans
 R016,garlic,3,clove,3 garlic cloves | approximate household unit conversion; review | Standardised from 9 g; confirm portion against recipe
-R016,red_chilli,1,each,1 chilli | approximate household unit conversion; review | Standardised from 6 g; confirm portion against recipe
+R016,red_chilli,6,g,1 chilli | approximate household unit conversion; review | Standardised from 6 g; confirm portion against recipe | Estimated 6 g per red chilli; adjust heat to taste.
 R016,soy_sauce,20,ml,20ml soy sauce
 R016,oyster_sauce,18,ml,1 tbsp oyster sauce | approximate household unit conversion; review | Standardised from 18 g; confirm portion against recipe
 R016,fresh_basil,15,g,15g basil
@@ -201,13 +201,13 @@ R020,cornflour,3,g,1 tsp cornflour | approximate household unit conversion; revi
 R020,fresh_ginger,10,g,10g ginger
 R020,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
 R021,beef_mince,300,g,300g beef mince
-R021,baking_potato,2,each,Two large baking potatoes; not interchangeable with two baby potatoes.
+R021,baking_potato,600,g,Use 2 large whole baking potatoes (approximately 600 g total); keep whole for jacket potatoes.
 R021,brown_onion,1,each,1 onion
 R021,kidney_beans,240,g,1 tin kidney beans | approximate household unit conversion; review
 R021,chopped_tomatoes,400,g,1 tin chopped tomatoes | approximate household unit conversion; review
 R021,ground_cumin,2,g,1 tsp cumin | approximate household unit conversion; review
 R021,smoked_paprika,2.4,g,1 tsp smoked paprika | approximate household unit conversion; review
-R021,red_chilli,1,each,1 chilli | approximate household unit conversion; review | Standardised from 6 g; confirm portion against recipe
+R021,red_chilli,6,g,1 chilli | approximate household unit conversion; review | Standardised from 6 g; confirm portion against recipe | Estimated 6 g per red chilli; adjust heat to taste.
 R022,beef_mince,300,g,300g beef mince
 R022,spaghetti,180,g,180g spaghetti
 R022,egg,1,each,1 egg
@@ -312,7 +312,7 @@ R033,mangetout,100,g,100g mangetout
 R033,thai_red_curry_paste,15,g,1 tbsp Thai red curry paste | approximate household unit conversion; review
 R033,lime,1,each,1 lime | whole fruit
 R033,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
-R034,baking_potato,2,each,Two large baking potatoes; not interchangeable with two baby potatoes.
+R034,baking_potato,600,g,Use 2 large whole baking potatoes (approximately 600 g total); keep whole for jacket potatoes.
 R034,tuna,145,g,145 g drained tuna is the preferred two-person quantity; a 145 g net can supplies only 102 g drained.
 R034,sweetcorn,120,g,120g sweetcorn
 R034,mayonnaise,60,ml,"60 ml mayonnaise, measured by volume to match retail pack."
