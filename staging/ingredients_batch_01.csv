@@ -1,30 +1,30 @@
 ingredient_id,canonical_name,category,preferred_model_unit,shelf_life_class,inventory_policy,default_flexibility_class,notes
 chipotle_paste,Chipotle paste,sauce_or_paste,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
-green_pepper,Green pepper,vegetable,each,short,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+green_pepper,Green pepper,vegetable,each,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
 burger_buns,Burger buns,starch,each,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
-lettuce,Lettuce,vegetable,each,short,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+lettuce,Lettuce,vegetable,each,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
 gnocchi,Potato gnocchi,starch,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
-creme_fraiche,Creme fraiche,dairy,g,short,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
-hard_cheese,Hard Italian style cheese,dairy,g,short,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
-chorizo,Diced chorizo,protein,g,short,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
-asparagus,Asparagus,vegetable,g,short,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
-leek,Leek,vegetable,each,short,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
-baby_corn,Baby corn,vegetable,g,short,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+creme_fraiche,Creme fraiche,dairy,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+hard_cheese,Hard Italian style cheese,dairy,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+chorizo,Diced chorizo,protein,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+asparagus,Asparagus,vegetable,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+leek,Leek,vegetable,each,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+baby_corn,Baby corn,vegetable,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
 teriyaki_sauce,Teriyaki sauce,sauce_or_paste,ml,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
 sesame_seeds,Sesame seeds,pantry_other,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
-pork_mince,Pork mince,protein,g,short,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+pork_mince,Pork mince,protein,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
 ketjap_manis,Ketjap manis,sauce_or_paste,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
 naan,Plain naan bread,starch,each,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
-turkey_mince,Turkey mince,protein,g,short,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+turkey_mince,Turkey mince,protein,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
 pesto,Basil pesto,sauce_or_paste,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
-rocket,Rocket leaves,vegetable,g,short,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+rocket,Rocket leaves,vegetable,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
 pumpkin_seeds,Pumpkin seeds,pantry_other,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
-sausages,Pork sausages,protein,each,short,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+sausages,Pork sausages,protein,each,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
 apple,Apple,fruit,each,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
-chives,Fresh chives,fresh_aromatic,g,short,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
-falafel,Ready-to-eat falafel,protein,g,short,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+chives,Fresh chives,fresh_aromatic,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+falafel,Ready-to-eat falafel,protein,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
 peanut_butter,Peanut butter,pantry_other,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
 peanuts,Peanuts,pantry_other,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
 honey,Honey,pantry_other,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
-bacon_lardons,Bacon lardons,protein,g,short,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+bacon_lardons,Bacon lardons,protein,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
 balsamic_vinegar,Balsamic vinegar,sauce_or_paste,ml,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
