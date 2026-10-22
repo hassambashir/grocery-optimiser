@@ -1,0 +1,8 @@
+ingredient_id,canonical_name,category,preferred_model_unit,shelf_life_class,inventory_policy,default_flexibility_class,notes
+zaatar,Za'atar seasoning,seasoning,g,long,durable_tracked,tight,Batch 06; Tesco mapping pending
+jalfrezi_paste,Jalfrezi curry paste,sauce_or_paste,g,long,durable_tracked,tight,Batch 06; Tesco mapping pending
+fennel_seeds,Fennel seeds,seasoning,g,long,durable_tracked,tight,Batch 06; Tesco mapping pending
+korma_paste,Korma curry paste,sauce_or_paste,g,long,durable_tracked,tight,Batch 06; Tesco mapping pending
+radishes,Radishes,vegetable,g,short,fresh_tracked,tight,Batch 06; Tesco mapping pending
+diced_beef,Diced stewing beef,meat,g,short,fresh_tracked,tight,Batch 06; Tesco mapping pending
+beansprouts,Beansprouts,vegetable,g,short,fresh_tracked,tight,Batch 06; Tesco mapping pending
