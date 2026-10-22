@@ -53,7 +53,7 @@ R145,coconut_milk,200,ml,Two portions
 R145,tomatoes,250,g,Two portions
 R145,chickpeas,240,g,Two portions
 R145,basmati_rice,150,g,Two portions
-R145,red_chilli,1,each,Two portions
+R145,red_chilli,6,g,Two portions | Estimated 6 g per red chilli; adjust heat to taste.
 R146,red_onion,1,each,Two portions
 R146,butternut_squash,250,g,Two portions
 R146,cauliflower,250,g,Two portions
@@ -76,7 +76,7 @@ R147,garlic,2,clove,Two portions | Standardised from 6 g; review serving equival
 R147,curry_powder,8,g,Two portions
 R147,garam_masala,3,g,Two portions
 R147,turmeric,2,g,Two portions
-R147,red_chilli,1,each,Two portions
+R147,red_chilli,6,g,Two portions | Estimated 6 g per red chilli; adjust heat to taste.
 R147,coconut_milk,200,ml,Two portions
 R147,vegetable_stock,0.5,cube,Two portions
 R147,mango_chutney,15,g,Two portions
@@ -171,7 +171,7 @@ R156,basmati_rice,150,g,Two portions
 R157,vegetable_oil,15,ml,Two portions
 R157,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
 R157,fresh_ginger,12,g,Two portions
-R157,red_chilli,1,each,Two portions
+R157,red_chilli,6,g,Two portions | Estimated 6 g per red chilli; adjust heat to taste.
 R157,pork_mince,300,g,Two portions
 R157,black_bean_sauce,160,ml,Two portions | Approximate volume from original gram quantity; verify against product density
 R157,rice_noodles,150,g,Two portions
