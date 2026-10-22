@@ -6,12 +6,12 @@ R001,red_pepper,1,each,Whole vegetable required; no fractional consumption.
 R001,tomato_puree,30,g,Rounded from Gousto's 32g sachet amount.
 R001,sweetcorn,160,g,Use the full usable/drained amount of the smaller Tesco tin.
 R001,peri_peri_seasoning,10,g,Household seasoning amount rather than preserving Gousto's supplied tablespoon weight.
-R001,garlic,6,g,About two cloves.
+R001,garlic,2,clove,About two cloves. | Standardised from 6 g; confirm portion against recipe
 R001,natural_yogurt,100,g,Practical sauce portion.
 R001,butter,20,g,Cooking butter required by the named dish; previously omitted.
-R002,red_chilli,6,g,Approximate one chilli.
-R002,hoisin_sauce,40,g,
-R002,garlic,6,g,About two cloves.
+R002,red_chilli,1,each,Approximate one chilli. | Standardised from 6 g; confirm portion against recipe
+R002,hoisin_sauce,40,ml,Standardised from 40 g; confirm portion against recipe
+R002,garlic,2,clove,About two cloves. | Standardised from 6 g; confirm portion against recipe
 R002,pak_choi,200,g,
 R002,cornflour,5,g,Household-rounded thickener amount.
 R002,fresh_ginger,15,g,
@@ -28,21 +28,21 @@ R003,ground_coriander,4.8,g,About 2 tsp.
 R003,dried_oregano,0.5,g,About 1 tsp.
 R003,chicken_stock_mix,0.5,cube,Use the same ordinary chicken stock kept elsewhere instead of a separate beef-stock product.
 R003,smoked_paprika,4.8,g,About 2 tsp.
-R003,garlic,6,g,About two cloves.
+R003,garlic,2,clove,About two cloves. | Standardised from 6 g; confirm portion against recipe
 R003,brown_onion,1,each,Whole vegetable required; no fractional consumption.
 R003,arborio_rice,160,g,Retained because the dish is cooked in a risotto-like style.
 R003,spinach,80,g,
 R003,cherry_tomatoes,125,g,
 R003,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
 R004,carrot,120,g,Rounded household amount.
-R004,bbq_sauce,30,g,Slightly reduced after simplifying the sauce.
+R004,bbq_sauce,30,ml,Slightly reduced after simplifying the sauce. | Standardised from 30 g; confirm portion against recipe
 R004,long_grain_rice,130,g,
 R004,spring_onion,30,g,About two spring onions rather than a token single piece.
 R004,chicken_breast,250,g,
 R004,five_spice,2.4,g,About 1 tsp.
-R004,garlic,6,g,About two cloves.
+R004,garlic,2,clove,About two cloves. | Standardised from 6 g; confirm portion against recipe
 R004,sesame_oil,10,ml,
-R004,hoisin_sauce,30,g,Increased after removing tomato paste.
+R004,hoisin_sauce,30,ml,Increased after removing tomato paste. | Standardised from 30 g; confirm portion against recipe
 R004,soy_sauce,15,ml,Standard household sauce component.
 R004,mangetout,80,g,
 R005,chicken_stock_mix,0.5,cube,Ordinary chicken stock/cube equivalent.
@@ -53,7 +53,7 @@ R005,chicken_breast,300,g,Reduced from Gousto's double-protein 500g version.
 R005,natural_yogurt,100,g,Replaces mayonnaise-based meal-kit sauce.
 R005,parsley,10,g,More useful household herb amount.
 R005,brown_onion,1,each,Whole vegetable required; no fractional consumption.
-R005,garlic,6,g,Fresh garlic replaces roasted garlic paste.
+R005,garlic,2,clove,Fresh garlic replaces roasted garlic paste. | Standardised from 6 g; confirm portion against recipe
 R005,green_beans,160,g,Increase vegetables after reducing double chicken.
 R005,spinach,80,g,
 R005,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
@@ -63,9 +63,9 @@ R006,chicken_breast,250,g,
 R006,sesame_oil,10,ml,
 R006,brown_onion,1,each,Whole vegetable required; no fractional consumption.
 R006,wholewheat_noodles,125,g,Two nests for two adults rather than Gousto's smaller one-nest portion.
-R006,hoisin_sauce,40,g,
+R006,hoisin_sauce,40,ml,Standardised from 40 g; confirm portion against recipe
 R006,fresh_ginger,10,g,Fresh ginger replaces ginger-garlic paste.
-R006,garlic,6,g,Fresh garlic replaces ginger-garlic paste.
+R006,garlic,2,clove,Fresh garlic replaces ginger-garlic paste. | Standardised from 6 g; confirm portion against recipe
 R006,carrot,60,g,Rounded household amount.
 R006,soy_sauce,15,ml,
 R007,chicken_thigh,250,g,
@@ -84,7 +84,7 @@ R008,ground_coriander,2.4,g,Common korma spice; uses an existing pantry ingredie
 R008,brown_onion,1,each,Whole vegetable required; no fractional consumption.
 R008,long_grain_rice,120,g,More typical two-person rice portion.
 R008,fresh_ginger,15,g,Fresh ginger replaces ginger paste.
-R008,garlic,6,g,Fresh garlic replaces meal-kit shortcuts.
+R008,garlic,2,clove,Fresh garlic replaces meal-kit shortcuts. | Standardised from 6 g; confirm portion against recipe
 R008,cardamom,0.6,g,About three pods.
 R008,spinach,120,g,
 R008,flaked_almonds,15,g,
@@ -93,7 +93,7 @@ R008,fresh_coriander,10,g,Fresh finishing herb; replaces the need for bespoke he
 R008,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
 R009,chicken_stock_mix,0.5,cube,Ordinary chicken stock/cube equivalent.
 R009,chicken_breast,250,g,
-R009,garlic,6,g,About two cloves.
+R009,garlic,2,clove,About two cloves. | Standardised from 6 g; confirm portion against recipe
 R009,soft_cheese,50,g,
 R009,spinach,100,g,Slightly fuller vegetable portion.
 R009,cherry_tomatoes,250,g,
@@ -102,8 +102,8 @@ R009,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit pur
 R010,chicken_breast,250,g,
 R010,sumac,2,g,About 1 tsp.
 R010,ground_coriander,2.4,g,About 1 tsp.
-R010,garlic,6,g,About two cloves.
-R010,courgette,200,g,
+R010,garlic,2,clove,About two cloves. | Standardised from 6 g; confirm portion against recipe
+R010,courgette,1,each,Standardised from 200 g; confirm portion against recipe
 R010,natural_yogurt,100,g,Practical sauce portion.
 R010,couscous,120,g,
 R010,harissa_paste,20,g,
@@ -125,7 +125,7 @@ R012,potatoes,400,g,400g baby potatoes
 R012,cherry_tomatoes,150,g,150g cherry tomatoes
 R012,red_onion,1,each,1 red onion
 R012,lemon,1,each,1 lemon | whole fruit
-R012,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R012,garlic,2,clove,2 garlic cloves | approximate household unit conversion; review | Standardised from 6 g; confirm portion against recipe
 R012,dried_oregano,0.5,g,1 tsp oregano | approximate household unit conversion; review
 R012,vegetable_oil,15,ml,One household tablespoon = 15 ml.
 R013,chicken_breast,300,g,300g chicken breast
@@ -134,13 +134,13 @@ R013,spinach,100,g,100g spinach
 R013,red_pepper,1,each,1 pepper
 R013,single_cream,120,ml,120ml single cream | measured by volume
 R013,cajun_seasoning,6,g,2 tsp Cajun seasoning | approximate household unit conversion; review
-R013,garlic,3,g,1 garlic clove | approximate household unit conversion; review
+R013,garlic,1,clove,1 garlic clove | approximate household unit conversion; review | Standardised from 3 g; confirm portion against recipe
 R013,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
 R014,chicken_thigh,400,g,400g chicken thighs
 R014,jasmine_rice,140,g,140g jasmine rice
 R014,soy_sauce,50,ml,50ml soy sauce
 R014,vinegar,45,ml,45ml vinegar
-R014,garlic,9,g,3 garlic cloves | approximate household unit conversion; review
+R014,garlic,3,clove,3 garlic cloves | approximate household unit conversion; review | Standardised from 9 g; confirm portion against recipe
 R014,bay_leaves,2,each,2 bay leaves | two whole leaves
 R014,brown_sugar,4,g,1 tsp brown sugar | approximate household unit conversion; review
 R014,green_beans,180,g,180g green beans
@@ -158,10 +158,10 @@ R015,vegetable_oil,45,ml,"Shallow-frying allowance plus sauce preparation; oil i
 R016,chicken_mince,300,g,300g chicken mince
 R016,jasmine_rice,140,g,140g jasmine rice
 R016,green_beans,180,g,180g green beans
-R016,garlic,9,g,3 garlic cloves | approximate household unit conversion; review
-R016,red_chilli,6,g,1 chilli | approximate household unit conversion; review
+R016,garlic,3,clove,3 garlic cloves | approximate household unit conversion; review | Standardised from 9 g; confirm portion against recipe
+R016,red_chilli,1,each,1 chilli | approximate household unit conversion; review | Standardised from 6 g; confirm portion against recipe
 R016,soy_sauce,20,ml,20ml soy sauce
-R016,oyster_sauce,18,g,1 tbsp oyster sauce | approximate household unit conversion; review
+R016,oyster_sauce,18,ml,1 tbsp oyster sauce | approximate household unit conversion; review | Standardised from 18 g; confirm portion against recipe
 R016,fresh_basil,15,g,15g basil
 R016,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
 R017,chicken_thigh,350,g,350g chicken thigh
@@ -172,7 +172,7 @@ R017,tomatoes,240,g,2 tomatoes | approximate household unit conversion; review
 R017,ground_cumin,2,g,1 tsp cumin | approximate household unit conversion; review
 R017,smoked_paprika,2.4,g,1 tsp paprika | approximate household unit conversion; review
 R017,lemon,1,each,1 lemon | whole fruit
-R017,garlic,3,g,1 garlic clove | approximate household unit conversion; review
+R017,garlic,1,clove,1 garlic clove | approximate household unit conversion; review | Standardised from 3 g; confirm portion against recipe
 R017,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
 R018,beef_mince,300,g,300g beef mince
 R018,potatoes,450,g,450g potatoes
@@ -189,14 +189,14 @@ R019,carrot,100,g,1 carrot | approximate household unit conversion; review
 R019,soy_sauce,30,ml,30ml soy sauce
 R019,brown_sugar,15,g,1 tbsp brown sugar | approximate household unit conversion; review
 R019,sesame_oil,5,ml,One household teaspoon = 5 ml.
-R019,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R019,garlic,2,clove,2 garlic cloves | approximate household unit conversion; review | Standardised from 6 g; confirm portion against recipe
 R019,fresh_ginger,10,g,10g ginger
 R020,beef_strips,300,g,300g beef strips
 R020,egg_noodles,180,g,180g egg noodles
 R020,broccoli,250,g,250g broccoli
-R020,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R020,garlic,2,clove,2 garlic cloves | approximate household unit conversion; review | Standardised from 6 g; confirm portion against recipe
 R020,soy_sauce,20,ml,20ml soy sauce
-R020,hoisin_sauce,30,g,30g hoisin
+R020,hoisin_sauce,30,ml,30g hoisin | Standardised from 30 g; confirm portion against recipe
 R020,cornflour,3,g,1 tsp cornflour | approximate household unit conversion; review
 R020,fresh_ginger,10,g,10g ginger
 R020,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
@@ -207,20 +207,20 @@ R021,kidney_beans,240,g,1 tin kidney beans | approximate household unit conversi
 R021,chopped_tomatoes,400,g,1 tin chopped tomatoes | approximate household unit conversion; review
 R021,ground_cumin,2,g,1 tsp cumin | approximate household unit conversion; review
 R021,smoked_paprika,2.4,g,1 tsp smoked paprika | approximate household unit conversion; review
-R021,red_chilli,6,g,1 chilli | approximate household unit conversion; review
+R021,red_chilli,1,each,1 chilli | approximate household unit conversion; review | Standardised from 6 g; confirm portion against recipe
 R022,beef_mince,300,g,300g beef mince
 R022,spaghetti,180,g,180g spaghetti
 R022,egg,1,each,1 egg
 R022,breadcrumbs,30,g,30g breadcrumbs
 R022,brown_onion,1,each,1 onion
 R022,chopped_tomatoes,400,g,400g chopped tomatoes
-R022,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R022,garlic,2,clove,2 garlic cloves | approximate household unit conversion; review | Standardised from 6 g; confirm portion against recipe
 R022,dried_oregano,0.5,g,1 tsp oregano | approximate household unit conversion; review
 R023,lamb_mince,300,g,300g lamb mince
 R023,pittas,2,each,2 pittas
 R023,ground_cumin,2,g,1 tsp cumin | approximate household unit conversion; review
 R023,ground_coriander,2.4,g,1 tsp coriander | approximate household unit conversion; review
-R023,garlic,3,g,1 garlic clove | approximate household unit conversion; review
+R023,garlic,1,clove,1 garlic clove | approximate household unit conversion; review | Standardised from 3 g; confirm portion against recipe
 R023,natural_yogurt,100,g,100g yoghurt
 R023,cucumber,0.5,each,Half a cucumber; combine leftover halves across meals
 R023,tomatoes,240,g,2 tomatoes | approximate household unit conversion; review
@@ -249,7 +249,7 @@ R026,chickpeas,480,g,2 tins chickpeas | approximate household unit conversion; r
 R026,basmati_rice,140,g,140g basmati rice
 R026,brown_onion,1,each,1 onion
 R026,chopped_tomatoes,400,g,1 tin chopped tomatoes | approximate household unit conversion; review
-R026,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R026,garlic,2,clove,2 garlic cloves | approximate household unit conversion; review | Standardised from 6 g; confirm portion against recipe
 R026,fresh_ginger,10,g,10g ginger
 R026,garam_masala,2,g,1 tsp garam masala | approximate household unit conversion; review
 R026,ground_cumin,2,g,1 tsp cumin | approximate household unit conversion; review
@@ -269,7 +269,7 @@ R028,ricotta,200,g,200g ricotta
 R028,spinach,200,g,200g spinach
 R028,passata,300,g,300g passata
 R028,mozzarella,80,g,80g mozzarella
-R028,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R028,garlic,2,clove,2 garlic cloves | approximate household unit conversion; review | Standardised from 6 g; confirm portion against recipe
 R028,dried_oregano,0.5,g,1 tsp oregano | approximate household unit conversion; review
 R028,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
 R029,mushrooms,350,g,350g mushrooms
@@ -286,22 +286,22 @@ R030,jasmine_rice,140,g,140g jasmine rice
 R030,broccoli,200,g,200g broccoli
 R030,red_pepper,1,each,1 pepper
 R030,soy_sauce,20,ml,20ml soy sauce
-R030,hoisin_sauce,18,g,1 tbsp hoisin | approximate household unit conversion; review
+R030,hoisin_sauce,18,ml,1 tbsp hoisin | approximate household unit conversion; review | Standardised from 18 g; confirm portion against recipe
 R030,sesame_oil,5,ml,One household teaspoon = 5 ml.
-R030,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R030,garlic,2,clove,2 garlic cloves | approximate household unit conversion; review | Standardised from 6 g; confirm portion against recipe
 R031,salmon,260,g,2 salmon fillets (260g)
 R031,potatoes,400,g,400g baby potatoes
 R031,green_beans,200,g,200g green beans
 R031,lemon,1,each,1 lemon | whole fruit
-R031,garlic,3,g,1 garlic clove | approximate household unit conversion; review
+R031,garlic,1,clove,1 garlic clove | approximate household unit conversion; review | Standardised from 3 g; confirm portion against recipe
 R031,olive_oil,15,ml,One household tablespoon = 15 ml.
 R031,dried_dill,1,g,1 tsp dried dill | approximate household unit conversion; review
 R032,cod,300,g,300g cod fillets
 R032,couscous,140,g,140g couscous
-R032,courgette,200,g,1 courgette | approximate household unit conversion; review
+R032,courgette,1,each,1 courgette | approximate household unit conversion; review | Standardised from 200 g; confirm portion against recipe
 R032,passata,300,g,300g passata
 R032,olives,50,g,50g olives
-R032,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R032,garlic,2,clove,2 garlic cloves | approximate household unit conversion; review | Standardised from 6 g; confirm portion against recipe
 R032,dried_oregano,0.5,g,1 tsp oregano | approximate household unit conversion; review
 R032,olive_oil,15,ml,One household tablespoon = 15 ml.
 R033,prawns,300,g,300g raw peeled prawns
@@ -321,7 +321,7 @@ R034,cucumber,0.5,each,Half a cucumber; combine leftover halves across meals
 R034,tomatoes,120,g,1 tomato | approximate household unit conversion; review
 R035,halloumi,225,g,225g halloumi
 R035,couscous,150,g,150g couscous
-R035,courgette,200,g,1 courgette | approximate household unit conversion; review
+R035,courgette,1,each,1 courgette | approximate household unit conversion; review | Standardised from 200 g; confirm portion against recipe
 R035,red_pepper,1,each,1 pepper
 R035,red_onion,1,each,1 red onion
 R035,lemon,1,each,1 lemon | whole fruit
@@ -340,7 +340,7 @@ R037,aubergine,1,each,"One whole aubergine, matching Tesco each listing; weight 
 R037,bulgur,120,g,120g bulgur
 R037,brown_onion,1,each,1 onion
 R037,chopped_tomatoes,250,g,250g chopped tomatoes
-R037,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R037,garlic,2,clove,2 garlic cloves | approximate household unit conversion; review | Standardised from 6 g; confirm portion against recipe
 R037,ground_cumin,2,g,1 tsp cumin | approximate household unit conversion; review
 R037,olive_oil,15,ml,One household tablespoon = 15 ml.
 R038,orzo,160,g,160g orzo
@@ -348,7 +348,7 @@ R038,chickpeas,240,g,1 tin chickpeas | approximate household unit conversion; re
 R038,spinach,100,g,100g spinach
 R038,lemon,1,each,1 lemon | whole fruit
 R038,brown_onion,1,each,1 onion
-R038,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R038,garlic,2,clove,2 garlic cloves | approximate household unit conversion; review | Standardised from 6 g; confirm portion against recipe
 R038,vegetable_stock,1,cube,400ml vegetable stock | practical stock cube amount
 R038,feta,50,g,50g feta
 R038,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
@@ -360,7 +360,7 @@ R039,lemongrass,1,each,One fresh stem; trim and mince. Tesco pack contains at le
 R039,lime,1,each,1 lime | whole fruit
 R039,fish_sauce,15,ml,1 tbsp fish sauce | approximate household unit conversion; review
 R039,sugar,4,g,1 tsp sugar | approximate household unit conversion; review
-R039,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R039,garlic,2,clove,2 garlic cloves | approximate household unit conversion; review | Standardised from 6 g; confirm portion against recipe
 R039,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
 R040,red_lentils,180,g,180g red lentils
 R040,basmati_rice,140,g,140g basmati rice
@@ -369,5 +369,5 @@ R040,brown_onion,1,each,1 onion
 R040,chopped_tomatoes,400,g,1 tin chopped tomatoes | approximate household unit conversion; review
 R040,turmeric,2.5,g,1 tsp turmeric | approximate household unit conversion; review
 R040,ground_cumin,2,g,1 tsp cumin | approximate household unit conversion; review
-R040,garlic,6,g,2 garlic cloves | approximate household unit conversion; review
+R040,garlic,2,clove,2 garlic cloves | approximate household unit conversion; review | Standardised from 6 g; confirm portion against recipe
 R040,vegetable_oil,15,ml,One household tablespoon = 15 ml.
