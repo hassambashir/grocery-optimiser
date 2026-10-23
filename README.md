@@ -2,13 +2,15 @@
 
 Choose seven varied dinners for two people and integer Tesco retail packs, balancing shopping cost, fresh surplus risk and small departures from preferred recipe quantities. Useful leftovers remain inventory; there is no requirement to finish a pack within one week.
 
-## Verified snapshot: 21 October 2026
+## Verified snapshot: 23 October 2026
 
-- 40 recipes, 372 recipe-ingredient rows, 125 ingredients used (133 canonical entries including retained legacy ingredients).
-- 240 distinct Tesco listings, each with product-page verification evidence.
-- 222 eligible product rows overall; 217 serve currently used ingredients, providing 92 alternatives beyond one option per ingredient.
+- 40 active recipes, 373 active recipe-ingredient rows, 125 active ingredients used and 209 canonical ingredient definitions.
+- 160 additional staged recipes with 1,404 ingredient lines and 198 staged ingredients; all pass the staged coverage validator.
+- 332 distinct Tesco listings, each with product-page verification evidence.
+- 307 eligible product rows overall; 219 serve currently active ingredients, providing 94 alternatives beyond one option per active ingredient.
 - All 125 used ingredients have an eligible purchasing option; no ingredient coverage exceptions.
-- 18 unavailable or unapproved product rows are retained for audit and excluded from purchasing.
+- All 205 ingredients used across the active and staged recipes have an eligible purchasing option.
+- 25 unavailable or unresolved product rows are retained for audit and excluded from purchasing.
 
 See [validation report](docs/validation_report.md) for executed results, the seven-dinner basket, corrections and limitations; [coverage audit](docs/catalogue_coverage.md) lists every ingredient and excluded product.
 
@@ -48,7 +50,9 @@ Before reusing inventory, remove anything eaten, discarded or no longer usable. 
 | `config/initial_inventory.csv` | Actual model starting stock; example includes 10 kg rice |
 | `config/flexibility_classes.csv` | Bounds on preferred quantities |
 | `scripts/catalogue.py` | Shared strict CSV reader and eligibility rules |
-| `scripts/validate_seed_data.py` | Integrity, evidence and complete eligible-coverage gate |
+| `scripts/validate_seed_data.py` | Active-data integrity, evidence and complete eligible-coverage gate |
+| `scripts/validate_staging_data.py` | Equivalent coverage, unit and method checks for every staged batch |
+| `scripts/generate_catalogue_coverage.py` | Rebuild the active-and-staged catalogue coverage audit |
 | `scripts/optimise_week.py` | Joint recipe, pack and inventory MILP |
 | `tests/test_project.py` | Data-corruption, purchasing and end-to-end regression tests |
 
@@ -72,7 +76,7 @@ M. A. van Rooijen et al. (2024), *Optimizing household food waste: The impact of
 
 ## Saved two-week simulation
 
-[Locked Week 1 and executed Week 2](runs/README.md) preserve the £39.88 original basket and a £20.44 optimal second-week basket using all 24 opening leftover balances. Both weeks include complete plans, inventory and reconciliation files. This is explicitly simulated consumption, assuming all leftovers survive; it does not overwrite the baseline inventory or represent actual purchases. The full 30-test suite includes product-schema, recipe-method quality, snapshot-integrity and two-week balance regression checks.
+[Locked Week 1 and executed Week 2](runs/README.md) preserve the £39.88 original basket and a £20.44 optimal second-week basket using all 24 opening leftover balances. Both weeks include complete plans, inventory and reconciliation files. This is explicitly simulated consumption, assuming all leftovers survive; it does not overwrite the baseline inventory or represent actual purchases. The full 32-test suite includes product-schema, staged-coverage, recipe-method quality, snapshot-integrity and two-week balance regression checks.
 
 ## Household web application
 

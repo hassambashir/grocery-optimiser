@@ -180,7 +180,7 @@ gochujang,Gochujang paste,sauce_or_paste,g,long,durable_tracked,tight,New staged
 sweet_chilli_sauce,Sweet chilli sauce,sauce_or_paste,ml,long,durable_tracked,tight,Tesco mapping pending
 avocado,Avocado,fruit,each,short,fresh_tracked,tight,Tesco mapping pending
 hot_sauce,Hot sauce,sauce_or_paste,ml,long,durable_tracked,tight,Tesco mapping pending
-green_chilli,Green chilli,vegetable,each,short,fresh_tracked,tight,Tesco mapping pending
+green_chilli,Green chilli,vegetable,g,short,fresh_tracked,tight,Standardised to grams because Tesco sells chillies by pack weight; instructions may describe an approximate whole-chilli count.
 sun_dried_tomatoes,Sun-dried tomatoes,pantry_other,g,long,durable_tracked,tight,Tesco mapping pending
 lasagne_sheets,Lasagne sheets,starch,g,long,durable_tracked,tight,Tesco mapping pending
 thai_green_curry_paste,Thai green curry paste,sauce_or_paste,g,long,durable_tracked,tight,New canonical ingredient; Tesco mapping pending
@@ -189,7 +189,7 @@ black_bean_sauce,Black bean sauce,sauce_or_paste,ml,long,durable_tracked,tight,N
 dried_apricots,Dried apricots,pantry_other,g,long,durable_tracked,tight,New canonical ingredient; Tesco mapping pending
 jerk_seasoning,Jerk seasoning,seasoning,g,long,durable_tracked,tight,Batch 05; Tesco mapping pending
 pineapple,Pineapple,fruit,g,short,fresh_tracked,tight,Batch 05; Tesco mapping pending
-instant_polenta,Instant polenta,starch,g,long,durable_tracked,tight,Batch 05; Tesco mapping pending
+polenta_cornmeal,Polenta cornmeal,starch,g,long,durable_tracked,tight,Standardised to Tesco-listed fine cornmeal suitable for polenta; cook according to pack directions.
 udon_noodles,Udon noodles,starch,g,long,durable_tracked,tight,Batch 05; Tesco mapping pending
 orange,Orange,fruit,each,short,fresh_tracked,tight,Batch 05; Tesco mapping pending
 goats_cheese,Goat cheese,dairy,g,short,fresh_tracked,tight,Batch 05; Tesco mapping pending

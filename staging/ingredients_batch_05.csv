@@ -1,7 +1,7 @@
 ingredient_id,canonical_name,category,preferred_model_unit,shelf_life_class,inventory_policy,default_flexibility_class,notes
 jerk_seasoning,Jerk seasoning,seasoning,g,long,durable_tracked,tight,Batch 05; Tesco mapping pending
 pineapple,Pineapple,fruit,g,short,fresh_tracked,tight,Batch 05; Tesco mapping pending
-instant_polenta,Instant polenta,starch,g,long,durable_tracked,tight,Batch 05; Tesco mapping pending
+polenta_cornmeal,Polenta cornmeal,starch,g,long,durable_tracked,tight,Standardised to Tesco-listed fine cornmeal suitable for polenta; cook according to pack directions.
 udon_noodles,Udon noodles,starch,g,long,durable_tracked,tight,Batch 05; Tesco mapping pending
 orange,Orange,fruit,each,short,fresh_tracked,tight,Batch 05; Tesco mapping pending
 goats_cheese,Goat cheese,dairy,g,short,fresh_tracked,tight,Batch 05; Tesco mapping pending

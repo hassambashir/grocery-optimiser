@@ -2,6 +2,6 @@ ingredient_id,canonical_name,category,preferred_model_unit,shelf_life_class,inve
 sweet_chilli_sauce,Sweet chilli sauce,sauce_or_paste,ml,long,durable_tracked,tight,Tesco mapping pending
 avocado,Avocado,fruit,each,short,fresh_tracked,tight,Tesco mapping pending
 hot_sauce,Hot sauce,sauce_or_paste,ml,long,durable_tracked,tight,Tesco mapping pending
-green_chilli,Green chilli,vegetable,each,short,fresh_tracked,tight,Tesco mapping pending
+green_chilli,Green chilli,vegetable,g,short,fresh_tracked,tight,Standardised to grams because Tesco sells chillies by pack weight; instructions may describe an approximate whole-chilli count.
 sun_dried_tomatoes,Sun-dried tomatoes,pantry_other,g,long,durable_tracked,tight,Tesco mapping pending
 lasagne_sheets,Lasagne sheets,starch,g,long,durable_tracked,tight,Tesco mapping pending

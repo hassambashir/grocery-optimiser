@@ -1,25 +1,11 @@
-Staging validation FAILED
+Staging validation PASSED
 batches: 7
 recipes: 160
 ingredient_lines: 1404
-used_ingredients: 200
+used_ingredients: 198
 canonical_ingredients: 209
-ingredients_with_eligible_products: 186
-missing_product_ingredients: ['baby_corn', 'butternut_squash', 'cannelloni_tubes', 'dried_apricots', 'dried_thyme', 'fennel_seeds', 'giant_couscous', 'green_chilli', 'instant_polenta', 'ketjap_manis', 'mixed_beans', 'pumpkin_seeds', 'tamarind_paste', 'zaatar']
+ingredients_with_eligible_products: 198
+missing_product_ingredients: []
 instruction_errors: 0
 provenance_warnings: 70
 WARNING: 70 recipes have no specific inspiration URL; provenance is optional
-- baby_corn: no eligible Tesco product for staged recipes
-- butternut_squash: no eligible Tesco product for staged recipes
-- cannelloni_tubes: no eligible Tesco product for staged recipes
-- dried_apricots: no eligible Tesco product for staged recipes
-- dried_thyme: no eligible Tesco product for staged recipes
-- fennel_seeds: no eligible Tesco product for staged recipes
-- giant_couscous: no eligible Tesco product for staged recipes
-- green_chilli: no eligible Tesco product for staged recipes
-- instant_polenta: no eligible Tesco product for staged recipes
-- ketjap_manis: no eligible Tesco product for staged recipes
-- mixed_beans: no eligible Tesco product for staged recipes
-- pumpkin_seeds: no eligible Tesco product for staged recipes
-- tamarind_paste: no eligible Tesco product for staged recipes
-- zaatar: no eligible Tesco product for staged recipes

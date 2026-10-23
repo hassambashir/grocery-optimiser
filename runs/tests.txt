@@ -11,11 +11,13 @@ test_seven_dinners_http_solver (test_app.HouseholdFlowTests.test_seven_dinners_h
 test_active_catalogue_has_no_candidate_products (test_project.DataTests.test_active_catalogue_has_no_candidate_products) ... ok
 test_direct_toppings_do_not_require_a_sauce_bowl (test_project.DataTests.test_direct_toppings_do_not_require_a_sauce_bowl) ... ok
 test_drain_and_inventory_corruption_fail (test_project.DataTests.test_drain_and_inventory_corruption_fail) ... ok
+test_every_staged_ingredient_has_an_eligible_product (test_project.DataTests.test_every_staged_ingredient_has_an_eligible_product) ... ok
 test_ids_references_urls_and_units_fail (test_project.DataTests.test_ids_references_urls_and_units_fail) ... ok
 test_invalid_prices_and_quantities_fail (test_project.DataTests.test_invalid_prices_and_quantities_fail) ... ok
 test_inventory_cannot_hide_missing_purchase_coverage (test_project.DataTests.test_inventory_cannot_hide_missing_purchase_coverage) ... ok
 test_known_drained_quantities (test_project.DataTests.test_known_drained_quantities) ... ok
 test_malformed_csv_fails (test_project.DataTests.test_malformed_csv_fails) ... ok
+test_new_catalogue_units_and_drained_weight (test_project.DataTests.test_new_catalogue_units_and_drained_weight) ... ok
 test_real_catalogue_complete (test_project.DataTests.test_real_catalogue_complete) ... ok
 test_staged_method_quality_and_optional_provenance (test_project.DataTests.test_staged_method_quality_and_optional_provenance) ... ok
 test_unavailable_or_unresolved_products_are_excluded (test_project.DataTests.test_unavailable_or_unresolved_products_are_excluded) ... ok
@@ -30,6 +32,6 @@ test_complete_two_week_workflow (test_two_week.TwoWeekTests.test_complete_two_we
 test_locked_snapshots_and_report (test_two_week.TwoWeekTests.test_locked_snapshots_and_report) ... ok
 
 ----------------------------------------------------------------------
-Ran 30 tests in 12.794s
+Ran 32 tests in 14.178s
 
 OK

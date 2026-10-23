@@ -15,7 +15,8 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
 from catalogue import read_csv,exclusion_reason,effective_pack
 from validate_seed_data import validate
-from validate_staging_data import method_quality_issues, provenance_warnings
+from validate_staging_data import (method_quality_issues, provenance_warnings,
+                                   validate as validate_staging)
 from optimise_week import solve
 
 
@@ -103,6 +104,20 @@ class DataTests(unittest.TestCase):
         self.assertTrue(provenance_warnings(recipe))
         recipe['cooking_instructions']=adequate+' Finish with your garlic mayo sauce.'
         self.assertTrue(any('prepared-component' in x for x in method_quality_issues(recipe)[0]))
+
+    def test_every_staged_ingredient_has_an_eligible_product(self):
+        errors,_,stats=validate_staging()
+        self.assertEqual(errors,[])
+        self.assertEqual(stats['recipes'],160)
+        self.assertEqual(stats['missing_product_ingredients'],[])
+        self.assertEqual(stats['ingredients_with_eligible_products'],stats['used_ingredients'])
+
+    def test_new_catalogue_units_and_drained_weight(self):
+        ingredients={r['ingredient_id']:r for r in read_csv('data/ingredients.csv')}
+        products={r['retailer_product_id']:r for r in read_csv('data/products.csv')}
+        self.assertEqual(ingredients['green_chilli']['preferred_model_unit'],'g')
+        self.assertIn('polenta_cornmeal',ingredients)
+        self.assertEqual(effective_pack(products['262489095']),(246,'g'))
 
     def test_direct_toppings_do_not_require_a_sauce_bowl(self):
         recipes={}

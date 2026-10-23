@@ -4,17 +4,17 @@ Revalidated on 23 October 2026 after applying the controlled recipe classificati
 
 ## Decision
 
-The staged data is structurally consistent but is **not ready for wholesale promotion** into the active optimiser dataset. Recipe IDs, ingredient references, canonical units, quantities, serving counts, instruction-length checks and inventory flags pass. Tesco purchasing coverage remains incomplete. Missing inspiration links are reported as provenance warnings rather than promotion blockers.
+The staged data is structurally consistent and all Tesco purchasing-coverage gates now pass. Recipe IDs, ingredient references, canonical units, quantities, serving counts, instruction checks and inventory flags pass. Missing inspiration links remain visible provenance warnings rather than promotion blockers. Promotion can therefore proceed in reviewed batches; culinary review and deduplication are still sensible before merging all 160 recipes into the active set.
 
 | Batch | Recipes | Ingredient lines | Specific source URLs | Short instructions | Ingredients without an eligible Tesco product | Status |
 |---|---:|---:|---:|---:|---:|---|
-| 01 | 20 | 171 | 20 | 0 | 3 | Hold for product coverage |
-| 02 | 20 | 121 | 1 | 0 | 3 | Hold for product coverage |
-| 03 | 20 | 130 | 6 | 0 | 1 | Hold for product coverage |
-| 04 | 20 | 148 | 3 | 0 | 1 | Hold for product coverage |
-| 05 | 20 | 154 | 0 | 0 | 6 | Hold for product coverage |
-| 06 | 20 | 204 | 20 | 0 | 4 | Hold for product coverage |
-| 07 | 40 | 476 | 40 | 0 | 2 | Hold for product coverage |
+| 01 | 20 | 171 | 20 | 0 | 0 | Catalogue-ready; recipe review remains |
+| 02 | 20 | 121 | 1 | 0 | 0 | Catalogue-ready; recipe review remains |
+| 03 | 20 | 130 | 6 | 0 | 0 | Catalogue-ready; recipe review remains |
+| 04 | 20 | 148 | 3 | 0 | 0 | Catalogue-ready; recipe review remains |
+| 05 | 20 | 154 | 0 | 0 | 0 | Catalogue-ready; recipe review remains |
+| 06 | 20 | 204 | 20 | 0 | 0 | Catalogue-ready; recipe review remains |
+| 07 | 40 | 476 | 40 | 0 | 0 | Catalogue-ready; recipe review remains |
 
 “Specific source URL” means the field points to a particular publisher recipe rather than being blank or resolving to a generic recipe landing page. It does not by itself prove that every adapted quantity and instruction matches the publisher's version.
 
@@ -33,7 +33,7 @@ The staged data is structurally consistent but is **not ready for wholesale prom
 - No exact duplicate recipe names were detected.
 - Product IDs and Tesco retailer IDs are unique after repairing the malformed `P232` CSV row.
 
-## Remaining blockers
+## Remaining review work
 
 ### Instruction quality and provenance
 
@@ -47,11 +47,28 @@ Specific links are still retained when already verified: 20 in Batch 1, 1 in Bat
 
 ### Tesco purchasing coverage
 
-The staged recipes use 200 unique ingredients. Of these, 186 currently have at least one eligible Tesco product under the optimiser's identity, availability, quantity and unit rules. The 14 without an eligible product are:
+The staged recipes now use 198 unique ingredients, and all 198 have at least one eligible Tesco product under the optimiser's identity, availability, quantity and unit rules. Eighteen verified current listings were added for 11 previously uncovered ingredients, including multiple pack or brand choices for butternut squash, thyme, fennel seeds, mixed beans, pumpkin seeds and tamarind paste.
 
-`baby_corn`, `butternut_squash`, `cannelloni_tubes`, `dried_apricots`, `dried_thyme`, `fennel_seeds`, `giant_couscous`, `green_chilli`, `instant_polenta`, `ketjap_manis`, `mixed_beans`, `pumpkin_seeds`, `tamarind_paste`, `zaatar`.
+Three unavailable product forms were corrected at recipe level rather than inventing stock. The cannelloni recipe is now a lasagne-roll recipe using eligible lasagne sheets; ketjap manis is replaced in two recipes by separately measured soy sauce and brown sugar; and instant polenta is standardised as non-instant `polenta_cornmeal`, matching Tesco's available fine cornmeal. Green chilli is standardised to grams across recipe, ingredient and product data.
 
-The whole butternut squash row is retained as a compatibility candidate because Tesco sells it by count while the recipes use grams. It must not become optimiser-eligible until a defensible usable gram quantity is recorded.
+Tesco's fresh-vegetable category showed baby corn available to add at the recorded price while its detail result presented conflicting availability. The row follows the current category snapshot, but postcode-specific stock must be checked at shopping time.
+
+| Original gap | Resolution used by staged recipes |
+|---|---|
+| `baby_corn` | Existing P253 reverified as currently listed |
+| `butternut_squash` | P319 frozen chunks and P320 fresh diced |
+| `cannelloni_tubes` | Recipe adapted to lasagne rolls using eligible P268 sheets |
+| `dried_apricots` | P321 Tesco Soft Apricots |
+| `dried_thyme` | P322 Tesco and P323 Schwartz thyme |
+| `fennel_seeds` | P324 Tesco plus P325/P326 East End packs |
+| `giant_couscous` | P327 Osem Israeli pearl couscous |
+| `green_chilli` | P328 Tesco Finger Chillies, measured in grams |
+| `instant_polenta` | Standardised to `polenta_cornmeal`; P329 Natco Fine Corn Meal |
+| `ketjap_manis` | Two recipes use P080 soy sauce plus eligible brown sugar instead of an unavailable bottle |
+| `mixed_beans` | P330 Tesco drained three-bean can and P331 Merchant Gourmet pouch |
+| `pumpkin_seeds` | P332 Tesco and P333 Tesco Organic |
+| `tamarind_paste` | P334 Niru and P335 Thai Taste |
+| `zaatar` | P336 Schwartz Za'atar |
 
 ### Classification fields
 
@@ -72,6 +89,9 @@ Primary-side synonyms have also been consolidated. Examples include `potato` rat
 - Replaced all 20 abbreviated Batch 2 methods and added regression tests for complete staged methods, optional provenance and direct assembly of simple finishing sauces.
 - Corrected the locked two-week regression so historical run artifacts remain immutable without requiring the evolving live catalogue to equal its old snapshot rows.
 - Removed the redundant `mapping_status` and `package_type` columns. Eligibility now follows directly from canonical ingredient identity, effective quantity/unit, verified Tesco identity, availability and price; unresolved P071 and P278 rows are isolated in `staging/product_candidates.csv`.
+- Added 18 verified Tesco listings covering 11 ingredient families, using the declared 246 g drained weight for Tesco Three Bean Salad.
+- Adapted three recipes where Tesco has no current cannelloni, ketjap manis or instant-polenta listing, preserving the meal concepts without fabricating products.
+- Added a regression test that requires every staged ingredient to retain an eligible purchasing option and a generated active-and-staged catalogue coverage report.
 
 ## Validation commands
 
@@ -82,26 +102,26 @@ recipes: 40
 used_ingredients: 125
 canonical_ingredients: 209
 recipe_ingredient_rows: 373
-products: 314
-eligible_products: 288
+products: 332
+eligible_products: 307
 covered_ingredients: 125
 missing: []
 alternatives: 94
-Excluded product rows: 26
+Excluded product rows: 25
 ```
 
 ```text
 python scripts/validate_staging_data.py
-Staging validation FAILED
+Staging validation PASSED
 batches: 7
 recipes: 160
 ingredient_lines: 1404
-used_ingredients: 200
+used_ingredients: 198
 canonical_ingredients: 209
-ingredients_with_eligible_products: 186
-missing_product_ingredients: ['baby_corn', 'butternut_squash', 'cannelloni_tubes', 'dried_apricots', 'dried_thyme', 'fennel_seeds', 'giant_couscous', 'green_chilli', 'instant_polenta', 'ketjap_manis', 'mixed_beans', 'pumpkin_seeds', 'tamarind_paste', 'zaatar']
+ingredients_with_eligible_products: 198
+missing_product_ingredients: []
 instruction_errors: 0
 provenance_warnings: 70
 ```
 
-The staging failure is now caused only by the 14 ingredients without eligible Tesco products. Provenance notices are warnings and do not make the validation fail. Promotion should occur after purchasing coverage is completed or the affected recipes are explicitly excluded.
+Both data validators pass. Provenance notices remain warnings and do not make validation fail.

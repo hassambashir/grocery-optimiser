@@ -87,8 +87,8 @@ R074,flatbreads,2,each,Household standardised quantity
 R075,chicken_breast,280,g,Household standardised quantity
 R075,egg_noodles,180,g,Household standardised quantity
 R075,mangetout,150,g,Household standardised quantity
-R075,ketjap_manis,50,g,Household standardised quantity
-R075,soy_sauce,30,ml,Household standardised quantity
+R075,brown_sugar,25,g,Household ketjap alternative; dissolve directly in the wok without a separate mixing bowl
+R075,soy_sauce,50,ml,Household ketjap alternative plus the recipe's original soy sauce
 R075,peanuts,25,g,Household standardised quantity
 R076,chicken_thigh,250,g,Household standardised quantity
 R076,chorizo,60,g,Household standardised quantity

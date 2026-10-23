@@ -2,6 +2,8 @@
 
 This is a **working backlog**, not a claim that all mappings are complete. Seven staged recipe-ingredient batches (R041–R200) were compared with the active ingredient and product catalogues. Another conversation may be updating the repository concurrently, so **recompute before acting**.
 
+> **Closed on 23 October 2026:** this document is retained as historical research notes. The live validators now report zero active or staged purchasing gaps. See [the current staged validation report](staging_validation_report.md) and [generated catalogue coverage](catalogue_coverage.md); do not use the older counts below as current status.
+
 ## Corrections committed in this pass
 
 - Cardamom is already modelled in grams. P233 Rajah Whole Green Cardamoms 50 g is listed online in the saved snapshot; P046 and P234 are marked out of stock. Active R008 uses 0.6 g for roughly three pods; staged R199 uses 1 g. Do not convert cardamom to each or assume 2–3 g per individual green pod.

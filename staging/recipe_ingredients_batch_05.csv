@@ -28,7 +28,7 @@ R124,brown_onion,1,each,Two portions
 R124,carrot,120,g,Two portions
 R124,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
 R124,dried_oregano,3,g,Two portions
-R124,instant_polenta,150,g,Two portions
+R124,polenta_cornmeal,150,g,Two portions; non-instant fine cornmeal suitable for polenta
 R124,hard_cheese,40,g,Two portions
 R125,udon_noodles,400,g,Two portions
 R125,mushrooms,250,g,Two portions
@@ -146,7 +146,7 @@ R139,lemongrass,1,each,Two portions
 R139,pak_choi,200,g,Two portions
 R139,lime,1,each,Two portions
 R139,fish_sauce,20,ml,Two portions
-R140,cannelloni_tubes,180,g,Two portions
+R140,lasagne_sheets,180,g,Two portions; softened and rolled around the filling
 R140,ricotta,250,g,Two portions
 R140,spinach,180,g,Two portions
 R140,passata,450,g,Two portions
