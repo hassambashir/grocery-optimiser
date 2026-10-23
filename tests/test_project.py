@@ -66,11 +66,19 @@ class DataTests(unittest.TestCase):
                 p=Path(d)/'bad.csv';p.write_text(content)
                 with self.assertRaises((ValueError,csv.Error)):read_csv(p)
 
-    def test_unsafe_statuses_excluded(self):
+    def test_unavailable_or_unresolved_products_are_excluded(self):
         im={r['ingredient_id']:r for r in read_csv('data/ingredients.csv')}
         p=read_csv('data/products.csv')[0]
-        for key,value in [('mapping_status','compatible_candidate'),('mapping_status','substitution_candidate'),('availability_status','unknown'),('availability_status','out_of_stock'),('product_resolution_status','unresolved')]:
+        for key,value in [('availability_status','unknown'),('availability_status','out_of_stock'),('product_resolution_status','unresolved')]:
             q=dict(p);q[key]=value;self.assertTrue(exclusion_reason(q,im))
+
+    def test_active_catalogue_has_no_candidate_products(self):
+        products=read_csv('data/products.csv')
+        self.assertNotIn('mapping_status',products[0])
+        self.assertNotIn('package_type',products[0])
+        self.assertFalse({'P071','P278'} & {p['product_id'] for p in products})
+        candidates=read_csv('staging/product_candidates.csv')
+        self.assertEqual({p['product_id'] for p in candidates},{'P071','P278'})
 
     def test_known_drained_quantities(self):
         p={r['retailer_product_id']:r for r in read_csv('data/products.csv')}
@@ -158,7 +166,7 @@ class OptimiserTests(unittest.TestCase):
           'config/initial_inventory.csv':[],
           'data/products.csv':[]}
         for n,price in [(6,4),(4,3),(12,9)]:
-            data['data/products.csv'].append(dict(product_id=str(n),ingredient_id='egg',product_name=str(n),retailer='Tesco',regular_price_gbp=str(price),pack_quantity=str(n),pack_unit='each',usable_quantity='',usable_unit='',mapping_status='direct',availability_status='listed_online',product_resolution_status='resolved_exact'))
+            data['data/products.csv'].append(dict(product_id=str(n),ingredient_id='egg',product_name=str(n),retailer='Tesco',regular_price_gbp=str(price),pack_quantity=str(n),pack_unit='each',usable_quantity='',usable_unit='',availability_status='listed_online',product_resolution_status='resolved_exact'))
         with patch('optimise_week.read_csv',side_effect=lambda p:copy.deepcopy(data[p])):
             p=quiet(days=1);self.assertEqual(p['spend_gbp'],7);self.assertEqual({x['product_id']:n for x,n,_ in p['basket']},{'6':1,'4':1})
             data['config/initial_inventory.csv']=[dict(ingredient_id='egg',quantity='4',unit='each')]

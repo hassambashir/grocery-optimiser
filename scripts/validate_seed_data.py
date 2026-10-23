@@ -6,7 +6,7 @@ from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
 from catalogue import (ROOT, read_csv, positive, effective_pack, exclusion_reason,
-                       consumption_step, MAPPINGS, AVAILABILITY, UNITS,
+                       consumption_step, AVAILABILITY, UNITS,
                        MAIN_PROTEINS, PRIMARY_SIDES,
                        INTENTIONAL_RETAIL_COMPOSITES,
                        looks_like_composite_ingredient)
@@ -33,7 +33,7 @@ def validate(root=ROOT, allow_documented_exceptions=False):
       paths[0]:{'recipe_id','recipe_name','servings','cooking_instructions','main_protein','cooking_method'},
       paths[1]:{'recipe_id','ingredient_id','preferred_quantity','unit'},
       paths[2]:{'ingredient_id','preferred_model_unit','default_flexibility_class','shelf_life_class'},
-      paths[3]:{'product_id','retailer_product_id','ingredient_id','retailer','product_name','pack_quantity','pack_unit','usable_quantity','usable_unit','regular_price_gbp','clubcard_price_gbp','availability_status','mapping_status','product_resolution_status','source_url','source_checked_at','package_type','notes'},
+      paths[3]:{'product_id','retailer_product_id','ingredient_id','retailer','product_name','pack_quantity','pack_unit','usable_quantity','usable_unit','regular_price_gbp','clubcard_price_gbp','availability_status','product_resolution_status','source_url','source_checked_at','notes'},
       paths[4]:{'conversion_id','ingredient_id','source_unit','model_unit','multiplier'},
       paths[5]:{'flexibility_class','min_factor','preferred_factor','max_factor'},
       paths[6]:{'ingredient_id','quantity','unit'},
@@ -44,6 +44,14 @@ def validate(root=ROOT, allow_documented_exceptions=False):
     if errors:return errors,{}
     for rows,key,label in [(recipes,'recipe_id','recipes'),(ingredients,'ingredient_id','ingredients'),(products,'product_id','products'),(products,'retailer_product_id','products'),(conversions,'conversion_id','conversions'),(flex,'flexibility_class','flexibility'),(inventory,'ingredient_id','inventory'),(evidence,'product_id','evidence')]:unique(rows,key,label)
     im={r['ingredient_id']:r for r in ingredients};rm={r['recipe_id']:r for r in recipes};fm={r['flexibility_class']:r for r in flex};em={r['product_id']:r for r in evidence}
+    candidate_path=root/'staging/product_candidates.csv'
+    if candidate_path.exists():
+        candidates=read_csv(candidate_path,root)
+        unique(candidates,'product_id','product candidates')
+        active_ids={p['product_id'] for p in products}
+        for candidate in candidates:
+            require(candidate['product_id'] not in active_ids,
+                    f"{candidate['product_id']}: candidate product is also active")
     for pair,n in Counter((r['recipe_id'],r['ingredient_id']) for r in lines).items():require(n==1,f'duplicate recipe ingredient {pair}')
     for r in recipes:
         require(r['servings']=='2',f"{r['recipe_id']}: expected two servings")
@@ -85,8 +93,6 @@ def validate(root=ROOT, allow_documented_exceptions=False):
         require(p['source_url']=='https://www.tesco.com/shop/en-GB/products/'+p['retailer_product_id'],f'{pid}: URL/ID mismatch')
         require(p['product_resolution_status']=='resolved_exact',f'{pid}: unresolved product')
         require(p['availability_status'] in AVAILABILITY,f'{pid}: unknown availability status')
-        require(p['mapping_status'] in MAPPINGS,f'{pid}: unknown mapping status')
-        require(p['package_type'] in {'fixed_pack','variable_weight','loose_each'},f'{pid}: invalid package type')
         require(p['pack_unit'] in UNITS,f'{pid}: invalid pack unit')
         require(positive(p['pack_quantity']),f'{pid}: invalid pack quantity')
         require(positive(p['regular_price_gbp']),f'{pid}: invalid regular price')
@@ -100,10 +106,9 @@ def validate(root=ROOT, allow_documented_exceptions=False):
             if p['pack_unit']==p['usable_unit'] and positive(p['pack_quantity']) and positive(p['usable_quantity']):require(float(p['usable_quantity'])<=float(p['pack_quantity']),f'{pid}: usable quantity exceeds pack')
         try:date.fromisoformat(p['source_checked_at'])
         except ValueError:errors.append(f'{pid}: invalid source date')
-        if iid in im and p['mapping_status'] not in {'substitution_candidate','compatible_candidate'}:
+        if iid in im:
             require((p['usable_unit'] if p['usable_quantity'] else p['pack_unit'])==im[iid]['preferred_model_unit'],f'{pid}: retail/model unit mismatch')
         if p['pack_unit'] in {'each','cube'} and positive(p['pack_quantity']):require(float(p['pack_quantity']).is_integer(),f'{pid}: fractional retail count')
-        if p['mapping_status']=='estimated_usable_weight':require('estimat' in p['notes'].lower(),f'{pid}: undocumented estimated quantity')
         reason=exclusion_reason(p,im)
         if reason:excluded[pid]=reason
         else:eligible[iid].append(p)

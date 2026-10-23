@@ -47,7 +47,7 @@ Specific links are still retained when already verified: 20 in Batch 1, 1 in Bat
 
 ### Tesco purchasing coverage
 
-The staged recipes use 200 unique ingredients. Of these, 186 currently have at least one eligible Tesco product under the optimiser's exact unit and mapping rules. The 14 without an eligible product are:
+The staged recipes use 200 unique ingredients. Of these, 186 currently have at least one eligible Tesco product under the optimiser's identity, availability, quantity and unit rules. The 14 without an eligible product are:
 
 `baby_corn`, `butternut_squash`, `cannelloni_tubes`, `dried_apricots`, `dried_thyme`, `fennel_seeds`, `giant_couscous`, `green_chilli`, `instant_polenta`, `ketjap_manis`, `mixed_beans`, `pumpkin_seeds`, `tamarind_paste`, `zaatar`.
 
@@ -64,13 +64,14 @@ Primary-side synonyms have also been consolidated. Examples include `potato` rat
 - Repaired the malformed quoting in product `P232`, preserving the explicit statement that 40 cloves is an estimate rather than a Tesco-declared weight.
 - Added `clove` to the validator's supported units.
 - Promoted 77 non-conflicting canonical ingredient definitions so product mappings for staged recipes retain referential integrity.
-- Changed `P278` whole butternut squash from `direct` to `compatible_candidate`; it cannot directly satisfy gram demand without a verified usable weight.
+- Moved `P278` whole butternut squash out of the active catalogue; it cannot satisfy gram demand without a verified usable weight.
 - Cleared nonnumeric prose from the rating fields for R082 and R085 and retained the verification note in `ingredient_notes`.
 - Added `scripts/validate_staging_data.py` so future staged batches are checked consistently before promotion.
 - Standardised `main_protein` and `primary_side` across all 200 active and staged recipes, and made both validators reject labels outside the controlled vocabularies.
 - Reclassified missing or generic recipe links as warnings rather than failures, because a URL does not establish method quality.
 - Replaced all 20 abbreviated Batch 2 methods and added regression tests for complete staged methods, optional provenance and direct assembly of simple finishing sauces.
 - Corrected the locked two-week regression so historical run artifacts remain immutable without requiring the evolving live catalogue to equal its old snapshot rows.
+- Removed the redundant `mapping_status` and `package_type` columns. Eligibility now follows directly from canonical ingredient identity, effective quantity/unit, verified Tesco identity, availability and price; unresolved P071 and P278 rows are isolated in `staging/product_candidates.csv`.
 
 ## Validation commands
 
@@ -81,12 +82,12 @@ recipes: 40
 used_ingredients: 125
 canonical_ingredients: 209
 recipe_ingredient_rows: 373
-products: 316
+products: 314
 eligible_products: 288
 covered_ingredients: 125
 missing: []
 alternatives: 94
-Excluded product rows: 28
+Excluded product rows: 26
 ```
 
 ```text

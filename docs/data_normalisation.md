@@ -28,9 +28,9 @@ Prepared-component labels copied from meal-kit prose, such as “your garlic may
 
 ## Purchasing eligibility
 
-The validator and optimiser call the same `exclusion_reason` function. A product requires Tesco identity, an exact product ID/URL, an approved mapping, `listed_online` snapshot status, a finite positive price and effective quantity, and a matching canonical unit. Unknown statuses, unapproved compatibility and substitution candidates are excluded. Having starting inventory never counts as complete catalogue coverage.
+The validator and optimiser call the same `exclusion_reason` function. The active catalogue has no mapping-status or package-type flags. A product is eligible when it has a verified Tesco identity and canonical `ingredient_id`, is `listed_online`, has a finite positive price and quantity, and its effective unit matches the ingredient's model unit. Effective supply is `usable_quantity`/`usable_unit` when present and otherwise `pack_quantity`/`pack_unit`. Having starting inventory never counts as complete catalogue coverage.
 
-Approved mappings are `direct`, `direct_variable_weight`, `effective_usable_quantity` and `estimated_usable_weight`. The last two are not claims that physical yields are exact. Mixed-colour peppers remain excluded from a red-pepper-only requirement. An unused Italian-herb approximation remains unapproved.
+Alternative brands, pack sizes and varieties that genuinely supply the same canonical ingredient simply share its `ingredient_id`; they do not need a “direct” or “substitution” label. Products whose equivalence or usable quantity is unresolved remain outside the active catalogue in `staging/product_candidates.csv`. Future ingredient-to-ingredient substitution rules belong in a separate substitution model rather than in product rows.
 
 ## Interchangeability
 
@@ -46,7 +46,7 @@ A limited allow-list covers mixtures that are themselves the purchased product: 
 
 ## Pack and usable quantities
 
-`pack_quantity` describes the bought pack in `pack_unit`. `usable_quantity` and `usable_unit`, when both populated, override it for supply. Gross and drained masses are retained separately: a 145 g tuna can supplies 102 g drained, and four cans supply 408 g; Tesco black beans supply 235 g per 400 g can; Tesco lentils supply 235 g per 390 g can. No double draining or cooked-to-dry conversion is applied.
+`pack_quantity` describes the bought retail unit in `pack_unit`. `usable_quantity` and `usable_unit`, when both populated, override it for supply. No package-type flag is required. Gross and drained masses are retained separately: a 145 g tuna can supplies 102 g drained, and four cans supply 408 g; Tesco black beans supply 235 g per 400 g can; Tesco lentils supply 235 g per 390 g can. No double draining or cooked-to-dry conversion is applied.
 
 Count-labelled egg/bread packs use counts directly. Loose produce is bought in integer reference portions; actual weights/charges vary. Weighted onion bags retain disclosed estimated counts. Garlic bulb packs retain the inherited conservative estimate of 24 g edible garlic per bulb; this is not a verified Tesco net weight. These approximations are surfaced in basket output and must be checked against the actual produce.
 

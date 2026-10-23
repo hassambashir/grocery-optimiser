@@ -8,6 +8,7 @@ test_missing_purchase_rolls_back_consumption (test_app.HouseholdFlowTests.test_m
 test_preferences_exclude_required_recipe (test_app.HouseholdFlowTests.test_preferences_exclude_required_recipe) ... ok
 test_repetition_rule_uses_confirmed_plan (test_app.HouseholdFlowTests.test_repetition_rule_uses_confirmed_plan) ... ok
 test_seven_dinners_http_solver (test_app.HouseholdFlowTests.test_seven_dinners_http_solver) ... ok
+test_active_catalogue_has_no_candidate_products (test_project.DataTests.test_active_catalogue_has_no_candidate_products) ... ok
 test_direct_toppings_do_not_require_a_sauce_bowl (test_project.DataTests.test_direct_toppings_do_not_require_a_sauce_bowl) ... ok
 test_drain_and_inventory_corruption_fail (test_project.DataTests.test_drain_and_inventory_corruption_fail) ... ok
 test_ids_references_urls_and_units_fail (test_project.DataTests.test_ids_references_urls_and_units_fail) ... ok
@@ -17,7 +18,7 @@ test_known_drained_quantities (test_project.DataTests.test_known_drained_quantit
 test_malformed_csv_fails (test_project.DataTests.test_malformed_csv_fails) ... ok
 test_real_catalogue_complete (test_project.DataTests.test_real_catalogue_complete) ... ok
 test_staged_method_quality_and_optional_provenance (test_project.DataTests.test_staged_method_quality_and_optional_provenance) ... ok
-test_unsafe_statuses_excluded (test_project.DataTests.test_unsafe_statuses_excluded) ... ok
+test_unavailable_or_unresolved_products_are_excluded (test_project.DataTests.test_unavailable_or_unresolved_products_are_excluded) ... ok
 test_alternative_pack_mix_and_leftovers (test_project.OptimiserTests.test_alternative_pack_mix_and_leftovers) ... ok
 test_each_of_all_40_recipes_is_feasible (test_project.OptimiserTests.test_each_of_all_40_recipes_is_feasible) ... ok
 test_half_cucumber_half_cube_and_whole_eggs (test_project.OptimiserTests.test_half_cucumber_half_cube_and_whole_eggs) ... ok
@@ -29,6 +30,6 @@ test_complete_two_week_workflow (test_two_week.TwoWeekTests.test_complete_two_we
 test_locked_snapshots_and_report (test_two_week.TwoWeekTests.test_locked_snapshots_and_report) ... ok
 
 ----------------------------------------------------------------------
-Ran 29 tests in 12.868s
+Ran 30 tests in 12.794s
 
 OK

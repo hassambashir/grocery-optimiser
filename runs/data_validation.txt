@@ -3,10 +3,10 @@ recipes: 40
 used_ingredients: 125
 canonical_ingredients: 209
 recipe_ingredient_rows: 373
-products: 316
+products: 314
 eligible_products: 288
 covered_ingredients: 125
 missing: []
 alternatives: 94
-Excluded product rows: 28
+Excluded product rows: 26
 Offline integrity/eligibility check; postcode-specific stock and future prices require checkout verification.

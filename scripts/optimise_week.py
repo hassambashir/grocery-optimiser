@@ -154,16 +154,11 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False,
         quantity_note = f" | usable {qty * n:g} {unit}"
         # Counts are guidance only; gram quantities remain authoritative.
         typical_weight = {"carrot": 61, "tomatoes": 80}.get(p["ingredient_id"])
-        if unit == "g" and typical_weight and p.get("package_type") != "variable_weight":
-            quantity_note += f" (about {qty * n / typical_weight:.0f} items; size varies)"
+        if unit == "g" and typical_weight:
+            quantity_note += f" (about {qty * n / typical_weight:.0f} items; size and charged weight may vary)"
         print("  " + str(n) + " x " + p["product_name"] + quantity_note + " | GBP " + format(amount, ".2f"))
     print("\nShopping cost: GBP " + format(spent, ".2f"))
-    approximations = [p["product_name"] for p, _, _ in bought
-                      if p["mapping_status"] in {"estimated_usable_weight", "direct_variable_weight"}]
-    if approximations:
-        print("Planning estimates (actual produce weights/yields and charges vary):")
-        for name in approximations:
-            print("  " + name)
+    print("PLANNING NOTE: Loose-produce weights, edible yields and converted usable quantities are estimates; checkout quantities and charges may vary.")
     print("\nIngredient consumption and estimated value:")
     # Weighted-average valuation. Opening inventory has no recorded cost basis:
     # estimate its unit value using the cheapest listed retail unit price.

@@ -42,7 +42,7 @@ Before reusing inventory, remove anything eaten, discarded or no longer usable. 
 | `data/recipes.csv` | Forty household dinners with methods and two servings |
 | `data/recipe_ingredients.csv` | Authoritative preferred quantities and canonical units |
 | `data/ingredients.csv` | Ingredient identities, units, shelf-life classes and flexibility |
-| `data/products.csv` | Tesco IDs, mappings, gross/usable quantities, prices, statuses and URLs |
+| `data/products.csv` | Active Tesco products with canonical ingredient IDs, gross/usable quantities, prices, availability and URLs |
 | `data/product_evidence.csv` | Observed Tesco product-page facts for every listing |
 | `data/unit_conversions.csv` | Documented historical household/source conversions, including explicit approximations |
 | `config/initial_inventory.csv` | Actual model starting stock; example includes 10 kg rice |
@@ -72,7 +72,7 @@ M. A. van Rooijen et al. (2024), *Optimizing household food waste: The impact of
 
 ## Saved two-week simulation
 
-[Locked Week 1 and executed Week 2](runs/README.md) preserve the £39.88 original basket and a £20.44 optimal second-week basket using all 24 opening leftover balances. Both weeks include complete plans, inventory and reconciliation files. This is explicitly simulated consumption, assuming all leftovers survive; it does not overwrite the baseline inventory or represent actual purchases. The full 29-test suite includes recipe-method quality, snapshot-integrity and two-week balance regression checks.
+[Locked Week 1 and executed Week 2](runs/README.md) preserve the £39.88 original basket and a £20.44 optimal second-week basket using all 24 opening leftover balances. Both weeks include complete plans, inventory and reconciliation files. This is explicitly simulated consumption, assuming all leftovers survive; it does not overwrite the baseline inventory or represent actual purchases. The full 30-test suite includes product-schema, recipe-method quality, snapshot-integrity and two-week balance regression checks.
 
 ## Household web application
 

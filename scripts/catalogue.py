@@ -5,9 +5,6 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-APPROVED_MAPPINGS = {'direct', 'direct_variable_weight', 'effective_usable_quantity',
-                     'estimated_usable_weight'}
-MAPPINGS = APPROVED_MAPPINGS | {'compatible_candidate', 'substitution_candidate'}
 AVAILABILITY = {'listed_online', 'out_of_stock', 'unknown'}
 UNITS = {'g', 'ml', 'each', 'cube', 'clove'}
 MAIN_PROTEINS = {
@@ -71,8 +68,6 @@ def exclusion_reason(product, ingredients):
         return 'not Tesco'
     if product.get('product_resolution_status') != 'resolved_exact':
         return 'unresolved product identity'
-    if product.get('mapping_status') not in APPROVED_MAPPINGS:
-        return 'unapproved substitution or compatibility'
     if product.get('availability_status') != 'listed_online':
         return 'not listed as available in snapshot'
     if not positive(product.get('regular_price_gbp')):
