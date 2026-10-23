@@ -2,7 +2,7 @@ ingredient_id,canonical_name,category,preferred_model_unit,shelf_life_class,inve
 chicken_stock_mix,Chicken stock mix,stock,cube,long,durable_tracked,fixed,
 long_grain_rice,Long grain rice,starch,g,long,assumed_on_hand_staple,tight,Initial household scenario starts with bulk stock; later simulation can add reorder logic.
 chicken_breast,Chicken breast,protein,g,short,fresh_tracked,moderate,
-red_pepper,Bell pepper (any colour),vegetable,each,short,fresh_tracked,fixed,Red green yellow and mixed bell peppers are interchangeable; ingredient ID retained for existing recipes.
+red_pepper,Red bell pepper,vegetable,each,short,fresh_tracked,fixed,Keep red and green and yellow pepper IDs distinct; mixed pepper packs may be eligible as substitutes with colour composition verified.
 tomato_puree,Tomato puree/paste,sauce_or_paste,g,long,durable_tracked,tight,Canonical family currently groups Gousto 'tomato paste'; product-form compatibility must be checked.
 sweetcorn,Sweetcorn,vegetable,g,long,durable_tracked,wide,
 peri_peri_seasoning,Peri peri seasoning,seasoning,g,long,durable_tracked,fixed,
