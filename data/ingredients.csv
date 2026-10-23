@@ -57,7 +57,6 @@ couscous,Couscous,starch,g,long,durable_tracked,tight,
 saffron,Saffron,seasoning,g,long,durable_tracked,fixed,
 harissa_paste,Harissa paste,sauce_or_paste,g,unknown,durable_tracked,tight,
 chopped_dates,Chopped dates,pantry_other,g,long,durable_tracked,tight,
-fresh_herb_mix_coriander_mint,Coriander & mint herb mix,fresh_aromatic,g,short,fresh_tracked,wide,Composite canonical item retained because source gives one combined 10g quantity; split later only with evidence.
 red_onion,Red onion,vegetable,each,medium,fresh_tracked,fixed,
 fresh_coriander,Fresh coriander,fresh_aromatic,g,short,fresh_tracked,wide,Added in household recipe cleaning; ordinary fresh herb used in cleaned korma and harissa recipes.
 tortillas,Tortillas,starch,each,long,durable_tracked,tight,
