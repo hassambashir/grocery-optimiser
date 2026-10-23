@@ -28,6 +28,7 @@ The staged data is structurally consistent but is **not ready for wholesale prom
 - Every ingredient line uses its canonical model unit.
 - Spring onions are measured in grams; instructions give approximate whole-spring-onion counts.
 - No duplicate staged ingredient IDs or conflicting definitions.
+- No unapproved composite canonical ingredients; coriander and mint are separate recipe and product mappings.
 - Short-life staged ingredients use `fresh_tracked` inventory policy.
 - No exact duplicate recipe names were detected.
 - Product IDs and Tesco retailer IDs are unique after repairing the malformed `P232` CSV row.
@@ -75,7 +76,7 @@ Seed-data validation PASSED
 recipes: 40
 used_ingredients: 125
 canonical_ingredients: 209
-recipe_ingredient_rows: 372
+recipe_ingredient_rows: 373
 products: 316
 eligible_products: 288
 covered_ingredients: 125

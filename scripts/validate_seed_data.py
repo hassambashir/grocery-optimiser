@@ -7,7 +7,9 @@ from datetime import date
 from pathlib import Path
 from catalogue import (ROOT, read_csv, positive, effective_pack, exclusion_reason,
                        consumption_step, MAPPINGS, AVAILABILITY, UNITS,
-                       MAIN_PROTEINS, PRIMARY_SIDES)
+                       MAIN_PROTEINS, PRIMARY_SIDES,
+                       INTENTIONAL_RETAIL_COMPOSITES,
+                       looks_like_composite_ingredient)
 
 
 def validate(root=ROOT, allow_documented_exceptions=False):
@@ -58,6 +60,8 @@ def validate(root=ROOT, allow_documented_exceptions=False):
         require(r['preferred_model_unit'] in UNITS,f'{iid}: invalid model unit')
         require(r['default_flexibility_class'] in fm,f'{iid}: unknown flexibility class')
         require(r['shelf_life_class'] in {'short','medium','long','unknown'},f'{iid}: invalid shelf life')
+        require(not looks_like_composite_ingredient(r) or iid in INTENTIONAL_RETAIL_COMPOSITES,
+                f'{iid}: unapproved composite canonical ingredient')
     for r in lines:
         iid=r['ingredient_id'];label=f"{r['recipe_id']}/{iid}"
         require(r['recipe_id'] in rm,f'{label}: unknown recipe');require(iid in im,f'{label}: unknown ingredient')
@@ -66,6 +70,13 @@ def validate(root=ROOT, allow_documented_exceptions=False):
             require(r['unit']==im[iid]['preferred_model_unit'],f'{label}: recipe/model unit mismatch')
             step=consumption_step(iid,r['unit'])
             if step and positive(r['preferred_quantity']):require(abs(float(r['preferred_quantity'])/step-round(float(r['preferred_quantity'])/step))<1e-8,f'{label}: impractical fractional count')
+    # Regression check for the removed coriander-and-mint synthetic ingredient.
+    require('fresh_herb_mix_coriander_mint' not in im,
+            'fresh_herb_mix_coriander_mint: removed composite ingredient has returned')
+    if 'R010' in rm:
+        r10={r['ingredient_id'] for r in lines if r['recipe_id']=='R010'}
+        require({'fresh_coriander','fresh_mint'}<=r10,
+                'R010: coriander and mint must be separate recipe ingredients')
     eligible=defaultdict(list);excluded={}
     for p in products:
         pid=p['product_id'];iid=p['ingredient_id']
@@ -109,6 +120,9 @@ def validate(root=ROOT, allow_documented_exceptions=False):
                 if p['usable_unit']==u and positive(p['usable_quantity']):comparisons.append(float(p['usable_quantity']))
                 if comparisons:require(any(abs(q-v)<1e-8 for v in comparisons),f'{pid}: quantity contradicts observed pack size')
     require(set(em)=={p['product_id'] for p in products},'Orphan verification evidence')
+    for iid in INTENTIONAL_RETAIL_COMPOSITES & set(im):
+        require(any(p['ingredient_id']==iid and p['product_resolution_status']=='resolved_exact' for p in products),
+                f'{iid}: intentional retail composite lacks a verified Tesco product identity')
     for r in conversions:
         label=r['conversion_id'];require(r['ingredient_id'] in im,f'{label}: unknown conversion ingredient')
         require(positive(r['multiplier']),f'{label}: invalid conversion multiplier')

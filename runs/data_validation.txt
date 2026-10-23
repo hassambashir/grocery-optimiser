@@ -2,7 +2,7 @@ Seed-data validation PASSED
 recipes: 40
 used_ingredients: 125
 canonical_ingredients: 209
-recipe_ingredient_rows: 372
+recipe_ingredient_rows: 373
 products: 316
 eligible_products: 288
 covered_ingredients: 125

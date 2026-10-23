@@ -1,6 +1,7 @@
 """Shared strict CSV reading and purchasing eligibility for validation and solving."""
 import csv
 import math
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,6 +19,19 @@ PRIMARY_SIDES = {
     'bread', 'couscous', 'bulgur', 'legumes', 'vegetables', 'salad',
     'pastry', 'polenta'
 }
+
+# These are deliberately modelled as one ingredient because Tesco sells the
+# requested blend in one pack. Ordinary separately sold ingredients must not
+# be combined into a synthetic canonical ingredient.
+INTENTIONAL_RETAIL_COMPOSITES = {
+    'chicken_stock_mix', 'beef_stock_mix', 'vegetable_stock',
+    'ginger_garlic_paste', 'mixed_beans', 'fish_pie_mix'
+}
+
+
+def looks_like_composite_ingredient(row):
+    text = f"{row.get('ingredient_id', '')} {row.get('canonical_name', '')}"
+    return bool(re.search(r'(^|_)(?:mix|mixed|and)(?:_|$)|\s&\s|\s+and\s+', text, re.I))
 
 
 def read_csv(path, root=ROOT):

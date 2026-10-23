@@ -30,6 +30,12 @@ Closed-cup/chestnut mushrooms, suitable egg pack sizes, plain chopped-tomato bra
 
 Whole flatbreads are ordinary meal-sized breads. Tiny 35 g folded flatbreads were not treated as equivalent to a full meal-sized bread. Bay leaves have a verified 10-leaf retail pack, avoiding a guessed leaves-per-gram conversion.
 
+## Composite ingredients
+
+Ingredients sold separately must remain separate canonical ingredients, recipe rows and product mappings. The former coriander-and-mint herb entry was removed: R010 now requests 5 g `fresh_coriander` and 5 g `fresh_mint`, and each maps to its own Tesco herb pack.
+
+A limited allow-list covers mixtures that are themselves the purchased product: stock cubes, ginger-and-garlic paste, canned mixed beans and fish pie mix. These remain single ingredients because splitting them would make the optimiser buy several separate products instead of the one retail pack required by the recipe. The validators reject any new combined ingredient unless it is added deliberately to this documented retail-composite allow-list and has a resolved Tesco product identity.
+
 ## Pack and usable quantities
 
 `pack_quantity` describes the bought pack in `pack_unit`. `usable_quantity` and `usable_unit`, when both populated, override it for supply. Gross and drained masses are retained separately: a 145 g tuna can supplies 102 g drained, and four cans supply 408 g; Tesco black beans supply 235 g per 400 g can; Tesco lentils supply 235 g per 390 g can. No double draining or cooked-to-dry conversion is applied.

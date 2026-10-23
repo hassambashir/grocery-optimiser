@@ -5,8 +5,9 @@ import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from catalogue import (ROOT, MAIN_PROTEINS, PRIMARY_SIDES, exclusion_reason,
-                       positive, read_csv)
+from catalogue import (ROOT, INTENTIONAL_RETAIL_COMPOSITES, MAIN_PROTEINS,
+                       PRIMARY_SIDES, exclusion_reason,
+                       looks_like_composite_ingredient, positive, read_csv)
 
 
 HELLOFRESH_RECIPE = re.compile(r"https://www\.hellofresh\.co\.uk/recipes/.+-[0-9a-f]{24}/?$")
@@ -52,6 +53,11 @@ def validate(root=ROOT):
         if existing and any(existing.get(key) != row.get(key) for key in row):
             errors.append(f"{row['ingredient_id']}: staged definition conflicts with active definition")
         definitions[row["ingredient_id"]] = row
+    for iid, row in definitions.items():
+        if looks_like_composite_ingredient(row) and iid not in INTENTIONAL_RETAIL_COMPOSITES:
+            errors.append(f"{iid}: unapproved composite canonical ingredient")
+    if "fresh_herb_mix_coriander_mint" in definitions:
+        errors.append("fresh_herb_mix_coriander_mint: removed composite ingredient has returned")
 
     recipe_map = {row["recipe_id"]: row for row in recipes}
     line_pairs = Counter((row["recipe_id"], row["ingredient_id"]) for row in lines)
