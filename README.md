@@ -4,12 +4,10 @@ Choose seven varied dinners for two people and integer Tesco retail packs, balan
 
 ## Verified snapshot: 23 October 2026
 
-- 40 active recipes, 373 active recipe-ingredient rows, 125 active ingredients used and 209 canonical ingredient definitions.
-- 160 additional staged recipes with 1,404 ingredient lines and 198 staged ingredients; all pass the staged coverage validator.
+- 200 active recipes, 1,777 recipe-ingredient rows, 205 ingredients used and 209 canonical ingredient definitions.
 - 332 distinct Tesco listings, each with product-page verification evidence.
-- 307 eligible product rows overall; 219 serve currently active ingredients, providing 94 alternatives beyond one option per active ingredient.
-- All 125 used ingredients have an eligible purchasing option; no ingredient coverage exceptions.
-- All 205 ingredients used across the active and staged recipes have an eligible purchasing option.
+- 307 eligible product rows overall; 306 serve used ingredients, providing 101 alternatives beyond one option per ingredient.
+- All 205 used ingredients have an eligible purchasing option; no coverage exceptions.
 - 25 unavailable or unresolved product rows are retained for audit and excluded from purchasing.
 
 See [validation report](docs/validation_report.md) for executed results, the seven-dinner basket, corrections and limitations; [coverage audit](docs/catalogue_coverage.md) lists every ingredient and excluded product.
@@ -41,7 +39,7 @@ Before reusing inventory, remove anything eaten, discarded or no longer usable. 
 
 | File | Purpose |
 |---|---|
-| `data/recipes.csv` | Forty household dinners with methods and two servings |
+| `data/recipes.csv` | Two hundred household dinners with methods and two servings |
 | `data/recipe_ingredients.csv` | Authoritative preferred quantities and canonical units |
 | `data/ingredients.csv` | Ingredient identities, units, shelf-life classes and flexibility |
 | `data/products.csv` | Active Tesco products with canonical ingredient IDs, gross/usable quantities, prices, availability and URLs |
@@ -51,16 +49,17 @@ Before reusing inventory, remove anything eaten, discarded or no longer usable. 
 | `config/flexibility_classes.csv` | Bounds on preferred quantities |
 | `scripts/catalogue.py` | Shared strict CSV reader and eligibility rules |
 | `scripts/validate_seed_data.py` | Active-data integrity, evidence and complete eligible-coverage gate |
-| `scripts/validate_staging_data.py` | Equivalent coverage, unit and method checks for every staged batch |
-| `scripts/generate_catalogue_coverage.py` | Rebuild the active-and-staged catalogue coverage audit |
+| `scripts/validate_staging_data.py` | Pre-promotion coverage, unit and method checks for future staged batches |
+| `scripts/audit_recipe_catalogue.py` | Duplicate, method-quality and optional per-recipe feasibility audit |
+| `scripts/generate_catalogue_coverage.py` | Rebuild the active catalogue coverage audit |
 | `scripts/optimise_week.py` | Joint recipe, pack and inventory MILP |
 | `tests/test_project.py` | Data-corruption, purchasing and end-to-end regression tests |
 
-The old `source_recipes.csv` and `source_recipe_ingredients.csv` files are not present in this repository. Inspiration URLs are optional provenance; cooking methods are household adaptations, not claimed verbatim source recipes. Staged methods may be AI-simplified from the structured ingredient list when declared in their notes. They are reviewed for practical sequencing, food safety and minimal unnecessary equipment before promotion.
+The old `source_recipes.csv` and `source_recipe_ingredients.csv` files are not present in this repository. Inspiration URLs are optional provenance; cooking methods are household adaptations, not claimed verbatim source recipes. Methods may be AI-simplified from the structured ingredient list when declared in their notes. The 160 former staged recipes passed duplicate, method, product-coverage and individual feasibility gates before promotion.
 
 ## Model behaviour
 
-Purchases are whole retail packs or integer reference portions of loose produce. Consumption is independent: eggs and whole-item recipes use integer quantities; cucumber and stock cubes allow half units; grams and millilitres are divisible. Single and soured cream and canned coconut milk use millilitres. Tinned beans, tuna, olives and mozzarella use labelled drained quantities where relevant.
+Purchases are whole retail packs or integer reference portions of loose produce. Consumption is independent: eggs remain whole; stock cubes use half-cube increments; and practical fractions are supported for cucumber, courgette, lemon, lettuce and red onion. Grams and millilitres are divisible. Single and soured cream and canned coconut milk use millilitres. Tinned beans, tuna, olives and mozzarella use labelled drained quantities where relevant.
 
 The objective is purchase expenditure plus a provisional value-based short-life surplus penalty plus a proportional penalty for deviations **in either direction** from recipe preferences. The last term prevents free inflation of portions to absorb surplus. Default weights are `--fresh-penalty 0.50` and `--deviation-penalty 2.0`. These are modelling assumptions, not measured food-waste probabilities. Long-life stock has no surplus penalty. Variety caps apply to protein and cooking-method groups when feasible; recipes cannot repeat within a plan.
 
@@ -76,7 +75,7 @@ M. A. van Rooijen et al. (2024), *Optimizing household food waste: The impact of
 
 ## Saved two-week simulation
 
-[Locked Week 1 and executed Week 2](runs/README.md) preserve the £39.88 original basket and a £20.44 optimal second-week basket using all 24 opening leftover balances. Both weeks include complete plans, inventory and reconciliation files. This is explicitly simulated consumption, assuming all leftovers survive; it does not overwrite the baseline inventory or represent actual purchases. The full 32-test suite includes product-schema, staged-coverage, recipe-method quality, snapshot-integrity and two-week balance regression checks.
+[Locked Week 1 and executed Week 2](runs/README.md) preserve the £39.88 original basket and a £20.44 optimal second-week basket using all 24 opening leftover balances. Both weeks include complete plans, inventory and reconciliation files. This is explicitly simulated consumption, assuming all leftovers survive; it does not overwrite the baseline inventory or represent actual purchases. The full test suite includes product-schema, catalogue-promotion, recipe-method quality, snapshot-integrity and two-week balance regression checks.
 
 ## Household web application
 

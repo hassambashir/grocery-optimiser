@@ -1,4 +1,6 @@
-# Staged recipe data validation
+# Staged recipe data validation — pre-promotion record
+
+> All 160 recipes covered by this report were promoted into the active catalogue on 23 October 2026. The counts below preserve the final pre-promotion audit; current authoritative totals are in `data/recipes.csv`, `data/recipe_ingredients.csv` and `docs/recipe_promotion_report.md`.
 
 Revalidated on 23 October 2026 after applying the controlled recipe classifications.
 

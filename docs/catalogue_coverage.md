@@ -1,6 +1,6 @@
 # Tesco catalogue coverage — 23 October 2026
 
-205 of 205 ingredients used by the active and staged recipes have eligible products. Availability is the observed public Tesco UK listing, not a guarantee of postcode or delivery-slot stock.
+205 of 205 ingredients used by the active recipe catalogue have eligible products. Availability is the observed public Tesco UK listing, not a guarantee of postcode or delivery-slot stock.
 
 | Ingredient | Unit | Eligible options | Tesco product IDs |
 |---|---|---:|---|

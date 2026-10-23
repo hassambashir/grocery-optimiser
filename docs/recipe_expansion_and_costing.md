@@ -1,12 +1,21 @@
 # Recipe catalogue and optimisation
 
-The sole recipe collection is `data/recipes.csv`. A recipe is only admitted when its two-person ingredient list and independently written cooking instructions exist. Source URLs are optional attribution/reference, not separate source records.
+The authoritative recipe collection is `data/recipes.csv`. It contains 200 two-person dinners. Every recipe has a structured ingredient list in `data/recipe_ingredients.csv`, a complete household cooking method, controlled protein/method/side classifications and eligible Tesco purchasing coverage.
 
-`data/recipe_ingredients.csv` stores canonical, model-unit ingredient quantities for the recipes that can be optimised. `data/ingredients.csv` defines ingredients, and `data/products.csv` holds Tesco pack/pricing snapshots. These are relational supporting tables, not additional recipe catalogues.
+`data/ingredients.csv` defines 209 canonical ingredients and their optimiser units. The 200 recipes use 205 of them. `data/products.csv` contains the Tesco pack and price snapshot; purchasing eligibility follows verified Tesco identity, availability, positive price and a usable quantity in the canonical ingredient unit.
 
-The collection currently has 40 recipes: ten with canonical model ingredient rows and thirty with ingredient quantities in `recipes.csv` pending normalisation to `recipe_ingredients.csv`. The 17 prior name-only candidates were removed because they had no ingredient list. The optimiser currently selects only the ten model-ready recipes. Never add name-only entries or invent retail prices to activate recipes.
+The former batches R041–R200 were promoted only after the following gates passed:
 
-Diversity is constrained by protein and cooking method only where enough eligible options exist. Actual weekly shopping cost is distinct from estimated consumed-ingredient value. Opening stock is valued approximately, not at a documented acquisition cost.
+- unique recipe IDs and normalised names;
+- no probable duplicate pair based on both name similarity and ingredient overlap;
+- valid canonical ingredient references and units;
+- complete eligible Tesco coverage;
+- method-length and prepared-component checks;
+- all 200 recipes solved individually;
+- a proven-optimal seven-dinner solve across the complete catalogue.
 
-## Next necessary work
-Convert the thirty complete textual ingredient lists into canonical `recipe_ingredients.csv` rows, add missing Tesco mappings using verified products, and activate them. Obtain and independently rewrite complete instructions for the ten original recipes that still lack instructions. Run validation and the optimiser and verify CI. Do not recreate candidate/source/household recipe files.
+Source URLs are optional provenance rather than an activation requirement. A missing URL does not make a complete household adaptation unusable, but it remains visible in the catalogue audit. Ratings are blank unless a numeric value from 0 to 5 was retained with the recipe.
+
+Diversity is constrained by protein and cooking method when sufficient alternatives exist. Shopping expenditure remains distinct from estimated consumed-ingredient value. Opening stock is valued approximately, not at a documented acquisition cost.
+
+Future recipe batches should be created outside the authoritative data files, checked with `scripts/validate_staging_data.py`, and promoted only after the active catalogue audit and complete test suite pass.

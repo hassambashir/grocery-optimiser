@@ -30,7 +30,7 @@ def validate(root=ROOT, allow_documented_exceptions=False):
     if errors:return errors,{}
     recipes,lines,ingredients,products,conversions,flex,inventory,evidence=[tables[p] for p in paths]
     required={
-      paths[0]:{'recipe_id','recipe_name','servings','cooking_instructions','main_protein','cooking_method'},
+      paths[0]:{'recipe_id','recipe_name','servings','cooking_instructions','main_protein','cooking_method','rating'},
       paths[1]:{'recipe_id','ingredient_id','preferred_quantity','unit'},
       paths[2]:{'ingredient_id','preferred_model_unit','default_flexibility_class','shelf_life_class'},
       paths[3]:{'product_id','retailer_product_id','ingredient_id','retailer','product_name','pack_quantity','pack_unit','usable_quantity','usable_unit','regular_price_gbp','clubcard_price_gbp','availability_status','product_resolution_status','source_url','source_checked_at','notes'},
@@ -59,6 +59,10 @@ def validate(root=ROOT, allow_documented_exceptions=False):
         require(r['main_protein'] in MAIN_PROTEINS,f"{r['recipe_id']}: non-standard main protein {r['main_protein']}")
         require(r['primary_side'] in PRIMARY_SIDES,f"{r['recipe_id']}: non-standard primary side {r['primary_side']}")
         require(any(l['recipe_id']==r['recipe_id'] for l in lines),f"{r['recipe_id']}: no ingredients")
+        rating=r.get('rating','').strip()
+        if rating:
+            try:require(0<=float(rating)<=5,f"{r['recipe_id']}: rating must be from 0 to 5")
+            except ValueError:require(False,f"{r['recipe_id']}: rating must be blank or numeric")
     for r in flex:
         keys=['min_factor','preferred_factor','max_factor']
         good=all(positive(r[k]) for k in keys);require(good,f"Invalid flexibility values: {r['flexibility_class']}")

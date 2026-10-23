@@ -1,5 +1,0 @@
-ingredient_id,canonical_name,category,preferred_model_unit,shelf_life_class,inventory_policy,default_flexibility_class,notes
-dried_thyme,Dried thyme,seasoning,g,long,durable_tracked,tight,Batch 07 draft; Tesco product mapping and eligibility pending review.
-red_pesto,Red tomato pesto,sauce_or_paste,g,long,durable_tracked,tight,Batch 07 draft; Tesco product mapping and eligibility pending review.
-fresh_rosemary,Fresh rosemary,fresh_aromatic,g,short,fresh_tracked,tight,Batch 07 draft; Tesco product mapping and eligibility pending review.
-tahini,Tahini,sauce_or_paste,g,long,durable_tracked,tight,Batch 07 draft; Tesco product mapping and eligibility pending review.

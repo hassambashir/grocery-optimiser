@@ -372,3 +372,1407 @@ R040,turmeric,2.5,g,1 tsp turmeric | approximate household unit conversion; revi
 R040,ground_cumin,2,g,1 tsp cumin | approximate household unit conversion; review
 R040,garlic,2,clove,2 garlic cloves | approximate household unit conversion; review | Standardised from 6 g; confirm portion against recipe
 R040,vegetable_oil,15,ml,One household tablespoon = 15 ml.
+R041,halloumi,250,g,Household standardised amount; verify product compatibility
+R041,basmati_rice,150,g,Household standardised amount; verify product compatibility
+R041,green_beans,160,g,Household standardised amount; verify product compatibility
+R041,brown_onion,1,each,Household standardised amount; verify product compatibility
+R041,passata,250,g,Household standardised amount; verify product compatibility
+R041,tomato_puree,30,g,Household standardised amount; verify product compatibility
+R041,garlic,2,clove,Household standardised amount; verify product compatibility | Standardised from 6 g; review serving equivalence
+R041,curry_powder,8,g,Household standardised amount; verify product compatibility
+R041,mango_chutney,40,g,Household standardised amount; verify product compatibility
+R041,natural_yogurt,75,g,Household standardised amount; verify product compatibility
+R042,halloumi,250,g,Household standardised amount; verify product compatibility
+R042,sweetcorn,150,g,Household standardised amount; verify product compatibility
+R042,tortillas,6,each,Household standardised amount; verify product compatibility
+R042,chipotle_paste,10,g,Household standardised amount; verify product compatibility
+R042,spring_onion,30,g,Household standardised amount; verify product compatibility
+R042,green_pepper,1,each,Household standardised amount; verify product compatibility
+R042,mayonnaise,40,ml,Household standardised amount; verify product compatibility
+R042,brown_onion,1,each,Household standardised amount; verify product compatibility
+R043,halloumi,250,g,Household standardised amount; verify product compatibility
+R043,burger_buns,2,each,Household standardised amount; verify product compatibility
+R043,chickpeas,240,g,Household standardised amount; verify product compatibility
+R043,mango_chutney,80,g,Household standardised amount; verify product compatibility
+R043,natural_yogurt,75,g,Household standardised amount; verify product compatibility
+R043,lettuce,0.5,each,Household standardised amount; verify product compatibility | Standardised from 100 g; review serving equivalence
+R043,tomatoes,240,g,Household standardised amount; verify product compatibility
+R043,lime,1,each,Household standardised amount; verify product compatibility
+R043,fresh_mint,8,g,Household standardised amount; verify product compatibility
+R044,gnocchi,350,g,Household standardised amount; verify product compatibility
+R044,mushrooms,250,g,Household standardised amount; verify product compatibility
+R044,spinach,100,g,Household standardised amount; verify product compatibility
+R044,creme_fraiche,100,g,Household standardised amount; verify product compatibility
+R044,garlic,2,clove,Household standardised amount; verify product compatibility | Standardised from 6 g; review serving equivalence
+R044,hard_cheese,40,g,Household standardised amount; verify product compatibility
+R044,vegetable_oil,10,ml,Household standardised amount; verify product compatibility
+R045,orzo,180,g,Household standardised amount; verify product compatibility
+R045,chorizo,90,g,Household standardised amount; verify product compatibility
+R045,garlic,2,clove,Household standardised amount; verify product compatibility | Standardised from 6 g; review serving equivalence
+R045,tomato_puree,30,g,Household standardised amount; verify product compatibility
+R045,smoked_paprika,3,g,Household standardised amount; verify product compatibility
+R045,creme_fraiche,75,g,Household standardised amount; verify product compatibility
+R045,peas,120,g,Household standardised amount; verify product compatibility
+R045,hard_cheese,40,g,Household standardised amount; verify product compatibility
+R046,prawns,200,g,Household standardised amount; verify product compatibility
+R046,arborio_rice,175,g,Household standardised amount; verify product compatibility
+R046,asparagus,200,g,Household standardised amount; verify product compatibility
+R046,leek,1,each,Household standardised amount; verify product compatibility
+R046,garlic,2,clove,Household standardised amount; verify product compatibility | Standardised from 6 g; review serving equivalence
+R046,vegetable_stock,1,cube,Household standardised amount; verify product compatibility
+R046,lemon,1,each,Household standardised amount; verify product compatibility
+R046,butter,30,g,Household standardised amount; verify product compatibility
+R046,hard_cheese,40,g,Household standardised amount; verify product compatibility
+R046,parsley,10,g,Household standardised amount; verify product compatibility
+R047,salmon,260,g,Household standardised amount; verify product compatibility
+R047,basmati_rice,150,g,Household standardised amount; verify product compatibility
+R047,garlic,3,clove,Household standardised amount; verify product compatibility | Standardised from 9 g; review serving equivalence
+R047,broccoli,150,g,Household standardised amount; verify product compatibility
+R047,baby_corn,100,g,Household standardised amount; verify product compatibility
+R047,sesame_oil,15,ml,Household standardised amount; verify product compatibility
+R047,teriyaki_sauce,100,ml,Household standardised amount; verify product compatibility | Approximate volume from original gram quantity; verify against product density
+R047,sesame_seeds,5,g,Household standardised amount; verify product compatibility
+R048,pork_mince,240,g,Household standardised amount; verify product compatibility
+R048,basmati_rice,150,g,Household standardised amount; verify product compatibility
+R048,brown_onion,1,each,Household standardised amount; verify product compatibility
+R048,garlic,2,clove,Household standardised amount; verify product compatibility | Standardised from 6 g; review serving equivalence
+R048,red_chilli,6,g,Household standardised amount; verify product compatibility | Standardised from 6 g; review serving equivalence | Estimated 6 g per red chilli; adjust heat to taste.
+R048,mangetout,150,g,Household standardised amount; verify product compatibility
+R048,brown_sugar,25,g,Household ketjap alternative; dissolve directly in the wok without a separate mixing bowl
+R048,soy_sauce,45,ml,Household ketjap alternative plus the recipe's original soy sauce
+R049,brown_onion,1,each,Household standardised amount; verify product compatibility
+R049,garlic,2,clove,Household standardised amount; verify product compatibility | Standardised from 6 g; review serving equivalence
+R049,tomatoes,120,g,Household standardised amount; verify product compatibility
+R049,tinned_lentils,240,g,Household standardised amount; verify product compatibility
+R049,lime,1,each,Household standardised amount; verify product compatibility
+R049,garam_masala,5,g,Household standardised amount; verify product compatibility
+R049,coconut_milk,200,ml,Household standardised amount; verify product compatibility
+R049,vegetable_stock,0.5,cube,Household standardised amount; verify product compatibility
+R049,spinach,80,g,Household standardised amount; verify product compatibility
+R049,mango_chutney,40,g,Household standardised amount; verify product compatibility
+R049,naan,2,each,Household standardised amount; verify product compatibility
+R050,turkey_mince,300,g,Household standardised amount; verify product compatibility
+R050,feta,80,g,Household standardised amount; verify product compatibility
+R050,burger_buns,2,each,Household standardised amount; verify product compatibility
+R050,potatoes,450,g,Household standardised amount; verify product compatibility
+R050,lettuce,0.5,each,Household standardised amount; verify product compatibility | Standardised from 80 g; review serving equivalence
+R050,tomatoes,120,g,Household standardised amount; verify product compatibility
+R050,vegetable_oil,15,ml,Household standardised amount; verify product compatibility
+R051,beef_mince,240,g,Household standardised amount; verify product compatibility
+R051,tortillas,6,each,Household standardised amount; verify product compatibility
+R051,cheddar,40,g,Household standardised amount; verify product compatibility
+R051,tomatoes,240,g,Household standardised amount; verify product compatibility
+R051,lettuce,0.5,each,Household standardised amount; verify product compatibility | Standardised from 80 g; review serving equivalence
+R051,lime,1,each,Household standardised amount; verify product compatibility
+R051,ground_cumin,3,g,Household standardised amount; verify product compatibility
+R051,smoked_paprika,3,g,Household standardised amount; verify product compatibility
+R051,tomato_puree,30,g,Household standardised amount; verify product compatibility
+R051,beef_stock_mix,0.5,cube,Household standardised amount; verify product compatibility
+R051,potatoes,450,g,Household standardised amount; verify product compatibility
+R052,pasta,180,g,Household standardised amount; verify product compatibility
+R052,chicken_breast,260,g,Household standardised amount; verify product compatibility
+R052,cherry_tomatoes,125,g,Household standardised amount; verify product compatibility
+R052,mozzarella,125,g,Household standardised amount; verify product compatibility
+R052,pesto,64,g,Household standardised amount; verify product compatibility
+R052,rocket,40,g,Household standardised amount; verify product compatibility
+R052,pumpkin_seeds,15,g,Household standardised amount; verify product compatibility
+R052,olive_oil,15,ml,Household standardised amount; verify product compatibility
+R053,sausages,4,each,Household standardised amount; verify product compatibility
+R053,red_onion,1,each,Household standardised amount; verify product compatibility
+R053,carrot,200,g,Household standardised amount; verify product compatibility
+R053,apple,1,each,Household standardised amount; verify product compatibility
+R053,potatoes,450,g,Household standardised amount; verify product compatibility
+R053,beef_stock_mix,0.5,cube,Household standardised amount; verify product compatibility
+R053,vegetable_oil,15,ml,Household standardised amount; verify product compatibility
+R054,pork_mince,240,g,Household standardised amount; verify product compatibility
+R054,breadcrumbs,10,g,Household standardised amount; verify product compatibility
+R054,garlic,2,clove,Household standardised amount; verify product compatibility | Standardised from 6 g; review serving equivalence
+R054,potatoes,450,g,Household standardised amount; verify product compatibility
+R054,green_beans,150,g,Household standardised amount; verify product compatibility
+R054,creme_fraiche,150,g,Household standardised amount; verify product compatibility
+R054,chives,10,g,Household standardised amount; verify product compatibility
+R054,chicken_stock_mix,0.5,cube,Household standardised amount; verify product compatibility
+R055,falafel,180,g,Household standardised amount; verify product compatibility
+R055,tortillas,4,each,Household standardised amount; verify product compatibility
+R055,potatoes,450,g,Household standardised amount; verify product compatibility
+R055,carrot,120,g,Household standardised amount; verify product compatibility
+R055,tomatoes,120,g,Household standardised amount; verify product compatibility
+R055,harissa_paste,35,g,Household standardised amount; verify product compatibility
+R055,mayonnaise,60,ml,Household standardised amount; verify product compatibility
+R055,vegetable_oil,15,ml,Household standardised amount; verify product compatibility
+R056,chicken_breast,260,g,Household standardised amount; verify product compatibility
+R056,jasmine_rice,150,g,Household standardised amount; verify product compatibility
+R056,lime,1,each,Household standardised amount; verify product compatibility
+R056,cucumber,0.5,each,Household standardised amount; verify product compatibility
+R056,peanut_butter,60,g,Household standardised amount; verify product compatibility
+R056,soy_sauce,20,ml,Household standardised amount; verify product compatibility
+R056,peanuts,30,g,Household standardised amount; verify product compatibility
+R056,garlic,2,clove,Household standardised amount; verify product compatibility | Standardised from 6 g; review serving equivalence
+R057,lamb_mince,240,g,Household standardised amount; verify product compatibility
+R057,breadcrumbs,10,g,Household standardised amount; verify product compatibility
+R057,garlic,2,clove,Household standardised amount; verify product compatibility | Standardised from 6 g; review serving equivalence
+R057,red_onion,1,each,Household standardised amount; verify product compatibility
+R057,tomatoes,120,g,Household standardised amount; verify product compatibility
+R057,harissa_paste,35,g,Household standardised amount; verify product compatibility
+R057,rocket,40,g,Household standardised amount; verify product compatibility
+R057,burger_buns,2,each,Household standardised amount; verify product compatibility
+R057,feta,50,g,Household standardised amount; verify product compatibility
+R057,potatoes,450,g,Household standardised amount; verify product compatibility
+R058,salmon,260,g,Household standardised amount; verify product compatibility
+R058,tortillas,6,each,Household standardised amount; verify product compatibility
+R058,sweet_potato,400,g,Household standardised amount; verify product compatibility
+R058,soy_sauce,25,ml,Household standardised amount; verify product compatibility
+R058,honey,15,g,Household standardised amount; verify product compatibility
+R058,sesame_seeds,15,g,Household standardised amount; verify product compatibility
+R058,mayonnaise,50,ml,Household standardised amount; verify product compatibility
+R058,lettuce,0.5,each,Household standardised amount; verify product compatibility | Standardised from 80 g; review serving equivalence
+R059,bacon_lardons,90,g,Household standardised amount; verify product compatibility
+R059,mushrooms,150,g,Household standardised amount; verify product compatibility
+R059,arborio_rice,175,g,Household standardised amount; verify product compatibility
+R059,leek,1,each,Household standardised amount; verify product compatibility
+R059,garlic,1,clove,Household standardised amount; verify product compatibility | Standardised from 3 g; review serving equivalence
+R059,vegetable_stock,1,cube,Household standardised amount; verify product compatibility
+R059,peas,120,g,Household standardised amount; verify product compatibility
+R059,hard_cheese,40,g,Household standardised amount; verify product compatibility
+R059,butter,20,g,Household standardised amount; verify product compatibility
+R060,sausages,4,each,Household standardised amount; verify product compatibility
+R060,gnocchi,300,g,Household standardised amount; verify product compatibility
+R060,broccoli,250,g,Household standardised amount; verify product compatibility
+R060,cherry_tomatoes,250,g,Household standardised amount; verify product compatibility
+R060,red_onion,1,each,Household standardised amount; verify product compatibility
+R060,dried_oregano,1,g,Household standardised amount; verify product compatibility
+R060,balsamic_vinegar,24,ml,Household standardised amount; verify product compatibility
+R060,vegetable_oil,15,ml,Household standardised amount; verify product compatibility
+R061,butternut_squash,450,g,Household standardised quantity
+R061,arborio_rice,175,g,Household standardised quantity
+R061,brown_onion,1,each,Household standardised quantity
+R061,vegetable_stock,1,cube,Household standardised quantity
+R061,hard_cheese,40,g,Household standardised quantity
+R061,fresh_sage,8,g,Household standardised quantity
+R062,aubergine,2,each,Household standardised quantity
+R062,jasmine_rice,150,g,Household standardised quantity
+R062,miso_paste,15,g,Household standardised quantity
+R062,soy_sauce,25,ml,Household standardised quantity
+R062,honey,15,g,Household standardised quantity
+R062,sesame_seeds,15,g,Household standardised quantity
+R062,mayonnaise,50,ml,Household standardised quantity
+R063,pasta,180,g,Household standardised quantity
+R063,tuna,145,g,Household standardised quantity
+R063,passata,300,g,Household standardised quantity
+R063,spinach,80,g,Household standardised quantity
+R063,cheddar,50,g,Household standardised quantity
+R063,garlic,2,clove,Household standardised quantity | Standardised from 6 g; review serving equivalence
+R064,pork_loin_steaks,300,g,Household standardised quantity
+R064,potatoes,450,g,Household standardised quantity
+R064,leek,1,each,Household standardised quantity
+R064,savoy_cabbage,150,g,Household standardised quantity
+R064,honey,15,g,Household standardised quantity
+R064,wholegrain_mustard,25,g,Household standardised quantity
+R065,sea_bass,260,g,Household standardised quantity
+R065,sweet_potato,450,g,Household standardised quantity
+R065,green_pepper,1,each,Household standardised quantity
+R065,tomatoes,240,g,Household standardised quantity
+R065,lime,1,each,Household standardised quantity
+R065,fresh_coriander,10,g,Household standardised quantity
+R066,prawns,200,g,Household standardised quantity
+R066,serrano_ham,60,g,Household standardised quantity
+R066,pasta,180,g,Household standardised quantity
+R066,garlic,2,clove,Household standardised quantity | Standardised from 6 g; review serving equivalence
+R066,creme_fraiche,150,g,Household standardised quantity
+R066,lemon,1,each,Household standardised quantity
+R067,black_beans,240,g,Household standardised quantity
+R067,courgette,1.5,each,Household standardised quantity | Standardised from 250 g; review serving equivalence
+R067,tortillas,4,each,Household standardised quantity
+R067,cheddar,80,g,Household standardised quantity
+R067,ground_cumin,3,g,Household standardised quantity
+R067,sour_cream,100,ml,Household standardised quantity
+R068,butter_beans,240,g,Household standardised quantity
+R068,mushrooms,180,g,Household standardised quantity
+R068,chopped_tomatoes,300,g,Household standardised quantity
+R068,vegetable_stock,0.5,cube,Household standardised quantity
+R068,spinach,100,g,Household standardised quantity
+R068,ciabatta,2,each,Household standardised quantity
+R069,salmon,260,g,Household standardised quantity
+R069,pasta,180,g,Household standardised quantity
+R069,peas,120,g,Household standardised quantity
+R069,creme_fraiche,150,g,Household standardised quantity
+R069,dried_dill,2,g,Household standardised quantity
+R069,lemon,1,each,Household standardised quantity
+R070,sweet_potato,450,g,Household standardised quantity
+R070,halloumi,225,g,Household standardised quantity
+R070,fresh_ginger,15,g,Household standardised quantity
+R070,coconut_milk,180,ml,Household standardised quantity
+R070,spinach,80,g,Household standardised quantity
+R070,lime,1,each,Household standardised quantity
+R071,tofu,250,g,Household standardised quantity
+R071,basmati_rice,150,g,Household standardised quantity
+R071,fresh_ginger,15,g,Household standardised quantity
+R071,coconut_milk,180,ml,Household standardised quantity
+R071,tomato_puree,30,g,Household standardised quantity
+R071,spinach,80,g,Household standardised quantity
+R072,chicken_thigh,250,g,Household standardised quantity
+R072,shallot,1,each,Household standardised quantity
+R072,butter_beans,240,g,Household standardised quantity
+R072,passata,300,g,Household standardised quantity
+R072,pesto,50,g,Household standardised quantity
+R072,ciabatta,2,each,Household standardised quantity
+R073,turkey_steaks,300,g,Household standardised quantity
+R073,brown_rice,150,g,Household standardised quantity
+R073,mixed_beans,240,g,Household standardised quantity
+R073,tomatoes,240,g,Household standardised quantity
+R073,green_pepper,1,each,Household standardised quantity
+R073,ground_cumin,3,g,Household standardised quantity
+R074,diced_lamb,300,g,Household standardised quantity
+R074,red_onion,1,each,Household standardised quantity
+R074,cucumber,0.5,each,Household standardised quantity
+R074,walnuts,30,g,Household standardised quantity
+R074,pomegranate,1,each,Household standardised quantity
+R074,flatbreads,2,each,Household standardised quantity
+R075,chicken_breast,280,g,Household standardised quantity
+R075,egg_noodles,180,g,Household standardised quantity
+R075,mangetout,150,g,Household standardised quantity
+R075,brown_sugar,25,g,Household ketjap alternative; dissolve directly in the wok without a separate mixing bowl
+R075,soy_sauce,50,ml,Household ketjap alternative plus the recipe's original soy sauce
+R075,peanuts,25,g,Household standardised quantity
+R076,chicken_thigh,250,g,Household standardised quantity
+R076,chorizo,60,g,Household standardised quantity
+R076,basmati_rice,150,g,Household standardised quantity
+R076,yellow_pepper,1,each,Household standardised quantity
+R076,smoked_paprika,3,g,Household standardised quantity
+R076,chicken_stock_mix,0.5,cube,Household standardised quantity
+R077,fish_pie_mix,300,g,Household standardised quantity
+R077,potatoes,250,g,Household standardised quantity
+R077,sweet_potato,400,g,Household standardised quantity
+R077,hard_cheese,30,g,Household standardised quantity
+R077,breadcrumbs,30,g,Household standardised quantity
+R077,rocket,50,g,Household standardised quantity
+R078,jasmine_rice,150,g,Household standardised quantity
+R078,cucumber,0.5,each,Household standardised quantity
+R078,rice_vinegar,15,ml,Household standardised quantity
+R078,pak_choi,200,g,Household standardised quantity
+R078,beef_mince,240,g,Household standardised quantity
+R078,gochujang,50,g,Household standardised quantity
+R079,courgette,1.5,each,Household standardised quantity | Standardised from 250 g; review serving equivalence
+R079,asparagus,100,g,Household standardised quantity
+R079,pasta,180,g,Household standardised quantity
+R079,passata,300,g,Household standardised quantity
+R079,prawns,200,g,Household standardised quantity
+R079,garlic,2,clove,Household standardised quantity | Standardised from 6 g; review serving equivalence
+R080,beef_strips,240,g,Household standardised quantity
+R080,mushrooms,150,g,Household standardised quantity
+R080,shallot,1,each,Household standardised quantity
+R080,basmati_rice,150,g,Household standardised quantity
+R080,smoked_paprika,3,g,Household standardised quantity
+R080,sour_cream,150,ml,Household standardised quantity
+R081,halloumi,225,g,Two portions
+R081,bacon_lardons,100,g,Two portions
+R081,burger_buns,2,each,Two portions
+R081,red_pepper,1,each,Two portions
+R081,sweet_chilli_sauce,45,ml,Two portions | Approximate volume from original gram quantity; verify against product density
+R081,lettuce,0.25,each,Two portions | Standardised from 60 g; review serving equivalence
+R082,halloumi,225,g,Two portions
+R082,flatbreads,2,each,Two portions
+R082,sweet_potato,400,g,Two portions
+R082,cucumber,0.5,each,Two portions
+R082,natural_yogurt,120,g,Two portions
+R082,honey,20,g,Two portions
+R082,lemon,0.5,each,Two portions
+R083,halloumi,225,g,Two portions
+R083,gochujang,35,g,Two portions
+R083,potatoes,450,g,Two portions
+R083,sesame_seeds,15,g,Two portions
+R083,avocado,1,each,Two portions
+R083,lettuce,0.25,each,Two portions | Standardised from 70 g; review serving equivalence
+R084,halloumi,225,g,Two portions
+R084,flatbreads,2,each,Two portions
+R084,potatoes,400,g,Two portions
+R084,carrot,120,g,Two portions
+R084,savoy_cabbage,180,g,Two portions
+R084,hot_sauce,35,ml,Two portions
+R084,mayonnaise,60,ml,Two portions
+R085,chicken_breast,300,g,Two portions
+R085,serrano_ham,70,g,Two portions
+R085,potatoes,450,g,Two portions
+R085,asparagus,160,g,Two portions
+R085,fresh_sage,8,g,Two portions
+R085,lemon,0.5,each,Two portions
+R086,chicken_breast,300,g,Two portions
+R086,serrano_ham,70,g,Two portions
+R086,potatoes,450,g,Two portions
+R086,broccoli,220,g,Two portions
+R086,hard_cheese,35,g,Two portions
+R086,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
+R087,chicken_breast,300,g,Two portions
+R087,tortillas,4,each,Two portions
+R087,potatoes,400,g,Two portions
+R087,cheddar,50,g,Two portions
+R087,hot_sauce,35,ml,Two portions
+R087,lettuce,0.5,each,Two portions | Standardised from 100 g; review serving equivalence
+R087,wholegrain_mustard,15,g,Two portions
+R087,honey,15,g,Two portions
+R088,chicken_thigh,300,g,Two portions
+R088,potatoes,500,g,Two portions
+R088,bbq_sauce,70,ml,Two portions | Standardised from 70 g; review serving equivalence
+R088,cheddar,70,g,Two portions
+R088,avocado,1,each,Two portions
+R088,fresh_coriander,10,g,Two portions
+R088,red_chilli,9,g,Two portions | Standardised from 10 g; review serving equivalence | Estimated 6 g per red chilli; adjust heat to taste.
+R089,chicken_breast,300,g,Two portions
+R089,garam_masala,8,g,Two portions
+R089,potatoes,450,g,Two portions
+R089,carrot,200,g,Two portions
+R089,natural_yogurt,120,g,Two portions
+R089,lemon,1,each,Two portions
+R090,chicken_breast,300,g,Two portions
+R090,bacon_lardons,100,g,Two portions
+R090,creme_fraiche,150,g,Two portions
+R090,chives,12,g,Two portions
+R090,potatoes,450,g,Two portions
+R090,mangetout,160,g,Two portions
+R090,wholegrain_mustard,20,g,Two portions
+R091,beef_mince,250,g,Two portions
+R091,pasta,180,g,Two portions
+R091,gochujang,35,g,Two portions
+R091,creme_fraiche,150,g,Two portions
+R091,spinach,90,g,Two portions
+R091,spring_onion,30,g,Two portions | Approx. 2 spring onions at 15 g each.
+R092,prawns,220,g,Two portions
+R092,bacon_lardons,90,g,Two portions
+R092,spaghetti,180,g,Two portions
+R092,creme_fraiche,120,g,Two portions
+R092,green_chilli,10,g,Two portions; approximately one medium green chilli but purchased by pack weight
+R092,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
+R093,black_beans,240,g,Two portions
+R093,tortillas,4,each,Two portions
+R093,cheddar,80,g,Two portions
+R093,chipotle_paste,25,g,Two portions
+R093,avocado,1,each,Two portions
+R093,tomatoes,200,g,Two portions
+R093,rocket,60,g,Two portions
+R094,aubergine,1,each,Two portions
+R094,red_pepper,1,each,Two portions
+R094,pasta,180,g,Two portions
+R094,walnuts,30,g,Two portions
+R094,chives,12,g,Two portions
+R094,passata,250,g,Two portions
+R095,pasta,180,g,Two portions
+R095,pesto,65,g,Two portions
+R095,peas,150,g,Two portions
+R095,spinach,100,g,Two portions
+R095,soft_cheese,90,g,Two portions
+R095,hard_cheese,30,g,Two portions
+R096,arborio_rice,180,g,Two portions
+R096,asparagus,180,g,Two portions
+R096,cherry_tomatoes,200,g,Two portions
+R096,sun_dried_tomatoes,70,g,Two portions
+R096,vegetable_stock,1,cube,Two portions
+R096,hard_cheese,40,g,Two portions
+R097,lasagne_sheets,160,g,Two portions
+R097,courgette,1,each,Two portions | Standardised from 220 g; review serving equivalence
+R097,red_pepper,1,each,Two portions
+R097,passata,400,g,Two portions
+R097,cheddar,100,g,Two portions
+R097,soft_cheese,100,g,Two portions
+R098,chickpeas,240,g,Two portions
+R098,coconut_milk,250,ml,Two portions
+R098,chopped_tomatoes,250,g,Two portions
+R098,garam_masala,8,g,Two portions
+R098,fresh_coriander,12,g,Two portions
+R098,crispy_onions,25,g,Two portions
+R098,naan,2,each,Two portions
+R099,tofu,280,g,Two portions
+R099,rice_noodles,160,g,Two portions
+R099,coconut_milk,300,ml,Two portions
+R099,thai_red_curry_paste,35,g,Two portions
+R099,pak_choi,180,g,Two portions
+R099,lime,1,each,Two portions
+R099,fresh_coriander,12,g,Two portions
+R100,halloumi,150,g,Two portions
+R100,falafel,160,g,Two portions
+R100,bulgur,150,g,Two portions
+R100,red_pepper,1,each,Two portions
+R100,red_onion,0.5,each,Two portions
+R100,harissa_paste,25,g,Two portions
+R100,natural_yogurt,90,g,Two portions
+R101,chicken_thigh,260,g,Two portions
+R101,jasmine_rice,150,g,Two portions
+R101,pak_choi,200,g,Two portions
+R101,carrot,120,g,Two portions
+R101,thai_green_curry_paste,45,g,Two portions
+R101,coconut_milk,200,ml,Two portions
+R101,lime,1,each,Two portions
+R101,soy_sauce,15,ml,Two portions
+R102,butter_beans,240,g,Two portions
+R102,sweet_potato,400,g,Two portions
+R102,harissa_paste,40,g,Two portions
+R102,passata,300,g,Two portions
+R102,spinach,60,g,Two portions
+R102,ciabatta,2,each,Two portions
+R102,feta,60,g,Two portions
+R102,crispy_onions,20,g,Two portions
+R103,butter_beans,240,g,Two portions
+R103,feta,80,g,Two portions
+R103,ciabatta,2,each,Two portions
+R103,kale,120,g,Two portions
+R103,harissa_paste,40,g,Two portions
+R103,passata,300,g,Two portions
+R103,breadcrumbs,30,g,Two portions
+R103,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
+R103,olive_oil,20,ml,Two portions
+R104,cod,300,g,Two portions
+R104,potatoes,450,g,Two portions
+R104,peas,200,g,Two portions
+R104,lemon,1,each,Two portions
+R104,butter,30,g,Two portions
+R104,parsley,15,g,Two portions
+R104,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
+R105,pork_loin_steaks,300,g,Two portions
+R105,apple,2,each,Two portions
+R105,potatoes,450,g,Two portions
+R105,red_onion,1,each,Two portions
+R105,wholegrain_mustard,25,g,Two portions
+R105,honey,20,g,Two portions
+R105,olive_oil,20,ml,Two portions
+R106,prawns,250,g,Two portions
+R106,couscous,150,g,Two portions
+R106,sweetcorn,160,g,Two portions
+R106,red_pepper,1,each,Two portions
+R106,cajun_seasoning,10,g,Two portions
+R106,lime,1,each,Two portions
+R106,natural_yogurt,100,g,Two portions
+R107,aubergine,2,each,Two portions
+R107,beef_mince,250,g,Two portions
+R107,chopped_tomatoes,300,g,Two portions
+R107,brown_onion,1,each,Two portions
+R107,ground_cumin,5,g,Two portions
+R107,ground_cinnamon,2,g,Two portions
+R107,feta,60,g,Two portions
+R108,tofu,300,g,Two portions
+R108,lettuce,1,each,Two portions
+R108,carrot,150,g,Two portions
+R108,peanut_butter,45,g,Two portions
+R108,soy_sauce,25,ml,Two portions
+R108,lime,1,each,Two portions
+R108,sesame_oil,15,ml,Two portions
+R108,peanuts,20,g,Two portions
+R109,red_pepper,2,each,Two portions
+R109,ricotta,200,g,Two portions
+R109,spinach,120,g,Two portions
+R109,basmati_rice,120,g,Two portions
+R109,passata,250,g,Two portions
+R109,mozzarella,80,g,Two portions
+R109,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
+R110,lamb_mince,300,g,Two portions
+R110,bulgur,150,g,Two portions
+R110,cauliflower,400,g,Two portions
+R110,ground_cumin,6,g,Two portions
+R110,fresh_mint,12,g,Two portions
+R110,natural_yogurt,120,g,Two portions
+R110,lemon,1,each,Two portions
+R111,chorizo,100,g,Two portions
+R111,chickpeas,240,g,Two portions
+R111,chopped_tomatoes,400,g,Two portions
+R111,egg,4,each,Two portions
+R111,red_pepper,1,each,Two portions
+R111,smoked_paprika,5,g,Two portions
+R111,ciabatta,2,each,Two portions
+R112,salmon,260,g,Two portions
+R112,broccoli,300,g,Two portions
+R112,basmati_rice,150,g,Two portions
+R112,soy_sauce,35,ml,Two portions
+R112,fresh_ginger,15,g,Two portions
+R112,honey,20,g,Two portions
+R112,sesame_seeds,15,g,Two portions
+R113,mushrooms,250,g,Two portions
+R113,tinned_lentils,250,g,Two portions
+R113,potatoes,550,g,Two portions
+R113,carrot,180,g,Two portions
+R113,brown_onion,1,each,Two portions
+R113,tomato_puree,35,g,Two portions
+R113,vegetable_stock,0.5,cube,Two portions
+R113,butter,25,g,Two portions
+R114,turkey_mince,300,g,Two portions
+R114,orzo,160,g,Two portions
+R114,breadcrumbs,30,g,Two portions
+R114,lemon,1,each,Two portions
+R114,spinach,100,g,Two portions
+R114,chicken_stock_mix,0.5,cube,Two portions
+R114,hard_cheese,35,g,Two portions
+R115,halloumi,180,g,Two portions
+R115,courgette,1.5,each,Two portions | Standardised from 300 g; review serving equivalence
+R115,egg,1,each,Two portions
+R115,plain_flour,60,g,Two portions
+R115,tomatoes,250,g,Two portions
+R115,fresh_mint,12,g,Two portions
+R115,natural_yogurt,120,g,Two portions
+R115,lemon,0.5,each,Two portions
+R116,chicken_thigh,300,g,Two portions
+R116,leek,1,each,Two portions
+R116,creme_fraiche,160,g,Two portions
+R116,wholegrain_mustard,25,g,Two portions
+R116,peas,120,g,Two portions
+R116,puff_pastry,250,g,Two portions
+R116,egg,1,each,Two portions
+R117,cauliflower,400,g,Two portions
+R117,chickpeas,240,g,Two portions
+R117,ground_cumin,5,g,Two portions
+R117,smoked_paprika,5,g,Two portions
+R117,pittas,4,each,Two portions
+R117,cucumber,0.5,each,Two portions
+R117,natural_yogurt,140,g,Two portions
+R117,lemon,1,each,Two portions
+R118,beef_strips,280,g,Two portions
+R118,black_bean_sauce,60,ml,Two portions | Approximate volume from original gram quantity; verify against product density
+R118,red_pepper,1,each,Two portions
+R118,green_pepper,1,each,Two portions
+R118,egg_noodles,180,g,Two portions
+R118,spring_onion,30,g,Two portions | Approx. 2 spring onions at 15 g each.
+R118,soy_sauce,15,ml,Two portions
+R119,gnocchi,400,g,Two portions
+R119,pesto,75,g,Two portions
+R119,passata,300,g,Two portions
+R119,mozzarella,125,g,Two portions
+R119,cherry_tomatoes,200,g,Two portions
+R119,spinach,100,g,Two portions
+R120,chicken_thigh,300,g,Two portions
+R120,couscous,150,g,Two portions
+R120,dried_apricots,70,g,Two portions
+R120,carrot,150,g,Two portions
+R120,ground_cumin,5,g,Two portions
+R120,ground_cinnamon,2,g,Two portions
+R120,chicken_stock_mix,0.5,cube,Two portions
+R120,flaked_almonds,25,g,Two portions
+R121,pork_mince,300,g,Two portions
+R121,jasmine_rice,150,g,Two portions
+R121,fish_sauce,25,ml,Two portions
+R121,brown_sugar,25,g,Two portions
+R121,lime,1,each,Two portions
+R121,cucumber,0.5,each,Two portions
+R121,spring_onion,30,g,Two portions | Approx. 2 spring onions at 15 g each.
+R121,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
+R122,feta,180,g,Two portions
+R122,butter_beans,240,g,Two portions
+R122,cherry_tomatoes,300,g,Two portions
+R122,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
+R122,dried_oregano,3,g,Two portions
+R122,olive_oil,20,ml,Two portions
+R122,ciabatta,2,each,Two portions
+R122,spinach,80,g,Two portions
+R123,chicken_thigh,300,g,Two portions
+R123,jerk_seasoning,12,g,Two portions
+R123,pineapple,200,g,Two portions
+R123,basmati_rice,150,g,Two portions
+R123,red_pepper,1,each,Two portions
+R123,lime,1,each,Two portions
+R123,spring_onion,30,g,Two portions | Approx. 2 spring onions at 15 g each.
+R124,beef_mince,300,g,Two portions
+R124,passata,350,g,Two portions
+R124,brown_onion,1,each,Two portions
+R124,carrot,120,g,Two portions
+R124,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
+R124,dried_oregano,3,g,Two portions
+R124,polenta_cornmeal,150,g,Two portions; non-instant fine cornmeal suitable for polenta
+R124,hard_cheese,40,g,Two portions
+R125,udon_noodles,400,g,Two portions
+R125,mushrooms,250,g,Two portions
+R125,miso_paste,25,g,Two portions
+R125,butter,25,g,Two portions
+R125,soy_sauce,20,ml,Two portions
+R125,pak_choi,200,g,Two portions
+R125,spring_onion,30,g,Two portions | Approx. 2 spring onions at 15 g each.
+R125,sesame_seeds,12,g,Two portions
+R126,salmon,260,g,Two portions
+R126,harissa_paste,30,g,Two portions
+R126,couscous,150,g,Two portions
+R126,orange,1,each,Two portions
+R126,courgette,1,each,Two portions | Standardised from 200 g; review serving equivalence
+R126,fresh_mint,10,g,Two portions
+R126,natural_yogurt,100,g,Two portions
+R127,sausages,4,each,Two portions | Standardised from 300 g; review serving equivalence
+R127,butter_beans,240,g,Two portions
+R127,kale,130,g,Two portions
+R127,chopped_tomatoes,350,g,Two portions
+R127,brown_onion,1,each,Two portions
+R127,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
+R127,ciabatta,2,each,Two portions
+R127,smoked_paprika,4,g,Two portions
+R128,paneer,250,g,Two portions
+R128,peas,160,g,Two portions
+R128,passata,300,g,Two portions
+R128,single_cream,100,ml,Two portions
+R128,garam_masala,7,g,Two portions
+R128,ground_cumin,4,g,Two portions
+R128,basmati_rice,150,g,Two portions
+R128,butter,20,g,Two portions
+R129,prawns,220,g,Two portions
+R129,chorizo,90,g,Two portions
+R129,arborio_rice,170,g,Two portions
+R129,red_pepper,1,each,Two portions
+R129,peas,100,g,Two portions
+R129,smoked_paprika,4,g,Two portions
+R129,chicken_stock_mix,1,cube,Two portions
+R129,lemon,1,each,Two portions
+R130,butternut_squash,400,g,Two portions
+R130,puff_pastry,250,g,Two portions
+R130,goats_cheese,120,g,Two portions
+R130,red_onion,1,each,Two portions
+R130,fresh_sage,8,g,Two portions
+R130,honey,20,g,Two portions
+R130,rocket,60,g,Two portions
+R131,chicken_breast,300,g,Two portions
+R131,giant_couscous,160,g,Two portions
+R131,cherry_tomatoes,200,g,Two portions
+R131,spinach,80,g,Two portions
+R131,lemon,1,each,Two portions
+R131,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
+R131,chicken_stock_mix,0.5,cube,Two portions
+R131,olive_oil,15,ml,Two portions
+R132,chickpeas,240,g,Two portions
+R132,bulgur,150,g,Two portions
+R132,avocado,1,each,Two portions
+R132,carrot,200,g,Two portions
+R132,ground_cumin,5,g,Two portions
+R132,natural_yogurt,120,g,Two portions
+R132,lemon,1,each,Two portions
+R132,pumpkin_seeds,25,g,Two portions
+R133,turkey_mince,300,g,Two portions
+R133,courgette,2,each,Two portions
+R133,spinach,100,g,Two portions
+R133,feta,90,g,Two portions
+R133,passata,300,g,Two portions
+R133,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
+R133,dried_oregano,3,g,Two portions
+R134,cod,300,g,Two portions
+R134,tamarind_paste,25,g,Two portions
+R134,honey,20,g,Two portions
+R134,soy_sauce,20,ml,Two portions
+R134,coconut_milk,150,ml,Two portions
+R134,jasmine_rice,150,g,Two portions
+R134,green_beans,180,g,Two portions
+R134,lime,1,each,Two portions
+R135,aubergine,2,each,Two portions
+R135,tinned_lentils,250,g,Two portions
+R135,chopped_tomatoes,350,g,Two portions
+R135,brown_onion,1,each,Two portions
+R135,ground_cinnamon,2,g,Two portions
+R135,smoked_paprika,4,g,Two portions
+R135,ricotta,180,g,Two portions
+R135,hard_cheese,40,g,Two portions
+R136,chicken_breast,300,g,Two portions
+R136,tortillas,4,each,Two portions
+R136,sweetcorn,160,g,Two portions
+R136,chipotle_paste,30,g,Two portions
+R136,passata,300,g,Two portions
+R136,cheddar,90,g,Two portions
+R136,red_onion,1,each,Two portions
+R136,natural_yogurt,80,g,Two portions
+R137,puff_pastry,250,g,Two portions
+R137,mushrooms,300,g,Two portions
+R137,goats_cheese,120,g,Two portions
+R137,red_onion,1,each,Two portions
+R137,fresh_thyme,8,g,Two portions
+R137,olive_oil,15,ml,Two portions
+R137,rocket,60,g,Two portions
+R138,pork_loin_steaks,320,g,Two portions
+R138,lemon,1,each,Two portions
+R138,dried_oregano,5,g,Two portions
+R138,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
+R138,pittas,4,each,Two portions
+R138,cucumber,0.5,each,Two portions
+R138,natural_yogurt,150,g,Two portions
+R138,tomatoes,200,g,Two portions
+R139,prawns,250,g,Two portions
+R139,rice_noodles,160,g,Two portions
+R139,coconut_milk,300,ml,Two portions
+R139,fresh_ginger,15,g,Two portions
+R139,lemongrass,1,each,Two portions
+R139,pak_choi,200,g,Two portions
+R139,lime,1,each,Two portions
+R139,fish_sauce,20,ml,Two portions
+R140,lasagne_sheets,180,g,Two portions; softened and rolled around the filling
+R140,ricotta,250,g,Two portions
+R140,spinach,180,g,Two portions
+R140,passata,450,g,Two portions
+R140,mozzarella,100,g,Two portions
+R140,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
+R140,dried_oregano,3,g,Two portions
+R141,potatoes,400,g,Two portions
+R141,chicken_thigh,320,g,Two portions
+R141,zaatar,15,g,Two portions
+R141,sumac,5,g,Two portions
+R141,smoked_paprika,3,g,Two portions
+R141,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
+R141,lemon,1,each,Two portions
+R141,red_onion,1,each,Two portions
+R141,olives,60,g,Two portions
+R141,parsley,10,g,Two portions
+R141,natural_yogurt,100,g,Two portions
+R141,olive_oil,20,ml,Two portions
+R142,pork_mince,250,g,Two portions
+R142,egg_noodles,180,g,Two portions
+R142,sesame_oil,15,ml,Two portions
+R142,fresh_ginger,15,g,Two portions
+R142,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
+R142,mangetout,100,g,Two portions
+R142,carrot,100,g,Two portions
+R142,red_pepper,1,each,Two portions
+R142,soy_sauce,30,ml,Two portions
+R142,cornflour,8,g,Two portions
+R142,sweet_chilli_sauce,35,ml,Two portions | Approximate volume from original gram quantity; verify against product density
+R143,salmon,260,g,Two portions
+R143,soy_sauce,40,ml,Two portions
+R143,rice_vinegar,25,ml,Two portions
+R143,fresh_ginger,20,g,Two portions
+R143,honey,20,g,Two portions
+R143,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
+R143,egg_noodles,150,g,Two portions
+R143,sesame_seeds,20,g,Two portions
+R143,spring_onion,30,g,Two portions | Approx. 2 spring onions at 15 g each.
+R144,brown_onion,1,each,Two portions
+R144,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
+R144,garam_masala,4,g,Two portions
+R144,turmeric,3,g,Two portions
+R144,ground_coriander,3,g,Two portions
+R144,chopped_tomatoes,200,g,Two portions
+R144,coconut_milk,200,ml,Two portions
+R144,chickpeas,240,g,Two portions
+R144,tomatoes,200,g,Two portions
+R144,fresh_coriander,10,g,Two portions
+R144,basmati_rice,150,g,Two portions
+R144,olive_oil,15,ml,Two portions
+R145,aubergine,1,each,Two portions
+R145,vegetable_oil,20,ml,Two portions
+R145,brown_onion,1,each,Two portions
+R145,garam_masala,7,g,Two portions
+R145,ground_coriander,4,g,Two portions
+R145,turmeric,3,g,Two portions
+R145,coconut_milk,200,ml,Two portions
+R145,tomatoes,250,g,Two portions
+R145,chickpeas,240,g,Two portions
+R145,basmati_rice,150,g,Two portions
+R145,red_chilli,6,g,Two portions | Estimated 6 g per red chilli; adjust heat to taste.
+R146,red_onion,1,each,Two portions
+R146,butternut_squash,250,g,Two portions
+R146,cauliflower,250,g,Two portions
+R146,red_pepper,1,each,Two portions
+R146,yellow_pepper,1,each,Two portions
+R146,chickpeas,240,g,Two portions
+R146,passata,250,g,Two portions
+R146,vegetable_stock,0.5,cube,Two portions
+R146,fresh_coriander,12,g,Two portions
+R146,natural_yogurt,70,g,Two portions
+R146,basmati_rice,150,g,Two portions
+R146,jalfrezi_paste,80,g,Two portions
+R146,vegetable_oil,10,ml,Two portions
+R147,paneer,180,g,Two portions
+R147,chickpeas,200,g,Two portions
+R147,spinach,200,g,Two portions
+R147,brown_onion,1,each,Two portions
+R147,fresh_ginger,10,g,Two portions
+R147,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
+R147,curry_powder,8,g,Two portions
+R147,garam_masala,3,g,Two portions
+R147,turmeric,2,g,Two portions
+R147,red_chilli,6,g,Two portions | Estimated 6 g per red chilli; adjust heat to taste.
+R147,coconut_milk,200,ml,Two portions
+R147,vegetable_stock,0.5,cube,Two portions
+R147,mango_chutney,15,g,Two portions
+R147,lemon,0.5,each,Two portions
+R147,basmati_rice,150,g,Two portions
+R147,vegetable_oil,15,ml,Two portions
+R148,salmon,260,g,Two portions
+R148,chicken_stock_mix,1,cube,Two portions
+R148,thai_red_curry_paste,20,g,Two portions
+R148,rice_noodles,100,g,Two portions
+R148,mushrooms,120,g,Two portions
+R148,baby_corn,120,g,Two portions
+R148,lime,1,each,Two portions
+R148,soy_sauce,15,ml,Two portions
+R148,brown_sugar,5,g,Two portions
+R148,fresh_coriander,10,g,Two portions
+R149,turkey_mince,300,g,Two portions
+R149,breadcrumbs,20,g,Two portions
+R149,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
+R149,olive_oil,15,ml,Two portions
+R149,brown_onion,1,each,Two portions
+R149,carrot,100,g,Two portions
+R149,fennel_seeds,3,g,Two portions
+R149,chopped_tomatoes,300,g,Two portions
+R149,tomato_puree,20,g,Two portions
+R149,spaghetti,160,g,Two portions
+R150,pork_loin_steaks,180,g,Two portions
+R150,prawns,100,g,Two portions
+R150,egg_noodles,160,g,Two portions
+R150,teriyaki_sauce,35,ml,Two portions | Approximate volume from original gram quantity; verify against product density
+R150,five_spice,2,g,Two portions
+R150,curry_powder,5,g,Two portions
+R150,carrot,100,g,Two portions
+R150,red_pepper,1,each,Two portions
+R150,mangetout,100,g,Two portions
+R150,vegetable_oil,15,ml,Two portions
+R151,red_pepper,1,each,Two portions
+R151,yellow_pepper,1,each,Two portions
+R151,red_onion,1,each,Two portions
+R151,halloumi,200,g,Two portions
+R151,balsamic_vinegar,20,ml,Two portions
+R151,dried_oregano,5,g,Two portions
+R151,olive_oil,20,ml,Two portions
+R151,garlic_paste,6,g,Two portions
+R151,tinned_lentils,250,g,Two portions
+R151,fresh_basil,12,g,Two portions
+R152,orange,1,each,Two portions
+R152,wholegrain_mustard,15,g,Two portions
+R152,honey,10,g,Two portions
+R152,rice_vinegar,10,ml,Two portions
+R152,olive_oil,20,ml,Two portions
+R152,carrot,200,g,Two portions
+R152,halloumi,200,g,Two portions
+R152,spinach,100,g,Two portions
+R153,potatoes,400,g,Two portions
+R153,peas,120,g,Two portions
+R153,halloumi,200,g,Two portions
+R153,lemon,0.5,each,Two portions
+R153,olive_oil,20,ml,Two portions
+R153,fresh_mint,12,g,Two portions
+R153,rocket,50,g,Two portions
+R154,turkey_mince,300,g,Two portions
+R154,korma_paste,30,g,Two portions
+R154,vegetable_oil,10,ml,Two portions
+R154,brown_onion,1,each,Two portions
+R154,chicken_stock_mix,0.5,cube,Two portions
+R154,coconut_milk,150,ml,Two portions
+R154,mangetout,120,g,Two portions
+R154,cherry_tomatoes,150,g,Two portions
+R154,flaked_almonds,15,g,Two portions
+R154,basmati_rice,150,g,Two portions
+R155,pork_loin_steaks,280,g,Two portions
+R155,honey,30,g,Two portions
+R155,lime,1,each,Two portions
+R155,egg_noodles,160,g,Two portions
+R155,radishes,100,g,Two portions
+R155,mangetout,140,g,Two portions
+R155,carrot,120,g,Two portions
+R155,fresh_coriander,10,g,Two portions
+R155,vegetable_oil,15,ml,Two portions
+R156,pineapple,200,g,Two portions
+R156,cornflour,10,g,Two portions
+R156,tomato_puree,15,g,Two portions
+R156,soy_sauce,10,ml,Two portions
+R156,brown_sugar,5,g,Two portions
+R156,rice_vinegar,30,ml,Two portions
+R156,vegetable_oil,15,ml,Two portions
+R156,pork_loin_steaks,250,g,Two portions
+R156,red_pepper,1,each,Two portions
+R156,spring_onion,45,g,Two portions | Approx. 3 spring onions at 15 g each.
+R156,basmati_rice,150,g,Two portions
+R157,vegetable_oil,15,ml,Two portions
+R157,garlic,3,clove,Two portions | Standardised from 8 g; review serving equivalence
+R157,fresh_ginger,12,g,Two portions
+R157,red_chilli,6,g,Two portions | Estimated 6 g per red chilli; adjust heat to taste.
+R157,pork_mince,300,g,Two portions
+R157,black_bean_sauce,160,ml,Two portions | Approximate volume from original gram quantity; verify against product density
+R157,rice_noodles,150,g,Two portions
+R157,spring_onion,45,g,Two portions | Approx. 3 spring onions at 15 g each.
+R158,diced_beef,300,g,Two portions
+R158,olive_oil,15,ml,Two portions
+R158,brown_onion,1,each,Two portions
+R158,mushrooms,180,g,Two portions
+R158,tomato_puree,15,g,Two portions
+R158,plain_flour,15,g,Two portions
+R158,beef_stock_mix,0.5,cube,Two portions
+R158,potatoes,350,g,Two portions
+R158,butter,20,g,Two portions
+R159,chicken_thigh,300,g,Two portions
+R159,vegetable_oil,15,ml,Two portions
+R159,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
+R159,red_pepper,1,each,Two portions
+R159,spring_onion,45,g,Two portions | Approx. 3 spring onions at 15 g each.
+R159,beansprouts,100,g,Two portions
+R159,egg_noodles,180,g,Two portions
+R159,oyster_sauce,45,ml,Two portions
+R160,sweet_potato,300,g,Two portions
+R160,vegetable_oil,10,ml,Two portions
+R160,brown_onion,1,each,Two portions
+R160,fresh_ginger,12,g,Two portions
+R160,garlic,2,clove,Two portions | Standardised from 6 g; review serving equivalence
+R160,thai_red_curry_paste,35,g,Two portions
+R160,chickpeas,240,g,Two portions
+R160,chopped_tomatoes,300,g,Two portions
+R160,basmati_rice,150,g,Two portions
+R160,fresh_coriander,10,g,Two portions
+R161,halloumi,200,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R161,aubergine,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R161,red_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R161,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R161,chopped_tomatoes,400,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R161,red_pesto,20,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R161,dried_oregano,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R161,smoked_paprika,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R161,ground_cumin,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R161,cayenne_pepper,0.3,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R161,fresh_basil,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R161,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R161,pittas,2,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R162,halloumi,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R162,chickpeas,240,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R162,cherry_tomatoes,200,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R162,kale,50,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R162,pesto,50,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R162,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R162,lemon,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R162,fresh_basil,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R163,halloumi,180,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R163,red_pepper,2,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R163,avocado,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R163,tortillas,4,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R163,smoked_paprika,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R163,ground_cumin,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R163,lime,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R163,olive_oil,10,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R164,halloumi,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R164,sweet_potato,300,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R164,olive_oil,20,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R164,smoked_paprika,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R164,cucumber,0.5,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R164,cherry_tomatoes,100,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R164,spring_onion,30,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R164,parsley,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R164,natural_yogurt,60,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R164,lemon,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R164,curry_powder,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R164,pittas,2,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R164,spinach,50,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R165,aubergine,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R165,halloumi,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R165,chickpeas,180,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R165,harissa_paste,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R165,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R165,fresh_basil,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R165,spinach,60,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R165,cherry_tomatoes,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R165,tahini,20,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R165,lemon,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R165,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R166,bulgur,120,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R166,halloumi,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R166,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R166,lemon,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R166,red_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R166,ground_cumin,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R166,kale,70,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R166,tomatoes,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R166,cucumber,0.5,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R166,fresh_mint,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R166,parsley,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R166,chopped_dates,30,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R167,cauliflower,400,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R167,halloumi,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R167,tinned_lentils,240,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R167,ground_cumin,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R167,olive_oil,20,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R167,parsley,15,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R167,lemon,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R167,cherry_tomatoes,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R168,couscous,130,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R168,halloumi,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R168,courgette,1,each,Recipe revised to one medium courgette for two people.
+R168,cherry_tomatoes,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R168,olives,40,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R168,lemon,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R168,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R168,fresh_mint,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R168,flaked_almonds,15,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R168,red_chilli,6,g,One chilli; deseed to moderate heat. | Estimated 6 g per red chilli; adjust heat to taste.
+R168,ground_cumin,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R168,ground_coriander,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R169,brown_rice,130,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R169,halloumi,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R169,harissa_paste,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R169,honey,7,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R169,lemon,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R169,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R169,ground_coriander,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R169,cherry_tomatoes,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R169,mangetout,100,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R169,spinach,60,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R170,carrot,100,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R170,courgette,1,each,Recipe revised to one medium courgette for two people.
+R170,halloumi,120,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R170,spring_onion,25,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R170,breadcrumbs,45,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R170,ground_cumin,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R170,ground_coriander,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R170,egg,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R170,plain_flour,15,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R170,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R170,pittas,2,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R170,spinach,40,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R170,tomatoes,100,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R170,natural_yogurt,60,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R170,cucumber,0.5,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R171,turkey_mince,250,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R171,cauliflower,250,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R171,basmati_rice,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R171,mangetout,75,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R171,vegetable_oil,12,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R171,brown_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R171,ginger_garlic_paste,15,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R171,honey,15,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R171,sweet_chilli_sauce,10,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable. | Provisional numeric g-to-ml standardisation; serving volume requires verification.
+R171,lime,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R171,fish_sauce,7,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R171,soy_sauce,7,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R171,spinach,55,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R171,fresh_coriander,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R171,fresh_mint,4,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R172,turkey_mince,250,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R172,fennel_seeds,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R172,breadcrumbs,25,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R172,fresh_basil,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R172,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R172,brown_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R172,carrot,80,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R172,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R172,passata,250,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R172,dried_thyme,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R172,spaghetti,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R173,turkey_mince,250,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R173,red_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R173,carrot,80,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R173,red_pepper,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R173,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R173,chipotle_paste,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R173,ground_cumin,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R173,fresh_coriander,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R173,kidney_beans,120,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R173,chopped_tomatoes,200,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R173,chicken_stock_mix,0.5,cube,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R173,lime,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R173,brown_rice,130,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R173,vegetable_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R173,sour_cream,30,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R174,turkey_mince,250,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R174,courgette,1,each,Recipe revised to one medium courgette for two people.
+R174,dried_oregano,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R174,lemon,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R174,parsley,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R174,cherry_tomatoes,100,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R174,spring_onion,25,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R174,cucumber,0.5,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R174,couscous,130,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R174,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R174,natural_yogurt,100,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R175,turkey_steaks,300,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R175,long_grain_rice,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R175,vegetable_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R175,red_pepper,2,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R175,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R175,fresh_ginger,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R175,spring_onion,45,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R175,soy_sauce,22,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R175,honey,20,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R175,fresh_coriander,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R176,turkey_steaks,300,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R176,fresh_rosemary,4,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R176,lemon,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R176,honey,20,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R176,garlic,1,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R176,olive_oil,20,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R176,cherry_tomatoes,100,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R176,spring_onion,30,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R176,fresh_mint,6,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R176,parsley,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R176,cucumber,0.5,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R176,flatbreads,2,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R177,turkey_mince,250,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R177,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R177,red_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R177,red_pepper,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R177,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R177,chopped_tomatoes,200,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R177,flatbreads,2,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R177,cheddar,50,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R177,natural_yogurt,40,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R177,cucumber,0.5,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R178,turkey_steaks,300,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R178,cheddar,35,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R178,breadcrumbs,50,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R178,egg,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R178,cherry_tomatoes,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R178,vegetable_oil,20,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R178,spinach,60,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R178,lemon,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R178,potatoes,350,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R179,turkey_mince,250,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R179,avocado,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R179,lime,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R179,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R179,cherry_tomatoes,100,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R179,fresh_coriander,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R179,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R179,brown_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R179,parsley,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R179,cayenne_pepper,0.5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R179,red_pepper,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R179,pittas,2,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R179,spinach,40,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R180,turkey_mince,300,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R180,red_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R180,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R180,breadcrumbs,35,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R180,tomato_puree,25,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R180,dried_thyme,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R180,dried_oregano,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R180,lemon,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R180,egg,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R180,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R180,honey,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R180,vinegar,10,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R180,passata,60,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R180,potatoes,400,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R180,peas,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R181,chicken_thigh,300,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R181,sweet_potato,350,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R181,red_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R181,garlic,4,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R181,dried_thyme,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R181,fresh_rosemary,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R181,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R181,lemon,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R181,smoked_paprika,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R181,broccoli,200,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R181,chicken_stock_mix,0.5,cube,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R182,chicken_breast,325,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R182,chickpeas,240,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R182,red_pepper,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R182,red_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R182,olives,25,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R182,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R182,smoked_paprika,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R182,lemon,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R182,chicken_stock_mix,0.5,cube,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R182,garlic,1,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R182,natural_yogurt,50,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R182,fresh_basil,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R183,chicken_breast,300,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R183,soft_cheese,60,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R183,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R183,dried_oregano,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R183,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R183,breadcrumbs,15,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R183,cherry_tomatoes,200,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R183,spinach,60,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R183,potatoes,350,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R184,sweet_potato,500,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R184,chicken_breast,250,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R184,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R184,red_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R184,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R184,red_pepper,2,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R184,cheddar,60,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R184,fresh_coriander,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R184,lime,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R184,smoked_paprika,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R184,dried_oregano,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R184,ground_cumin,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R184,cayenne_pepper,0.3,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R185,potatoes,350,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R185,courgette,1,each,Recipe revised to one medium courgette for two people.
+R185,green_beans,110,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R185,chicken_breast,300,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R185,cherry_tomatoes,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R185,lemon,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R185,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R185,chicken_stock_mix,0.5,cube,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R186,chicken_breast,325,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R186,potatoes,350,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R186,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R186,soft_cheese,75,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R186,mustard,20,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R186,chicken_stock_mix,0.5,cube,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R186,kale,100,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R186,peas,100,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R186,breadcrumbs,30,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R186,lemon,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R186,garlic,1,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R186,parsley,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R187,chicken_thigh,300,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R187,basmati_rice,130,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R187,vegetable_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R187,curry_powder,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R187,turmeric,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R187,brown_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R187,carrot,100,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R187,green_beans,100,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R187,spring_onion,25,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R187,fresh_coriander,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R187,red_chilli,6,g,One chilli; deseed to moderate heat. | Estimated 6 g per red chilli; adjust heat to taste.
+R187,flaked_almonds,15,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R188,chicken_thigh,350,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R188,harissa_paste,20,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R188,lemon,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R188,honey,15,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R188,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R188,parsley,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R188,couscous,130,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R188,courgette,1,each,Recipe revised to one medium courgette for two people.
+R188,olive_oil,10,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R189,salmon,260,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R189,soy_sauce,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R189,sugar,3,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R189,lime,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R189,red_chilli,6,g,One chilli; deseed to moderate heat. | Estimated 6 g per red chilli; adjust heat to taste.
+R189,fresh_ginger,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R189,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R189,pak_choi,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R189,sesame_oil,10,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R189,cucumber,0.5,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R189,carrot,100,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R189,spring_onion,30,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R189,fresh_coriander,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R189,rice_vinegar,10,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R189,jasmine_rice,130,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R190,salmon,260,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R190,spring_onion,50,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R190,soy_sauce,22,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R190,sesame_oil,10,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R190,honey,15,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R190,rice_vinegar,12,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R190,cayenne_pepper,0.3,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R190,basmati_rice,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R190,garlic,1,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R190,cucumber,0.5,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R191,salmon,275,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R191,chipotle_paste,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R191,olive_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R191,brown_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R191,cauliflower,300,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R191,chickpeas,180,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R191,curry_powder,4,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R191,spinach,175,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R191,natural_yogurt,60,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R191,lemon,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R191,fresh_coriander,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R192,salmon,260,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R192,basmati_rice,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R192,vegetable_oil,12,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R192,fresh_ginger,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R192,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R192,red_chilli,6,g,One chilli; deseed to moderate heat. | Estimated 6 g per red chilli; adjust heat to taste.
+R192,turmeric,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R192,curry_powder,3,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R192,tomato_puree,20,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R192,coconut_milk,200,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R192,spinach,110,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R192,lime,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R192,fresh_coriander,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R193,cod,280,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R193,curry_powder,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R193,fresh_coriander,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R193,fresh_ginger,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R193,cayenne_pepper,0.3,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R193,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R193,spring_onion,40,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R193,lemon,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R193,coconut_milk,150,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R193,long_grain_rice,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R193,plain_flour,25,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R193,vegetable_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R194,cauliflower,300,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R194,vegetable_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R194,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R194,red_chilli,6,g,One chilli; deseed to moderate heat. | Estimated 6 g per red chilli; adjust heat to taste.
+R194,fresh_ginger,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R194,prawns,200,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R194,spring_onion,50,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R194,red_pepper,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R194,courgette,1,each,Recipe revised to one medium courgette for two people.
+R194,peas,50,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R194,fresh_coriander,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R194,honey,7,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R194,lime,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R194,sesame_oil,5,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R194,soy_sauce,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R194,basmati_rice,100,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R195,paneer,200,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R195,vegetable_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R195,ground_cumin,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R195,fresh_ginger,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R195,garlic,4,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R195,red_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R195,tomatoes,100,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R195,turmeric,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R195,cayenne_pepper,0.3,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R195,garam_masala,3,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R195,spinach,250,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R195,lime,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R195,red_chilli,6,g,One chilli; deseed to moderate heat. | Estimated 6 g per red chilli; adjust heat to taste.
+R195,fresh_coriander,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R195,flatbreads,2,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R196,paneer,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R196,vegetable_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R196,brown_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R196,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R196,fresh_ginger,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R196,garam_masala,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R196,ground_cumin,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R196,turmeric,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R196,chopped_tomatoes,400,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R196,chickpeas,120,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R196,single_cream,75,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R196,peas,100,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R196,fresh_coriander,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R196,basmati_rice,130,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R197,paneer,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R197,brown_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R197,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R197,garam_masala,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R197,fresh_coriander,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R197,vegetable_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R197,cherry_tomatoes,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R197,vegetable_stock,0.5,cube,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R197,kale,60,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R197,long_grain_rice,150,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R197,broccoli,225,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R198,paneer,200,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R198,vegetable_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R198,garlic,2,clove,Recipe revised to this whole-clove count; not a verified retail weight conversion.
+R198,fresh_ginger,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R198,brown_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R198,red_pepper,2,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R198,turmeric,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R198,garam_masala,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R198,cayenne_pepper,0.5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R198,ground_cumin,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R198,ground_coriander,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R198,chopped_tomatoes,300,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R198,fresh_coriander,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R198,brown_rice,130,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R199,paneer,200,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R199,natural_yogurt,100,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R199,vegetable_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R199,garlic_paste,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R199,ginger_paste,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R199,curry_powder,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R199,red_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R199,red_chilli,6,g,One chilli; deseed to moderate heat. | Estimated 6 g per red chilli; adjust heat to taste.
+R199,flaked_almonds,15,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R199,bay_leaves,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R199,cardamom,1,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R199,passata,250,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R199,peas,100,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R199,fresh_coriander,5,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R199,brown_rice,130,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R200,paneer,200,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R200,ground_cumin,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R200,curry_powder,2,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R200,cayenne_pepper,0.3,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R200,cornflour,15,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R200,vegetable_oil,15,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R200,vinegar,12,ml,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R200,honey,10,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R200,fresh_mint,8,g,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R200,red_onion,1,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R200,red_chilli,6,g,One chilli; deseed to moderate heat. | Estimated 6 g per red chilli; adjust heat to taste.
+R200,flatbreads,2,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.
+R200,cucumber,0.5,each,Two-person draft quantity; dry starch or drained canned pulses where applicable.

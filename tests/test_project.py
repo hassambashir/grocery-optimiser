@@ -13,10 +13,10 @@ from unittest.mock import patch
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
-from catalogue import read_csv,exclusion_reason,effective_pack
+from catalogue import read_csv,exclusion_reason,effective_pack,consumption_step
 from validate_seed_data import validate
-from validate_staging_data import (method_quality_issues, provenance_warnings,
-                                   validate as validate_staging)
+from validate_staging_data import method_quality_issues, provenance_warnings
+from audit_recipe_catalogue import audit
 from optimise_week import solve
 
 
@@ -28,7 +28,7 @@ class DataTests(unittest.TestCase):
     def test_real_catalogue_complete(self):
         errors,stats=validate()
         self.assertEqual(errors,[])
-        self.assertEqual(stats['recipes'],40)
+        self.assertEqual(stats['recipes'],200)
         self.assertEqual(stats['covered_ingredients'],stats['used_ingredients'])
         self.assertGreater(stats['alternatives'],80)
 
@@ -87,12 +87,10 @@ class DataTests(unittest.TestCase):
             self.assertEqual(effective_pack(p[rid]),(usable,'g'))
         self.assertEqual(effective_pack(p['279695475']),(220,'g'))
 
-    def test_staged_method_quality_and_optional_provenance(self):
-        staged=[]
-        for path in sorted((ROOT/'staging').glob('recipes_batch_*.csv')):
-            staged.extend(read_csv(path))
+    def test_method_quality_and_optional_provenance(self):
+        recipes=read_csv('data/recipes.csv')
         failures=[]
-        for recipe in staged:
+        for recipe in recipes:
             failures.extend(method_quality_issues(recipe)[0])
         self.assertEqual(failures,[])
 
@@ -105,12 +103,12 @@ class DataTests(unittest.TestCase):
         recipe['cooking_instructions']=adequate+' Finish with your garlic mayo sauce.'
         self.assertTrue(any('prepared-component' in x for x in method_quality_issues(recipe)[0]))
 
-    def test_every_staged_ingredient_has_an_eligible_product(self):
-        errors,_,stats=validate_staging()
+    def test_promoted_catalogue_audit(self):
+        errors,_,stats=audit()
         self.assertEqual(errors,[])
-        self.assertEqual(stats['recipes'],160)
-        self.assertEqual(stats['missing_product_ingredients'],[])
-        self.assertEqual(stats['ingredients_with_eligible_products'],stats['used_ingredients'])
+        self.assertEqual(stats['recipes'],200)
+        self.assertEqual(stats['exact_duplicate_name_groups'],0)
+        self.assertEqual(stats['probable_duplicate_pairs'],0)
 
     def test_new_catalogue_units_and_drained_weight(self):
         ingredients={r['ingredient_id']:r for r in read_csv('data/ingredients.csv')}
@@ -119,10 +117,14 @@ class DataTests(unittest.TestCase):
         self.assertIn('polenta_cornmeal',ingredients)
         self.assertEqual(effective_pack(products['262489095']),(246,'g'))
 
+    def test_practical_fractional_produce_consumption(self):
+        self.assertEqual(consumption_step('lettuce','each'),0.25)
+        for ingredient in ['cucumber','courgette','lemon','red_onion']:
+            self.assertEqual(consumption_step(ingredient,'each'),0.5)
+        self.assertEqual(consumption_step('egg','each'),1.0)
+
     def test_direct_toppings_do_not_require_a_sauce_bowl(self):
-        recipes={}
-        for path in sorted((ROOT/'staging').glob('recipes_batch_*.csv')):
-            recipes.update({r['recipe_id']:r for r in read_csv(path)})
+        recipes={r['recipe_id']:r for r in read_csv('data/recipes.csv')}
         for rid in ['R042','R055','R058','R062']:
             method=recipes[rid]['cooking_instructions'].lower()
             self.assertNotIn('mix chipotle paste with mayonnaise',method)
@@ -137,7 +139,7 @@ class OptimiserTests(unittest.TestCase):
 
     def test_seven_day_real_plan(self):
         p=self.plan
-        self.assertEqual(p['status'],'Optimal');self.assertEqual(p['eligible_recipe_count'],40)
+        self.assertEqual(p['status'],'Optimal');self.assertEqual(p['eligible_recipe_count'],200)
         self.assertEqual(len({r['recipe_id'] for r in p['recipes']}),7)
         self.assertGreater(p['spend_gbp'],0)
         self.assertAlmostEqual(p['spend_gbp'],sum(price for _,_,price in p['basket']))
@@ -147,7 +149,7 @@ class OptimiserTests(unittest.TestCase):
         self.assertTrue(all(q>=-1e-5 for q in p['ending_inventory'].values()))
         self.assertGreater(len({r['main_protein'] for r in p['recipes']}),2)
 
-    def test_each_of_all_40_recipes_is_feasible(self):
+    def test_each_of_all_200_recipes_is_feasible(self):
         for r in read_csv('data/recipes.csv'):
             with self.subTest(recipe=r['recipe_id']):
                 p=quiet(days=1,required_recipes=[r['recipe_id']])

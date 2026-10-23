@@ -4,7 +4,7 @@ The application adds persistent household state and a mobile-friendly interface 
 
 ## What works
 
-- Browse all 40 recipes, read ingredients and methods, and pin required meals.
+- Browse all 200 recipes, read ingredients and methods, and pin required meals.
 - Generate one to seven dinners for two, jointly selecting recipes and integer Tesco packs.
 - Save ingredient/recipe exclusions and optionally avoid the most recent plan with confirmed purchases.
 - Start with genuinely empty stock. Neither the example rice nor simulated leftovers are imported.
@@ -46,7 +46,7 @@ All application tables enable PostgreSQL row-level security with no public polic
 
 `POST /api/plans` launches an isolated Python process (`app/solver_job.py`). It supplies the database stock and filters excluded recipes/ingredients before calling the unchanged `solve()` function. Required recipes remain solver constraints. Isolation prevents request-specific catalogue filtering leaking between requests. Original scripts and historical snapshot fingerprints remain unchanged.
 
-The backend waits up to 120 seconds; only proven optimal results are saved. The app accepts one simultaneous solve per server process. Run a single application worker for this initial personal deployment. Larger experiments need a job queue and resource/time limits at the solver level.
+The backend waits up to 120 seconds; only proven optimal results are saved. CBC uses up to eight available CPU threads. The app accepts one simultaneous solve per server process. Run a single application worker for this initial personal deployment. Larger experiments need a job queue and resource/time limits at the solver level.
 
 Servings are fixed at two. No budget, dietary certification or nutrition switches are presented without underlying solver support. Exclusions refer to canonical recipe ingredients and are not allergen certification of product labels.
 
@@ -85,6 +85,6 @@ Not implemented: Tesco account/basket integration, live price refresh, payment, 
 
 ## Executed verification
 
-The data validator passed: 40 recipes, 125 covered recipe ingredients, 240 products, 222 eligible products, zero missing mappings. Full suite: **27 tests passed** (17 existing + 10 application tests), including actual solver calls through the HTTP API, persistence, receipt retries, partial shopping, atomic cooking rollback, exclusions, repetition, abandoned plans and next-plan carry-over. `node --check app/static/app.js` passed.
+The current data validator passes with 200 recipes, 205 covered recipe ingredients, 332 products, 307 eligible products and zero missing mappings. The full suite includes actual solver calls through the HTTP API, persistence, receipt retries, partial shopping, atomic cooking rollback, exclusions, repetition, abandoned plans and next-plan carry-over. `node --check app/static/app.js` passes.
 
 HTTP tests also serve the real HTML and test authentication. Interactive browser/visual QA could not be completed: the managed preview supervisor runs in a separate environment where the Python interpreter used for the tested backend is unavailable (`python: not found`, including the absolute runtime path). No browser rendering or iPhone installation is claimed as verified.

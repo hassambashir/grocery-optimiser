@@ -1,4 +1,4 @@
-"""Generate the current active-and-staged Tesco catalogue coverage report."""
+"""Generate the current Tesco catalogue coverage report."""
 from collections import defaultdict
 from pathlib import Path
 
@@ -22,10 +22,11 @@ def main(root=ROOT):
             eligible[product["ingredient_id"]].append(product)
 
     missing = sorted(used - set(eligible))
+    scope = "active and staged recipes" if list(Path(root, "staging").glob("recipe_ingredients_batch_*.csv")) else "active recipe catalogue"
     lines = [
         "# Tesco catalogue coverage — 23 October 2026",
         "",
-        f"{len(used) - len(missing)} of {len(used)} ingredients used by the active and staged recipes have eligible products. "
+        f"{len(used) - len(missing)} of {len(used)} ingredients used by the {scope} have eligible products. "
         "Availability is the observed public Tesco UK listing, not a guarantee of postcode or delivery-slot stock.",
         "",
         "| Ingredient | Unit | Eligible options | Tesco product IDs |",

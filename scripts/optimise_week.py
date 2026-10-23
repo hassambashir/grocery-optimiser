@@ -7,6 +7,7 @@ import argparse
 import csv
 import json
 import math
+import os
 from collections import defaultdict
 from pathlib import Path
 
@@ -23,14 +24,20 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False,
     products = read_csv("data/products.csv")
     inventory_rows = read_csv(inventory_path)
     inventory_ids = {r["ingredient_id"] for r in inventory_rows if float(r["quantity"]) > 0}
-    supplied = {p["ingredient_id"] for p in products if not exclusion_reason(p, ingredients)}
-    required = defaultdict(set)
-    for line in all_lines:
-        required[line["recipe_id"]].add(line["ingredient_id"])
     requested = set(required_recipes or [])
     known_ids = {r["recipe_id"] for r in catalogue}
     if requested - known_ids:
         raise ValueError("Unknown requested recipes: " + ", ".join(sorted(requested - known_ids)))
+    # If every plan slot is pinned, unrequested recipes cannot affect the
+    # optimum. Removing them before model construction makes recipe-level
+    # feasibility checks and fully pinned household plans much faster.
+    if requested and days == len(requested):
+        catalogue = [r for r in catalogue if r["recipe_id"] in requested]
+        all_lines = [r for r in all_lines if r["recipe_id"] in requested]
+    supplied = {p["ingredient_id"] for p in products if not exclusion_reason(p, ingredients)}
+    required = defaultdict(set)
+    for line in all_lines:
+        required[line["recipe_id"]].add(line["ingredient_id"])
     recipes = [r for r in catalogue if required[r["recipe_id"]]
                and required[r["recipe_id"]] <= supplied | inventory_ids]
     eligible_ids = {r["recipe_id"] for r in recipes}
@@ -134,7 +141,10 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False,
                 risk.append(fresh_penalty * min(prices) * v)
 
     model += pulp.lpSum(cost) + pulp.lpSum(risk) + pulp.lpSum(deviation_cost)
-    status = model.solve(pulp.PULP_CBC_CMD(msg=show_solver))
+    # The expanded catalogue creates a substantially larger branch-and-bound
+    # search. CBC remains exact, but parallel workers keep interactive plans
+    # practical without relaxing the optimality requirement.
+    status = model.solve(pulp.PULP_CBC_CMD(msg=show_solver, threads=min(8, os.cpu_count() or 1)))
     if pulp.LpStatus[status] != "Optimal" or model.sol_status != pulp.LpSolutionOptimal:
         raise RuntimeError("Solver status: " + pulp.LpStatus[status])
 

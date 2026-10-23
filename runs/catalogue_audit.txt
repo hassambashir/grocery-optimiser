@@ -1,0 +1,12 @@
+Recipe catalogue audit PASSED
+recipes: 200
+ingredient_lines: 1777
+unique_ingredients: 205
+exact_duplicate_name_groups: 0
+probable_duplicate_pairs: 0
+identical_ingredient_set_groups: 0
+recipes_without_source_url: 92
+recipes_solved_individually: 200
+infeasible_recipes: 0
+protein_distribution: {'beef': 14, 'cheese': 43, 'chicken': 45, 'fish': 20, 'lamb': 5, 'legumes': 21, 'pork': 18, 'shrimp': 9, 'tofu': 4, 'turkey': 16, 'vegetable': 5}
+warnings: 92

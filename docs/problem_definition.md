@@ -1,10 +1,10 @@
 # Problem definition
 
-Choose seven distinct, approved two-person dinners and whole Tesco purchase units to balance affordability, variety and avoidable fresh surplus. There are 40 recipes spanning meat, fish and vegetarian dishes. Every recipe ingredient has a purchasing option; the solver cannot drop inconvenient ingredients.
+Choose seven distinct, approved two-person dinners and whole Tesco purchase units to balance affordability, variety and avoidable fresh surplus. There are 200 recipes spanning meat, fish and vegetarian dishes. Every recipe ingredient has a purchasing option; the solver cannot drop inconvenient ingredients.
 
 ## Decisions and accounting
 
-Binary recipe variables choose exactly the requested number of dinners. Integer product variables buy retail packs/reference portions. Consumption stays within the configured recipe bounds, with whole eggs and appropriate half-unit cucumber/cube increments. Every ingredient obeys:
+Binary recipe variables choose exactly the requested number of dinners. Integer product variables buy retail packs/reference portions. Consumption stays within the configured recipe bounds, with whole eggs, half stock cubes and documented practical fractions of selected whole produce. Every ingredient obeys:
 
 `ending inventory = opening inventory + usable purchased quantity - consumption`
 

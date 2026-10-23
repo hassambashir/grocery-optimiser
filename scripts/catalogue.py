@@ -86,6 +86,15 @@ def exclusion_reason(product, ingredients):
 
 def consumption_step(ingredient_id, unit):
     # Retail packs always remain integer; kitchen consumption has separate rules.
-    if unit == 'cube' or ingredient_id == 'cucumber':
+    fractional_each = {
+        'cucumber': 0.5,
+        'courgette': 0.5,
+        'lemon': 0.5,
+        'lettuce': 0.25,
+        'red_onion': 0.5,
+    }
+    if unit == 'cube':
         return 0.5
+    if ingredient_id in fractional_each:
+        return fractional_each[ingredient_id]
     return 1.0 if unit == 'each' else None
