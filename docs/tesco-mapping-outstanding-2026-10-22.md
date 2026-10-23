@@ -31,3 +31,27 @@ chipotle_paste, green_pepper, burger_buns, lettuce, gnocchi, creme_fraiche, hard
 5. Run `scripts/validate_seed_data.py`, the repository tests, and `scripts/optimise_week.py` on a realistic two-person week. Record any failures and fix them before marking mapping complete.
 
 **Status:** partially corrected; staged Tesco product coverage, live stock/price refresh, and full end-to-end validation remain outstanding.
+
+## Reconciled audit — 23 October 2026
+
+The latest `data/products.csv` contains 310 product rows and no repeated Tesco retailer product IDs. All seven staged ingredient batches and the active ingredient catalogue were compared against the product catalogue by exact ingredient ID. This is an **identity-level audit**, not an end-to-end optimiser test.
+
+### Nine ingredient IDs still without any exact Tesco product row
+
+`fresh_herb_mix_coriander_mint`, `savoy_cabbage`, `shallot`, `hot_sauce`, `instant_polenta`, `zaatar`, `jalfrezi_paste`, `korma_paste`, `dried_thyme`.
+
+These nine must **not** be treated as resolved. Tesco listings exist for several of these ingredient types, but exact Tesco SKU IDs and corresponding verified pack/price combinations have not been established in this pass. A combined coriander-and-mint product must not be fabricated: it may need two separately priced Tesco products and recipe ingredient rows split into the canonical herb IDs. Similarly a Savoy cabbage sold each must not be assigned a fictional weight without an explicit estimate.
+
+### Eleven ingredient IDs have product rows but no listed-online unit-compatible SKU
+
+`garlic_paste`, `pumpkin_seeds`, `baby_corn`, `dried_apricots`, `ketjap_manis`, `cannelloni_tubes`, `giant_couscous`, `fennel_seeds`, `tamarind_paste`, `green_chilli`, `mixed_beans`.
+
+Their mapped products are recorded as out of stock. These are not purchasable candidates until a live alternative is verified. The `butternut_squash` product is sold each while the ingredient model uses grams; correct with a documented estimated edible weight or a weight-sold SKU before optimiser use.
+
+### Pepper allocation
+
+`red_pepper`, `green_pepper`, `yellow_pepper` are distinct ingredients. The existing P016–P018 mixed pepper packs are currently attached to `red_pepper`. They are **not yet implemented** as shared multi-colour allocations. The optimiser must use one purchased mixed pack and assign its actual colour counts across recipes without double counting; do not duplicate the SKU under each ingredient ID.
+
+### Verification limitations
+
+Tesco stock is postcode and slot dependent. `listed_online` is not a guarantee of availability in the intended Northern Ireland delivery slot. Earlier catalogue records and price snapshots require refresh before checkout. The optimiser and recipe-to-product end-to-end validator were not run as part of this audit.
