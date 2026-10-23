@@ -55,3 +55,11 @@ Their mapped products are recorded as out of stock. These are not purchasable ca
 ### Verification limitations
 
 Tesco stock is postcode and slot dependent. `listed_online` is not a guarantee of availability in the intended Northern Ireland delivery slot. Earlier catalogue records and price snapshots require refresh before checkout. The optimiser and recipe-to-product end-to-end validator were not run as part of this audit.
+
+## Further verified Tesco matches — 23 October (latest)
+
+Added P312 Tropical Sun Jamaican Hot Pepper Sauce 85 ml at GBP 0.80, P313 Pataks Indian Korma Curry Paste 283 g at GBP 3.35 (GBP 2.60 Clubcard), P314 Pataks Indian Jalfrezi Curry Paste 283 g at GBP 3.35 (GBP 2.60 Clubcard), and P315 Tesco Savoy Cabbage each at GBP 0.77 with an explicitly estimated 600 g usable weight. Korma page has conflicting pack-size text (title 283 g; description/net contents 290 g); check the label before optimisation. Clubcard offer ends 26 October 2026.
+
+**Five unmapped ingredient IDs remain:** `fresh_herb_mix_coriander_mint`, `shallot`, `instant_polenta`, `zaatar`, `dried_thyme`. Tesco search for polenta returned no eligible dry instant polenta groceries, only ready-made out-of-stock polenta and unrelated products. Do not substitute ready-made polenta for instant dry polenta. Coriander-and-mint mix likely requires a two-ingredient recipe split and separate eligible Tesco herb products. No exact SKU, pack, and price combination was established for the other three during this pass.
+
+**Not complete:** stock/availability blockers, pepper mixed-pack allocation, and optimiser end-to-end testing remain unresolved.
