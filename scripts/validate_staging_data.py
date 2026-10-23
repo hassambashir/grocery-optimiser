@@ -5,7 +5,8 @@ import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from catalogue import ROOT, exclusion_reason, positive, read_csv
+from catalogue import (ROOT, MAIN_PROTEINS, PRIMARY_SIDES, exclusion_reason,
+                       positive, read_csv)
 
 
 HELLOFRESH_RECIPE = re.compile(r"https://www\.hellofresh\.co\.uk/recipes/.+-[0-9a-f]{24}/?$")
@@ -72,6 +73,10 @@ def validate(root=ROOT):
         rid = row["recipe_id"]
         if row["servings"] != "2":
             errors.append(f"{rid}: expected two servings")
+        if row["main_protein"] not in MAIN_PROTEINS:
+            errors.append(f"{rid}: non-standard main protein {row['main_protein']}")
+        if row["primary_side"] not in PRIMARY_SIDES:
+            errors.append(f"{rid}: non-standard primary side {row['primary_side']}")
         if not row["cooking_instructions"].strip():
             errors.append(f"{rid}: missing cooking instructions")
         elif len(row["cooking_instructions"].split()) < 35:
@@ -103,13 +108,6 @@ def validate(root=ROOT):
     missing_products = sorted(used - set(eligible))
     for iid in missing_products:
         errors.append(f"{iid}: no eligible Tesco product for staged recipes")
-
-    vague_proteins = [row["recipe_id"] for row in recipes if row["main_protein"] in {"vegetarian", "seafood"}]
-    if vague_proteins:
-        warnings.append("Main-protein taxonomy mixes generic and ingredient-specific labels: " + ", ".join(vague_proteins))
-    sides = {row["primary_side"] for row in recipes}
-    if {"potato", "potatoes"} <= sides or {"tortilla", "tortillas"} <= sides:
-        warnings.append("Primary-side taxonomy contains singular/plural duplicates")
 
     stats = {
         "batches": len(recipe_files),

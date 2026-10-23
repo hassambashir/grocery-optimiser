@@ -12,6 +12,12 @@ The authoritative optimiser inputs are `recipes.csv`, `recipe_ingredients.csv`, 
 - A household tablespoon is 15 ml and teaspoon 5 ml. Do not silently equate grams with millilitres for sauces.
 - Existing source conversions are historical explanatory records, not automatically applied to already-normalised recipe quantities. Provisional conversions remain explicitly marked as such.
 
+## Recipe classification
+
+`main_protein` is a controlled grouping used by the optimiser's variety constraint. Its permitted values are `chicken`, `turkey`, `pork`, `beef`, `lamb`, `fish`, `shrimp`, `tofu`, `cheese`, `legumes` and `vegetable`. Salmon, cod, tuna, sea bass and mixed fish use `fish`. Prawns use `shrimp`; the vague `seafood` label is not permitted. `vegetable` is used where a recipe has no distinct protein rather than mixing the dietary label `vegetarian` with ingredient groups.
+
+`primary_side` describes the staple family rather than its spelling or shape. Permitted values are `rice`, `potato`, `sweet_potato`, `pasta`, `noodles`, `tortilla`, `bread`, `couscous`, `bulgur`, `legumes`, `vegetables`, `salad`, `pastry` and `polenta`. For example, brown rice is `rice`; spaghetti, orzo and gnocchi are grouped as `pasta`; and pitta, naan and flatbreads are grouped as `bread`. Sweet potato remains distinct from ordinary potato.
+
 ## Purchasing eligibility
 
 The validator and optimiser call the same `exclusion_reason` function. A product requires Tesco identity, an exact product ID/URL, an approved mapping, `listed_online` snapshot status, a finite positive price and effective quantity, and a matching canonical unit. Unknown statuses, unapproved compatibility and substitution candidates are excluded. Having starting inventory never counts as complete catalogue coverage.

@@ -3,12 +3,10 @@ batches: 7
 recipes: 160
 ingredient_lines: 1404
 used_ingredients: 200
-canonical_ingredients: 210
+canonical_ingredients: 209
 ingredients_with_eligible_products: 186
 missing_product_ingredients: ['baby_corn', 'butternut_squash', 'cannelloni_tubes', 'dried_apricots', 'dried_thyme', 'fennel_seeds', 'giant_couscous', 'green_chilli', 'instant_polenta', 'ketjap_manis', 'mixed_beans', 'pumpkin_seeds', 'tamarind_paste', 'zaatar']
 source_or_instruction_errors: 90
-WARNING: Main-protein taxonomy mixes generic and ingredient-specific labels: R044, R061, R062, R094, R095, R096, R097, R125, R194
-WARNING: Primary-side taxonomy contains singular/plural duplicates
 - R061: cooking instructions are too abbreviated
 - R061: HelloFresh URL is not a specific recipe page
 - R062: cooking instructions are too abbreviated

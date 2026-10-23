@@ -6,7 +6,8 @@ from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
 from catalogue import (ROOT, read_csv, positive, effective_pack, exclusion_reason,
-                       consumption_step, MAPPINGS, AVAILABILITY, UNITS)
+                       consumption_step, MAPPINGS, AVAILABILITY, UNITS,
+                       MAIN_PROTEINS, PRIMARY_SIDES)
 
 
 def validate(root=ROOT, allow_documented_exceptions=False):
@@ -45,6 +46,8 @@ def validate(root=ROOT, allow_documented_exceptions=False):
     for r in recipes:
         require(r['servings']=='2',f"{r['recipe_id']}: expected two servings")
         for k in ['recipe_name','cooking_instructions','main_protein','cooking_method']:require(bool(r[k].strip()),f"{r['recipe_id']}: blank {k}")
+        require(r['main_protein'] in MAIN_PROTEINS,f"{r['recipe_id']}: non-standard main protein {r['main_protein']}")
+        require(r['primary_side'] in PRIMARY_SIDES,f"{r['recipe_id']}: non-standard primary side {r['primary_side']}")
         require(any(l['recipe_id']==r['recipe_id'] for l in lines),f"{r['recipe_id']}: no ingredients")
     for r in flex:
         keys=['min_factor','preferred_factor','max_factor']

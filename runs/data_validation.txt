@@ -1,12 +1,12 @@
 Seed-data validation PASSED
 recipes: 40
 used_ingredients: 125
-canonical_ingredients: 133
+canonical_ingredients: 209
 recipe_ingredient_rows: 372
-products: 240
-eligible_products: 222
+products: 316
+eligible_products: 288
 covered_ingredients: 125
 missing: []
-alternatives: 92
-Excluded product rows: 18
+alternatives: 94
+Excluded product rows: 28
 Offline integrity/eligibility check; postcode-specific stock and future prices require checkout verification.

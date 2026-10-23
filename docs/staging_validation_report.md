@@ -1,6 +1,6 @@
 # Staged recipe data validation
 
-Validated against repository commit `68f335d38b301f27213d25ebca15f8965ab7fa60` on 23 October 2026.
+Revalidated on 23 October 2026 after applying the controlled recipe classifications.
 
 ## Decision
 
@@ -53,7 +53,9 @@ The whole butternut squash row is retained as a compatibility candidate because 
 
 ### Classification fields
 
-`main_protein` currently mixes broad values such as `vegetarian` and `seafood` with ingredient families such as `cheese`, `legumes` and `shrimp`. `primary_side` also contains singular/plural duplicates (`potato`/`potatoes`, `tortilla`/`tortillas`). These fields need a documented controlled vocabulary before recipes are promoted, because they may later drive variety constraints.
+The classification fields now use controlled vocabularies across the active and staged recipes. Fish such as salmon, cod and tuna use `fish`; prawns use `shrimp`; and the vague `seafood` value has been removed. Recipes without a distinct protein use `vegetable` rather than mixing dietary labels such as `vegetarian` with ingredient families.
+
+Primary-side synonyms have also been consolidated. Examples include `potato` rather than `potatoes`, `tortilla` rather than `tortillas`, `rice` for brown-rice variants, `pasta` for spaghetti/orzo/gnocchi, and `bread` for pitta, naan and other flatbreads. Meaningfully different sides such as ordinary potato and sweet potato remain separate.
 
 ## Corrections made in this pass
 
@@ -63,6 +65,7 @@ The whole butternut squash row is retained as a compatibility candidate because 
 - Changed `P278` whole butternut squash from `direct` to `compatible_candidate`; it cannot directly satisfy gram demand without a verified usable weight.
 - Cleared nonnumeric prose from the rating fields for R082 and R085 and retained the verification note in `ingredient_notes`.
 - Added `scripts/validate_staging_data.py` so future staged batches are checked consistently before promotion.
+- Standardised `main_protein` and `primary_side` across all 200 active and staged recipes, and made both validators reject labels outside the controlled vocabularies.
 
 ## Validation commands
 
@@ -71,7 +74,7 @@ python scripts/validate_seed_data.py
 Seed-data validation PASSED
 recipes: 40
 used_ingredients: 125
-canonical_ingredients: 210
+canonical_ingredients: 209
 recipe_ingredient_rows: 372
 products: 316
 eligible_products: 288
@@ -88,7 +91,7 @@ batches: 7
 recipes: 160
 ingredient_lines: 1404
 used_ingredients: 200
-canonical_ingredients: 210
+canonical_ingredients: 209
 ingredients_with_eligible_products: 186
 ```
 

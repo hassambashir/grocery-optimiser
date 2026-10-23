@@ -9,6 +9,15 @@ APPROVED_MAPPINGS = {'direct', 'direct_variable_weight', 'effective_usable_quant
 MAPPINGS = APPROVED_MAPPINGS | {'compatible_candidate', 'substitution_candidate'}
 AVAILABILITY = {'listed_online', 'out_of_stock', 'unknown'}
 UNITS = {'g', 'ml', 'each', 'cube', 'clove'}
+MAIN_PROTEINS = {
+    'chicken', 'turkey', 'pork', 'beef', 'lamb', 'fish', 'shrimp',
+    'tofu', 'cheese', 'legumes', 'vegetable'
+}
+PRIMARY_SIDES = {
+    'rice', 'potato', 'sweet_potato', 'pasta', 'noodles', 'tortilla',
+    'bread', 'couscous', 'bulgur', 'legumes', 'vegetables', 'salad',
+    'pastry', 'polenta'
+}
 
 
 def read_csv(path, root=ROOT):
