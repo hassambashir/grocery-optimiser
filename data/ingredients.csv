@@ -132,3 +132,80 @@ sugar,Sugar,pantry_other,g,long,durable_tracked,tight,
 red_lentils,Red Lentils,pantry_other,g,long,durable_tracked,tight,
 cauliflower,Cauliflower,vegetable,g,short,fresh_tracked,tight,
 baking_potato,Large baking potato,vegetable,g,medium,fresh_tracked,fixed,Approximate 300 g per large baking potato; jacket recipes still require large whole potatoes.
+chipotle_paste,Chipotle paste,sauce_or_paste,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+green_pepper,Green pepper,vegetable,each,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+burger_buns,Burger buns,starch,each,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+lettuce,Lettuce,vegetable,each,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+gnocchi,Potato gnocchi,starch,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+creme_fraiche,Creme fraiche,dairy,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+hard_cheese,Hard Italian style cheese,dairy,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+chorizo,Diced chorizo,protein,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+asparagus,Asparagus,vegetable,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+leek,Leek,vegetable,each,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+baby_corn,Baby corn,vegetable,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+teriyaki_sauce,Teriyaki sauce,sauce_or_paste,ml,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+sesame_seeds,Sesame seeds,pantry_other,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+pork_mince,Pork mince,protein,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+ketjap_manis,Ketjap manis,sauce_or_paste,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+naan,Plain naan bread,starch,each,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+turkey_mince,Turkey mince,protein,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+pesto,Basil pesto,sauce_or_paste,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+rocket,Rocket leaves,vegetable,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+pumpkin_seeds,Pumpkin seeds,pantry_other,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+sausages,Pork sausages,protein,each,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+apple,Apple,fruit,each,medium,fresh_tracked,tight,Fresh whole apples; Tesco SKU mapping pending
+chives,Fresh chives,fresh_aromatic,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+falafel,Ready-to-eat falafel,protein,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+peanut_butter,Peanut butter,pantry_other,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+peanuts,Peanuts,pantry_other,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+honey,Honey,pantry_other,g,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+bacon_lardons,Bacon lardons,protein,g,short,fresh_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+balsamic_vinegar,Balsamic vinegar,sauce_or_paste,ml,long,durable_tracked,tight,New staged ingredient; Tesco SKU mapping pending
+butternut_squash,Butternut squash,vegetable,g,short,fresh_tracked,tight,New staged ingredient
+fresh_sage,Fresh sage,fresh_aromatic,g,short,fresh_tracked,tight,New staged ingredient
+pork_loin_steaks,Pork loin steaks,protein,g,short,fresh_tracked,tight,New staged ingredient
+savoy_cabbage,Savoy cabbage,vegetable,g,short,fresh_tracked,tight,New staged ingredient
+wholegrain_mustard,Wholegrain mustard,sauce_or_paste,g,long,durable_tracked,tight,New staged ingredient
+sea_bass,Sea bass fillets,protein,g,short,fresh_tracked,tight,New staged ingredient
+serrano_ham,Serrano ham,protein,g,short,fresh_tracked,tight,New staged ingredient
+butter_beans,Butter beans drained,pantry_other,g,long,durable_tracked,tight,New staged ingredient
+ciabatta,Ciabatta,starch,each,short,fresh_tracked,tight,New staged ingredient
+shallot,Shallot,vegetable,each,short,fresh_tracked,tight,New staged ingredient
+turkey_steaks,Turkey steaks,protein,g,short,fresh_tracked,tight,New staged ingredient
+mixed_beans,Mixed beans drained,pantry_other,g,long,durable_tracked,tight,New staged ingredient
+walnuts,Walnuts,pantry_other,g,long,durable_tracked,tight,New staged ingredient
+pomegranate,Pomegranate,fruit,each,short,fresh_tracked,tight,New staged ingredient
+yellow_pepper,Yellow pepper,vegetable,each,short,fresh_tracked,tight,New staged ingredient
+fish_pie_mix,Mixed fish,protein,g,short,fresh_tracked,tight,New staged ingredient
+gochujang,Gochujang paste,sauce_or_paste,g,long,durable_tracked,tight,New staged ingredient
+sweet_chilli_sauce,Sweet chilli sauce,sauce_or_paste,ml,long,durable_tracked,tight,Tesco mapping pending
+avocado,Avocado,fruit,each,short,fresh_tracked,tight,Tesco mapping pending
+hot_sauce,Hot sauce,sauce_or_paste,ml,long,durable_tracked,tight,Tesco mapping pending
+green_chilli,Green chilli,vegetable,each,short,fresh_tracked,tight,Tesco mapping pending
+sun_dried_tomatoes,Sun-dried tomatoes,pantry_other,g,long,durable_tracked,tight,Tesco mapping pending
+lasagne_sheets,Lasagne sheets,starch,g,long,durable_tracked,tight,Tesco mapping pending
+thai_green_curry_paste,Thai green curry paste,sauce_or_paste,g,long,durable_tracked,tight,New canonical ingredient; Tesco mapping pending
+puff_pastry,Puff pastry,starch,g,short,fresh_tracked,tight,New canonical ingredient; Tesco mapping pending
+black_bean_sauce,Black bean sauce,sauce_or_paste,ml,long,durable_tracked,tight,New canonical ingredient; Tesco mapping pending
+dried_apricots,Dried apricots,pantry_other,g,long,durable_tracked,tight,New canonical ingredient; Tesco mapping pending
+jerk_seasoning,Jerk seasoning,seasoning,g,long,durable_tracked,tight,Batch 05; Tesco mapping pending
+pineapple,Pineapple,fruit,g,short,fresh_tracked,tight,Batch 05; Tesco mapping pending
+instant_polenta,Instant polenta,starch,g,long,durable_tracked,tight,Batch 05; Tesco mapping pending
+udon_noodles,Udon noodles,starch,g,long,durable_tracked,tight,Batch 05; Tesco mapping pending
+orange,Orange,fruit,each,short,fresh_tracked,tight,Batch 05; Tesco mapping pending
+goats_cheese,Goat cheese,dairy,g,short,fresh_tracked,tight,Batch 05; Tesco mapping pending
+giant_couscous,Giant couscous,starch,g,long,durable_tracked,tight,Batch 05; Tesco mapping pending
+tamarind_paste,Tamarind paste,sauce_or_paste,g,long,durable_tracked,tight,Batch 05; Tesco mapping pending
+fresh_thyme,Fresh thyme,fresh_aromatic,g,short,fresh_tracked,tight,Batch 05; Tesco mapping pending
+cannelloni_tubes,Cannelloni tubes,starch,g,long,durable_tracked,tight,Batch 05; Tesco mapping pending
+zaatar,Za'atar seasoning,seasoning,g,long,durable_tracked,tight,Batch 06; Tesco mapping pending
+jalfrezi_paste,Jalfrezi curry paste,sauce_or_paste,g,long,durable_tracked,tight,Batch 06; Tesco mapping pending
+fennel_seeds,Fennel seeds,seasoning,g,long,durable_tracked,tight,Batch 06; Tesco mapping pending
+korma_paste,Korma curry paste,sauce_or_paste,g,long,durable_tracked,tight,Batch 06; Tesco mapping pending
+radishes,Radishes,vegetable,g,short,fresh_tracked,tight,Batch 06; Tesco mapping pending
+diced_beef,Diced stewing beef,meat,g,short,fresh_tracked,tight,Batch 06; Tesco mapping pending
+beansprouts,Beansprouts,vegetable,g,short,fresh_tracked,tight,Batch 06; Tesco mapping pending
+dried_thyme,Dried thyme,seasoning,g,long,durable_tracked,tight,Batch 07 draft; Tesco product mapping and eligibility pending review.
+red_pesto,Red tomato pesto,sauce_or_paste,g,long,durable_tracked,tight,Batch 07 draft; Tesco product mapping and eligibility pending review.
+fresh_rosemary,Fresh rosemary,fresh_aromatic,g,short,fresh_tracked,tight,Batch 07 draft; Tesco product mapping and eligibility pending review.
+tahini,Tahini,sauce_or_paste,g,long,durable_tracked,tight,Batch 07 draft; Tesco product mapping and eligibility pending review.

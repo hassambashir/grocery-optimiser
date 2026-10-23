@@ -8,7 +8,7 @@ APPROVED_MAPPINGS = {'direct', 'direct_variable_weight', 'effective_usable_quant
                      'estimated_usable_weight'}
 MAPPINGS = APPROVED_MAPPINGS | {'compatible_candidate', 'substitution_candidate'}
 AVAILABILITY = {'listed_online', 'out_of_stock', 'unknown'}
-UNITS = {'g', 'ml', 'each', 'cube'}
+UNITS = {'g', 'ml', 'each', 'cube', 'clove'}
 
 
 def read_csv(path, root=ROOT):
