@@ -4,15 +4,15 @@ Revalidated on 23 October 2026 after applying the controlled recipe classificati
 
 ## Decision
 
-The staged data is structurally consistent but is **not ready for wholesale promotion** into the active optimiser dataset. Recipe IDs, ingredient references, canonical units, quantities, serving counts and inventory flags pass. Source provenance, Batch 2 instructions and Tesco coverage remain incomplete.
+The staged data is structurally consistent but is **not ready for wholesale promotion** into the active optimiser dataset. Recipe IDs, ingredient references, canonical units, quantities, serving counts, instruction-length checks and inventory flags pass. Tesco purchasing coverage remains incomplete. Missing inspiration links are reported as provenance warnings rather than promotion blockers.
 
 | Batch | Recipes | Ingredient lines | Specific source URLs | Short instructions | Ingredients without an eligible Tesco product | Status |
 |---|---:|---:|---:|---:|---:|---|
 | 01 | 20 | 171 | 20 | 0 | 3 | Hold for product coverage |
-| 02 | 20 | 121 | 1 | 20 | 3 | Blocked: sources and instructions |
-| 03 | 20 | 130 | 6 | 0 | 1 | Blocked: 14 missing sources |
-| 04 | 20 | 148 | 3 | 0 | 1 | Blocked: 17 missing sources |
-| 05 | 20 | 154 | 0 | 0 | 6 | Blocked: 20 missing sources |
+| 02 | 20 | 121 | 1 | 0 | 3 | Hold for product coverage |
+| 03 | 20 | 130 | 6 | 0 | 1 | Hold for product coverage |
+| 04 | 20 | 148 | 3 | 0 | 1 | Hold for product coverage |
+| 05 | 20 | 154 | 0 | 0 | 6 | Hold for product coverage |
 | 06 | 20 | 204 | 20 | 0 | 4 | Hold for product coverage |
 | 07 | 40 | 476 | 40 | 0 | 2 | Hold for product coverage |
 
@@ -35,14 +35,15 @@ The staged data is structurally consistent but is **not ready for wholesale prom
 
 ## Remaining blockers
 
-### Source and instruction evidence
+### Instruction quality and provenance
 
-- 51 recipes have no source URL: R086–R090, R092–R100, R104–R140.
-- Batch 2 has 19 generic HelloFresh URLs rather than specific recipe pages: R061 and R063–R080.
-- All 20 Batch 2 instructions contain fewer than 35 words and do not provide a reliable cooking sequence, timings and doneness checks.
-- R062 has a specific source URL, but its instructions are still too abbreviated.
+- All 160 staged recipes now pass the objective instruction checks: a nonempty method of at least 35 words and no unexplained meal-kit label such as “your garlic mayo”.
+- Batch 2's 20 placeholder methods were replaced with complete two-person methods using the structured ingredient lists. They give sequence, timings and doneness guidance and deliberately reuse pans or trays where practical.
+- Nineteen generic Batch 2 HelloFresh paths were cleared rather than retained as if they were verified recipe pages. Those methods are declared AI-simplified and not kitchen-tested.
+- Seventy recipes now have no inspiration URL. This is a visible provenance warning, not a failure: the method must be internally complete and honestly labelled whether or not a publisher link exists.
+- R042, R055, R058 and R153 were simplified to remove unnecessary sauce or dressing vessels. Ingredients are combined directly on the food, in the cooking pan or in the potato saucepan already in use.
 
-The earlier retrieval check reached 90 specific recipe pages: 20 in Batch 1, 1 in Batch 2, 6 in Batch 3, 3 in Batch 4, 20 in Batch 6 and 40 in Batch 7. Full ingredient-by-ingredient source alignment remains a manual culinary review.
+Specific links are still retained when already verified: 20 in Batch 1, 1 in Batch 2, 6 in Batch 3, 3 in Batch 4, 20 in Batch 6 and 40 in Batch 7. A link is provenance only; full culinary suitability and ingredient-to-method alignment remain review questions.
 
 ### Tesco purchasing coverage
 
@@ -67,6 +68,9 @@ Primary-side synonyms have also been consolidated. Examples include `potato` rat
 - Cleared nonnumeric prose from the rating fields for R082 and R085 and retained the verification note in `ingredient_notes`.
 - Added `scripts/validate_staging_data.py` so future staged batches are checked consistently before promotion.
 - Standardised `main_protein` and `primary_side` across all 200 active and staged recipes, and made both validators reject labels outside the controlled vocabularies.
+- Reclassified missing or generic recipe links as warnings rather than failures, because a URL does not establish method quality.
+- Replaced all 20 abbreviated Batch 2 methods and added regression tests for complete staged methods, optional provenance and direct assembly of simple finishing sauces.
+- Corrected the locked two-week regression so historical run artifacts remain immutable without requiring the evolving live catalogue to equal its old snapshot rows.
 
 ## Validation commands
 
@@ -94,6 +98,9 @@ ingredient_lines: 1404
 used_ingredients: 200
 canonical_ingredients: 209
 ingredients_with_eligible_products: 186
+missing_product_ingredients: ['baby_corn', 'butternut_squash', 'cannelloni_tubes', 'dried_apricots', 'dried_thyme', 'fennel_seeds', 'giant_couscous', 'green_chilli', 'instant_polenta', 'ketjap_manis', 'mixed_beans', 'pumpkin_seeds', 'tamarind_paste', 'zaatar']
+instruction_errors: 0
+provenance_warnings: 70
 ```
 
-The staging failure is intentional and lists every unresolved source, short instruction and missing eligible product. Promotion should occur only after those errors are resolved or explicitly accepted as documented exceptions.
+The staging failure is now caused only by the 14 ingredients without eligible Tesco products. Provenance notices are warnings and do not make the validation fail. Promotion should occur after purchasing coverage is completed or the affected recipes are explicitly excluded.

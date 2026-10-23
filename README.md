@@ -52,7 +52,7 @@ Before reusing inventory, remove anything eaten, discarded or no longer usable. 
 | `scripts/optimise_week.py` | Joint recipe, pack and inventory MILP |
 | `tests/test_project.py` | Data-corruption, purchasing and end-to-end regression tests |
 
-The old `source_recipes.csv` and `source_recipe_ingredients.csv` files are not present in this repository. Inspiration URLs are retained; cooking methods are household adaptations, not claimed verbatim source recipes.
+The old `source_recipes.csv` and `source_recipe_ingredients.csv` files are not present in this repository. Inspiration URLs are optional provenance; cooking methods are household adaptations, not claimed verbatim source recipes. Staged methods may be AI-simplified from the structured ingredient list when declared in their notes. They are reviewed for practical sequencing, food safety and minimal unnecessary equipment before promotion.
 
 ## Model behaviour
 
@@ -72,7 +72,7 @@ M. A. van Rooijen et al. (2024), *Optimizing household food waste: The impact of
 
 ## Saved two-week simulation
 
-[Locked Week 1 and executed Week 2](runs/README.md) preserve the £39.88 original basket and a £20.44 optimal second-week basket using all 24 opening leftover balances. Both weeks include complete plans, inventory and reconciliation files. This is explicitly simulated consumption, assuming all leftovers survive; it does not overwrite the baseline inventory or represent actual purchases. The full 17-test suite includes snapshot-integrity and two-week balance regression checks.
+[Locked Week 1 and executed Week 2](runs/README.md) preserve the £39.88 original basket and a £20.44 optimal second-week basket using all 24 opening leftover balances. Both weeks include complete plans, inventory and reconciliation files. This is explicitly simulated consumption, assuming all leftovers survive; it does not overwrite the baseline inventory or represent actual purchases. The full 29-test suite includes recipe-method quality, snapshot-integrity and two-week balance regression checks.
 
 ## Household web application
 

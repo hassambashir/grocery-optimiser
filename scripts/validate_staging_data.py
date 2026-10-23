@@ -11,6 +11,47 @@ from catalogue import (ROOT, INTENTIONAL_RETAIL_COMPOSITES, MAIN_PROTEINS,
 
 
 HELLOFRESH_RECIPE = re.compile(r"https://www\.hellofresh\.co\.uk/recipes/.+-[0-9a-f]{24}/?$")
+PREPARED_COMPONENT_REFERENCE = re.compile(
+    r"\byour\s+(?:[a-z]+\s+){0,2}(?:mayo|mayonnaise|yoghurt|yogurt|dressing|salsa|sauce)\b",
+    re.I,
+)
+
+
+def method_quality_issues(recipe):
+    """Return objective failures and review prompts for a household method.
+
+    Vessel minimisation is partly culinary judgement, so only clearly
+    unhelpful source-style fragments fail automatically.  Possible extra-bowl
+    language is surfaced for review rather than rejected blindly.
+    """
+    rid = recipe["recipe_id"]
+    method = recipe.get("cooking_instructions", "").strip()
+    errors, warnings = [], []
+    if not method:
+        errors.append(f"{rid}: missing cooking instructions")
+        return errors, warnings
+    if len(method.split()) < 35:
+        errors.append(f"{rid}: cooking instructions are too abbreviated")
+    if PREPARED_COMPONENT_REFERENCE.search(method):
+        errors.append(
+            f"{rid}: method uses an unexplained source-style prepared-component label"
+        )
+    if re.search(r"\b(?:separate|small) bowl\b|\bin a bowl\b", method, re.I):
+        warnings.append(
+            f"{rid}: review whether the named bowl is genuinely needed or the ingredients can be assembled directly"
+        )
+    return errors, warnings
+
+
+def provenance_warnings(recipe):
+    """A source link is useful provenance, but is not a recipe-quality gate."""
+    rid = recipe["recipe_id"]
+    url = recipe.get("inspiration_url", "").strip()
+    if not url:
+        return [f"{rid}: no inspiration URL; method must stand on its own"]
+    if "hellofresh.co.uk" in url and not HELLOFRESH_RECIPE.fullmatch(url):
+        return [f"{rid}: inspiration URL is a generic HelloFresh path, not a verified recipe page"]
+    return []
 
 
 def validate(root=ROOT):
@@ -83,15 +124,10 @@ def validate(root=ROOT):
             errors.append(f"{rid}: non-standard main protein {row['main_protein']}")
         if row["primary_side"] not in PRIMARY_SIDES:
             errors.append(f"{rid}: non-standard primary side {row['primary_side']}")
-        if not row["cooking_instructions"].strip():
-            errors.append(f"{rid}: missing cooking instructions")
-        elif len(row["cooking_instructions"].split()) < 35:
-            errors.append(f"{rid}: cooking instructions are too abbreviated")
-        url = row["inspiration_url"].strip()
-        if not url:
-            errors.append(f"{rid}: missing source URL")
-        elif "hellofresh.co.uk" in url and not HELLOFRESH_RECIPE.fullmatch(url):
-            errors.append(f"{rid}: HelloFresh URL is not a specific recipe page")
+        method_errors, method_warnings = method_quality_issues(row)
+        errors.extend(method_errors)
+        warnings.extend(method_warnings)
+        warnings.extend(provenance_warnings(row))
         rating = row.get("rating", "").strip()
         if rating:
             try:
@@ -123,10 +159,11 @@ def validate(root=ROOT):
         "canonical_ingredients": len(definitions),
         "ingredients_with_eligible_products": len(used & set(eligible)),
         "missing_product_ingredients": missing_products,
-        "source_or_instruction_errors": sum(
-            "source URL" in error or "specific recipe page" in error or "instructions are too abbreviated" in error
+        "instruction_errors": sum(
+            "instructions" in error or "prepared-component" in error
             for error in errors
         ),
+        "provenance_warnings": sum("inspiration URL" in warning for warning in warnings),
     }
     return errors, warnings, stats
 
@@ -136,8 +173,14 @@ def main():
     print("Staging validation " + ("FAILED" if errors else "PASSED"))
     for key, value in stats.items():
         print(f"{key}: {value}")
+    if stats.get("provenance_warnings"):
+        print(
+            f"WARNING: {stats['provenance_warnings']} recipes have no specific inspiration URL; "
+            "provenance is optional"
+        )
     for warning in warnings:
-        print("WARNING: " + warning)
+        if "inspiration URL" not in warning:
+            print("WARNING: " + warning)
     for error in errors:
         print("- " + error)
     return bool(errors)

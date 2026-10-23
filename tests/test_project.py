@@ -15,6 +15,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
 from catalogue import read_csv,exclusion_reason,effective_pack
 from validate_seed_data import validate
+from validate_staging_data import method_quality_issues, provenance_warnings
 from optimise_week import solve
 
 
@@ -76,6 +77,34 @@ class DataTests(unittest.TestCase):
         for rid,usable in [('303887546',102),('303882239',408),('264129006',235),('297021336',235),('314602620',125)]:
             self.assertEqual(effective_pack(p[rid]),(usable,'g'))
         self.assertEqual(effective_pack(p['279695475']),(220,'g'))
+
+    def test_staged_method_quality_and_optional_provenance(self):
+        staged=[]
+        for path in sorted((ROOT/'staging').glob('recipes_batch_*.csv')):
+            staged.extend(read_csv(path))
+        failures=[]
+        for recipe in staged:
+            failures.extend(method_quality_issues(recipe)[0])
+        self.assertEqual(failures,[])
+
+        adequate=('Cook the listed ingredients in sequence until tender and fully cooked. '
+                  'Reuse the pan where safe, add the finishing ingredients directly to each plate, '
+                  'and serve the complete two-person meal while hot with the prepared side.')
+        recipe={'recipe_id':'T','cooking_instructions':adequate,'inspiration_url':''}
+        self.assertEqual(method_quality_issues(recipe)[0],[])
+        self.assertTrue(provenance_warnings(recipe))
+        recipe['cooking_instructions']=adequate+' Finish with your garlic mayo sauce.'
+        self.assertTrue(any('prepared-component' in x for x in method_quality_issues(recipe)[0]))
+
+    def test_direct_toppings_do_not_require_a_sauce_bowl(self):
+        recipes={}
+        for path in sorted((ROOT/'staging').glob('recipes_batch_*.csv')):
+            recipes.update({r['recipe_id']:r for r in read_csv(path)})
+        for rid in ['R042','R055','R058','R062']:
+            method=recipes[rid]['cooking_instructions'].lower()
+            self.assertNotIn('mix chipotle paste with mayonnaise',method)
+            self.assertNotIn('mix harissa paste with mayonnaise',method)
+            self.assertNotIn('mix sesame seeds into mayonnaise',method)
 
 
 class OptimiserTests(unittest.TestCase):

@@ -18,6 +18,14 @@ The authoritative optimiser inputs are `recipes.csv`, `recipe_ingredients.csv`, 
 
 `primary_side` describes the staple family rather than its spelling or shape. Permitted values are `rice`, `potato`, `sweet_potato`, `pasta`, `noodles`, `tortilla`, `bread`, `couscous`, `bulgur`, `legumes`, `vegetables`, `salad`, `pastry` and `polenta`. For example, brown rice is `rice`; spaghetti, orzo and gnocchi are grouped as `pasta`; and pitta, naan and flatbreads are grouped as `bread`. Sweet potato remains distinct from ordinary potato.
 
+## Cooking-method quality
+
+The structured ingredient rows are authoritative for shopping. Cooking instructions may be source-adapted or AI-composed, but they must stand on their own: use every listed ingredient, introduce no unlisted ingredient other than water, give a practical sequence and timings, and include safe doneness guidance where relevant. A source URL is optional provenance, not proof of quality and not a promotion requirement. AI-composed or materially simplified methods must say so in `ingredient_notes`; untested methods must not be described as kitchen-tested.
+
+Methods are deliberately optimised for an ordinary two-person kitchen as well as for readability. Reuse a pan or tray when this does not contaminate cooked food, assemble toppings directly on the plate or wrap, and do not pre-mix two finishing ingredients in a separate bowl when applying them separately gives the same result. For example, mayonnaise can be spread onto a taco and chipotle dotted over it; the dataset should not require a bowl merely to name the combination “chipotle mayo”. Separate mixing remains appropriate when it materially affects coating, hydration, emulsification, marination, texture or food safety.
+
+Prepared-component labels copied from meal-kit prose, such as “your garlic mayo”, are not acceptable unless the component and a genuinely necessary preparation step have already been explained. The staging validator rejects these unexplained labels and surfaces explicit bowl language for human review. It cannot determine culinary equivalence mechanically, so minimal equipment remains a review criterion rather than a blanket ban on bowls.
+
 ## Purchasing eligibility
 
 The validator and optimiser call the same `exclusion_reason` function. A product requires Tesco identity, an exact product ID/URL, an approved mapping, `listed_online` snapshot status, a finite positive price and effective quantity, and a matching canonical unit. Unknown statuses, unapproved compatibility and substitution candidates are excluded. Having starting inventory never counts as complete catalogue coverage.

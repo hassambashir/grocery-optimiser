@@ -90,7 +90,7 @@ Excluded product rows: 18
 Actual full-suite result (`tests.txt`):
 
 ```text
-Ran 17 tests in 8.892s
+Ran 29 tests in 12.868s
 
 OK
 ```
