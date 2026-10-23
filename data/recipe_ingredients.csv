@@ -109,7 +109,8 @@ R010,couscous,120,g,
 R010,harissa_paste,20,g,
 R010,chopped_dates,30,g,
 R010,red_pepper,1,each,Whole vegetable required; no fractional consumption.
-R010,fresh_coriander,10,g,Use ordinary fresh coriander rather than Gousto's combined coriander-and-mint pack.
+R010,fresh_coriander,5,g,Half of original 10g mixed fresh herb portion; use separate coriander.
+R010,fresh_mint,5,g,Half of original 10g mixed fresh herb portion; use separate mint.
 R010,red_onion,1,each,Whole vegetable required; no fractional consumption.
 R010,vegetable_oil,10,ml,Household cooking fat for frying/roasting; explicit purchase requirement.
 R011,chicken_breast,350,g,350g chicken breast
