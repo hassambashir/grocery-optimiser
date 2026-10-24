@@ -20,7 +20,7 @@ class GlutenFreeAdapterTests(unittest.TestCase):
     def test_inventory_without_provenance_fails_closed(self):
         with patch.object(solver_job, 'validate', return_value=([], {})):
             with self.assertRaisesRegex(ValueError, 'product-verified inventory'):
-                solver_job.run(self.request(inventory={'rice': 100}))
+                solver_job.run(self.request(inventory={next(iter({r['ingredient_id'] for r in read_csv('data/ingredients.csv')})): 100}))
 
     def test_only_free_products_reach_solver(self):
         statuses = {r['product_id']: r['status'] for r in read_csv('data/product_allergens.csv')
