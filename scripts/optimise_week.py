@@ -17,11 +17,19 @@ from catalogue import ROOT, read_csv, exclusion_reason, effective_pack, consumpt
 
 
 def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False,
-          inventory_path="config/initial_inventory.csv", required_recipes=None):
+          inventory_path="config/initial_inventory.csv", required_recipes=None, allergen_rules=None):
     catalogue = read_csv("data/recipes.csv")
     all_lines = read_csv("data/recipe_ingredients.csv")
     ingredients = {r["ingredient_id"]: r for r in read_csv("data/ingredients.csv")}
     products = read_csv("data/products.csv")
+    allergen_rules = allergen_rules or {}
+    allergen_status = {(r["product_id"], r["allergen_id"]): r["status"]
+                       for r in read_csv("data/product_allergens.csv")} if allergen_rules else {}
+    preference_weights = {"contains": 10.0, "may_contain": 3.0, "unknown": 2.0, "free": 0.0}
+    strict_allergens = [a for a, mode in allergen_rules.items() if mode == "strict"]
+    products = [p for p in products if all(
+        allergen_status.get((p["product_id"], a), "unknown") == "free"
+        for a in strict_allergens)]
     inventory_rows = read_csv(inventory_path)
     inventory_ids = {r["ingredient_id"] for r in inventory_rows if float(r["quantity"]) > 0}
     requested = set(required_recipes or [])
@@ -104,7 +112,9 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False,
             v = pulp.LpVariable("packs_" + pid, lowBound=0, cat="Integer")
             purchase[pid] = v
             supply[i].append(qty * v)
-            cost.append(price * v)
+            penalty = sum(preference_weights[allergen_status.get((pid, a), "unknown")]
+                          for a, mode in allergen_rules.items() if mode == "preference")
+            cost.append((price + penalty) * v)
 
     consumption, deviation_cost = defaultdict(list), []
     recipe_consumption = []
