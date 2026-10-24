@@ -1,0 +1,15 @@
+allergen_id,regulated_name,notes
+celery,Celery,Includes celeriac.
+cereals_containing_gluten,Cereals containing gluten,"Wheat (including spelt and khorasan), rye, barley and oats."
+crustaceans,Crustaceans,Includes prawns crabs lobsters and crayfish.
+eggs,Eggs,
+fish,Fish,
+lupin,Lupin,
+milk,Milk,
+molluscs,Molluscs,Includes mussels oysters squid and scallops.
+mustard,Mustard,
+peanuts,Peanuts,
+sesame,Sesame,
+soya,Soya,
+sulphur_dioxide_sulphites,Sulphur dioxide and sulphites,Regulated above the applicable concentration threshold.
+tree_nuts,Tree nuts,"Almonds, hazelnuts, walnuts, cashews, pecans, Brazil nuts, pistachios and macadamias."

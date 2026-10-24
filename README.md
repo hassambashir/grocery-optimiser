@@ -2,15 +2,16 @@
 
 Choose seven varied dinners for two people and integer Tesco retail packs, balancing shopping cost, fresh surplus risk and small departures from preferred recipe quantities. Useful leftovers remain inventory; there is no requirement to finish a pack within one week.
 
-## Verified snapshot: 23 October 2026
+## Verified snapshot: 24 October 2026
 
 - 200 active recipes, 1,777 recipe-ingredient rows, 205 ingredients used and 209 canonical ingredient definitions.
-- 332 distinct Tesco listings, each with product-page verification evidence.
-- 307 eligible product rows overall; 306 serve used ingredients, providing 101 alternatives beyond one option per ingredient.
+- 355 distinct Tesco listings, each with product-page verification evidence and 14 regulated-allergen classifications.
+- 330 eligible product rows overall, providing 124 alternatives beyond one option per used ingredient.
 - All 205 used ingredients have an eligible purchasing option; no coverage exceptions.
 - 25 unavailable or unresolved product rows are retained for audit and excluded from purchasing.
+- 23 eligible gluten-free products cover 21 canonical ingredient mappings; pack-to-recipe and cooking adjustments are explicit.
 
-See [validation report](docs/validation_report.md) for executed results, the seven-dinner basket, corrections and limitations; [coverage audit](docs/catalogue_coverage.md) lists every ingredient and excluded product.
+See the [allergen catalogue report](docs/allergen_catalogue_report.md) for evidence semantics, executed results and unresolved gluten-free gaps. The historical [validation report](docs/validation_report.md) preserves the original seven-dinner run; [coverage audit](docs/catalogue_coverage.md) lists every ingredient and excluded product.
 
 ## Run
 
@@ -44,11 +45,16 @@ Before reusing inventory, remove anything eaten, discarded or no longer usable. 
 | `data/ingredients.csv` | Ingredient identities, units, shelf-life classes and flexibility |
 | `data/products.csv` | Active Tesco products with canonical ingredient IDs, gross/usable quantities, prices, availability and URLs |
 | `data/product_evidence.csv` | Observed Tesco product-page facts for every listing |
+| `data/allergens.csv` | The 14 UK regulated allergen groups |
+| `data/product_allergens.csv` | One `contains`, `may_contain`, `free` or `unknown` status per product and allergen |
+| `data/product_allergen_evidence.csv` | Dated ingredient, warning and dietary-claim evidence with source hashes |
+| `data/gluten_free_alternatives.csv` | Verified eligible direct alternatives and required quantity/method adjustments |
 | `data/unit_conversions.csv` | Documented historical household/source conversions, including explicit approximations |
 | `config/initial_inventory.csv` | Actual model starting stock; example includes 10 kg rice |
 | `config/flexibility_classes.csv` | Bounds on preferred quantities |
 | `scripts/catalogue.py` | Shared strict CSV reader and eligibility rules |
 | `scripts/validate_seed_data.py` | Active-data integrity, evidence and complete eligible-coverage gate |
+| `scripts/fetch_tesco_allergens.py` | Rebuild dated allergen evidence and the complete 14-status product matrix |
 | `scripts/validate_staging_data.py` | Pre-promotion coverage, unit and method checks for future staged batches |
 | `scripts/audit_recipe_catalogue.py` | Duplicate, method-quality and optional per-recipe feasibility audit |
 | `scripts/generate_catalogue_coverage.py` | Rebuild the active catalogue coverage audit |
@@ -64,6 +70,8 @@ Purchases are whole retail packs or integer reference portions of loose produce.
 The objective is purchase expenditure plus a provisional value-based short-life surplus penalty plus a proportional penalty for deviations **in either direction** from recipe preferences. The last term prevents free inflation of portions to absorb surplus. Default weights are `--fresh-penalty 0.50` and `--deviation-penalty 2.0`. These are modelling assumptions, not measured food-waste probabilities. Long-life stock has no surplus penalty. Variety caps apply to protein and cooking-method groups when feasible; recipes cannot repeat within a plan.
 
 Prices are regular-price snapshots. Active single-product Clubcard prices are recorded, but this model deliberately costs regular prices; conditional multibuys are documented rather than incorrectly converted into single-product discounts. Delivery fees, Clubcard multibuy optimisation and postcode/slot-specific availability are not modelled.
+
+Allergen data is conservative and date-specific. `free` is used only for an explicit free-from claim or when a complete online ingredients/allergy label has no declaration; incomplete labels remain `unknown`. Tesco warns that formulations and labels can change, so the application must treat `unknown` as unsafe for an exclusion and users must check the physical pack. The current optimiser does not yet apply household allergen filters automatically.
 
 ## Important scope
 

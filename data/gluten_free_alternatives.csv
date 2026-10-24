@@ -1,0 +1,24 @@
+product_id,ingredient_id,compatibility,quantity_adjustment_required,instruction_adjustment_required,guidance,verified_at
+P337,pasta,direct,no,yes,Use the recipe gram quantity and follow the product cooking time.,2026-10-24
+P338,pasta,direct,no,yes,Use the recipe gram quantity and follow the product cooking time.,2026-10-24
+P339,spaghetti,direct,no,yes,Use the recipe gram quantity and follow the product cooking time.,2026-10-24
+P340,orzo,direct,no,yes,Use the recipe gram quantity and follow the product cooking and liquid guidance.,2026-10-24
+P341,lasagne_sheets,direct,no,yes,Use the recipe gram quantity and follow the product preparation guidance.,2026-10-24
+P342,gnocchi,direct,no,yes,Use the recipe gram quantity and follow the product cooking time.,2026-10-24
+P343,tortillas,direct,no,no,The optimiser buys whole four-wrap packs.,2026-10-24
+P344,tortillas,direct,no,no,The optimiser buys whole six-wrap packs.,2026-10-24
+P345,flatbreads,direct,no,yes,Warm according to the product guidance.,2026-10-24
+P346,pittas,direct,no,yes,Warm according to the product guidance.,2026-10-24
+P347,plain_flour,direct,no,no,Use the recipe gram quantity.,2026-10-24
+P348,breadcrumbs,direct,no,no,Use the recipe gram quantity.,2026-10-24
+P349,puff_pastry,direct,no,yes,Follow the product handling and baking guidance.,2026-10-24
+P350,soy_sauce,direct,no,no,Use the recipe millilitre quantity.,2026-10-24
+P351,sausages,direct,no,yes,Use the recipe sausage count and follow the product cooking guidance.,2026-10-24
+P352,burger_buns,direct,no,no,Use one roll per requested burger bun.,2026-10-24
+P353,naan,direct,no,yes,Use one naan for each naan requested and follow the pack heating guidance.,2026-10-24
+P354,hoisin_sauce,direct,yes,no,Recipes use millilitres but the pouch is labelled in grams; the optimiser follows the existing approximate 1 g to 1 ml stir-fry-sauce convention.,2026-10-24
+P355,black_bean_sauce,direct,yes,no,Recipes use millilitres but the pouch is labelled in grams; the optimiser follows the existing approximate 1 g to 1 ml stir-fry-sauce convention.,2026-10-24
+P356,teriyaki_sauce,direct,yes,no,Recipes use millilitres but the pouch is labelled in grams; the optimiser models this sauce at approximately 1 g per ml.,2026-10-24
+P357,falafel,direct,no,yes,Use the recipe gram quantity and follow the pack heating guidance.,2026-10-24
+P358,ciabatta,direct,no,yes,Use one 50 g roll for each ciabatta roll requested and follow the pack baking guidance.,2026-10-24
+P359,vinegar,direct,no,no,Use the recipe millilitre quantity; cyder vinegar may give a slightly fruitier flavour.,2026-10-24

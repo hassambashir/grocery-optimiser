@@ -8,12 +8,18 @@ from pathlib import Path
 from catalogue import (ROOT, read_csv, positive, effective_pack, exclusion_reason,
                        consumption_step, AVAILABILITY, UNITS,
                        MAIN_PROTEINS, PRIMARY_SIDES,
+                       UK_ALLERGENS, ALLERGEN_STATUSES,
+                       ALLERGEN_EVIDENCE_BASES,
                        INTENTIONAL_RETAIL_COMPOSITES,
                        looks_like_composite_ingredient)
 
 
 def validate(root=ROOT, allow_documented_exceptions=False):
     errors=[]
+    def comparable_name(value):
+        # Tesco occasionally changes capitalisation or omits a space before
+        # the pack size without changing the product identity.
+        return re.sub(r'[^a-z0-9]+','',(value or '').lower())
     def require(ok,message):
         if not ok:errors.append(message)
     def unique(rows,key,label):
@@ -22,13 +28,16 @@ def validate(root=ROOT, allow_documented_exceptions=False):
         for v,n in Counter(values).items():require(n==1,f'{label}: duplicate {key} {v}')
     paths=['data/recipes.csv','data/recipe_ingredients.csv','data/ingredients.csv',
            'data/products.csv','data/unit_conversions.csv','config/flexibility_classes.csv',
-           'config/initial_inventory.csv','data/product_evidence.csv']
+           'config/initial_inventory.csv','data/product_evidence.csv',
+           'data/allergens.csv','data/product_allergens.csv',
+           'data/product_allergen_evidence.csv','data/gluten_free_alternatives.csv']
     tables={}
     for path in paths:
         try:tables[path]=read_csv(path,root)
         except (ValueError,OSError,csv.Error) as e:errors.append(str(e))
     if errors:return errors,{}
-    recipes,lines,ingredients,products,conversions,flex,inventory,evidence=[tables[p] for p in paths]
+    (recipes,lines,ingredients,products,conversions,flex,inventory,evidence,
+     allergens,product_allergens,allergen_evidence,gf_alternatives)=[tables[p] for p in paths]
     required={
       paths[0]:{'recipe_id','recipe_name','servings','cooking_instructions','main_protein','cooking_method','rating'},
       paths[1]:{'recipe_id','ingredient_id','preferred_quantity','unit'},
@@ -37,13 +46,69 @@ def validate(root=ROOT, allow_documented_exceptions=False):
       paths[4]:{'conversion_id','ingredient_id','source_unit','model_unit','multiplier'},
       paths[5]:{'flexibility_class','min_factor','preferred_factor','max_factor'},
       paths[6]:{'ingredient_id','quantity','unit'},
-      paths[7]:{'product_id','retailer_product_id','checked_at','source_url','observed_name','regular_price_gbp','availability_status'}}
+      paths[7]:{'product_id','retailer_product_id','checked_at','source_url','observed_name','regular_price_gbp','availability_status'},
+      paths[8]:{'allergen_id','regulated_name','notes'},
+      paths[9]:{'product_id','allergen_id','status','evidence_basis','notes'},
+      paths[10]:{'product_id','retailer_product_id','checked_at','source_url','observed_name','ingredients_text','allergen_statement','dietary_information','product_claims','emphasised_terms','evidence_status','source_content_sha256','fetch_error'},
+      paths[11]:{'product_id','ingredient_id','compatibility','quantity_adjustment_required','instruction_adjustment_required','guidance','verified_at'}}
     for path,fields in required.items():
         if tables[path]: require(fields<=set(tables[path][0]),f'{path}: missing required columns {fields-set(tables[path][0])}')
         elif path!='config/initial_inventory.csv':errors.append(f'{path}: empty table')
     if errors:return errors,{}
-    for rows,key,label in [(recipes,'recipe_id','recipes'),(ingredients,'ingredient_id','ingredients'),(products,'product_id','products'),(products,'retailer_product_id','products'),(conversions,'conversion_id','conversions'),(flex,'flexibility_class','flexibility'),(inventory,'ingredient_id','inventory'),(evidence,'product_id','evidence')]:unique(rows,key,label)
+    for rows,key,label in [(recipes,'recipe_id','recipes'),(ingredients,'ingredient_id','ingredients'),(products,'product_id','products'),(products,'retailer_product_id','products'),(conversions,'conversion_id','conversions'),(flex,'flexibility_class','flexibility'),(inventory,'ingredient_id','inventory'),(evidence,'product_id','evidence'),(allergens,'allergen_id','allergens'),(allergen_evidence,'product_id','allergen evidence'),(gf_alternatives,'product_id','gluten-free alternatives')]:unique(rows,key,label)
     im={r['ingredient_id']:r for r in ingredients};rm={r['recipe_id']:r for r in recipes};fm={r['flexibility_class']:r for r in flex};em={r['product_id']:r for r in evidence}
+    pm={r['product_id']:r for r in products};aem={r['product_id']:r for r in allergen_evidence}
+    require({r['allergen_id'] for r in allergens}==UK_ALLERGENS,
+            'data/allergens.csv must contain exactly the 14 UK regulated allergen groups')
+    allergen_pairs=Counter((r['product_id'],r['allergen_id']) for r in product_allergens)
+    require(all(n==1 for n in allergen_pairs.values()),'Duplicate product/allergen classification')
+    require(set(allergen_pairs)=={(p['product_id'],a) for p in products for a in UK_ALLERGENS},
+            'Every product must have exactly one classification for every UK allergen')
+    for r in product_allergens:
+        label=f"{r['product_id']}/{r['allergen_id']}"
+        require(r['product_id'] in pm,f'{label}: unknown product')
+        require(r['allergen_id'] in UK_ALLERGENS,f'{label}: unknown allergen')
+        require(r['status'] in ALLERGEN_STATUSES,f'{label}: invalid allergen status')
+        require(r['evidence_basis'] in ALLERGEN_EVIDENCE_BASES,f'{label}: invalid evidence basis')
+        expected={
+            'contains':{'emphasised_ingredient','ingredient_list'},
+            'may_contain':{'precautionary_allergen_warning'},
+            'free':{'explicit_free_from_claim','complete_online_label_no_declaration'},
+            'unknown':{'insufficient_online_label','fetch_failed'},
+        }
+        if r['status'] in expected:require(r['evidence_basis'] in expected[r['status']],f'{label}: status/evidence mismatch')
+    require(set(aem)==set(pm),'Allergen evidence must cover every product exactly once')
+    for pid,e in aem.items():
+        require(pid in pm,f'{pid}: orphan allergen evidence')
+        if pid not in pm:
+            continue
+        p=pm[pid]
+        require(e['retailer_product_id']==p['retailer_product_id'],f'{pid}: allergen evidence Tesco ID mismatch')
+        require(e['source_url']==p['source_url'],f'{pid}: allergen evidence URL mismatch')
+        try:date.fromisoformat(e['checked_at'])
+        except ValueError:errors.append(f'{pid}: invalid allergen evidence date')
+        require(e['evidence_status'] in {'label_complete','ingredients_only','no_ingredients','fetch_failed'},f'{pid}: invalid allergen evidence status')
+        if e['evidence_status']=='fetch_failed':
+            require(bool(e['fetch_error']),f'{pid}: failed allergen fetch lacks an error')
+            require(all(r['status']=='unknown' for r in product_allergens if r['product_id']==pid),f'{pid}: failed fetch must remain unknown')
+        else:
+            require(comparable_name(e['observed_name'])==comparable_name(p['product_name']),
+                    f'{pid}: allergen evidence product-name mismatch')
+            require(bool(re.fullmatch(r'[0-9a-f]{64}',e['source_content_sha256'])),f'{pid}: invalid allergen evidence content hash')
+    pa={(r['product_id'],r['allergen_id']):r for r in product_allergens}
+    for r in gf_alternatives:
+        pid=r['product_id'];label=f'{pid}: gluten-free alternative'
+        require(pid in pm,f'{label} has unknown product')
+        if pid in pm:
+            require(r['ingredient_id']==pm[pid]['ingredient_id'],f'{label} ingredient mapping mismatch')
+            require(not exclusion_reason(pm[pid],im),f'{label} is not eligible for purchasing')
+        require(r['compatibility']=='direct',f'{label} must be a direct compatible product')
+        require(r['quantity_adjustment_required'] in {'yes','no'},f'{label} invalid quantity-adjustment flag')
+        require(r['instruction_adjustment_required'] in {'yes','no'},f'{label} invalid instruction-adjustment flag')
+        require(bool(r['guidance']),f'{label} missing guidance')
+        try:date.fromisoformat(r['verified_at'])
+        except ValueError:errors.append(f'{label} invalid verification date')
+        require(pa.get((pid,'cereals_containing_gluten'),{}).get('status')=='free',f'{label} lacks verified gluten-free status')
     candidate_path=root/'staging/product_candidates.csv'
     if candidate_path.exists():
         candidates=read_csv(candidate_path,root)
@@ -153,7 +218,8 @@ def validate(root=ROOT, allow_documented_exceptions=False):
     for iid in missing:
         if not (allow_documented_exceptions and iid in exceptions):errors.append(f'{iid}: NO ELIGIBLE TESCO PRODUCT (inventory is not catalogue coverage)')
     for iid in exceptions:require(iid in missing,f'{iid}: stale coverage exception')
-    stats=dict(recipes=len(recipes),used_ingredients=len(used),canonical_ingredients=len(ingredients),recipe_ingredient_rows=len(lines),products=len(products),eligible_products=sum(map(len,eligible.values())),covered_ingredients=len(used&set(eligible)),missing=missing,excluded=excluded,alternatives=sum(max(0,len(eligible[i])-1) for i in used))
+    products_with_unknown={r['product_id'] for r in product_allergens if r['status']=='unknown'}
+    stats=dict(recipes=len(recipes),used_ingredients=len(used),canonical_ingredients=len(ingredients),recipe_ingredient_rows=len(lines),products=len(products),eligible_products=sum(map(len,eligible.values())),covered_ingredients=len(used&set(eligible)),missing=missing,excluded=excluded,alternatives=sum(max(0,len(eligible[i])-1) for i in used),allergen_assessed_products=len(aem),allergen_classifications=len(product_allergens),fully_classified_products=len(products)-len(products_with_unknown),products_with_unknown_allergens=len(products_with_unknown),allergen_fetch_failures=sum(e['evidence_status']=='fetch_failed' for e in allergen_evidence),gluten_free_alternatives=len(gf_alternatives),gluten_free_ingredient_mappings=len({r['ingredient_id'] for r in gf_alternatives}))
     return errors,stats
 
 

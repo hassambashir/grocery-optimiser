@@ -16,6 +16,18 @@ PRIMARY_SIDES = {
     'bread', 'couscous', 'bulgur', 'legumes', 'vegetables', 'salad',
     'pastry', 'polenta'
 }
+UK_ALLERGENS = {
+    'celery', 'cereals_containing_gluten', 'crustaceans', 'eggs', 'fish',
+    'lupin', 'milk', 'molluscs', 'mustard', 'peanuts', 'sesame', 'soya',
+    'sulphur_dioxide_sulphites', 'tree_nuts'
+}
+ALLERGEN_STATUSES = {'contains', 'may_contain', 'free', 'unknown'}
+ALLERGEN_EVIDENCE_BASES = {
+    'emphasised_ingredient', 'ingredient_list',
+    'precautionary_allergen_warning', 'explicit_free_from_claim',
+    'complete_online_label_no_declaration', 'insufficient_online_label',
+    'fetch_failed'
+}
 
 # These are deliberately modelled as one ingredient because Tesco sells the
 # requested blend in one pack. Ordinary separately sold ingredients must not
