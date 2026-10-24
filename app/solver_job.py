@@ -37,7 +37,7 @@ def run(request):
                      allergen_rules,
                      {r['ingredient_id']: r for r in read_csv('data/ingredients.csv')},
                      tables['data/recipes.csv'], tables['data/recipe_ingredients.csv'],
-                     request['inventory'])
+                     request['inventory'], inventory_verified=request.get('inventory_verified', False))
     tables['data/products.csv'] = policy['products']
     # This process handles one solve only; no global patch shared with web requests.
     original_read_csv = optimise_week.read_csv
