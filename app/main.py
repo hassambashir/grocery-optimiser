@@ -217,7 +217,7 @@ def create_app(database_url=None, password=None, session_secret=None, secure_coo
             if prefs['avoid_previous_plan']:
                 previous=conn.execute(select(plans).where(plans.c.receipts_confirmed==1).order_by(plans.c.created_at.desc())).mappings().first()
                 if previous:excluded.update(r['recipe_id'] for r in previous['result']['recipes'])
-        params={**body.model_dump(),'excluded_ingredients':prefs['excluded_ingredients'],'excluded_recipes':sorted(excluded),'inventory':inventory,'allergen_rules':prefs.get('allergen_rules',{})}
+        params={**body.model_dump(),'excluded_ingredients':prefs['excluded_ingredients'],'excluded_recipes':sorted(excluded),'inventory':inventory,'inventory_verified':True,'allergen_rules':prefs.get('allergen_rules',{})}
         if not solve_lock.acquire(blocking=False):raise HTTPException(409,'Another plan is being calculated. Try again shortly.')
         try:
             process=subprocess.run([sys.executable,'-m','app.solver_job'],input=json.dumps(params),text=True,capture_output=True,cwd=ROOT,timeout=120)
