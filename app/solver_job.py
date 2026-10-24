@@ -8,6 +8,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import optimise_week
 from catalogue import read_csv
 from validate_seed_data import validate
+from app.allergen_policy import prepare
 
 
 def run(request):
@@ -31,24 +32,28 @@ def run(request):
         'data/recipe_ingredients.csv': [r for r in lines if r['recipe_id'] in allowed],
         'app_inventory': [dict(ingredient_id=i, quantity=str(q), unit=units[i]) for i,q in request['inventory'].items() if q>0],
     }
-    if allergen_rules:
-        if any(mode == 'strict' for mode in allergen_rules.values()) and request['inventory']:
-            raise ValueError('Strict allergen planning requires product-verified inventory; ingredient-only stock cannot be certified.')
-        statuses = {(r['product_id'], r['allergen_id']): r['status']
-                    for r in read_csv('data/product_allergens.csv')}
-        # Strict exclusions apply to actual purchasable products, not recipes.
-        strict = [a for a, mode in allergen_rules.items() if mode == 'strict']
-        tables['data/products.csv'] = [p for p in read_csv('data/products.csv')
-                                       if all(statuses.get((p['product_id'], a), 'unknown') == 'free'
-                                              for a in strict)]
-        # Soft preferences need an objective penalty in the core MILP, rather
-        # than pretending to be a product exclusion.
-        tables['data/product_allergens.csv'] = read_csv('data/product_allergens.csv')
+    policy = prepare(read_csv('data/products.csv'),
+                     read_csv('data/product_allergens.csv'),
+                     allergen_rules,
+                     {r['ingredient_id']: r for r in read_csv('data/ingredients.csv')},
+                     tables['data/recipes.csv'], tables['data/recipe_ingredients.csv'],
+                     request['inventory'])
+    tables['data/products.csv'] = policy['products']
     # This process handles one solve only; no global patch shared with web requests.
-    optimise_week.read_csv = lambda path: tables[path] if path in tables else read_csv(path)
-    with contextlib.redirect_stdout(io.StringIO()):
-        return optimise_week.solve(days=request['days'], inventory_path='app_inventory',
-                                   required_recipes=request['required_recipes'], allergen_rules=allergen_rules)
+    original_read_csv = optimise_week.read_csv
+    try:
+        optimise_week.read_csv = lambda path: tables[path] if path in tables else read_csv(path)
+        with contextlib.redirect_stdout(io.StringIO()):
+            result = optimise_week.solve(days=request['days'], inventory_path='app_inventory',
+                                         required_recipes=request['required_recipes'],
+                                         product_penalties=policy['product_penalties'])
+        result['allergen_coverage'] = {
+            'unavailable_recipes': policy['unavailable_recipes'],
+            'excluded_product_count': sum(map(len, policy['excluded_products'].values())),
+            'eligible_product_count': len(policy['products'])}
+        return result
+    finally:
+        optimise_week.read_csv = original_read_csv
 
 if __name__ == '__main__':
     try:
