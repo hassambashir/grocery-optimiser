@@ -14,9 +14,9 @@ def run(request):
     errors, _ = validate()
     if errors:
         raise ValueError('; '.join(errors))
-    gluten_free = request.get('gluten_free', False)
-    if not isinstance(gluten_free, bool):
-        raise ValueError('Invalid gluten-free preference.')
+    allergen_rules = request.get('allergen_rules', {})
+    if not isinstance(allergen_rules, dict) or any(v not in ('strict', 'preference') for v in allergen_rules.values()):
+        raise ValueError('Invalid allergen rules.')
     recipes = read_csv('data/recipes.csv')
     lines = read_csv('data/recipe_ingredients.csv')
     excluded = set(request['excluded_recipes'])
@@ -31,19 +31,24 @@ def run(request):
         'data/recipe_ingredients.csv': [r for r in lines if r['recipe_id'] in allowed],
         'app_inventory': [dict(ingredient_id=i, quantity=str(q), unit=units[i]) for i,q in request['inventory'].items() if q>0],
     }
-    if gluten_free:
-        # Existing inventory lacks product-level allergen provenance.
-        if request['inventory']:
-            raise ValueError('Gluten-free planning requires product-verified inventory; ingredient-only stock cannot be certified.')
-        statuses = {r['product_id']: r['status'] for r in read_csv('data/product_allergens.csv')
-                    if r['allergen_id'] == 'cereals_containing_gluten'}
+    if allergen_rules:
+        if any(mode == 'strict' for mode in allergen_rules.values()) and request['inventory']:
+            raise ValueError('Strict allergen planning requires product-verified inventory; ingredient-only stock cannot be certified.')
+        statuses = {(r['product_id'], r['allergen_id']): r['status']
+                    for r in read_csv('data/product_allergens.csv')}
+        # Strict exclusions apply to actual purchasable products, not recipes.
+        strict = [a for a, mode in allergen_rules.items() if mode == 'strict']
         tables['data/products.csv'] = [p for p in read_csv('data/products.csv')
-                                       if statuses.get(p['product_id']) == 'free']
+                                       if all(statuses.get((p['product_id'], a), 'unknown') == 'free'
+                                              for a in strict)]
+        # Soft preferences need an objective penalty in the core MILP, rather
+        # than pretending to be a product exclusion.
+        tables['data/product_allergens.csv'] = read_csv('data/product_allergens.csv')
     # This process handles one solve only; no global patch shared with web requests.
     optimise_week.read_csv = lambda path: tables[path] if path in tables else read_csv(path)
     with contextlib.redirect_stdout(io.StringIO()):
         return optimise_week.solve(days=request['days'], inventory_path='app_inventory',
-                                   required_recipes=request['required_recipes'])
+                                   required_recipes=request['required_recipes'], allergen_rules=allergen_rules)
 
 if __name__ == '__main__':
     try:
