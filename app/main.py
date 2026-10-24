@@ -38,7 +38,7 @@ class Preferences(Input):
     excluded_ingredients: list[str] = Field(default_factory=list)
     excluded_recipes: list[str] = Field(default_factory=list)
     avoid_previous_plan: bool = False
-    gluten_free: bool = False
+    allergen_rules: dict[str, str] = Field(default_factory=dict)
 class Generate(Input):
     days: int = Field(default=7, ge=1, le=7)
     required_recipes: list[str] = Field(default_factory=list)
@@ -186,6 +186,9 @@ def create_app(database_url=None, password=None, session_secret=None, secure_coo
     @api.put('/api/preferences',dependencies=[Depends(auth)])
     def preferences(body:Preferences):
         validate_ids(body.excluded_ingredients,ingredients);validate_ids(body.excluded_recipes,recipes)
+        from catalogue import UK_ALLERGENS
+        if set(body.allergen_rules)-UK_ALLERGENS or any(v not in ('strict','preference') for v in body.allergen_rules.values()):
+            raise HTTPException(422,'Invalid allergen restriction.')
         with engine.begin() as conn:
             lock(conn);conn.execute(update(households).where(households.c.id=='home').values(preferences=body.model_dump()))
         return {'ok':True}
@@ -200,7 +203,7 @@ def create_app(database_url=None, password=None, session_secret=None, secure_coo
             if prefs['avoid_previous_plan']:
                 previous=conn.execute(select(plans).where(plans.c.receipts_confirmed==1).order_by(plans.c.created_at.desc())).mappings().first()
                 if previous:excluded.update(r['recipe_id'] for r in previous['result']['recipes'])
-        params={**body.model_dump(),'excluded_ingredients':prefs['excluded_ingredients'],'excluded_recipes':sorted(excluded),'inventory':inventory,'gluten_free':prefs.get('gluten_free',False)}
+        params={**body.model_dump(),'excluded_ingredients':prefs['excluded_ingredients'],'excluded_recipes':sorted(excluded),'inventory':inventory,'allergen_rules':prefs.get('allergen_rules',{})}
         if not solve_lock.acquire(blocking=False):raise HTTPException(409,'Another plan is being calculated. Try again shortly.')
         try:
             process=subprocess.run([sys.executable,'-m','app.solver_job'],input=json.dumps(params),text=True,capture_output=True,cwd=ROOT,timeout=120)
