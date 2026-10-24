@@ -17,11 +17,12 @@ from catalogue import ROOT, read_csv, exclusion_reason, effective_pack, consumpt
 
 
 def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False,
-          inventory_path="config/initial_inventory.csv", required_recipes=None):
+          inventory_path="config/initial_inventory.csv", required_recipes=None, product_penalties=None):
     catalogue = read_csv("data/recipes.csv")
     all_lines = read_csv("data/recipe_ingredients.csv")
     ingredients = {r["ingredient_id"]: r for r in read_csv("data/ingredients.csv")}
     products = read_csv("data/products.csv")
+    product_penalties = product_penalties or {}
     inventory_rows = read_csv(inventory_path)
     inventory_ids = {r["ingredient_id"] for r in inventory_rows if float(r["quantity"]) > 0}
     requested = set(required_recipes or [])
@@ -104,7 +105,8 @@ def solve(days=7, fresh_penalty=0.50, deviation_penalty=2.0, show_solver=False,
             v = pulp.LpVariable("packs_" + pid, lowBound=0, cat="Integer")
             purchase[pid] = v
             supply[i].append(qty * v)
-            cost.append(price * v)
+            penalty = float(product_penalties.get(pid, 0.0))
+            cost.append((price + penalty) * v)
 
     consumption, deviation_cost = defaultdict(list), []
     recipe_consumption = []

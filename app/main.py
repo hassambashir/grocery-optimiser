@@ -38,6 +38,7 @@ class Preferences(Input):
     excluded_ingredients: list[str] = Field(default_factory=list)
     excluded_recipes: list[str] = Field(default_factory=list)
     avoid_previous_plan: bool = False
+    allergen_rules: dict[str, str] = Field(default_factory=dict)
 class Generate(Input):
     days: int = Field(default=7, ge=1, le=7)
     required_recipes: list[str] = Field(default_factory=list)
@@ -63,6 +64,7 @@ def create_app(database_url=None, password=None, session_secret=None, secure_coo
         https_only=secure_cookie if secure_cookie is not None else os.environ.get('COOKIE_SECURE','true')=='true', max_age=86400)
     ingredients = {r['ingredient_id']:r for r in read_csv('data/ingredients.csv')}
     recipes = {r['recipe_id']:r for r in read_csv('data/recipes.csv')}
+    allergen_status = {(r['product_id'], r['allergen_id']): r['status'] for r in read_csv('data/product_allergens.csv')}
     solve_lock = threading.Lock()
     login_attempts = deque(maxlen=20)
     login_lock = threading.Lock()
@@ -83,6 +85,19 @@ def create_app(database_url=None, password=None, session_secret=None, secure_coo
     def stock_rows(conn):
         return [dict(r) for r in conn.execute(select(batches).where(batches.c.household_id=='home',batches.c.quantity>1e-6)).mappings()]
 
+    def verified_stock(conn, rules):
+        strict = [a for a, mode in rules.items() if mode == 'strict']
+        result = {}
+        for r in stock_rows(conn):
+            if r['expires_on'] and r['expires_on'] < date.today().isoformat(): continue
+            # Legacy purchases and manual entries have no product evidence.
+            source = r['source']
+            pid = source.rsplit(' product:', 1)[-1] if ' product:' in source else None
+            if strict and (not pid or any(allergen_status.get((pid, a), 'unknown') != 'free' for a in strict)):
+                continue
+            result[r['ingredient_id']] = result.get(r['ingredient_id'], 0) + r['quantity']
+        return result
+
     def available(conn):
         result={}
         for r in stock_rows(conn):
@@ -95,9 +110,13 @@ def create_app(database_url=None, password=None, session_secret=None, secure_coo
             conn.execute(batches.insert().values(id=str(uuid4()),household_id='home',ingredient_id=i,
                 quantity=q,unit=ingredients[i]['preferred_model_unit'],created_at=now(),expires_on=expires,source=source))
 
-    def take(conn,i,q,include_expired=False):
+    def take(conn,i,q,include_expired=False,strict_allergens=None):
         rows=[r for r in stock_rows(conn) if r['ingredient_id']==i and
               (include_expired or not r['expires_on'] or r['expires_on']>=date.today().isoformat())]
+        if strict_allergens:
+            rows=[r for r in rows if ' product:' in r['source'] and all(
+                allergen_status.get((r['source'].rsplit(' product:',1)[-1],a),'unknown') == 'free'
+                for a in strict_allergens)]
         if sum(r['quantity'] for r in rows)+1e-5<q:
             raise HTTPException(409,f'Not enough usable {i}. Record missing purchases or correct your stock first.')
         for r in sorted(rows,key=lambda r:(r['expires_on'] or '9999-12-31',r['created_at'])):
@@ -185,6 +204,9 @@ def create_app(database_url=None, password=None, session_secret=None, secure_coo
     @api.put('/api/preferences',dependencies=[Depends(auth)])
     def preferences(body:Preferences):
         validate_ids(body.excluded_ingredients,ingredients);validate_ids(body.excluded_recipes,recipes)
+        from catalogue import UK_ALLERGENS
+        if set(body.allergen_rules)-UK_ALLERGENS or any(v not in ('strict','preference') for v in body.allergen_rules.values()):
+            raise HTTPException(422,'Invalid allergen restriction.')
         with engine.begin() as conn:
             lock(conn);conn.execute(update(households).where(households.c.id=='home').values(preferences=body.model_dump()))
         return {'ok':True}
@@ -194,12 +216,12 @@ def create_app(database_url=None, password=None, session_secret=None, secure_coo
         validate_ids(body.required_recipes,recipes)
         if len(body.required_recipes)>body.days:raise HTTPException(422,'More required recipes than dinners.')
         with engine.connect() as conn:
-            h=home(conn);prefs=h['preferences'];revision=h['revision'];inventory=available(conn)
+            h=home(conn);prefs=h['preferences'];revision=h['revision'];inventory=verified_stock(conn,prefs.get('allergen_rules',{}))
             excluded=set(prefs['excluded_recipes'])
             if prefs['avoid_previous_plan']:
                 previous=conn.execute(select(plans).where(plans.c.receipts_confirmed==1).order_by(plans.c.created_at.desc())).mappings().first()
                 if previous:excluded.update(r['recipe_id'] for r in previous['result']['recipes'])
-        params={**body.model_dump(),'excluded_ingredients':prefs['excluded_ingredients'],'excluded_recipes':sorted(excluded),'inventory':inventory}
+        params={**body.model_dump(),'excluded_ingredients':prefs['excluded_ingredients'],'excluded_recipes':sorted(excluded),'inventory':inventory,'inventory_verified':True,'allergen_rules':prefs.get('allergen_rules',{})}
         if not solve_lock.acquire(blocking=False):raise HTTPException(409,'Another plan is being calculated. Try again shortly.')
         try:
             process=subprocess.run([sys.executable,'-m','app.solver_job'],input=json.dumps(params),text=True,capture_output=True,cwd=ROOT,timeout=120)
@@ -230,7 +252,7 @@ def create_app(database_url=None, password=None, session_secret=None, secure_coo
             for product_id,n in body.packs.items():
                 if n<0 or n>1000:raise HTTPException(422,'Pack quantities must be whole numbers between 0 and 1000.')
                 product,_=basket[product_id];q=effective_pack(product)[0]*n;i=product['ingredient_id']
-                add(conn,i,q,'purchase '+pid);changes[i]=changes.get(i,0)+q
+                add(conn,i,q,'purchase '+pid+' product:'+product_id);changes[i]=changes.get(i,0)+q
             conn.execute(update(plans).where(plans.c.id==pid).values(receipts_confirmed=1))
             record(conn,body.request_id,'purchase',payload,changes)
         return {'ok':True}
@@ -252,7 +274,8 @@ def create_app(database_url=None, password=None, session_secret=None, secure_coo
             for row in p['result']['consumption']:
                 if row['recipe_id'] in body.cooked:
                     i=row['ingredient_id'];demand[i]=demand.get(i,0)+row['quantity']
-            for i,q in demand.items():take(conn,i,q)
+            strict=[a for a,mode in p['parameters'].get('allergen_rules',{}).items() if mode=='strict']
+            for i,q in demand.items():take(conn,i,q,strict_allergens=strict)
             statuses.update({r:'cooked' for r in body.cooked});statuses.update({r:'skipped' for r in body.skipped})
             conn.execute(update(plans).where(plans.c.id==pid).values(meal_status=statuses))
             record(conn,body.request_id,'meals',payload,{i:-q for i,q in demand.items()})
