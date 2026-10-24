@@ -13,11 +13,11 @@ DEFAULT_PENALTIES = {"free": 0.0, "unknown": 2.0, "may_contain": 3.0, "contains"
 
 
 def prepare(products, product_allergens, rules, ingredients, recipes, lines,
-            inventory=None, penalties=None):
+            inventory=None, penalties=None, inventory_verified=False):
     if not isinstance(rules, dict) or any(mode not in MODES for mode in rules.values()):
         raise ValueError("Allergen rules must use strict or preference.")
     inventory = inventory or {}
-    if inventory and "strict" in rules.values():
+    if inventory and "strict" in rules.values() and not inventory_verified:
         raise ValueError("Strict allergen planning requires product-verified inventory; ingredient-only stock cannot be certified.")
     penalties = penalties or DEFAULT_PENALTIES
     if set(penalties) != STATUSES or any(not isinstance(v, (int, float)) or v < 0 for v in penalties.values()):
