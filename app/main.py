@@ -110,9 +110,13 @@ def create_app(database_url=None, password=None, session_secret=None, secure_coo
             conn.execute(batches.insert().values(id=str(uuid4()),household_id='home',ingredient_id=i,
                 quantity=q,unit=ingredients[i]['preferred_model_unit'],created_at=now(),expires_on=expires,source=source))
 
-    def take(conn,i,q,include_expired=False):
+    def take(conn,i,q,include_expired=False,strict_allergens=None):
         rows=[r for r in stock_rows(conn) if r['ingredient_id']==i and
               (include_expired or not r['expires_on'] or r['expires_on']>=date.today().isoformat())]
+        if strict_allergens:
+            rows=[r for r in rows if ' product:' in r['source'] and all(
+                allergen_status.get((r['source'].rsplit(' product:',1)[-1],a),'unknown') == 'free'
+                for a in strict_allergens)]
         if sum(r['quantity'] for r in rows)+1e-5<q:
             raise HTTPException(409,f'Not enough usable {i}. Record missing purchases or correct your stock first.')
         for r in sorted(rows,key=lambda r:(r['expires_on'] or '9999-12-31',r['created_at'])):
@@ -270,7 +274,8 @@ def create_app(database_url=None, password=None, session_secret=None, secure_coo
             for row in p['result']['consumption']:
                 if row['recipe_id'] in body.cooked:
                     i=row['ingredient_id'];demand[i]=demand.get(i,0)+row['quantity']
-            for i,q in demand.items():take(conn,i,q)
+            strict=[a for a,mode in p['parameters'].get('allergen_rules',{}).items() if mode=='strict']
+            for i,q in demand.items():take(conn,i,q,strict_allergens=strict)
             statuses.update({r:'cooked' for r in body.cooked});statuses.update({r:'skipped' for r in body.skipped})
             conn.execute(update(plans).where(plans.c.id==pid).values(meal_status=statuses))
             record(conn,body.request_id,'meals',payload,{i:-q for i,q in demand.items()})
